@@ -1,12 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from './components/Login/Login';
-import Management from './components/Management/Management';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/home/Home";
+import Login from "./components/login/Login"
 
-const App = () => {
-  console.log('before router');
+function App() {
   return (
-    <Login />
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route exact path = "/" element={<Login />} />
+          <Route exact path = "/home" element={<Home />}>
+
+          </Route>
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

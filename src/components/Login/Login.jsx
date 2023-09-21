@@ -1,5 +1,5 @@
 import React from 'react'
-import upesfull from '../../assets/upesfull.jpg'
+import upesfull from '../../assets/upesfull.png'
 import './Login.css'
 
 const Login = () => {
@@ -30,6 +30,5 @@ const Login = () => {
 }
 
 export default Login
-
 
 
