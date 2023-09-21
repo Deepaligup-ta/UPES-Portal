@@ -1,29 +1,52 @@
-#upesfull {
-    /*align-items: center;
-    justify-content: center;
-    width: 500px;
-    height: 200px;
-    align-content: center;
-    margin: 0 auto;
-    display: block;
-    display: flex;*/
+/* Login.css */
 
-    display: block; /* Ensures it's treated as a block-level element */
-    margin: 0 auto; /* Centers horizontally */
-    width: 500px;
-    height: 200px;
-    margin: 10px;
-    margin-top: 30px;
-    overflow: contain;
+/* Base styles for the login container */
+.Login5 {
+    position: relative;
+    background-color: white;
 }
 
-#logindiv {
-    border: 2px solid black;
-    padding: 10px;
-    margin: 20px;
-    border: 1px solid;
-    padding: 20px;
-    /*box-shadow: 5px 10px #888888;*/
+/* Styling for the background image */
+.BackgroundImage {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Styling for the Your Logo text */
+.YourLogo {
+    position: absolute;
+    top: 31px;
+    left: 42px;
+    color: black;
+    font-size: xl;
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+
+/* Styling for the main login form container */
+.LoginForm {
+    top: 200px;
+    left: 100px;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    /* Glass morphism effect */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Styling for the white background rectangle */
+.Rectangle13 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.75;
     border-radius: 20px;
     z-index: 1;
     backdrop-filter: blur(5px);
@@ -31,14 +54,19 @@
 
 
 .center {
-    align-items: center;
+    align-items: centre;
     justify-self: center;
     align-content: center;
     text-align: center;
 }
 
-#loginform {
-    margin: 10px;
+/* Styling for the social media buttons */
+.SocialButtons {
+    position: absolute;
+    top: 202px;
+    left: 44px;
+    width: 96px;
+    height: 14px;
 }
 
 input, label, select, option {
@@ -52,11 +80,11 @@ label {
     float: left;
     font-weight: 500;
     font-size: 25px;
-    color: white;
+    color: black;
 }
 
 #welcome {
-    color: yellow;
+    color: black    ;
     font-size: 30px;
 }
 
@@ -82,4 +110,5 @@ body {
     background-position: center;
     width: 100vw;
     height: 100vh;
+    background-image: url("../../assets/bg2.jpg");
 }
