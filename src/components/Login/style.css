@@ -1,0 +1,343 @@
+.login {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.login .overlap {
+    background-image: url("../../assets/bg2.avif");
+   
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.login .overlap-wrapper {
+    background-color: #ffffff;
+}
+.login .text-wrapper {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    left: 42px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 30px;
+}
+.login {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.login .overlap-wrapper {
+    background-color: #ffffff;
+    height: 900px;
+    width: 1440px;
+}
+
+
+
+.login .text-wrapper {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    left: 42px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 30px;
+}
+
+.login .overlap-group-wrapper {
+    height: 741px;
+    left: 783px;
+    position: absolute;
+    top: 80px;
+    width: 543px;
+}
+
+.login .div {
+    background-color: #ffffffbf;
+    border-radius: 40px;
+    height: 741px;
+    position: relative;
+    width: 539px;
+}
+
+.login .overlap-2 {
+    height: 116px;
+    left: 44px;
+    position: absolute;
+    top: 44px;
+    width: 455px;
+}
+
+.login .group-2 {
+    height: 46px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 455px;
+}
+
+.login .welcome-to-LOREM {
+    color: transparent;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 21px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.login .span {
+    color: #000000;
+}
+
+.login .text-wrapper-2 {
+    color: #779341;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+}
+
+.login .no-account-sign-up {
+    color: transparent;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 13px;
+    font-weight: 400;
+    left: 366px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 6px;
+}
+
+.login .text-wrapper-3 {
+    color: #8d8d8d;
+}
+
+.login .text-wrapper-4 {
+    color: #779341;
+}
+
+.login .text-wrapper-5 {
+    color: #000000;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 55px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 33px;
+}
+
+.login .group-3 {
+    height: 56px;
+    left: 44px;
+    position: absolute;
+    top: 202px;
+    width: 451px;
+}
+
+.login .div-wrapper {
+    height: 55px;
+    left: 0;
+    position: absolute;
+    top: 1px;
+    width: 300px;
+}
+
+.login .overlap-group-2 {
+    background-color: #e8f1ff;
+    border-radius: 9px;
+    height: 55px;
+    position: relative;
+    width: 298px;
+}
+
+.login .google-instance {
+    height: 26px !important;
+    left: 32px !important;
+    position: absolute !important;
+    top: 15px !important;
+    width: 26px !important;
+}
+
+.login .text-wrapper-6 {
+    color: #4285f4;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 79px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+}
+
+.login .facebook-wrapper {
+    background-color: #ffffff;
+    border-radius: 9px;
+    height: 55px;
+    left: 318px;
+    position: absolute;
+    top: 1px;
+    width: 60px;
+}
+
+.login .facebook-instance {
+    height: 29px !important;
+    left: 15px !important;
+    position: absolute !important;
+    top: 12px !important;
+    width: 29px !important;
+}
+
+.login .apple-wrapper {
+    background-color: #ffffff;
+    border-radius: 9px;
+    height: 55px;
+    left: 391px;
+    position: absolute;
+    top: 0;
+    width: 60px;
+}
+
+.login .apple-instance {
+    height: 28px !important;
+    left: 15px !important;
+    position: absolute !important;
+    top: 13px !important;
+    width: 29px !important;
+}
+
+.login .group-54 {
+    left: 44px !important;
+    position: absolute !important;
+    top: 310px !important;
+}
+
+.login .group-instance {
+    border-color: #adadad !important;
+}
+
+.login .group-54-instance {
+    left: 44px !important;
+    position: absolute !important;
+    top: 440px !important;
+}
+
+.login .text-wrapper-7 {
+    color: #4285f4;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 13px;
+    font-weight: 400;
+    left: 387px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 544px;
+}
+
+.login .group-4 {
+    height: 54px;
+    left: 259px;
+    position: absolute;
+    top: 608px;
+    width: 238px;
+}
+
+.login .overlap-3 {
+    background-color: #779341;
+    border-radius: 10px;
+    box-shadow: 0px 4px 19px #7793414c;
+    height: 54px;
+    position: relative;
+    width: 236px;
+}
+
+.login .text-wrapper-8 {
+    color: #ffffff;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 91px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+}
+/* Default styles for large screens */
+.login {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.login .overlap-wrapper {
+    background-color: #ffffff;
+    height: 900px;
+    width: 1440px;
+}
+
+/* Responsive styles for smaller screens (e.g., tablets) */
+@media (max-width: 1024px) {
+    .login .overlap-wrapper {
+        width: 100%;
+        /* Adjust to fit smaller screens */
+    }
+}
+
+/* Responsive styles for even smaller screens (e.g., smartphones) */
+@media (max-width: 768px) {
+    .login {
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+        /* Center content vertically */
+    }
+
+    .login .overlap-wrapper {
+        height: auto;
+        /* Allow content to determine height */
+        width: 100%;
+        /* Adjust to fit smaller screens */
+    }
+
+    .login .text-wrapper {
+        top: 15px;
+        /* Adjust the top margin for smaller screens */
+        font-size: 16px;
+        /* Adjust font size for smaller screens */
+    }
+
+    .login .overlap-group-wrapper {
+        height: auto;
+        /* Allow content to determine height */
+        width: 100%;
+        /* Adjust to fit smaller screens */
+    }
+
+    .login .div {
+        height: auto;
+        /* Allow content to determine height */
+        width: 100%;
+        /* Adjust to fit smaller screens */
+    }
+
+    /* Continue adjusting styles as needed for smaller screens */
+}
