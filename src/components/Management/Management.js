@@ -1,7 +1,7 @@
 import React from "react";
 import './Management.css'
 
-const Home = (props) => {
+const Management = () => {
     return (
         <div className="main">
             <div className="strip"></div>
@@ -46,4 +46,4 @@ const Home = (props) => {
     )
 };
 
-export default Home;
+export default Management;

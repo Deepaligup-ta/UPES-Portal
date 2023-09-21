@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
-import Login from "./components/login/Login";
-import Management from "./components/management/Management";
+import Management from "./components/Management/Management"
+import Login from "./components/Login/Login"
 import Faculty from "./components/faculty/Faculty";
 function App() {
   return (
