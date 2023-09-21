@@ -5,6 +5,7 @@ import Management from "./components/Management/Management"
 import Login1 from "./components/Login/Login1";
 // import Management from "./components/Management/Management";
 import Faculty from "./components/faculty/Faculty";
+import Policies from "./Pages/Policies";
 function App() {
   return (
     <div className="App">
@@ -13,10 +14,8 @@ function App() {
           <Route exact path = "/" element={<Login1 />} />
           <Route exact path = "/faculty" element={<Faculty />}/>
           <Route exact path = "/home" element={<Home />}/>
-          <Route exact path = "/management" element={<Management />}/>
-
-
-          
+          <Route exact path = "/policies" element={<Policies />}/>
+          <Route exact path = "/management" element={<Management />}/>          
         </Routes>
       </Router>
     </div>
