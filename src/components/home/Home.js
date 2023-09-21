@@ -1,10 +1,11 @@
 import React from "react";
 import './Home.css'
+import Sidebar from "../SideBar/Sidebar";
 
 const Home = (props) => {
     return (
         <div className="main">
-            <div className="strip"></div>
+            {/* <div className="strip"></div>
             <div className="side-nav">
                 <div className="logo">
                     <div className="upes">
@@ -41,8 +42,10 @@ const Home = (props) => {
                         <label>LOGOUT</label>
                     </div>
                 </div>
+            </div> */}
+            <Sidebar/>
             </div>
-        </div>
+            
     )
 };
 
