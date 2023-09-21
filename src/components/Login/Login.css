@@ -9,12 +9,18 @@
     display: flex;*/
 
     display: block; /* Ensures it's treated as a block-level element */
-    margin: 0 auto; /* Centers horizontally */
-    width: 500px;
-    height: 200px;
-    margin: 10px;
+    /*margin: 0 auto; /* Centers horizontally */
+    width: 300px;
+    height: 100px;
+    /*margin: 10px;*/
+    position: absolute;
+    top:0;
+    left: 0;
+    margin: 20px;
     margin-top: 30px;
+    
 }
+
 
 #logindiv {
     border: 2px solid black;
@@ -30,7 +36,7 @@
 
 
 .center {
-    align-items: center;
+    align-items: centre;
     justify-self: center;
     align-content: center;
     text-align: center;
@@ -51,11 +57,11 @@ label {
     float: left;
     font-weight: 500;
     font-size: 25px;
-    color: white;
+    color: black;
 }
 
 #welcome {
-    color: yellow;
+    color: black    ;
     font-size: 30px;
 }
 
@@ -81,5 +87,5 @@ body {
     background-position: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("../../assets/bg.jpg");
+    background-image: url("../../assets/bg2.jpg");
 }

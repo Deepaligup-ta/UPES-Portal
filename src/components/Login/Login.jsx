@@ -4,8 +4,9 @@ import './Login.css'
 
 const Login = () => {
   return (
+    <>
+    <img src={upesfull} id="upesfull" />
     <div>
-        <img src={upesfull} id="upesfull" />
         <form class="center" id ="loginform">
             <div id = "logindiv" class="center">
             <h2 id = "welcome">Welcome to UPES!</h2>
@@ -26,6 +27,7 @@ const Login = () => {
             </div>
         </form> 
     </div>
+    </>
   )
 }
 
