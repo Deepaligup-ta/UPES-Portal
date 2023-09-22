@@ -57,8 +57,11 @@ const Sidebar = () => {
                     </div>
 
                     <div className='list-items pt-20'>
-                        <div className='profile-photo pt-10 '>
-                            <img src={JSON.parse(sessionStorage.getItem("info")).ppic} alt="profile photo" className='w-28 rounded-full' />
+                        <div className='profile-photo  '>
+                            <div className="inner m-20">
+                            <img src={JSON.parse(sessionStorage.getItem("info")).ppic} alt="profile photo" className='w-24 rounded-full justify-content-center' id='dp' />
+
+                            </div>
                             <h1 className='text-white text-center text-xl'>{JSON.parse(sessionStorage.getItem("info")).name}</h1>
                         </div>
                         <ul className='container d-flex flex-column align-items-start gap-1 ul-contain'>

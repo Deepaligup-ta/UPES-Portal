@@ -56,7 +56,10 @@ const Sidebar_faculty = () => {
 
                     <div className='list-items pt-20'>
                          <div className='profile-photo pt-10 '>
+                            <div className="inner ml-20">
                             <img src={JSON.parse(sessionStorage.getItem("info")).ppic} alt="profile photo" className='w-28 rounded-full' />
+                            </div>
+        
                             <h1 className='text-white text-center text-xl'>{JSON.parse(sessionStorage.getItem("info")).name}</h1>
                         </div>
                         <ul className='container d-flex flex-column align-items-start gap-1 ul-contain'>
