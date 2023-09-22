@@ -1,8 +1,11 @@
 import React from 'react'
+import Sidebar_faculty from '../components/SideBar/Sidebar-faculty'
 
 const Policies = () => {
   return (
-    <div>Policies</div>
+    <div className='policies flex-start'>
+      <Sidebar_faculty/>
+    </div>
   )
 }
 
