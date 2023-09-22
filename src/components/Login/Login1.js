@@ -57,7 +57,7 @@ const Login1 = () => {
                 <p>
                     By signing-in you agree to the LOREM Conditions of Use & Sale. Please
                     see our Privacy Notice, our Cookies Notice and our Interest-Based Ads
-                    Notice.
+                    Notice .
                 </p>
             </div>
         </div>
