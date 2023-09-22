@@ -6,6 +6,7 @@ import Login1 from "./components/Login/Login1";
 // import Management from "./components/Management/Management";
 import Faculty from "./components/faculty/Faculty";
           import Policies from "./Pages/Policies";
+import Password from "./components/Password/Password";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path = "/faculty" element={<Faculty />}/>
           <Route exact path = "/home" element={<Home />}/>
           <Route exact path = "/management" element={<Management />}/>
+          {/* <Route exact path ="/new-login" element={<Password/>}/> */}
 
           <Route exact path = "/policies" element={<Policies />}/>
 

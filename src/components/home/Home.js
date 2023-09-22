@@ -1,10 +1,12 @@
 import React from "react";
 import './Home.css'
 import Sidebar from "../SideBar/Sidebar";
+import Management from "../Management/Management";
 
 const Home = (props) => {
     return (
         <div className="main">
+
             {/* <div className="strip"></div>
             <div className="side-nav">
                 <div className="logo">
@@ -43,6 +45,7 @@ const Home = (props) => {
                     </div>
                 </div>
             </div> */}
+            <Management/>
             <Sidebar/>
             </div>
             

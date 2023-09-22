@@ -44,7 +44,7 @@ const Sidebar = () => {
 
                     <div className='navbar-vertical' >
                        
-                        <span className='rotate-text-container'><h1 className='rotate-text' style={{ fontSize: '25px' }}>WELCOME TO UPES</h1></span>
+                        <span className='rotate-text-container'><h1 className='rotate-text' style={{ fontSize: '25px' }}>SCHOOL OF COMPUTER SCIENCE</h1></span>
                     </div>
                 </div>
                 <div className={`navbar-inner d-flex flex-column align-items-center justify-content-center`} style={bigBoxStyle}>
