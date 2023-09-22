@@ -16,3 +16,10 @@ export const signIn = async (data) => {
     const result = await response.json();
     return result;
 };
+export const isAuthenticated = () => {
+    if (typeof window === 'undefined') {
+        return false;
+    }
+    const userInfo = sessionStorage.getItem('info');
+    return userInfo ? true : false;
+};
