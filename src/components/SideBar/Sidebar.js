@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import logo from "../../assets/upesfull.png"
 import './Sidebar.css'
+import logo_new from "../../assets/upes.png"
 
 import {faChartLine} from "react-icons/fa"
 const Sidebar = () => {
@@ -43,7 +44,10 @@ const Sidebar = () => {
                 <div className='nav-vert-out' style={smallBoxStyle}>
 
                     <div className='navbar-vertical' >
-                       
+
+                       <div className='logo-img '>
+                            <img src={logo_new} className='logo'></img>
+                        </div>
                         <span className='rotate-text-container'><h1 className='rotate-text' style={{ fontSize: '25px' }}>SCHOOL OF COMPUTER SCIENCE</h1></span>
                     </div>
                 </div>
@@ -53,6 +57,10 @@ const Sidebar = () => {
                     </div>
 
                     <div className='list-items pt-20'>
+                        <div className='profile-photo'>
+                            <img src={JSON.parse(sessionStorage.getItem("info")).ppic} alt="profile photo" />
+                            <h3>USERNAME</h3>
+                        </div>
                         <ul className='container d-flex flex-column align-items-start gap-1 ul-contain'>
                             <li><NavLink to="/Dashboard" onClick={backMove} className={({ isActive }) => (isActive ? 'active' : 'inactive')}>                        <img src="./images/dashboard-logo.svg" alt="dashboard" />
  <span class="list-item-text">Dashboard</span></NavLink></li>
