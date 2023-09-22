@@ -57,7 +57,9 @@ const Sidebar_faculty = () => {
                     <div className='list-items pt-20'>
                          <div className='profile-photo pt-10 '>
                             <img src={JSON.parse(sessionStorage.getItem("info")).ppic} alt="profile photo" className='w-28 rounded-full' />
-                            <h1 className='text-white text-center text-xl'>{JSON.parse(sessionStorage.getItem("info")).name}</h1>
+                            <h1 className='text-white text-center text-xl'>{JSON.parse(sessionStorage.getItem("info")).name}</h1><br/>
+                            <h1 className='text-white text-center text-xl'>{JSON.parse(sessionStorage.getItem("info")).designation}</h1>
+
                         </div>
                         <ul className='container d-flex flex-column align-items-start gap-1 ul-contain'>
                             <li><NavLink to="/Dashboard" onClick={backMove} className={({ isActive }) => (isActive ? 'active' : 'inactive')}>                        <img src="./images/dashboard-logo.svg" alt="dashboard" />
