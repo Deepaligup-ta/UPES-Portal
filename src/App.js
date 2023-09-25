@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Home from "./components/home/Home";
 import Management from "./components/Management/Management";
 import Login1 from "./components/Login/Login1";
@@ -7,6 +12,9 @@ import Faculty from "./components/faculty/Faculty";
 import Policies from "./Pages/Policies";
 import Password from "./components/Password/Password";
 import { isAuthenticated } from "./Helper";
+import Timetable from "./components/faculty/Pages/Timetable";
+import Timetable_Management from "./components/Management/Pages/Timetable";
+import Post from "./components/Management/Pages/Post";
 
 function App() {
   // Retrieve the user's role from sessionStorage
@@ -22,7 +30,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login1 />} />
-          <Route
+          {/* <Route
             path="/home"
             element={
               isAuthenticated() && userRole === 1 ? (
@@ -41,8 +49,17 @@ function App() {
                 <Navigate to="/" />
               )
             }
+          /> */}
+          <Route path="/newpassword" element={<Password />} />
+          <Route path="/management" element={<Home />} />
+          <Route path="/faculty" element={<Faculty />} />
+          <Route path="/faculty/timetable" element={<Timetable />} />
+          <Route
+            path="/management/timetable"
+            element={<Timetable_Management />}
           />
-          <Route path="/management" element={<Management />} />
+          <Route path="/management/post" element={<Post />} />
+
           <Route path="/policies" element={<Policies />} />
           {/* <Route path="/new-login" element={<Password />} /> */}
         </Routes>
