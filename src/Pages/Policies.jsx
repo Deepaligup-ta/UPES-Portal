@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar_faculty from '../components/SideBar/Sidebar-faculty'
+import Sidebar_faculty from '../Components/SideBar/Sidebar-faculty'
 
 const Policies = () => {
   return (
