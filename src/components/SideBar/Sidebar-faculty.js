@@ -29,53 +29,53 @@ const Sidebar_faculty = () => {
 
 
     }
-    const designation = JSON.parse(sessionStorage.getItem("info")).designation;
+    //const designation = JSON.parse(sessionStorage.getItem("info")).designation;
 
     // Use a switch statement to determine the text to display
     let designationText = "";
-    switch (designation) {
-        case 1:
-            designationText = "Assistant Manager";
-            break;
-        case 2:
-            designationText = "Assistant Professor";
-            break;
-        case 3:
-            designationText = "Assistant Professor - Selection Grade";
-            break;
-        case 4:
-            designationText = "Assistant Professor - Senior Selection Grade";
-            break;
-        case 5:
-            designationText = "Associate Professor";
-            break;
-        case 6:
-            designationText = "Deputy Director";
-            break;
-        case 7:
-            designationText = "Director";
-            break;
-        case 8:
-            designationText = "Distinguished Professor Cum Director";
-            break;
-        case 9:
-            designationText = "Lab Assistant";
-            break;
-        case 10:
-            designationText = "Professor";
-            break;
-        case 11:
-            designationText = "Professor And Dean";
-            break;
-        case 12:
-            designationText = "Sr. Associate Professor";
-            break;
-        case 13:
-            designationText = "Sr. Lab Assistant";
-            break;
-        default:
-            designationText = "Unknown";
-    }
+    // switch (designation) {
+    //     case 1:
+    //         designationText = "Assistant Manager";
+    //         break;
+    //     case 2:
+    //         designationText = "Assistant Professor";
+    //         break;
+    //     case 3:
+    //         designationText = "Assistant Professor - Selection Grade";
+    //         break;
+    //     case 4:
+    //         designationText = "Assistant Professor - Senior Selection Grade";
+    //         break;
+    //     case 5:
+    //         designationText = "Associate Professor";
+    //         break;
+    //     case 6:
+    //         designationText = "Deputy Director";
+    //         break;
+    //     case 7:
+    //         designationText = "Director";
+    //         break;
+    //     case 8:
+    //         designationText = "Distinguished Professor Cum Director";
+    //         break;
+    //     case 9:
+    //         designationText = "Lab Assistant";
+    //         break;
+    //     case 10:
+    //         designationText = "Professor";
+    //         break;
+    //     case 11:
+    //         designationText = "Professor And Dean";
+    //         break;
+    //     case 12:
+    //         designationText = "Sr. Associate Professor";
+    //         break;
+    //     case 13:
+    //         designationText = "Sr. Lab Assistant";
+    //         break;
+    //     default:
+    //         designationText = "Unknown";
+    // }
      const logout = () => {
         sessionStorage.clear();
         window.location.href = "/";
@@ -108,8 +108,8 @@ const Sidebar_faculty = () => {
 
                     <div className='list-items pt-12'>
                          <div className='profile-photo pt-10 '>
-                            <img src={JSON.parse(sessionStorage.getItem("info")).ppic} alt="profile photo" className='w-28 rounded-full' />
-                            <h1 className='text-white text-center text-xl'>{JSON.parse(sessionStorage.getItem("info")).name}</h1><br/>
+                            <img src="" alt="profile photo" className='w-28 rounded-full' />
+                            <h1 className='text-white text-center text-xl'>Name</h1><br/>
             <h1 className='text-white text-center text-xl'>{designationText}</h1>
 
                         </div>
@@ -127,7 +127,7 @@ const Sidebar_faculty = () => {
                                                         <li><NavLink to="/assessment" onClick={backMove} className={({ isActive }) => (isActive ? 'active' : 'inactive')}><img src="../images/policies-logo.svg" alt="policies-logo"/><span class="list-item-text">assessment</span></NavLink></li>
                                                         <li><NavLink to="/awardsheets" onClick={logout} className={({ isActive }) => (isActive ? 'active' : 'inactive')}><img src="../images/policies-logo.svg" alt="policies-logo"/><span class="list-item-text">Award Sheets</span></NavLink></li>
 
-                            <li><NavLink to="/Logout" onClick={backMove} className={({ isActive }) => (isActive ? 'active' : 'inactive')}><img src="../images/logout-logo.svg" alt="logout-logo"/><span class="list-item-text">Logout</span></NavLink></li>
+                            <li><NavLink to="/Logout" onClick={() => logout()} className={({ isActive }) => (isActive ? 'active' : 'inactive')}><img src="../images/logout-logo.svg" alt="logout-logo"/><span class="list-item-text">Logout</span></NavLink></li>
                         {/* {click === 'dashboard' && <Dashboard />}
                 {click === 'calender' && <Calender />}
                 {click === 'courses' && <Courses />}

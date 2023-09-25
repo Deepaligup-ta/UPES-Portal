@@ -1,35 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-import Home from "./components/home/Home";
-import Management from "./components/Management/Management";
-import Login1 from "./components/Login/Login1";
-import Faculty from "./components/faculty/Faculty";
+import Home from "./Components/home/Home";
+import Management from "./Components/Management/Management";
+import Login from "./Components/Login/Login";
+import Faculty from "./Components/faculty/Faculty";
 import Policies from "./Pages/Policies";
-import Password from "./components/Password/Password";
-import { isAuthenticated } from "./Helper";
-import Timetable from "./components/faculty/Pages/Timetable";
-import Timetable_Management from "./components/Management/Pages/Timetable";
-import Post from "./components/Management/Pages/Post";
+import Password from "./Components/Password/Password";
+import Timetable from "./Components/faculty/Pages/Timetable";
+import Timetable_Management from "./Components/Management/Pages/Timetable";
+import Post from "./Components/Management/Pages/Post";
+import FacultyRoute from "./Routes/Faculty";
+import Dashboard from "./Pages/Dashboard";
 
-function App() {
-  // Retrieve the user's role from sessionStorage
-  if (sessionStorage.getItem("info") === null) {
-    sessionStorage.setItem("info", JSON.stringify({ role: "0" }));
-  }
-  const userRole = JSON.parse(sessionStorage.getItem("info")).role;
-  // then console log role
-  console.log(userRole);
+const App = () => {
 
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Login1 />} />
+          <Route path="/" element={<Login />} />
+          <Route element={<FacultyRoute />}>
+            <Route path="/faculty" element={<Faculty/>} />
+          </Route>
           {/* <Route
             path="/home"
             element={
@@ -52,8 +49,8 @@ function App() {
           /> */}
           <Route path="/newpassword" element={<Password />} />
           <Route path="/management" element={<Home />} />
-          <Route path="/faculty" element={<Faculty />} />
-          <Route path="/faculty/timetable" element={<Timetable/>}/>
+          {/* <Route path="/faculty" element={<Faculty />} />
+          <Route path="/faculty/timetable" element={<Timetable/>}/> */}
           <Route path="/management/timetable" element={<Timetable_Management/>}/>
           <Route path="/management/post" element={<Post/>} />
 
