@@ -21,6 +21,9 @@ const Sidebar = () => {
     setSmallBoxStyle({ transform: "translateX(-100%)", position: "absolute" });
     setBigBoxStyle({ transform: "translateX(0%)" });
   };
+    
+
+
 
   const backMove = () => {
     setBoxStyle({ width: "80px" });
@@ -80,7 +83,9 @@ const Sidebar = () => {
       designationText = "Unknown";
   }
 
-  const [open, setOpen] = useState(false);
+
+    
+    const [open, setOpen] = useState(false);
 
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);

@@ -53,12 +53,9 @@ function App() {
           <Route path="/newpassword" element={<Password />} />
           <Route path="/management" element={<Home />} />
           <Route path="/faculty" element={<Faculty />} />
-          <Route path="/faculty/timetable" element={<Timetable />} />
-          <Route
-            path="/management/timetable"
-            element={<Timetable_Management />}
-          />
-          <Route path="/management/post" element={<Post />} />
+          <Route path="/faculty/timetable" element={<Timetable/>}/>
+          <Route path="/management/timetable" element={<Timetable_Management/>}/>
+          <Route path="/management/post" element={<Post/>} />
 
           <Route path="/policies" element={<Policies />} />
           {/* <Route path="/new-login" element={<Password />} /> */}

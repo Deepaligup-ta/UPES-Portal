@@ -68,7 +68,7 @@ const Login1 = () => {
             <img className="login__logo" src={logo} alt="Logo" />
 
             <div className="login__container text-black z-50 absolute" style={{right:80}}>
-                <h1 className="text-xl">Welcome To UPES Management Portal</h1>
+                <h1 className="text-3xl text-">Welcome To UPES Management Portal</h1>
                 <div className="form-container">
                     <form onSubmit={handleSubmit}>
                         <h5>E-mail</h5>
@@ -83,7 +83,7 @@ const Login1 = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <button type="submit" className="login__signInButton">
+                        <button type="submit" className="login__signInButton bg-blue ">
                             Sign In
                         </button>
                     </form>
