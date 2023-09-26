@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "./Password.css"; // You can remove this line
 import bg from "../../assets/upes-web-banner.mp4";
 import axios from "axios";
+import { changePassword } from "../../Helper/Authentication";
 
 const Password = () => {
   const [email, setEmail] = useState("");
@@ -16,42 +17,14 @@ const Password = () => {
       setError("Password is required");
       return;
     }
-    axios
-      .post("https://wt31hwj1-8000.inc1.devtunnels.ms/api/token/", {
-        sap: email,
-        password: password,
+    changePassword({ sapId:email , password:password })
+      .then((data) => {
+        
+        console.log(data);
       })
-      .then((response) => {
-        console.log(response.data);
-        const token = response.data;
-
-        localStorage.setItem("token", JSON.stringify(token));
-        axios
-          .get("https://wt31hwj1-8000.inc1.devtunnels.ms/api/user/", {
-            headers: {
-              Authorization: `Token ${token.key}`,
-            },
-          })
-          .then((response) => {
-            console.log(response.data);
-            setUserData(response.data);
-            sessionStorage.setItem("user", JSON.stringify(response.data));
-            // add condition if the user is faculty or management, and for management role is 1 and for faculty role is 2
-            if (response.data.role === 1) {
-              window.location.href = "/home";
-            } else if (response.data.role === 2) {
-              window.location.href = "/faculty";
-            }
-          })
-          .catch((error) => {
-            console.error(error);
-            setError("Failed to get user details");
-          });
-      })
-      .catch((error) => {
-        console.error(error);
-        setError("Invalid email or password");
-      });
+    
+    
+        
     console.log(email, password);
   };
   const videoRef = useRef(null);

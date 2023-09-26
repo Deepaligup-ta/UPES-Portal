@@ -1,6 +1,6 @@
 .timetable-page{
     margin-right: 10rem;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     padding-left: 10px;
 }
 .group{
@@ -27,4 +27,10 @@
   line-height: normal;
   position: absolute;
   top: 36px;
+}
+.rbc-time-header-cell {
+  height: 100px;
+}
+.rbc-timeslot-group{
+  min-height: 75px;
 }

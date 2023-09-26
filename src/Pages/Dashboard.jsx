@@ -1,6 +1,6 @@
 import React from "react";
 import search from "./icon _Search.svg";
-import Graph_1 from "../Components/Dashboard_faculty/Graph_1";
+import Graph_1 from "../components/Dashboard_faculty/Graph_1";
 
 const Dashboard = () => {
   return (

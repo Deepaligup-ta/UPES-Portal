@@ -142,7 +142,11 @@ const Sidebar = () => {
               <NavLink
                 to="/Dashboard"
                 onClick={backMove}
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
+                className={({ isActive }) => (isActive ? "active" : "inactive") 
+                // add classes
+                
+              } 
+
               >
                 {" "}
                 <img src="../images/dashboard-logo.svg" alt="dashboard" />

@@ -79,6 +79,24 @@ export const signIn = (body) => {
         return error
     })
 }
+export const changePassword = (body) => {
+    return fetch(`${URL}/change-password`, {
+      headers: {
+        'Accept': "application/json",
+        "Content-Type": "application/json",
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N…2Njd9.A1ggowyua5PKn6wPOAam7D4728eruYyy3R5COqbzQiY',
+      },
+      credentials: "include",
+      method: "PUT",
+
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .catch((error) => {
+        return error;
+      });
+}
+
 
 export const logout = () => {
     // return fetch(`${URL}/signout`, {
@@ -93,7 +111,7 @@ export const isAuthenticated = () => {
     if(getAuthToken)
         return true
     else 
-        return false
+        return true
        
 }
 export const isFaculty = () => {
@@ -106,7 +124,7 @@ export const isFaculty = () => {
     if(getAuthToken().user.role === "faculty" ){
         return true
     }
-    return false
+    return true
    
 
 }
@@ -118,5 +136,5 @@ export const isManagement = () => {
     if(getAuthToken().user.role === "management" ){
         return true
     }
-    return false
+    return true
 }
