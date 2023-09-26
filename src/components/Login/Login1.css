@@ -22,18 +22,24 @@
 
 /* Styling for the video container */
 .video-container {
-    position: relative;
-    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio (change as needed) */
+    height: 100%;
+    overflow: hidden;
 }
 
 /* Styling for the responsive video */
 .responsive-video {
+    
     position: absolute;
     top: 0;
     left: 0;
-   
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 /* Styling for the login container */
@@ -74,7 +80,7 @@
 }
 
 .login__signInButton {
-    background-color: #007bff;
+    /* background-color: #007bff; */
     /* Button background color */
     color: white;
     /* Button text color */
@@ -82,6 +88,7 @@
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+    
     transition: background-color 0.3s ease;
 }
 
