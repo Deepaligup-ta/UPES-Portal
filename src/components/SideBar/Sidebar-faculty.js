@@ -55,7 +55,7 @@ const Sidebar_faculty = () => {
                     </div>
 
                     <div className='list-items pt-20'>
-                         <div className='profile-photo pt-10 '>
+                         <div className='profile-photo '>
                             <div className="inner ml-20">
                             <img src={JSON.parse(sessionStorage.getItem("info")).ppic} alt="profile photo" className='w-28 rounded-full' />
                             </div>

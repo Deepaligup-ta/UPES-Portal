@@ -57,7 +57,7 @@ const Sidebar = () => {
                     </div>
 
                     <div className='list-items pt-20'>
-                        <div className='profile-photo  '>
+                        <div className='profile-photo '>
                             <div className="inner m-20">
                             <img src={JSON.parse(sessionStorage.getItem("info")).ppic} alt="profile photo" className='w-24 rounded-full justify-content-center' id='dp' />
 
