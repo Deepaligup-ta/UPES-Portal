@@ -21,24 +21,28 @@ const localizer = momentLocalizer(moment);
 
 const Timetable = () => {
   const [events, setEvents] = useState([]);
-  console.log(getToken()[2])
-  let weeklyData = []
-  fetch(`http://localhost:8000/api/timetable/faculty`, {
+  const [weeklyData, setData] = useState([]);
+  useEffect(() => {
+    // Function to fetch data from the API
+    fetch(`http://localhost:8000/api/timetable/faculty`, {
       headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${getToken()[2]}`
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${getToken()[2]}`,
       },
-      credentials: 'include',
+      credentials: "include",
       method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setData(data); // Setting the data in the state
+      })
+      .catch((error) => {
+        return error;
+      });
+  }, []); // Empty dependency array to run the effect only once
 
-  })
-  .then(res => {
-      console.log(res)
-  })
-  .catch(error => {
-      return error
-  })
   // })
   // const weeklyData = [
   //   {
@@ -81,7 +85,7 @@ const Timetable = () => {
   //     room: "0000",
   //     day: "monday",
   //   },
-  //   Add more weekly data as needed
+  //   // Add more weekly data as needed
   // ];
 
   useEffect(() => {
@@ -102,7 +106,6 @@ const Timetable = () => {
         const dayIndex = daysOfWeek.indexOf(weeklyEvent.day.toLowerCase());
         if (dayIndex !== -1) {
           const startDate = moment(`${year}-01-01`).day(dayIndex);
-          console.log(startDate);
 
           while (startDate.year() === year) {
             const startParts = weeklyEvent.start.split("T")[1].split(":");
@@ -131,9 +134,6 @@ const Timetable = () => {
               room: weeklyEvent.room,
             };
             events.push(event);
-            console.log("startDate:", startDate);
-            console.log("event.start:", event.start);
-            console.log("event.end:", event.end);
 
             // Move to the next occurrence of the day
             startDate.add(7, "days");
@@ -143,7 +143,6 @@ const Timetable = () => {
 
       return events;
     };
-
 
     // Generate events for the year 2023
     const year = 2023;
@@ -180,13 +179,13 @@ const Timetable = () => {
             {events.map((event, index) => (
               <Text key={index} style={styles.event}>
                 {event.title}
-                <br/>
+                <br />
                 Batch: {event.batch}
                 <br />
                 Start: {event.start.toLocaleString()}
                 <br />
                 End: {event.end.toLocaleString()}
-                <br/>
+                <br />
                 Room: {event.room}
               </Text>
             ))}
@@ -212,7 +211,7 @@ const Timetable = () => {
       style: style,
     };
   };
-   const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
+  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
 
   return (
     <div className="timetable">
