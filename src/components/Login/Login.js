@@ -1,17 +1,22 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Login.css";
 import logo from "../../assets/upesfull.png";
 import bg from "../../assets/upes-web-banner.mp4";
-import { signIn } from "../../Helper/Authentication";
+import { getAuthToken, signIn } from "../../Helper/Authentication";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  // const [email, setEmail] = useState("");
-  const [sapId, setSapId] = useState(0);
+  const [sapId, setSapId] = useState(null);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [userData, setUserData] = useState(null);
-
+  useEffect(() => {
+    const token = getAuthToken()
+    if(token) {
+      if(token.user.role === "faculty") return navigate('/faculty')
+      if(token.user.role === "management") return navigate('/faculty')
+    }
+    
+  })
   const videoRef = useRef(null);
   const navigate = useNavigate();
   const handleSubmit = (event) => {
@@ -22,16 +27,14 @@ const Login = () => {
     }
     signIn({ sapId: sapId, password: password })
       .then((data) => {
-        console.log(data);
         if (data.changePassword) return navigate("/newpassword");
         if (data.user.role === "faculty") return navigate("/faculty");
         if (data.user.role === "management") return navigate("/management");
         if (data.user.role === "admin") return navigate("/faculty");
       })
       .catch((error) => {
-        console.log(error);
+        return navigate('/?error=true')
       });
-    console.log(sapId, password);
   };
 
   return (
@@ -77,12 +80,6 @@ const Login = () => {
               Sign In
             </button>
           </form>
-          {error && <p>{error}</p>}
-          {userData && (
-            <p>
-              Welcome {userData.first_name} {userData.last_name}!
-            </p>
-          )}
         </div>
         <p>
           By signing-in you agree to the LOREM Conditions of Use & Sale. Please

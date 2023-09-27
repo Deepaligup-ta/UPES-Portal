@@ -8,7 +8,7 @@ import {
 import Home from "./components/home/Home";
 import Management from "./components/Management/Management";
 import Login from "./components/Login/Login";
-import Faculty from "./components/faculty/Faculty";
+import FacultyDashboard from "./components/faculty/Pages/Dashboard";
 import Policies from "./Pages/Policies";
 import Password from "./components/Password/Password";
 import Timetable from "./components/faculty/Pages/Timetable";
@@ -16,41 +16,29 @@ import Timetable_Management from "./components/Management/Pages/Timetable";
 import Post from "./components/Management/Pages/Post";
 import FacultyRoute from "./Routes/Faculty";
 import Dashboard from "./Pages/Dashboard";
+import { isAuthenticated, isFaculty } from "./Helper/Authentication";
 
 const App = () => {
 
   return (
-    <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route element={<FacultyRoute />}>
-            {/* <Route path="/faculty" element={<Faculty/>} /> */}
-          </Route>
-          {/* <Route
-            path="/home"
-            element={
-              isAuthenticated() && userRole === 1 ? (
-                <Home />
-              ) : (
-                <Navigate to="/" />
-              )
-            }
+          <Route 
+            path="/" 
+            element={<Login /> } 
           />
-          <Route
-            path="/faculty"
-            element={
-              isAuthenticated() && userRole === 2 ? (
-                <Faculty />
-              ) : (
-                <Navigate to="/" />
-              )
-            }
-          /> */}
-          <Route path="/newpassword" element={<Password />} />
+          <Route element={<FacultyRoute />}>
+            <Route path="/faculty" element={<FacultyDashboard/>} />
+            <Route path="/faculty/dashboard" element={<FacultyDashboard />} />
+            <Route path="/faculty/timetable" element={<Timetable/>}/>
+          </Route>
+          <Route 
+            path="/newpassword" 
+            element={isAuthenticated() ? <Password />: <Navigate to="/" />} 
+          />
           <Route path="/management" element={<Home />} />
-          <Route path="/faculty" element={<Faculty />} />
-          <Route path="/faculty/timetable" element={<Timetable/>}/>
+          {/* <Route path="/faculty" element={<Faculty />} />
+          <Route path="/faculty/timetable" element={<Timetable/>}/> */}
           <Route path="/management/timetable" element={<Timetable_Management/>}/>
           <Route path="/management/post" element={<Post/>} />
 
@@ -58,7 +46,6 @@ const App = () => {
           {/* <Route path="/new-login" element={<Password />} /> */}
         </Routes>
       </Router>
-    </div>
   );
 }
 

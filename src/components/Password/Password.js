@@ -5,7 +5,7 @@ import axios from "axios";
 import { changePassword } from "../../Helper/Authentication";
 
 const Password = () => {
-  const [email, setEmail] = useState("");
+  const [sap, setSap] = useState();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [userData, setUserData] = useState(null);
@@ -17,15 +17,14 @@ const Password = () => {
       setError("Password is required");
       return;
     }
-    changePassword({ sapId:email , password:password })
+    changePassword({ sapId:sap , password:password })
       .then((data) => {
         
-        console.log(data);
       })
     
     
         
-    console.log(email, password);
+    console.log(sap, password);
   };
   const videoRef = useRef(null);
 
@@ -59,8 +58,8 @@ const Password = () => {
             <input
               type="password"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={sap}
+              onChange={(e) => setSap(e.target.value)}
               className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring focus:ring-blue-500"
             />
           </div>

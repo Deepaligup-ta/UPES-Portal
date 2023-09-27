@@ -35,58 +35,9 @@ const Sidebar = () => {
     window.location.href = "/";
   };
 
-  const designation = JSON.parse(sessionStorage.getItem("info")).designation;
-
-  // Use a switch statement to determine the text to display
-  let designationText = "";
-  switch (designation) {
-    case 1:
-      designationText = "Assistant Manager";
-      break;
-    case 2:
-      designationText = "Assistant Professor";
-      break;
-    case 3:
-      designationText = "Assistant Professor - Selection Grade";
-      break;
-    case 4:
-      designationText = "Assistant Professor - Senior Selection Grade";
-      break;
-    case 5:
-      designationText = "Associate Professor";
-      break;
-    case 6:
-      designationText = "Deputy Director";
-      break;
-    case 7:
-      designationText = "Director";
-      break;
-    case 8:
-      designationText = "Distinguished Professor Cum Director";
-      break;
-    case 9:
-      designationText = "Lab Assistant";
-      break;
-    case 10:
-      designationText = "Professor";
-      break;
-    case 11:
-      designationText = "Professor And Dean";
-      break;
-    case 12:
-      designationText = "Sr. Associate Professor";
-      break;
-    case 13:
-      designationText = "Sr. Lab Assistant";
-      break;
-    default:
-      designationText = "Unknown";
-  }
-
 
     
-    const [open, setOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
@@ -125,16 +76,13 @@ const Sidebar = () => {
         <div className="list-items pt-20">
           <div className="profile-photo pt-10 ">
             <img
-              src={JSON.parse(sessionStorage.getItem("info")).ppic}
               alt="profile photo"
               className="w-28  ml-20 rounded-full"
             />
             <h1 className="text-white text-center text-xl">
-              {JSON.parse(sessionStorage.getItem("info")).name}
             </h1>
             <br />
             <h1 className="text-white text-center text-xl">
-              {designationText}
             </h1>
           </div>
           <ul className="container d-flex flex-column align-items-start gap-1 ul-contain">

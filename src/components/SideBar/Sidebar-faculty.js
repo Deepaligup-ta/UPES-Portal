@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/upesfull.png";
 import "./Sidebar.css";
 import { FaBars,  FaCross, Fa } from "react-icons/fa";
+import { logout } from "../../Helper/Authentication";
 import cross from "./images/circle-xmark-regular.svg"
+import Navitem from "./Navitem";
 const Sidebar_faculty = () => {
   const box = useRef();
   const inBox = useRef();
@@ -37,10 +39,27 @@ const Sidebar_faculty = () => {
     }
   };
 
-  const logout = () => {
-    sessionStorage.clear();
-    window.location.href = "/";
-  };
+  const dashboardMenu = [
+    {
+      to: '/dashboard', 
+      className:(true ? 'active' : 'inactive'),
+      name:"Dashboard",
+      icon: '../images/dashboard-logo.svg' 
+    },
+    {
+      to: '/calender', 
+      className:(true ? 'active' : 'inactive'),
+      name:"Calender",
+      icon: '../images/dashboard-logo.svg' 
+    },
+    {
+      to: '/courses', 
+      className:(true ? 'active' : 'inactive'),
+      name:"Course",
+      icon: '../images/timetable-logo.svg' 
+    },
+ 
+  ]
 
   return (
     <>
@@ -78,152 +97,16 @@ const Sidebar_faculty = () => {
               <h1 className="text-white text-center text-xl"></h1>
             </div>
             <ul className="container d-flex flex-column align-items-start gap-1 ul-contain">
-              <li>
-                <NavLink
-                  to="/Dashboard"
-                  onClick={backMove}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  {" "}
-                  <img src="../images/dashboard-logo.svg" alt="dashboard" />
-                  <span class="list-item-text">Dashboard</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/calendar"
-                  onClick={backMove}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  {" "}
-                  <img
-                    src="../images/dashboard-logo.svg"
-                    alt="dashboard"
-                  />{" "}
-                  <span class="list-item-text">Calendar</span>
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink
-                  to="/courses"
-                  onClick={backMove}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  <img
-                    src="../images/timetable-logo.svg"
-                    alt="timetable-logo"
+              {dashboardMenu.map((value, index) => {
+                return(
+                  <Navitem 
+                    to={value.to}
+                    className={value.className}
+                    name={value.name}
+                    icon={value.icon}
                   />
-                  <span class="list-item-text">Courses</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/broadcast"
-                  onClick={backMove}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  <img
-                    src="../images/timetable-logo.svg"
-                    alt="timetable-logo"
-                  />
-                  <span class="list-item-text">Broadcast</span>
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink
-                  to="/faculty/timetable"
-                  onClick={backMove}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  <img
-                    src="../images/timetable-logo.svg"
-                    alt="timetable-logo"
-                  />
-                  <span class="list-item-text">Time Table</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Policies"
-                  onClick={backMove}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  <img src="../images/policies-logo.svg" alt="policies-logo" />
-                  <span class="list-item-text">Policies</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/syllabus"
-                  onClick={backMove}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  <img src="../images/policies-logo.svg" alt="policies-logo" />
-                  <span class="list-item-text">Syllabus</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/assessment"
-                  onClick={backMove}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  <img src="../images/policies-logo.svg" alt="policies-logo" />
-                  <span class="list-item-text">assessment</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/awardsheets"
-                  onClick={logout}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  <img src="../images/policies-logo.svg" alt="policies-logo" />
-                  <span class="list-item-text">Award Sheets</span>
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink
-                  to="/Logout"
-                  onClick={() => logout()}
-                  className={({ isActive }) =>
-                    isActive ? "active" : "inactive"
-                  }
-                >
-                  <img src="../images/logout-logo.svg" alt="logout-logo" />
-                  <span class="list-item-text">Logout</span>
-                </NavLink>
-              </li>
-              {/* {click === 'dashboard' && <Dashboard />}
-                {click === 'calender' && <Calender />}
-                {click === 'courses' && <Courses />}
-                {click === 'broadcast' && <Broadcast />}
-                {click === 'timetable' && <Timetable />}
-                {click === 'policies' && <Policies />}
-                {click === 'syllabus' && <Syllabus />}
-                {click === 'assessment' && <Assessment />}
-                {click === 'awardSheets' && <Awardsheets />} */}
+                )
+              })}
             </ul>
           </div>
         </div>

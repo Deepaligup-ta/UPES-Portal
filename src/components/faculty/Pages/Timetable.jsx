@@ -14,7 +14,7 @@ import {
 import "./Timetable.css";
 import SidebarFaculty from "../../SideBar/Sidebar-faculty";
 import { usePDF } from "react-to-pdf";
-
+import { getAuthToken } from "../../../Helper/Authentication";
 
 
 const localizer = momentLocalizer(moment);
@@ -22,7 +22,8 @@ const localizer = momentLocalizer(moment);
 const Timetable = () => {
   const [events, setEvents] = useState([]);
 
-  // Sample weekly data from the server
+  console.log(getAuthToken())
+  
   const weeklyData = [
     {
       batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",

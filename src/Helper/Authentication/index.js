@@ -3,7 +3,7 @@ import config from '../../config.json';
 
 const URL = config.auth
 
-const getAuthToken = () => {
+export const getAuthToken = () => {
   
     const regex = new RegExp(`(^| )socis=([^;]+)`)
     const match = document.cookie.match(regex)
@@ -80,18 +80,25 @@ export const signIn = (body) => {
     })
 }
 export const changePassword = (body) => {
+    const headers = {
+        'Accept': "application/json",
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${getAuthToken()}`,
+      }
+      console.log(headers)
     return fetch(`${URL}/change-password`, {
       headers: {
         'Accept': "application/json",
         "Content-Type": "application/json",
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N…2Njd9.A1ggowyua5PKn6wPOAam7D4728eruYyy3R5COqbzQiY',
+        'Authorization': `Bearer ${getAuthToken()}`,
       },
       credentials: "include",
       method: "PUT",
+      mode: 'no-cors',
 
       body: JSON.stringify(body),
     })
-      .then((res) => res.json())
+      .then((res) => console.log(res))
       .catch((error) => {
         return error;
       });
@@ -99,19 +106,23 @@ export const changePassword = (body) => {
 
 
 export const logout = () => {
-    // return fetch(`${URL}/signout`, {
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json'
-    //     },
+    return fetch(`${URL}/signout`, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${getAuthToken()}`
+        },
+        credetials: 'include',
+        method: "GET"
 
-    // })
+    }).then((res) => res.json())
+    .catch((error) => console.log(error))
 }
 export const isAuthenticated = () => {
     if(getAuthToken)
         return true
     else 
-        return true
+        return false
        
 }
 export const isFaculty = () => {
@@ -124,7 +135,6 @@ export const isFaculty = () => {
     if(getAuthToken().user.role === "faculty" ){
         return true
     }
-    return true
    
 
 }
@@ -136,5 +146,4 @@ export const isManagement = () => {
     if(getAuthToken().user.role === "management" ){
         return true
     }
-    return true
 }
