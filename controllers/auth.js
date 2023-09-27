@@ -166,9 +166,16 @@ export const isSignedIn = expressjwt({
     algorithms: ['sha1', 'RS256', 'HS256'],
 })
 
+export const loggout = (req, res) => {
+    res.clearCookie('socis');
+    res.json({
+        logout: true
+    })
+}
+
 //Middleware For Check If The User Is Valid
 export const isAuthenticated = (req, res, next) => {
-
+    console.log("Auth Called")
     getUser(req.auth.user.sapId)
         .then(user => {
             if(!user)
@@ -184,7 +191,7 @@ export const isAuthenticated = (req, res, next) => {
 
 //Middleware For Check If User Is Faculty
 export const isFaculty = (req, res, next) => {
-
+    console.log("faculty")
     if(req.auth.user.role === "faculty")
         next()
     else

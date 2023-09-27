@@ -3,6 +3,9 @@ import { mongoose } from 'mongoose'
 
 const policySchema = mongoose.Schema({
     policyName: String,
+    policyFile: {
+        type: Buffer
+    },
     school: {
         type: mongoose.ObjectId,
         ref: 'School'

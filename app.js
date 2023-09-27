@@ -15,6 +15,7 @@ import { authenticateAdmin } from './controllers/auth.js'
 import { router as authRoutes } from './routes/auth.js'
 import { router as timeTableRoutes } from './routes/timetable.js'
 import { router as annoucementRouter} from './routes/announcement.js'
+import { router as policyRouter } from './routes/policy.js'
 import { schoolResource } from './models/School.js'
 import { subjectResource } from './models/Subject.js'
 import { courseResource } from './models/Course.js'
@@ -124,19 +125,30 @@ const router = AdminJSExpress.buildAuthenticatedRouter(
 //Use static sources
 app.use(express.static('public'))
 //CORS
+// app.use(cors({
+//     origin: '*', 
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+//     credentials: true
+// }))
 app.use(cors({
-    origin: 'http://localhost:3000', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials: true
-}))
+    credentials: true,
+    preflightContinue: true,
+    optionsSuccessStatus: 200,
+    origin: 'http://localhost:3000',
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "HEAD", "PATCH", "DELETE"]}))
 //Json parser
 app.use(json())
 //Auth Routes
 app.use('/api/auth', authRoutes)
 //Timetable Routes
 app.use('/api/timetable', timeTableRoutes)
+//Annoucement Routes
 app.use('/api/annoucement', annoucementRouter)
+//Policy Routes
+app.use('/api/policy', policyRouter)
+
 //Admin Js Routes
 app.use(adminJs.options.rootPath, router)
 

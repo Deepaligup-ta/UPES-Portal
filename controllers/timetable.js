@@ -2,7 +2,7 @@ import { Timetable } from "../models/Timetable.js";
 import { Batch } from '../models/Batch.js'
 
 export const getTimeTableFaculty = (req, res) => {
-   
+    
     Timetable
         .find({
           
@@ -55,6 +55,11 @@ export const getTimeTableFaculty = (req, res) => {
                 }     
             }
             res.json(array)
+        })
+        .catch((error) => {
+            res.status(400).json({
+                error: error
+            })
         })
    
 }
