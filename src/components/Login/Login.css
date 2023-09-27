@@ -1,114 +1,187 @@
-/* Login.css */
+/* Login1.css */
 
-/* Base styles for the login container */
-.Login5 {
-    position: relative;
-    background-color: white;
+/* Styling for the full-page background */
+.login_main {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  /* background: url("../../assets//bg2.avif") no-repeat center center fixed ; */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/upes-web-banner.mp4") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+/* Login1.css */
+
+/* Styling for the full-page background */
+/* ...existing styles... */
+
+/* Styling for the video container */
+.video-container {
+  width: 100%;
 }
 
-/* Styling for the background image */
-.BackgroundImage {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Styling for the responsive video */
+.responsive-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-/* Styling for the Your Logo text */
-.YourLogo {
-    position: absolute;
-    top: 31px;
-    left: 42px;
-    color: black;
-    font-size: xl;
-    font-weight: bold;
-    font-family: 'Poppins';
+/* Styling for the login container */
+.login__container {
+  background: rgba(255, 255, 255, 0.1);
+  /* Adjust the opacity as needed */
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  /* Glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Optional border for contrast */
+  text-align: center;
+  max-width: 400px;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
-/* Styling for the main login form container */
-.LoginForm {
-    top: 200px;
-    left: 100px;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    /* Glass morphism effect */
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+.login__container h1 {
+  color: white;
+  /* Text color */
+  margin-bottom: 20px;
 }
 
-/* Styling for the white background rectangle */
-.Rectangle13 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: white;
-    opacity: 0.75;
-    border-radius: 20px;
-    z-index: 1;
-    backdrop-filter: blur(5px);
+.login__container h5 {
+  color: white;
+  /* Text color */
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-
-.center {
-    align-items: centre;
-    justify-self: center;
-    align-content: center;
-    text-align: center;
+.login__container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
 }
 
-/* Styling for the social media buttons */
-.SocialButtons {
-    position: absolute;
-    top: 202px;
-    left: 44px;
-    width: 96px;
-    height: 14px;
+.login__signInButton {
+  background-color: #007bff;
+  /* Button background color */
+  color: white;
+  /* Button text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-input, label, select, option {
-    font-size: 20px;
-    height: 25px;
-    width: 200px;
-    margin: 10px;
+.login__signInButton:hover {
+  background-color: #0056b3;
+  /* Hover state background color */
 }
 
-label {
-    float: left;
-    font-weight: 500;
-    font-size: 25px;
-    color: black;
+.login__container p {
+  color: white;
+  /* Text color */
+  font-size: 12px;
 }
+/* Login1.css */
 
-#welcome {
-    color: black    ;
-    font-size: 30px;
-}
-
-#loginbtn {
-    font-size: 15px;
-    background-color:#1f456e;
-    text-align: center;
-    color: white;
-    margin: 10px;
-    height: 50px;
-    width: 150px;
-    border-radius: 28px;
-}
-
+/* Styling for the full-page background */
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh; /* Makes the body fill the viewport height */
-    margin: 0;
-    background-size: cover;
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../../assets/bg2.jpg");
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-size: cover;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for the login container */
+.login__container {
+  background: rgba(255, 255, 255, 0.1);
+  /* Adjust the opacity as needed */
+  padding: 60px;
+  padding-left: 70px;
+  padding-right: 70px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  /* Glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Optional border for contrast */
+  text-align: center;
+  max-width: 400px;
+  position: relative;
+  right: 40px;
+  /* Add this for absolute positioning */
+}
+
+/* Styling for the logo in the top-left corner */
+.login__logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 200px;
+  /* Adjust the width as needed */
+
+  /* Adjust the height as needed */
+}
+
+.login__container h1 {
+  color: white;
+  /* Text color */
+  margin-bottom: 20px;
+}
+
+/* Rest of your existing CSS */
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .login_main {
+    /* Modify styles for smaller screens */
+    background-size: contain;
+    justify-content: flex-start; /* Align content to the top */
+  }
+
+  .login__container {
+    /* Modify styles for smaller screens */
+    padding: 20px;
+    max-width: 100%;
+    text-align: center; /* Center text */
+    position: relative; /* Remove absolute positioning */
+    top: auto; /* Remove top positioning */
+    left: auto !important; /* Remove left positioning */
+    transform: translate(0, 0); /* Remove transformation */
+    right: auto;
+  }
+
+  .login__logo {
+    /* Modify styles for smaller screens */
+    width: 150px;
+  }
+
+  .login__container h1 {
+    /* Modify styles for smaller screens */
+    font-size: 24px;
+  }
+  .responsive-video {
+    /* rotate video */
+    transform: rotate(90deg);
+    height: auto;
+
+
+
+  }
+  
 }

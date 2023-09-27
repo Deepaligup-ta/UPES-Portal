@@ -1,26 +1,32 @@
+/* Add these styles at the end of your Sidebar.css file */
+
+/* Ensure the logo inside .logo-img is responsive */
 .logo-img .logo {
-    width: 35%;
+  width: 100%;
+  max-width: 100px; /* Adjust the maximum width as needed */
 }
 
 .logo-img {
-    position: absolute;
-    top: 40px;
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  top: 40px;
+  left: 20px; /* Adjust the left position as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Refine the styles for the main navbar */
 .navbar-main {
-    overflow: hidden;
-    position: fixed !important;
-    height: 100vh;
-    padding: 0 !important;
-    background-color: rgb(0, 0, 0, 0.5);
-    z-index: 9999;
-    /* make blur */
-    backdrop-filter: blur(5px);
+  overflow: hidden;
+  position: fixed !important;
+  height: 100vh;
+  padding: 0 !important;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent background with some opacity */
+  z-index: 30;
+  backdrop-filter: blur(5px); /* Add a blur effect to the background */
 }
-/* Add these styles at the end of your Sidebar.css file */
 
+/* Refine the profile photo styles */
 .profile-photo-container {
   display: flex;
   flex-direction: column;
@@ -31,259 +37,145 @@
   text-align: center;
 }
 
-
-.navbar-inner {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    transition: 0.5s all ease;
-}
-
+/* Refine the list items styles */
 .list-items ul {
-    text-align: left;
-    padding-top: 120px;
-    /* padding-left: 40px !important;
-    padding-right: 40px !important; */
+  text-align: left;
+  padding-top: 120px;
 }
 
 .list-items ul li {
-    font-size: 2.7rem;
-    color: white;
-    font-weight: 700;
-
+  font-size: 2.7rem;
+  color: white;
+  font-weight: 700;
 }
 
 .list-items ul li a {
-    display: flex;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ham-btn{
+  
+    text-transform: none;
     align-items: center;
-    /* justify-content: center; */
-    gap: 20px;
-}
-
-.ul-contain li a .fa-solid {
-    font-size: 1.8rem;
-}
-
-@media (max-width:992px) {
-    .ul-contain li a .fa-solid {
-        font-size: 1.5rem;
-    }
-
-    .list-items ul li {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width:690px) {
-    .navbar-main {
-        background-color: transparent;
-    }
-
-    .ham-btn {
-        display: block !important;
-        color: white;
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-
-    .navbar-vertical {
-        display: none !important;
-    }
-
-    .nav-vert-out {
-
-        display: none !important;
-    }
-
-    .navbar-main {
-        height: 0 !important;
-    }
-
-    .navbar-inner {
-        /* position: absolute; */
-        background-color: rgb(0, 0, 0, 0.75);
-    }
-}
-
-
-
-@media (max-width:1080px) {
-    .navbar-main {
-        background-color: transparent;
-    }
-
-    .ham-btn {
-        display: block !important;
-        color: white;
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-
-    .navbar-vertical {
-        display: none !important;
-    }
-
-    .nav-vert-out {
-
-        display: none !important;
-    }
-
-    .navbar-main {
-        height: 0 !important;
-    }
-
-    .navbar-inner {
-        /* position: absolute; */
-        background-color: rgb(0, 0, 0, 0.75);
-    }
-}
-
-@media (max-height:700px) {
-    .ul-contain li a .fa-solid {
-        font-size: 1.3rem;
-    }
-
-    .list-items ul li {
-        font-size: 1.8rem;
-    }
-}
-
-.navbar-vertical {
-    height: 100%;
-    max-width: 90px;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+/* Refine styles for smaller screens */
+@media (max-width: 992px) {
+  .ul-contain li a .fa-solid {
+    font-size: 1.5rem;
+  }
+
+  .list-items ul li {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 690px) {
+  /* Adjust styles for smaller screens */
+  .navbar-main {
+    background-color: transparent;
+  }
+
+  .ham-btn {
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .navbar-inner {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+@media (max-width: 1080px) {
+  /* Adjust styles for smaller screens */
+  .navbar-main {
+    background-color: transparent;
+  }
+
+  .ham-btn {
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-height: 700px) {
+  .ul-contain li a .fa-solid {
+    font-size: 1.3rem;
+  }
+
+  .list-items ul li {
+    font-size: 1.8rem;
+  }
+}
+
+/* Refine styles for the vertical navbar */
+.navbar-vertical {
+  height: 100%;
+  max-width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rotate-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: white;
-    white-space: nowrap;
-    rotate: 270deg;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+  /* rotate is not a valid CSS property, remove it */
+  transform: rotate(270deg);
 }
 
 .nav-vert-out {
-    height: 100%;
-    width: 100%;
-    transition: all 0.5s ease;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease;
 }
 
+/* Ensure the logo inside .logo-img is responsive in the vertical navbar */
 .navbar-vertical .logo-img .logo {
-    width: 60%;
+  width: 60%;
 }
 
+/* Refine the hamburger button styles */
 .ham-btn {
-    display: none;
-    position: fixed;
-    z-index: 99;
-    /* position: absolute; */
+  position: fixed;
+  z-index: 99;
 }
 
-/* examples/custom-styling.css */
-.pk .customOverlay {
-    background: transparent !important;
+li text{
+  font-size: large;
+}
+.list-item-text{
+  font-size: large;
+  font-weight: 600;
+}
+/* Sidebar.css */
+
+/* Style for inactive list items */
+.inactive {
+  padding: 10px; /* Adjust padding as needed */
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+  list-style-type: none; /* Remove default list bullet */
 }
 
-.pk .customModal {
-    background: transparent !important;
-    background-color: transparent !important;
-    width: max-content;
-    height: 100vh;
-    margin: 0 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
+.inactive:hover {
+  background-color: #e0e0e0; /* Change the background color on hover */
 }
 
-.pk .react-responsive-modal-container {
-    display: flex;
+/* Style for active list items */
+.active {
+  padding: 10px; /* Adjust padding as needed */
+  background-color: #007bff; /* Background color for active item */
+  color: #fff; /* Text color for active item */
+  list-style-type: none; /* Remove default list bullet */
 }
 
-.pk .react-responsive-modal-container button {
-    display: none !important;
-}
-
-*:focus {
-    outline: 0 !important;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.ul-contain li {
-    width: 100%;
-}
-
-.ul-contain li .active {
-    padding-left: 40px;
-    padding-right: 40px;
-    /* outline: 1px solid white !important; */
-    /* background-color: rgba(0, 0, 0, 0.71); */
-    color: #0A6480;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    /* transform: translateX(3%); */
-}
-
-
-.ul-contain li a:hover {
-    padding-left: 40px;
-    padding-right: 40px;
-    /* outline: 1px solid white;  */
-    color: #0A6480;
-    border-radius: 10px;
-    transform: translateX(3%) !important;
-
-    /* background-color: rgba(0, 0, 0, 0.71); */
-    transition: all 0.3s ease;
-}
-
-.ul-contain li a {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.list-item-text {
-    font-size: 30px;
-}
-
-@media (max-width:550px) {
-    .ul-contain li a .fa-solid {
-        font-size: 1.3rem;
-    }
-
-    .list-items ul li {
-        font-size: 1.8rem;
-    }
-
-    .list-items ul li a {
-        gap: 10px;
-    }
-
-    .list-items ul {
-        gap: 15px !important;
-        text-align: left;
-        padding-left: 15px !important;
-        padding-right: 22px !important;
-    }
-
-    .ul-contain li a {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-}
-
-.mobile-nav .list-items ul {
-    gap: 0px !important;
-}
-svg{
-    color: white;
+.active:hover {
+  background-color: #0056b3; /* Change the background color on hover for active item */
 }

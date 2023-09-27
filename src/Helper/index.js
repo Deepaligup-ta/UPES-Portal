@@ -23,3 +23,4 @@ export const isAuthenticated = () => {
     const userInfo = sessionStorage.getItem('info');
     return userInfo ? true : false;
 };
+
