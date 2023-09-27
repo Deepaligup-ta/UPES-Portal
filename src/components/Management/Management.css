@@ -61,27 +61,29 @@
 
 .box .rectangle {
   background-color: #ffffff;
-  height: 76px;
-  left: 1px;
+  height: 60px;
+  left: 75px;
   position: absolute;
   top: 0;
-  width: 502px;
+  width: 350px;
+  border-radius: 50px;
 }
-
+/* 
 .box .rectangle-2 {
   background-color: #ffffff;
   box-shadow: 4px 0px 4px #0000004c;
-  height: 76px;
+  height: 60px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 78px;
-}
+  width: 65px;
+  border-radius: 50px;
+} */
 
 .box .icon-search {
-  height: 47px;
-  left: 20px;
+  height: 37px;
+  left: 110px;
   position: absolute;
   top: 14px;
-  width: 47px;
+  width: 27px;
 }
