@@ -216,7 +216,7 @@ const Timetable = () => {
   return (
     <div className="timetable">
       <SidebarFaculty />
-      <div className="group " style={{ overflowY: "scroll" }}>
+      <div className="group " style={{ overflowY: "scroll"  }}>
         <div className="overlap-group">
           <div className="text-wrapper">TIME TABLE</div>
         </div>
@@ -228,6 +228,7 @@ const Timetable = () => {
           <button onClick={() => toPDF()}>Download PDF</button>
           <div ref={targetRef}>
             Content to be generated to PDF
+            <div style={{ overflowX: "auto"}}>
             <Calendar
               localizer={localizer}
               events={events}
@@ -245,7 +246,9 @@ const Timetable = () => {
                   </div>
                 ),
               }}
+
             />
+            </div>
           </div>
         </div>
       </div>
