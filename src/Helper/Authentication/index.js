@@ -14,6 +14,14 @@ export const getAuthToken = () => {
     return false
    
 }
+export const getToken = () => {
+    const regex = new RegExp(`(^| )socis=([^;]+)`)
+    const match = document.cookie.match(regex)
+    if (match) {
+        return match
+    }
+    return false
+}
 const GET = (ENDPOINT, AUTH) => {
     return fetch(`${ENDPOINT}`, {
         headers: {
@@ -83,14 +91,14 @@ export const changePassword = (body) => {
     const headers = {
         'Accept': "application/json",
         "Content-Type": "application/json",
-        'Authorization': `Bearer ${getAuthToken()}`,
+        'Authorization': `Bearer ${getAuthToken().token}`,
       }
       console.log(headers)
     return fetch(`${URL}/change-password`, {
       headers: {
         'Accept': "application/json",
         "Content-Type": "application/json",
-        'Authorization': `Bearer ${getAuthToken()}`,
+        'Authorization': `Bearer ${getAuthToken().token}`,
       },
       credentials: "include",
       method: "PUT",

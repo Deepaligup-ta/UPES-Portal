@@ -14,59 +14,75 @@ import {
 import "./Timetable.css";
 import SidebarFaculty from "../../SideBar/Sidebar-faculty";
 import { usePDF } from "react-to-pdf";
-import { getAuthToken } from "../../../Helper/Authentication";
+import { getAuthToken, getToken } from "../../../Helper/Authentication";
 
 
 const localizer = momentLocalizer(moment);
 
 const Timetable = () => {
   const [events, setEvents] = useState([]);
+  console.log(getToken()[2])
+  let weeklyData = []
+  fetch(`http://localhost:8000/api/timetable/faculty`, {
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${getToken()[2]}`
+      },
+      credentials: 'include',
+      method: "GET",
 
-  console.log(getAuthToken())
-  
-  const weeklyData = [
-    {
-      batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
-      start: "2023-09-25T14:00:00.000Z",
-      end: "2023-09-25T14:55:00.000Z",
-      subject: "Computer Networks",
-      room: "0",
-      day: "monday",
-    },
-    {
-      batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
-      start: "2023-09-25T03:00:00.000Z",
-      end: "2023-09-26T07:00:00.000Z",
-      subject: "Computer Networks",
-      room: "0000",
-      day: "thursday",
-    },
-    {
-      batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
-      start: "2023-09-25T06:00:00.000Z",
-      end: "2023-09-26T08:00:00.000Z",
-      subject: "Computer Networks",
-      room: "0000",
-      day: "friday",
-    },
-    {
-      batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
-      start: "2023-09-25T08:00:00.000Z",
-      end: "2023-09-26T10:00:00.000Z",
-      subject: "Computer old Networks",
-      room: "0000",
-      day: "monday",
-    },
-    {
-      batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
-      start: "2023-09-25T06:00:00.000Z",
-      end: "2023-09-26T08:00:00.000Z",
-      subject: "New Networks",
-      room: "0000",
-      day: "monday",
-    },
-    // Add more weekly data as needed
-  ];
+  })
+  .then(res => {
+      console.log(res)
+  })
+  .catch(error => {
+      return error
+  })
+  // })
+  // const weeklyData = [
+  //   {
+  //     batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
+  //     start: "2023-09-25T14:00:00.000Z",
+  //     end: "2023-09-25T14:55:00.000Z",
+  //     subject: "Computer Networks",
+  //     room: "0",
+  //     day: "monday",
+  //   },
+  //   {
+  //     batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
+  //     start: "2023-09-25T03:00:00.000Z",
+  //     end: "2023-09-26T07:00:00.000Z",
+  //     subject: "Computer Networks",
+  //     room: "0000",
+  //     day: "thursday",
+  //   },
+  //   {
+  //     batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
+  //     start: "2023-09-25T06:00:00.000Z",
+  //     end: "2023-09-26T08:00:00.000Z",
+  //     subject: "Computer Networks",
+  //     room: "0000",
+  //     day: "friday",
+  //   },
+  //   {
+  //     batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
+  //     start: "2023-09-25T08:00:00.000Z",
+  //     end: "2023-09-26T10:00:00.000Z",
+  //     subject: "Computer old Networks",
+  //     room: "0000",
+  //     day: "monday",
+  //   },
+  //   {
+  //     batch: "BCA_Sem-1_Batch_65117dcf060848f9e7a1ddfc",
+  //     start: "2023-09-25T06:00:00.000Z",
+  //     end: "2023-09-26T08:00:00.000Z",
+  //     subject: "New Networks",
+  //     room: "0000",
+  //     day: "monday",
+  //   },
+  //   Add more weekly data as needed
+  // ];
 
   useEffect(() => {
     // Function to generate events for the entire year
