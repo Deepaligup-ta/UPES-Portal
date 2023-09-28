@@ -17,7 +17,8 @@ import Post from "./components/Management/Pages/Post";
 import FacultyRoute from "./Routes/Faculty";
 import Dashboard from "./Pages/Dashboard";
 import { isAuthenticated, isFaculty } from "./Helper/Authentication";
-
+import ManagementDashboard from "./components/Management/management_dashboard/dashboard";
+import News from "./components/Management/news/news";
 const App = () => {
 
   return (
@@ -41,6 +42,8 @@ const App = () => {
           <Route path="/faculty/timetable" element={<Timetable/>}/> */}
           <Route path="/management/timetable" element={<Timetable_Management/>}/>
           <Route path="/management/post" element={<Post/>} />
+          <Route path="/management/dashboard" element={<ManagementDashboard/>} />
+          <Route path="/management/news" element={<News/>} />
 
           <Route path="/policies" element={<Policies />} />
           {/* <Route path="/new-login" element={<Password />} /> */}

@@ -113,7 +113,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink
-                to="/News"
+                to="/Management/News"
                 onClick={backMove}
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
               >
