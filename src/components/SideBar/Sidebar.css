@@ -19,7 +19,7 @@
 .navbar-main {
   overflow: hidden;
   position: fixed !important;
-  height: 100vh;
+  height: 100vh !important;
   padding: 0 !important;
   background-color: rgba(0, 0, 0, 0.5); /* Transparent background with some opacity */
   z-index: 30;
@@ -60,8 +60,15 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    color: white;
+    padding-top: 10pxa;
 }
-
+.cross{
+  color: white;
+}
+.navbar-inner {
+  height: 100vh;
+}
 /* Refine styles for smaller screens */
 @media (max-width: 992px) {
   .ul-contain li a .fa-solid {
@@ -72,6 +79,9 @@
     font-size: 2.5rem;
   }
 }
+.nav-vert-out{
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
 @media (max-width: 690px) {
   /* Adjust styles for smaller screens */
@@ -81,7 +91,7 @@
 
   .ham-btn {
     color: white;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 20px;
   }
 
@@ -98,8 +108,8 @@
 
   .ham-btn {
     color: white;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -171,7 +181,7 @@ li text{
 /* Style for active list items */
 .active {
   padding: 10px; /* Adjust padding as needed */
-  background-color: #007bff; /* Background color for active item */
+ /* Background color for active item */
   color: #fff; /* Text color for active item */
   list-style-type: none; /* Remove default list bullet */
 }

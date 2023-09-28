@@ -34,3 +34,6 @@
 .rbc-timeslot-group{
   min-height: 75px;
 }
+.rbc-month-row{
+  overflow: visible;
+}
