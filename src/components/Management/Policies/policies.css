@@ -1,0 +1,183 @@
+.POLICY {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .POLICY .div {
+    background-color: #ffffff;
+    height: 1003px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .POLICY .overlap {
+    height: 881px;
+    left: 32px;
+    position: absolute;
+    top: 31px;
+    width: 1380px;
+  }
+  
+  .POLICY .designation-button {
+    height: 881px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1380px;
+  }
+  
+  .POLICY .icon-caret-square {
+    height: 158px;
+    left: -4px;
+    position: absolute;
+    top: 0;
+    width: 1388px;
+  }
+  
+  .POLICY .rectangle {
+    background-color: #175f75;
+    border-radius: 30px;
+    height: 670px;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 211px;
+    width: 1380px;
+  }
+  
+  .POLICY .group {
+    height: 587px;
+    left: 22px;
+    position: absolute;
+    top: 256px;
+    width: 1336px;
+  }
+  
+  .POLICY .overlap-group {
+    height: 587px;
+    position: relative;
+  }
+  
+  .POLICY .POLICY-temp {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    height: 123px;
+    left: 0;
+    position: absolute;
+    top: 156px;
+    width: 1336px;
+  }
+  
+  .POLICY .rectangle-2 {
+    background-color: #6d6d6d;
+    border-radius: 20px;
+    height: 9px;
+    left: 48px;
+    position: absolute;
+    top: 26px;
+    width: 1192px;
+  }
+  
+  .POLICY .rectangle-3 {
+    background-color: #6d6d6d;
+    border-radius: 20px;
+    height: 9px;
+    left: 48px;
+    position: absolute;
+    top: 52px;
+    width: 1192px;
+  }
+  
+  .POLICY .rectangle-4 {
+    background-color: #6d6d6d;
+    border-radius: 20px;
+    height: 9px;
+    left: 48px;
+    position: absolute;
+    top: 78px;
+    width: 1192px;
+  }
+  
+  .POLICY .POLICY-temp-2 {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    height: 123px;
+    left: 0;
+    position: absolute;
+    top: 308px;
+    width: 1336px;
+  }
+  
+  .POLICY .POLICY-temp-3 {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    height: 123px;
+    left: 0;
+    position: absolute;
+    top: 464px;
+    width: 1336px;
+  }
+  
+  .POLICY .POLICY-temp-4 {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    height: 123px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1336px;
+  }
+  
+  .POLICY .download-icon {
+    height: 503px;
+    left: 1265px;
+    position: absolute;
+    top: 36px;
+    width: 30px;
+  }
+  
+  .POLICY .text-wrapper {
+    color: #ffffff;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    left: 1016px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 56px;
+    width: 246px;
+  }
+  
+  .POLICY .vector {
+    height: 25px;
+    left: 1225px;
+    position: absolute;
+    top: 66px;
+    width: 25px;
+  }
+  
+  .POLICY .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 50px;
+    font-weight: 600;
+    left: 96px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0px 4px 4px #00000040;
+    top: 39px;
+  }
+  
+  .POLICY .img {
+    height: 148px;
+    left: 777px;
+    position: absolute;
+    top: -4004px;
+    width: 644px;
+  }
+  
