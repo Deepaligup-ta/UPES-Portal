@@ -101,11 +101,17 @@ export const getUsers = (req, res) => {
         page: req.query.page || 1,
         limit: req.query.limit || 10,
     }
-    User.paginate({
-    }, pageOptions, (err, result) => {
-        
-        res.json(result)
-    })
+    User
+        .paginate({
+
+        }, pageOptions, (err, result) => {
+            if(err)
+                return res.status(400).json({
+                    error: true,
+                    errorMessage: err
+                })
+            res.json(result)
+        })
 }
 
 //Get User By SAP Id
@@ -175,7 +181,6 @@ export const loggout = (req, res) => {
 
 //Middleware For Check If The User Is Valid
 export const isAuthenticated = (req, res, next) => {
-    console.log("Auth Called")
     getUser(req.auth.user.sapId)
         .then(user => {
             if(!user)
@@ -191,7 +196,6 @@ export const isAuthenticated = (req, res, next) => {
 
 //Middleware For Check If User Is Faculty
 export const isFaculty = (req, res, next) => {
-    console.log("faculty")
     if(req.auth.user.role === "faculty")
         next()
     else
@@ -200,7 +204,6 @@ export const isFaculty = (req, res, next) => {
 
 //Middleware For Check If User Is Management
 export const isManagement = (req, res, next) => {
-    console.log(req.auth)
     if(req.auth.user.role === 'admin')
         next()
     if(req.auth.user.role !== 'management')

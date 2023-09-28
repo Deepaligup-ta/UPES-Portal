@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema({
     },
     designations: {
         type: String,
-        enum: ['dean', 'assistant professor', 'none'],
+        enum: ["Assistant Manager","Assistant Professor - Selection Grade","Assistant Professor - Senior Scale","Assistant Professor -Selection Grade","Assistant Professor- Selection Grade","Associate Professor","Deputy Director","Director","Distinguished Professor cum Director", "Lab Assistant", "Professor", "Professor and Dean","Sr. Associate Professor","Sr. Lab Assistant"],
         default: 'none'
     },
     // designations: [
@@ -103,10 +103,14 @@ export const User = mongoose.model('User', userSchema)
 export const usersResource = {
     resource: User,
     options:{
+        
         properties: {
-            encpy_password: {
-                type: 'password',
+            password: {
+                type: 'password'
             },
+            // encpy_password: {
+            //     type: 'password',
+            // },
             salt: {
                 isVisible: false
             },

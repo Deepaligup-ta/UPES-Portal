@@ -9,7 +9,11 @@ const policySchema = mongoose.Schema({
     school: {
         type: mongoose.ObjectId,
         ref: 'School'
-    },
+    },.
+    status: {
+        type: String,
+        enum: ["delete", "publish"]
+    }
     
 }, { timestamps: true })
 

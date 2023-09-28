@@ -17,6 +17,11 @@ const courseSchema = mongoose.Schema({
     school: {
         type: mongoose.ObjectId,
         ref: 'School'
+    },
+    status: {
+        type: String,
+        enum: ["publish", "delete"],
+        default: "publish"
     }
 }, { timestamps: true })
 

@@ -87,19 +87,18 @@ const authenticate = async (email, password) => {
         password: 'password',
         name: ''
     }
-    return Promise.resolve(DEFAULT_ADMIN)
-    // return Promise.resolve(authenticateAdmin(email, password)
-    //     .then(user => {
-    //         if(user.error1 || user.error2 || user.error3)
-    //             return null
-    //         if(user){
-    //             DEFAULT_ADMIN.email = user.email
-    //             DEFAULT_ADMIN.name = user.firstName
-    //             return Promise.resolve(DEFAULT_ADMIN)
-    //         }
-    //         else      
-    //             return null
-    //     }))
+    return Promise.resolve(authenticateAdmin(email, password)
+        .then(user => {
+            if(user.error1 || user.error2 || user.error3)
+                return null
+            if(user){
+                DEFAULT_ADMIN.email = user.email
+                DEFAULT_ADMIN.name = user.firstName
+                return Promise.resolve(DEFAULT_ADMIN)
+            }
+            else      
+                return null
+        }))
 }
 //Router For AdminJs Authenticated Routes
 const router = AdminJSExpress.buildAuthenticatedRouter(
@@ -125,19 +124,13 @@ const router = AdminJSExpress.buildAuthenticatedRouter(
 //Use static sources
 app.use(express.static('public'))
 //CORS
-// app.use(cors({
-//     origin: '*', 
-//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-//     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-//     credentials: true
-// }))
 app.use(cors({
-    credentials: true,
-    preflightContinue: true,
-    optionsSuccessStatus: 200,
-    origin: 'http://localhost:3000',
-    allowedHeaders: ["Content-Type", "Authorization"],
-    methods: ["GET", "POST", "PUT", "HEAD", "PATCH", "DELETE"]}))
+    origin: ['http://localhost:3000'], 
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+    credentials: true
+}))
+
 //Json parser
 app.use(json())
 //Auth Routes

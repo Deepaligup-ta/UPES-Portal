@@ -70,6 +70,30 @@ export const getOne = (req, res) => {
         })
 }
 
+
+export const updateAnnouncement = (req, res) => {
+    const { _id } = req.body
+
+Announcement.updateOne({ _id: _id }, req.body)
+        .then((data) => {
+            if(data) 
+                return res.json({
+                    success: true,
+                    error: false,
+                    successMessage: "Updated annoucement"
+                })
+            else
+                return res.status(400).json({
+                    error: true
+                })
+        })
+        .catch((error) => {
+            res.status(400).json({
+                error: true,
+                errorMessage: error
+            })
+        })
+}
 export const deleteAnnoucement = (req, res) => {
     const { annoucementId } = req.body
 
@@ -78,7 +102,8 @@ export const deleteAnnoucement = (req, res) => {
             if(data) 
                 return res.json({
                     success: true,
-                    error: false
+                    error: false,
+                    successMessage: "Deleted Announcement!"
                 })
             else
                 return res.status(400).json({

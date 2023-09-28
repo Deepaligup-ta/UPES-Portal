@@ -2,14 +2,114 @@ import { Policy  } from "../models/Policy.js"
 import { User } from "../models/User.js"
 
 export const getAllPolicy = (req, res) => {
-
+    const userId = req.auth._id
+    
+    User.findOne({ _id: userId, status: "publish" })
+        then((user) => {
+            if(!user) 
+                return res.status(400).json({
+                    erorr: true
+                })
+            Policy.find({
+                school: user.school
+            })
+            .then((policy) => {
+                if(!policy)
+                    return res.status(400).json({
+                        error: true,
+                        errorMessage: "Policy not found"
+                    })
+                res.json(policy)
+            })
+            .catch((error) => {
+                return res.status(400).json({
+                    erorr: true,
+                    errorMessage: error
+                })
+            })
+        })
+        .catch((erorr) => {
+            return res.status(400).json({
+                erorr: true,
+                errorMessage: erorr
+            })
+        })
 }
 export const getPolicy = (req ,res) => {
-
+    const userId = req.auth._id
+    const policyId = req.params.policyId
+    User.findOne({ _id: userId, status: "publish" })
+        then((user) => {
+            if(!user) 
+                return res.status(400).json({
+                    erorr: true
+                })
+            Policy.findOne({
+                _id: policyId,
+                school: user.school
+            })
+            .then((policy) => {
+                if(!policy)
+                    return res.status(400).json({
+                        error: true,
+                        errorMessage: "Policy not found"
+                    })
+                res.json(policy)
+            })
+            .catch((error) => {
+                return res.status(400).json({
+                    erorr: true,
+                    errorMessage: error
+                })
+            })
+        })
+        .catch((erorr) => {
+            return res.status(400).json({
+                erorr: true,
+                errorMessage: erorr
+            })
+        })
 }
+
 export const deletePolicy = (req, res) => {
-
+    const userId = req.auth._id
+    const policyId = req.params.policyId
+    User.findOne({ _id: userId, designations: "dean" })
+        then((user) => {
+            if(!user) 
+                return res.status(400).json({
+                    erorr: true
+                })
+            Policy.updateOne({
+                _id: policyId
+            },
+            { status: "delete"})
+            .then((policy) => {
+                if(!policy)
+                    return res.status(400).json({
+                        error: true,
+                        errorMessage: "Policy not found"
+                    })
+                res.json({
+                    success: true,
+                    successMessage: "Deleted Successfully"
+                })
+            })
+            .catch((error) => {
+                return res.status(400).json({
+                    erorr: true,
+                    errorMessage: error
+                })
+            })
+        })
+        .catch((erorr) => {
+            return res.status(400).json({
+                erorr: true,
+                errorMessage: erorr
+            })
+        })
 }
+
 export const updatePolicy = (req, res) => {
     const userId = req.auth._id
     const { policyId, policyName, policyFile } = req.body
