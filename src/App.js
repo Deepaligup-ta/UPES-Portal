@@ -9,7 +9,7 @@ import Home from "./components/home/Home";
 import Management from "./components/Management/Management";
 import Login from "./components/Login/Login";
 import FacultyDashboard from "./components/faculty/Pages/Dashboard";
-import Policies from "./Pages/Policies";
+// import Policies from "./Pages/Policies";
 import Password from "./components/Password/Password";
 import Timetable from "./components/faculty/Pages/Timetable";
 import Timetable_Management from "./components/Management/Pages/Timetable";
@@ -19,6 +19,9 @@ import Dashboard from "./Pages/Dashboard";
 import { isAuthenticated, isFaculty } from "./Helper/Authentication";
 import ManagementDashboard from "./components/Management/management_dashboard/dashboard";
 import News from "./components/Management/news/news";
+import Deadlines from "./components/Management/Deadlines/deadline";
+import Policies from "./components/Management/Policies/policy";
+import Posts from "./components/Management/Posts/post";
 const App = () => {
 
   return (
@@ -44,8 +47,10 @@ const App = () => {
           <Route path="/management/post" element={<Post/>} />
           <Route path="/management/dashboard" element={<ManagementDashboard/>} />
           <Route path="/management/news" element={<News/>} />
+          <Route path="/management/Deadlines" element={<Deadlines/>} />
+          <Route path="/management/Policies" element={<Policies/>} />
+          <Route path="/management/Posts" element={<Posts/>} />
 
-          <Route path="/policies" element={<Policies />} />
           {/* <Route path="/new-login" element={<Password />} /> */}
         </Routes>
       </Router>
