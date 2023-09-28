@@ -1,0 +1,227 @@
+.POST {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .POST .div {
+    background-color: #ffffff;
+    height: 900px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .POST .overlap {
+    background-color: #1f7089;
+    height: 603px;
+    left: 29px;
+    position: absolute;
+    top: 238px;
+    width: 1382px;
+  }
+  
+  .POST .group {
+    height: 224px;
+    left: 45px;
+    position: absolute;
+    top: 59px;
+    width: 622px;
+  }
+  
+  .POST .overlap-group {
+    background-color: #d9d9d9;
+    border-radius: 50px;
+    height: 224px;
+    position: relative;
+    width: 620px;
+  }
+  
+  .POST .text-wrapper {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 40px;
+    font-weight: 600;
+    left: 21px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 16px;
+    width: 289px;
+  }
+  
+  .POST .overlap-wrapper {
+    height: 224px;
+    left: 45px;
+    position: absolute;
+    top: 333px;
+    width: 622px;
+  }
+  
+  .POST .group-2 {
+    background-color: #ffffff;
+    border-radius: 35px;
+    height: 495px;
+    left: 739px;
+    position: absolute;
+    top: 59px;
+    width: 588px;
+  }
+  
+  .POST .overlap-group-wrapper {
+    height: 68px;
+    left: 418px;
+    position: absolute;
+    top: 412px;
+    width: 150px;
+  }
+  
+  .POST .overlap-group-2 {
+    height: 68px;
+    position: relative;
+    width: 148px;
+  }
+  
+  .POST .rectangle {
+    background-color: #1f7089bf;
+    border-radius: 38.5px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 67px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 148px;
+  }
+  
+  .POST .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 35px;
+    font-weight: 600;
+    left: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 3px;
+    width: 102px;
+  }
+  
+  .POST .div-wrapper {
+    height: 111px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 588px;
+  }
+  
+  .POST .overlap-2 {
+    height: 111px;
+    position: relative;
+    width: 594px;
+  }
+  
+  .POST .group-3 {
+    height: 111px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 594px;
+  }
+  
+  .POST .overlap-group-3 {
+    height: 111px;
+    position: relative;
+    width: 588px;
+  }
+  
+  .POST .rectangle-2 {
+    background-color: #d9d9d9;
+    border-radius: 35px 35px 0px 0px;
+    box-shadow: inset 0px 4px 4px #00000040;
+    height: 80px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 588px;
+  }
+  
+  .POST .icon-format-line {
+    height: 53px;
+    left: 220px;
+    position: absolute;
+    top: 14px;
+    width: 60px;
+  }
+  
+  .POST .text-wrapper-3 {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 50px;
+    font-weight: 600;
+    left: 153px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-decoration: underline;
+    top: 1px;
+    width: 67px;
+  }
+  
+  .POST .text-wrapper-4 {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 50px;
+    font-weight: 600;
+    left: 47px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 3px;
+    width: 60px;
+  }
+  
+  .POST .text-wrapper-5 {
+    color: #000000;
+    font-family: "Poppins-SemiBoldItalic", Helvetica;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 600;
+    left: 107px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 3px;
+    width: 28px;
+  }
+  
+  .POST .img {
+    height: 42px;
+    left: 306px;
+    position: absolute;
+    top: 22px;
+    width: 260px;
+  }
+  
+  .POST .overlap-3 {
+    background-color: #0a6480;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 169px;
+    left: 29px;
+    position: absolute;
+    top: 26px;
+    width: 1382px;
+  }
+  
+  .POST .text-wrapper-6 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 80px;
+    font-weight: 600;
+    left: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 24px;
+  }
+  
