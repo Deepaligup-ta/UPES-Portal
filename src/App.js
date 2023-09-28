@@ -5,13 +5,13 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Home from "./Components/home/Home";
-import Management from "./Components/Management/Management";
+// import Home from "./Components/home/Home";
 import Login from "./Components/Login/Login";
 import Faculty from "./Components/faculty/Faculty";
 import Policies from "./Pages/Policies";
-import Password from "./Components/Password/Password";
-import Timetable from "./Components/faculty/Pages/Timetable";
+import Management from "./Components/Management/Management";
+import Password from "./components/Password/Password";
+import Timetable from "./components/faculty/Pages/Timetable";
 import Timetable_Management from "./Components/Management/Pages/Timetable";
 import Post from "./Components/Management/Pages/Post";
 import FacultyRoute from "./Routes/Faculty";
@@ -48,7 +48,7 @@ const App = () => {
             }
           /> */}
           <Route path="/newpassword" element={<Password />} />
-          <Route path="/management" element={<Home />} />
+          <Route path="/management" element={<Management />} />
           {/* <Route path="/faculty" element={<Faculty />} />
           <Route path="/faculty/timetable" element={<Timetable/>}/> */}
           <Route path="/management/timetable" element={<Timetable_Management/>}/>
