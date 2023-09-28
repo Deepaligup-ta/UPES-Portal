@@ -41,25 +41,30 @@ const Sidebar_faculty = () => {
 
   const dashboardMenu = [
     {
-      to: '/dashboard', 
-      className:(true ? 'active' : 'inactive'),
-      name:"Dashboard",
-      icon: '../images/dashboard-logo.svg' 
+      to: "/dashboard",
+      className: true ? "active" : "inactive",
+      name: "Dashboard",
+      icon: "../images/dashboard-logo.svg",
     },
     {
-      to: '/calender', 
-      className:(true ? 'active' : 'inactive'),
-      name:"Calender",
-      icon: '../images/dashboard-logo.svg' 
+      to: "/calender",
+      className: true ? "active" : "inactive",
+      name: "Calender",
+      icon: "../images/dashboard-logo.svg",
     },
     {
-      to: '/courses', 
-      className:(true ? 'active' : 'inactive'),
-      name:"Course",
-      icon: '../images/timetable-logo.svg' 
+      to: "/courses",
+      className: true ? "active" : "inactive",
+      name: "Course",
+      icon: "../images/timetable-logo.svg",
     },
- 
-  ]
+    {
+      to: "/timetable",
+      className: true ? "active" : "inactive",
+      name: "Course",
+      icon: "../images/timetable-logo.svg",
+    },
+  ];
 
   return (
     <>
@@ -67,11 +72,11 @@ const Sidebar_faculty = () => {
         {boxStyle.width === "80px" ? (
           <FaBars className="content-center w-14 h-14 z-50" />
         ) : (
-          <img src={cross} className=" right-4 w-6 h-6 z-50" />
+          <img src={cross} className=" cross white w-8 h-8 z-50" />
         )}
       </button>
 
-      <div className={`navbar-main container`} style={boxStyle} ref={box}>
+      <div className="navbar-main container h-full" style={boxStyle} ref={box}>
         <div className="nav-vert-out" style={smallBoxStyle}>
           <div className="navbar-vertical">
             <span className="rotate-text-container">
@@ -96,18 +101,20 @@ const Sidebar_faculty = () => {
               <br />
               <h1 className="text-white text-center text-xl"></h1>
             </div>
-            <ul className="container d-flex flex-column align-items-start gap-1 ul-contain">
-              {dashboardMenu.map((value, index) => {
-                return(
-                  <Navitem 
-                    to={value.to}
-                    className={value.className}
-                    name={value.name}
-                    icon={value.icon}
-                  />
-                )
-              })}
-            </ul>
+            <div>
+              <ul className="container d-flex flex-column align-items-start gap-1 ul-contain">
+                {dashboardMenu.map((value, index) => {
+                  return (
+                    <Navitem
+                      to={value.to}
+                      className={value.className}
+                      name={value.name}
+                      icon={value.icon}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
