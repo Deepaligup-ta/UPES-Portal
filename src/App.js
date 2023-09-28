@@ -19,6 +19,7 @@ import Dashboard from "./Pages/Dashboard";
 import { isAuthenticated, isFaculty } from "./Helper/Authentication";
 import ManagementDashboard from "./components/Management/management_dashboard/dashboard";
 import News from "./components/Management/news/news";
+import Deadlines from "./components/Management/Deadlines/deadline";
 const App = () => {
 
   return (
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/management/post" element={<Post/>} />
           <Route path="/management/dashboard" element={<ManagementDashboard/>} />
           <Route path="/management/news" element={<News/>} />
+          <Route path="/management/Deadlines" element={<Deadlines/>} />
 
           <Route path="/policies" element={<Policies />} />
           {/* <Route path="/new-login" element={<Password />} /> */}

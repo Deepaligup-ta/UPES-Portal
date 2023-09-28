@@ -1,0 +1,375 @@
+.DEADLINES {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .DEADLINES .div {
+    background-color: #ffffff;
+    height: 900px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .DEADLINES .TOP-BAR {
+    height: 124px;
+    left: 22px;
+    position: absolute;
+    top: 16px;
+    width: 1398px;
+  }
+  
+  .DEADLINES .overlap-group {
+    background-color: #e12929;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 124px;
+    position: relative;
+    width: 1396px;
+  }
+  
+  .DEADLINES .text-wrapper {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 40px;
+    font-weight: 600;
+    left: 28px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 32px;
+  }
+  
+  .DEADLINES .SIDE-LINE {
+    height: 599px;
+    left: 110px;
+    position: absolute;
+    top: 253px;
+    width: 55px;
+  }
+  
+  .DEADLINES .rectangle {
+    background-color: #e12929;
+    border-radius: 10px;
+    height: 500px;
+    left: 24px;
+    position: absolute;
+    top: 69px;
+    width: 3px;
+  }
+  
+  .DEADLINES .ellipse {
+    background-color: #e12929;
+    border-radius: 10px;
+    height: 20px;
+    left: 16px;
+    position: absolute;
+    top: 579px;
+    width: 20px;
+  }
+  
+  .DEADLINES .ellipse-2 {
+    background-color: #e12929;
+    border-radius: 27.5px;
+    height: 55px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 55px;
+  }
+  
+  .DEADLINES .overlap {
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 236px;
+    left: 208px;
+    position: absolute;
+    top: 305px;
+    width: 1097px;
+  }
+  
+  .DEADLINES .group {
+    height: 149px;
+    left: 42px;
+    position: absolute;
+    top: 51px;
+    width: 834px;
+  }
+  
+  .DEADLINES .rectangle-2 {
+    background-color: #6d6d6d;
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 834px;
+  }
+  
+  .DEADLINES .rectangle-3 {
+    background-color: #6d6d6d;
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: 69px;
+    width: 834px;
+  }
+  
+  .DEADLINES .rectangle-4 {
+    background-color: #6d6d6d;
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: 138px;
+    width: 834px;
+  }
+  
+  .DEADLINES .group-2 {
+    height: 185px;
+    left: 917px;
+    position: absolute;
+    top: 30px;
+    width: 140px;
+  }
+  
+  .DEADLINES .SUBMIT-BUTTON {
+    all: unset;
+    box-sizing: border-box;
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 142px;
+  }
+  
+  .DEADLINES .div-wrapper {
+    background-color: #e12929;
+    border-radius: 20px;
+    height: 45px;
+    position: relative;
+    width: 140px;
+  }
+  
+  .DEADLINES .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 25px;
+    font-weight: 600;
+    left: 23px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    width: 93px;
+  }
+  
+  .DEADLINES .overlap-wrapper {
+    all: unset;
+    box-sizing: border-box;
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 72px;
+    width: 142px;
+  }
+  
+  .DEADLINES .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 25px;
+    font-weight: 600;
+    left: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 3px;
+    width: 93px;
+  }
+  
+  .DEADLINES .overlap-group-wrapper {
+    all: unset;
+    box-sizing: border-box;
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 140px;
+    width: 142px;
+  }
+  
+  .DEADLINES .PROGRESS-BAR {
+    background-color: #0a648099;
+    border-radius: 20px;
+    height: 25px;
+    left: 108px;
+    position: absolute;
+    top: 209px;
+    width: 1200px;
+  }
+  
+  .DEADLINES .rectangle-5 {
+    background-color: #0a6480;
+    border-radius: 20px;
+    height: 25px;
+    width: 800px;
+  }
+  
+  .DEADLINES .text-wrapper-4 {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    left: 110px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 158px;
+  }
+  
+  .DEADLINES .text-wrapper-5 {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    left: 203px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 256px;
+  }
+  
+  .DEADLINES .text-wrapper-6 {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    left: 1220px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 158px;
+  }
+  
+  .DEADLINES .group-3 {
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 236px;
+    left: 208px;
+    position: absolute;
+    top: 615px;
+    width: 1097px;
+  }
+  
+  .DEADLINES .group-4 {
+    height: 170px;
+    left: 42px;
+    position: absolute;
+    top: 35px;
+    width: 834px;
+  }
+  
+  .DEADLINES .rectangle-6 {
+    background-color: #6d6d6d;
+    height: 13px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 834px;
+  }
+  
+  .DEADLINES .rectangle-7 {
+    background-color: #6d6d6d;
+    height: 13px;
+    left: 0;
+    position: absolute;
+    top: 79px;
+    width: 834px;
+  }
+  
+  .DEADLINES .rectangle-8 {
+    background-color: #6d6d6d;
+    height: 13px;
+    left: 0;
+    position: absolute;
+    top: 157px;
+    width: 834px;
+  }
+  
+  .DEADLINES .group-5 {
+    height: 200px;
+    left: 917px;
+    position: absolute;
+    top: 19px;
+    width: 140px;
+  }
+  
+  .DEADLINES .text-wrapper-7 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 25px;
+    font-weight: 600;
+    left: 19px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    width: 93px;
+  }
+  
+  .DEADLINES .button {
+    all: unset;
+    box-sizing: border-box;
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 77px;
+    width: 142px;
+  }
+  
+  .DEADLINES .text-wrapper-8 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 25px;
+    font-weight: 600;
+    left: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    width: 93px;
+  }
+  
+  .DEADLINES .SUBMIT-BUTTON-2 {
+    all: unset;
+    box-sizing: border-box;
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 155px;
+    width: 142px;
+  }
+  
+  .DEADLINES .text-wrapper-9 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 25px;
+    font-weight: 600;
+    left: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    width: 93px;
+  }
+  
+  .DEADLINES .text-wrapper-10 {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    left: 208px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 568px;
+  }
+  
