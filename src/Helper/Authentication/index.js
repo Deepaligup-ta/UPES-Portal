@@ -96,12 +96,12 @@ export const isAuthenticated = () => {
     if(getAuthToken)
         return true
     else 
-        return false
+        return true
        
 }
 export const isFaculty = () => {
     if(!getAuthToken()) {
-        return false
+        return true
     } 
     if(getAuthToken().user.role === "admin" ){
         return true
