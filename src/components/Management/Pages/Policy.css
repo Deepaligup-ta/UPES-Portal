@@ -1,0 +1,16 @@
+.text-wrapper{
+    margin-left: 100px;
+}
+
+.label .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 50px;
+  font-weight: 600;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: fixed;
+  text-shadow: 0px 4px 4px #00000040;
+  top: 0;
+}

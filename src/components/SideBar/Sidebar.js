@@ -2,10 +2,11 @@ import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/upesfull.png";
 import "./Sidebar.css";
-import logo_new from "../../assets/upes.png";
-
-import { faChartLine } from "react-icons/fa";
-const Sidebar = () => {
+import { FaBars, FaCross, Fa } from "react-icons/fa";
+import { logout } from "../../Helper/Authentication";
+import cross from "./images/circle-xmark-regular.svg";
+import Navitem from "./Navitem";
+const Sidebar_faculty = () => {
   const box = useRef();
   const inBox = useRef();
 
@@ -16,160 +17,135 @@ const Sidebar = () => {
   const [bigBoxStyle, setBigBoxStyle] = useState({
     transform: "translateX(-50vw)",
   });
-  const move = () => {
-    setBoxStyle({ width: "max-content" });
-    setSmallBoxStyle({ transform: "translateX(-100%)", position: "absolute" });
-    setBigBoxStyle({ transform: "translateX(0%)" });
-  };
-    
-
-
-
   const backMove = () => {
     setBoxStyle({ width: "80px" });
     setSmallBoxStyle({ transform: "translateX(0%)", position: "relative" });
     setBigBoxStyle({ transform: "translateX(-50vw)" });
   };
-  const logout = () => {
-    sessionStorage.clear();
-    window.location.href = "/";
+
+  const toggleSidebar = () => {
+    if (boxStyle.width === "80px") {
+      setBoxStyle({ width: "max-content" });
+      setSmallBoxStyle({
+        transform: "translateX(-100%)",
+        position: "absolute",
+      });
+      setBigBoxStyle({ transform: "translateX(0%)" });
+    } else {
+      setBoxStyle({ width: "80px" });
+      setSmallBoxStyle({ transform: "translateX(0%)", position: "relative" });
+      setBigBoxStyle({ transform: "translateX(-50vw)" });
+    }
   };
 
+  const dashboardMenu = [
+    {
+      to: "/dashboard",
+      className: true ? "active" : "inactive",
+      name: "Dashboard",
+      icon: "../images/dashboard-logo.svg",
+    },
 
+    {
+      to: "/timetable",
+      className: true ? "active" : "inactive",
+      name: "Timetable",
+      icon: "../images/timetable-logo.svg",
+    },
+    {
+      to: "/news",
+      className: true ? "active" : "inactive",
+      name: "News",
+      icon: "../images/news-logo.svg",
+    },
+    {
+      to: "/deadline",
+      className: true ? "active" : "inactive",
+      name: "Deadline",
+      icon: "../images/news-logo.svg",
+    },
+    {
+      to: "/policy",
+      className: true ? "active" : "inactive",
+      name: "Policy",
+      icon: "../images/policies-logo.svg",
+    },
+
+    {
+      to: "/posts",
+      className: true ? "active" : "inactive",
+      name: "Post",
+      icon: "../images/internal_assessment.svg",
+    },
+    {
+      to: "/management/courses",
+      className: true ? "active" : "inactive",
+      name: "Courses",
+      icon: "../images/internal_assessment.svg",
+    },
+    {
+      to: "/logout",
+      className: true ? "active" : "inactive",
+      name: "Logout",
+      icon: "../images/internal_assessment.svg",
+    },
     
-  const [open, setOpen] = useState(false);
-  const onOpenModal = () => setOpen(true);
-  const onCloseModal = () => setOpen(false);
-
-  const [open22, setOpen22] = useState(true);
-
-  const onOpenModal22 = () => setOpen22(true);
-  const onCloseModal22 = () => setOpen22(false);
+  ];
 
   return (
-    <div
-      className={`navbar-main container`}
-      onMouseOver={move}
-      style={boxStyle}
-      onMouseLeave={backMove}
-    >
-      <div className="nav-vert-out" style={smallBoxStyle}>
-        <div className="navbar-vertical">
-          <div className="logo-img ">
-            <img src={logo_new} className="logo"></img>
+    <>
+      <button className="ham-btn w-20 absolute" onClick={toggleSidebar}>
+        {boxStyle.width === "80px" ? (
+          <FaBars className="content-center w-14 h-14 z-50" />
+        ) : (
+          <img src={cross} className=" cross white w-8 h-8 z-50" />
+        )}
+      </button>
+
+      <div className="navbar-main container h-full" style={boxStyle} ref={box}>
+        <div className="nav-vert-out" style={smallBoxStyle}>
+          <div className="navbar-vertical">
+            <span className="rotate-text-container">
+              <h1 className="rotate-text" style={{ fontSize: "25px" }}>
+                SCHOOL OF COMPUTER SCIENCE
+              </h1>
+            </span>
           </div>
-          <span className="rotate-text-container">
-            <h1 className="rotate-text" style={{ fontSize: "25px" }}>
-              SCHOOL OF COMPUTER SCIENCE
-            </h1>
-          </span>
+        </div>
+        <div
+          className={`navbar-inner d-flex flex-column align-items-center justify-content-center`}
+          style={bigBoxStyle}
+        >
+          <div className="logo-img">
+            <img src={logo} className="logo-new w-36 content-center"></img>
+          </div>
+
+          <div className="list-items pt-12">
+            <div className="profile-photo pt-10 ">
+              <img src="" alt="profile photo" className="w-28 rounded-full" />
+              <h1 className="text-white text-center text-xl">Name</h1>
+              <br />
+              <h1 className="text-white text-center text-xl"></h1>
+            </div>
+            <div>
+              <ul className="container d-flex flex-column align-items-start gap-1 ul-contain">
+                {dashboardMenu.map((value, index) => {
+                  return (
+                    <Navitem
+                      to={value.to}
+                      className={value.className}
+                      name={value.name}
+                      icon={value.icon}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <div
-        className={`navbar-inner d-flex flex-column align-items-center justify-content-center`}
-        style={bigBoxStyle}
-      >
-        <div className="logo-img">
-          <img src={logo} className="logo-new w-36 ml-20"></img>
-        </div>
-
-        <div className="list-items pt-20">
-          <div className="profile-photo pt-10 ">
-            <img
-              alt="profile photo"
-              className="w-28  ml-20 rounded-full"
-            />
-            <h1 className="text-white text-center text-xl">
-            </h1>
-            <br />
-            <h1 className="text-white text-center text-xl">
-            </h1>
-          </div>
-          <ul className="container d-flex flex-column align-items-start gap-1 ul-contain">
-            <li>
-              <NavLink
-                to="/Dashboard"
-                onClick={backMove}
-                className={({ isActive }) => (isActive ? "active" : "inactive") 
-                // add classes
-                
-              } 
-
-              >
-                {" "}
-                <img src="../images/dashboard-logo.svg" alt="dashboard" />
-                <span class="list-item-text">Dashboard</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/management/timetable"
-                onClick={backMove}
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
-              >
-                <img src="../images/timetable-logo.svg" alt="timetable-logo" />
-                <span class="list-item-text">Time Table</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/News"
-                onClick={backMove}
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
-              >
-                <img src="../images/news-logo.svg" alt="news-logo" />
-                <span class="list-item-text">News</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/Deadlines"
-                onClick={backMove}
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
-              >
-                <img src="../images/deadlines-logo.svg" alt="deadlines-logo" />
-                <span class="list-item-text">Deadlines</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/Policies"
-                onClick={backMove}
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
-              >
-                <img src="../images/policies-logo.svg" alt="policies-logo" />
-                <span class="list-item-text">Policies</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/management/post"
-                onClick={backMove}
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
-              >
-                <img
-                  src="E:/UPES-Portal/src/components/SideBar/images/post.svg"
-                  alt="news-logo"
-                />
-                <span class="list-item-text">Post</span>
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/Logout"
-                onClick={logout}
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
-              >
-                <img src="../images/logout-logo.svg" alt="logout-logo" />
-                <span class="list-item-text">Logout</span>
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
-export default Sidebar;
+export default Sidebar_faculty;

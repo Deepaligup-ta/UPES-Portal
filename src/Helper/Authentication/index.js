@@ -22,56 +22,9 @@ export const getToken = () => {
     }
     return false
 }
-const GET = (ENDPOINT, AUTH) => {
-    return fetch(`${ENDPOINT}`, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization':`Bearer ${AUTH}`
-        },
-        method: "GET",
-    })
-    .then(res => res.json())
-    .catch(error => {
-        return error
-    })
-}
-
-const PUT = (ENDPOINT, BODY, AUTH) => {
-    return fetch(`${ENDPOINT}`, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization':`Bearer ${AUTH}`
-        },
-        method: "PUT",
-        body: JSON.stringify(BODY)
-    })
-    .then(res => res.json())
-    .catch(error => { 
-        return error
-     })
-}
-
-const POST = (ENDPOINT, BODY, AUTH) => {
-    return fetch(`${ENDPOINT}`, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization':`Bearer ${AUTH}`
-        },
-        method: "POST",
-        body: JSON.stringify(BODY)
-    })
-    .then(res => res.json())
-    .catch(error => {
-        return error
-    })
-}
 
 
 export const signIn = (body) => {
-    console.log(body)
     return fetch(`${URL}/signin`, {
         headers: {
             'Accept': 'application/json',
@@ -87,18 +40,31 @@ export const signIn = (body) => {
         return error
     })
 }
-export const changePassword = (body) => {
-    const headers = {
+export const getUser = () => {
+
+    return fetch(`${URL}/current`, {
+      headers: {
         'Accept': "application/json",
         "Content-Type": "application/json",
-        'Authorization': `Bearer ${getAuthToken().token}`,
-      }
-      console.log(headers)
+        'Authorization': `Bearer ${getToken()[2]}`,
+      },
+      credentials: "include",
+      method: "GET",
+
+    })
+      .then((res) => res.json())
+      .catch((error) => {
+        return error;
+      });
+}
+
+export const changePassword = (body) => {
+
     return fetch(`${URL}/change-password`, {
       headers: {
         'Accept': "application/json",
         "Content-Type": "application/json",
-        'Authorization': `Bearer ${getAuthToken().token}`,
+        'Authorization': `Bearer ${getToken()[2]}`,
       },
       credentials: "include",
       method: "PUT",
@@ -106,7 +72,7 @@ export const changePassword = (body) => {
 
       body: JSON.stringify(body),
     })
-      .then((res) => console.log(res))
+      .then((res) => res.json())
       .catch((error) => {
         return error;
       });

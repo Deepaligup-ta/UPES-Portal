@@ -50,19 +50,55 @@ const Sidebar_faculty = () => {
       to: "/calender",
       className: true ? "active" : "inactive",
       name: "Calender",
-      icon: "../images/dashboard-logo.svg",
+      icon: "../images/calendar-logo.svg",
     },
     {
       to: "/courses",
       className: true ? "active" : "inactive",
       name: "Course",
-      icon: "../images/timetable-logo.svg",
+      icon: "../images/courses-logo.svg",
     },
     {
       to: "/timetable",
       className: true ? "active" : "inactive",
-      name: "Course",
+      name: "Timetable",
       icon: "../images/timetable-logo.svg",
+    },
+    {
+      to: "/policy",
+      className: true ? "active" : "inactive",
+      name: "Policy",
+      icon: "../images/policies-logo.svg",
+    },
+    {
+      to: "/syllabus",
+      className: true ? "active" : "inactive",
+      name: "Syllabus",
+      icon: "../images/syllabus-logo.svg",
+    },
+    {
+      to: "/assessment",
+      className: true ? "active" : "inactive",
+      name: "Internal Assessment",
+      icon: "../images/internal_assessment.svg",
+    },
+    {
+      to: "/awardsheet",
+      className: true ? "active" : "inactive",
+      name: "Award Sheet",
+      icon: "../images/internal_assessment.svg",
+    },
+    {
+      to: "/posts",
+      className: true ? "active" : "inactive",
+      name: "Post",
+      icon: "../images/internal_assessment.svg",
+    },
+    {
+      to: "/logout",
+      className: true ? "active" : "inactive",
+      name: "Logout",
+      icon: "../images/internal_assessment.svg",
     },
   ];
 

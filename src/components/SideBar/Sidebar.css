@@ -40,7 +40,7 @@
 /* Refine the list items styles */
 .list-items ul {
   text-align: left;
-  padding-top: 120px;
+  padding-top: 10vh;
 }
 
 .list-items ul li {
@@ -102,9 +102,7 @@
 
 @media (max-width: 1080px) {
   /* Adjust styles for smaller screens */
-  .navbar-main {
-    background-color: transparent;
-  }
+
 
   .ham-btn {
     color: white;
