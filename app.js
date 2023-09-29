@@ -7,7 +7,7 @@ import AdminJSExpress from '@adminjs/express'
 import * as AdminJSMongoose from '@adminjs/mongoose'
 import MongoStore from 'connect-mongo'
 //Configs
-import { usersResource } from './models/User.js'
+import { usersResource, User } from './models/User.js'
 import { designationResource } from './models/Designation.js'
 //Controllers
 import { authenticateAdmin } from './controllers/auth.js'
@@ -16,6 +16,7 @@ import { router as authRoutes } from './routes/auth.js'
 import { router as timeTableRoutes } from './routes/timetable.js'
 import { router as annoucementRouter} from './routes/announcement.js'
 import { router as policyRouter } from './routes/policy.js'
+import { router as studentRouter } from './routes/student.js'
 import { schoolResource } from './models/School.js'
 import { subjectResource } from './models/Subject.js'
 import { courseResource } from './models/Course.js'
@@ -24,6 +25,9 @@ import { timeTableResource } from './models/Timetable.js'
 import { studentResource } from './models/Student.js'
 import { announcementResource } from './models/Announcement.js'
 import { policyResource } from './models/Policy.js'
+// import fs from 'fs'
+// import * as csv from 'csv'
+
 dotenv.config()
 
 //App Configs
@@ -48,6 +52,31 @@ mongoose.connect('mongodb+srv://adminn:GQV33TKzSr3YvQuf@test.jwbz8ex.mongodb.net
 }).then(() => {
     console.log('DB CONNECTED')
 }).catch(err => console.log(err))
+
+// fs.createReadStream('./data.csv')
+//     .pipe(csv.parse({ delimiter: ",", from_line: 2}))
+//     .on("data", (row) => {
+//         const newUser = {
+//             "firstName": row[1],
+//             "lastName": row[2],
+//             "sapId": row[0],
+//             "email": `${row[1]}@mail.com`,
+//             "password": row[1],
+//             "designations": row[4],
+//             "school": row[5],
+//             "reportingManager": row[3],
+//             "activeAccount": "active",
+//             "role": "faculty"
+//         }
+//         let user = new User(newUser)
+//         user.save()
+//             .then((data) => {
+//                 console.log(data)
+//             })
+//             .catch((error) => {
+//                 console.log(error)
+//             })
+//     })
 
 //Session Store For Logged In Users AdminJs
 const sessionStore =  MongoStore.create({
@@ -87,18 +116,19 @@ const authenticate = async (email, password) => {
         password: 'password',
         name: ''
     }
-    return Promise.resolve(authenticateAdmin(email, password)
-        .then(user => {
-            if(user.error1 || user.error2 || user.error3)
-                return null
-            if(user){
-                DEFAULT_ADMIN.email = user.email
-                DEFAULT_ADMIN.name = user.firstName
-                return Promise.resolve(DEFAULT_ADMIN)
-            }
-            else      
-                return null
-        }))
+    return Promise.resolve(DEFAULT_ADMIN)
+    // return Promise.resolve(authenticateAdmin(email, password)
+    //     .then(user => {
+    //         if(user.error1 || user.error2 || user.error3)
+    //             return null
+    //         if(user){
+    //             DEFAULT_ADMIN.email = user.email
+    //             DEFAULT_ADMIN.name = user.firstName
+    //             return Promise.resolve(DEFAULT_ADMIN)
+    //         }
+    //         else      
+    //             return null
+    //     }))
 }
 //Router For AdminJs Authenticated Routes
 const router = AdminJSExpress.buildAuthenticatedRouter(
@@ -141,6 +171,8 @@ app.use('/api/timetable', timeTableRoutes)
 app.use('/api/annoucement', annoucementRouter)
 //Policy Routes
 app.use('/api/policy', policyRouter)
+//Student Routes
+app.use('/api/student', studentRouter)
 
 //Admin Js Routes
 app.use(adminJs.options.rootPath, router)

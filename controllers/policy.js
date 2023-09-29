@@ -4,14 +4,15 @@ import { User } from "../models/User.js"
 export const getAllPolicy = (req, res) => {
     const userId = req.auth._id
     
-    User.findOne({ _id: userId, status: "publish" })
-        then((user) => {
+    User.findOne({ _id: userId })
+        .then((user) => {
             if(!user) 
                 return res.status(400).json({
                     erorr: true
                 })
             Policy.find({
-                school: user.school
+                school: user.school,
+                status: (user.role === "mangement" ? '*' : 'publish')
             })
             .then((policy) => {
                 if(!policy)
@@ -38,15 +39,16 @@ export const getAllPolicy = (req, res) => {
 export const getPolicy = (req ,res) => {
     const userId = req.auth._id
     const policyId = req.params.policyId
-    User.findOne({ _id: userId, status: "publish" })
-        then((user) => {
+    User.findOne({ _id: userId })
+        .then((user) => {
             if(!user) 
                 return res.status(400).json({
                     erorr: true
                 })
             Policy.findOne({
                 _id: policyId,
-                school: user.school
+                school: user.school,
+                status: "publish"
             })
             .then((policy) => {
                 if(!policy)
@@ -75,7 +77,7 @@ export const deletePolicy = (req, res) => {
     const userId = req.auth._id
     const policyId = req.params.policyId
     User.findOne({ _id: userId, designations: "dean" })
-        then((user) => {
+        .then((user) => {
             if(!user) 
                 return res.status(400).json({
                     erorr: true

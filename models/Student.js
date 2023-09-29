@@ -38,6 +38,14 @@ const userSchema = new mongoose.Schema({
         type: mongoose.ObjectId,
         ref: 'Course'
     },
+    semester: {
+        type: Number,
+        default: 1
+    },
+    batch: {
+        type: mongoose.ObjectId,
+        ref: 'Batch'
+    }
     }, 
     { 
         timestamps:true 

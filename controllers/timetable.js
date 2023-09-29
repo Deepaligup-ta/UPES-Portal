@@ -1,8 +1,30 @@
 import { Timetable } from "../models/Timetable.js";
 import { Batch } from '../models/Batch.js'
 
+export const getTimeTableBatch = (req, res) => {
+    Timetable.findOne({ batch: req.params.batchId })
+        .then((timetable) => {
+            if(!timetable) 
+                return res.status(400).json({
+                    error: true
+                })
+
+            res.json(timetable.eventSchema)
+        })
+        .catch((error) => {
+            res.status(400).json({
+                error: true,
+                errorMesssage: error
+            })
+        })
+}
+
 export const getTimeTableFaculty = (req, res) => {
-    
+    let userId = null
+    if(req.query.userId) 
+        userId = req.query.userId
+    else 
+        userId = req.auth._id
     Timetable
         .find({
           
@@ -10,7 +32,7 @@ export const getTimeTableFaculty = (req, res) => {
         .populate({ 
             path: 'eventSchema',
             populate: {
-                path: 'subjectName batch',
+                path: 'subjectnName batch',
                 populate: {
                     path: 'course',
                     strictPopulate: false
@@ -33,7 +55,7 @@ export const getTimeTableFaculty = (req, res) => {
                     //res.json(result[i].eventSchema[i])\
                     console.log(String(result[i].eventSchema[j].faculty))
 
-                    if(String(result[i].eventSchema[j].faculty) === req.auth._id)  {
+                    if(String(result[i].eventSchema[j].faculty) === userId)  {
                         console.log("if")
                         const obj = result[i].eventSchema[j]
                         object.batch = obj.batch.course.courseName+'_Sem-'+obj.batch.currentSemester+'_Batch_'+obj.batch._id
