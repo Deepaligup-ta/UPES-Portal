@@ -20,7 +20,7 @@ export const getTimeTableBatch = (req, res) => {
 }
 
 export const getTimeTableFaculty = (req, res) => {
-    let userId = null
+    let userId = ''
     if(req.query.userId) 
         userId = req.query.userId
     else 

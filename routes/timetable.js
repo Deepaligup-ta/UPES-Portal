@@ -6,5 +6,5 @@ import { getTimeTableBatch, getTimeTableFaculty } from "../controllers/timetable
 export const router = Router()
 
 
-router.get('/faculty', isSignedIn, isAuthenticated, isFaculty, getTimeTableFaculty)
+router.get('/faculty', isSignedIn, isAuthenticated,  getTimeTableFaculty)
 router.get('/batch/:batchId', isSignedIn, isAuthenticated, getTimeTableBatch)
