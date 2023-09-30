@@ -25,6 +25,7 @@ import { timeTableResource } from './models/Timetable.js'
 import { studentResource } from './models/Student.js'
 import { announcementResource } from './models/Announcement.js'
 import { policyResource } from './models/Policy.js'
+import { router as courseRouter} from './routes/course.js'
 // import fs from 'fs'
 // import * as csv from 'csv'
 
@@ -173,6 +174,7 @@ app.use('/api/annoucement', annoucementRouter)
 app.use('/api/policy', policyRouter)
 //Student Routes
 app.use('/api/student', studentRouter)
+app.ise('./api/courses', courseRouter)
 
 //Admin Js Routes
 app.use(adminJs.options.rootPath, router)
