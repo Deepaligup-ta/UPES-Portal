@@ -15,6 +15,7 @@ import "./Timetable.css";
 import SidebarFaculty from "../../SideBar/Sidebar-faculty";
 import { usePDF } from "react-to-pdf";
 import { getAuthToken, getToken } from "../../../Helper/Authentication";
+import Sidebar_faculty from "../../SideBar/Sidebar";
 
 const localizer = momentLocalizer(moment);
 
@@ -154,7 +155,7 @@ const Timetable_Management = () => {
 
   return (
     <div className="timetable">
-      <SidebarFaculty />
+      <Sidebar_faculty />
       <div className="group " style={{ overflowY: "scroll" }}>
         <div className="overlap-group">
           <div className="text-wrapper">TIME TABLE</div>

@@ -48,32 +48,32 @@ const Sidebar_faculty = () => {
 
   const dashboardMenu = [
     {
-      to: "/dashboard",
+      to: "/management/dashboard",
       className: true ? "active" : "inactive",
       name: "Dashboard",
       icon: "../../images/dashboard-logo.svg",
     },
 
     {
-      to: "/timetable",
+      to: "/management/timetable",
       className: true ? "active" : "inactive",
       name: "Timetable",
       icon: "../../images/timetable-logo.svg",
     },
     {
-      to: "/news",
+      to: ".management/news",
       className: true ? "active" : "inactive",
       name: "News",
       icon: "../../images/news-logo.svg",
     },
     {
-      to: "/deadline",
+      to: "/management/deadline",
       className: true ? "active" : "inactive",
       name: "Deadline",
       icon: "../../images/deadlines-logo.svg",
     },
     {
-      to: "/policy",
+      to: "/management/policy",
       className: true ? "active" : "inactive",
       name: "Policy",
       icon: "../../images/policies-logo.svg",
