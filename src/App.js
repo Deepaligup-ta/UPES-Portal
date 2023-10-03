@@ -27,6 +27,9 @@ import News from "./components/Management/news/news";
 import Deadlines from "./components/Management/Deadlines/deadline";
 import Policies from "./components/Management/Policies/policy";
 import Posts from "./components/Management/Posts/post";
+import Faculty_Management from "./components/Management/Pages/Faculty";
+import { View_timetable } from "./components/Management/Pages/View_timetable";
+import Management_Route from "./components/Management/Route";
 const App = () => {
 
   return (
@@ -42,24 +45,34 @@ const App = () => {
           path="/newpassword"
           element={isAuthenticated() ? <Password /> : <Navigate to="/" />}
         />
-        <Route path="/management" element={<Home />} />
-        {/* <Route path="/faculty" element={<Faculty />} />
+          {/* <Route path="/faculty" element={<Faculty />} />
           <Route path="/faculty/timetable" element={<Timetable/>}/> */}
-        <Route
-          path="/management/timetable"
-          element={<Timetable_Management />}
-        />
-        <Route path="/management/post" element={<Post />} />
-          <Route path="/management/dashboard" element={<ManagementDashboard/>} />
-          <Route path="/management/news" element={<News/>} />
-          <Route path="/management/Deadlines" element={<Deadlines/>} />
-          <Route path="/management/Policies" element={<Policies/>} />
-          <Route path="/management/Posts" element={<Posts/>} />
+          <Route
+            path="/management/timetable"
+            element={<Timetable_Management />}
+          />
+          <Route path="/management/post" element={<Post />} />
+          <Route
+            path="/management/dashboard"
+            element={<ManagementDashboard />}
+          />
+          <Route path="/management/news" element={<News />} />
+          <Route path="/management/Deadlines" element={<Deadlines />} />
+          <Route path="/management/Policies" element={<Policy />} />
+          <Route path="/management/Posts" element={<Post />} />
+          <Route path="/management/faculty" element={<Faculty_Management />} />
+          <Route path="/management/courses" element={<Courses />} />
+          <Route path="/management/edit-policy/:id" element={<EditPolicy />} />
+          <Route
+            path="/management/view-timetable/:userid"
+            element={<View_timetable />}
+          />
+          <Route path="/management/add-policy/" element={<NewPolicy />} />
 
-          <Route path="/policies" element={<Policies />} />
-          {/* <Route path="/new-login" element={<Password />} /> */}
-        </Routes>
-      </Router>
+          <Route path="/management/policies" element={<Policies />} />
+        {/* <Route path="/new-login" element={<Password />} /> */}
+      </Routes>
+    </Router>
   );
 }
 

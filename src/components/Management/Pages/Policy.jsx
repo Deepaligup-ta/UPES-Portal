@@ -15,16 +15,22 @@ const Policy = () => {
   }, []);
 
   const Delete = (policyId) => {
-    deletePolicy({ policyId: policyId}).then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    }
-    );
-    
+    deletePolicy({ policyId: policyId })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     console.log("Policy Deleted");
-  }
+  };
+
+  // Function to open the policy file in a new tab
+  const openPolicyFile = (policyFile) => {
+    const file = new Blob([policyFile], { type: "application/pdf" }); // Assuming it's a PDF, you can adjust the type accordingly
+    const fileURL = URL.createObjectURL(file);
+    window.open(fileURL);
+  };
 
   return (
     <>
@@ -36,7 +42,7 @@ const Policy = () => {
         </div>
         <div className="ml-20 mt-28 timetable-page h-full">
           <h1>Policies</h1>
-          <Link to={`/edit-policy`}>
+          <Link to={`/management/add-policy`}>
             <p>Add New Policy</p>
           </Link>
           {policies.map((policy) => (
@@ -45,14 +51,16 @@ const Policy = () => {
               key={policy.id}
             >
               <h2>{policy.policyName}</h2>
-              {/* policy date is of this type "2023-09-26T14:30:37.450Z" */}
               <p>{new Date(policy.createdAt).toLocaleString()}</p>
               <p>{policy.school}</p>
-              <p>{policy.policyFile.toString()}</p>
-              <p>{policy.date}</p>
+
+              {/* Add a button to open the policy file in a new tab */}
+              <button onClick={() => openPolicyFile(policy.policyFile)}>
+                Open Policy File
+              </button>
 
               {/* Use Link to navigate to the EditPolicy page */}
-              <Link to={`/edit-policy/${policy._id}`}>
+              <Link to={`/management/edit-policy/${policy._id}`}>
                 <p>Update Policy</p>
               </Link>
               <button onClick={() => Delete(policy._id)}>Delete Policy</button>

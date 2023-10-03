@@ -1,5 +1,4 @@
 import React from "react";
-import "./policies.css";
 
 export const Policies = () => {
   return (

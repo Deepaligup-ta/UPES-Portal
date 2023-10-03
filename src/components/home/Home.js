@@ -7,10 +7,9 @@ const Home = (props) => {
     return (
         <div className="main">
 
-           
+           <Sidebar/>
             <Management/>
-            <Sidebar/>
-            </div>
+             </div>
             
     )
 };

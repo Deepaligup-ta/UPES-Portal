@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../SideBar/Sidebar";
 
 const Post = () => {
+  const[posts, setposts]=useState([])
+
   return (
     <div>
       <Sidebar />

@@ -10,5 +10,6 @@ const MangementRoute = () => {
         return <Outlet />
     else    
         return <Navigate to="/" state={{ from: location}} />
+        
 };
 export default MangementRoute;

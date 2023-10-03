@@ -6,6 +6,14 @@ import { FaBars, FaCross, Fa } from "react-icons/fa";
 import { logout } from "../../Helper/Authentication";
 import cross from "./images/circle-xmark-regular.svg";
 import Navitem from "./Navitem";
+import pic_dashborad from "../../images/dashboard-logo.svg";
+import pic_news from "./images/news-logo.svg";
+import pic_policies from "./images/policies-logo.svg";
+import pic_deadline from "./images/deadlines-logo.svg"
+import pic_post from "./images/post.svg"
+import pic_timetable from "./images/timetable-logo.svg"
+import pic_courses from "./images/courses-logo.svg"
+import pic_logout from "./images/logout-logo.svg"
 const Sidebar_faculty = () => {
   const box = useRef();
   const inBox = useRef();
@@ -43,53 +51,58 @@ const Sidebar_faculty = () => {
       to: "/dashboard",
       className: true ? "active" : "inactive",
       name: "Dashboard",
-      icon: "../images/dashboard-logo.svg",
+      icon: "../../images/dashboard-logo.svg",
     },
 
     {
       to: "/timetable",
       className: true ? "active" : "inactive",
       name: "Timetable",
-      icon: "../images/timetable-logo.svg",
+      icon: "../../images/timetable-logo.svg",
     },
     {
       to: "/news",
       className: true ? "active" : "inactive",
       name: "News",
-      icon: "../images/news-logo.svg",
+      icon: "../../images/news-logo.svg",
     },
     {
       to: "/deadline",
       className: true ? "active" : "inactive",
       name: "Deadline",
-      icon: "../images/news-logo.svg",
+      icon: "../../images/deadlines-logo.svg",
     },
     {
       to: "/policy",
       className: true ? "active" : "inactive",
       name: "Policy",
-      icon: "../images/policies-logo.svg",
+      icon: "../../images/policies-logo.svg",
     },
 
     {
       to: "/posts",
       className: true ? "active" : "inactive",
       name: "Post",
-      icon: "../images/internal_assessment.svg",
+      icon: "../../images/courses-logo.svg",
     },
     {
       to: "/management/courses",
       className: true ? "active" : "inactive",
       name: "Courses",
-      icon: "../images/internal_assessment.svg",
+      icon: "../../images/courses-logo.svg",
+    },
+    {
+      to: "/management/faculty",
+      className: true ? "active" : "inactive",
+      name: "Faculty",
+      icon: "../../images/courses-logo.svg",
     },
     {
       to: "/logout",
       className: true ? "active" : "inactive",
       name: "Logout",
-      icon: "../images/internal_assessment.svg",
+      icon: "../../images/logout-logo.svg",
     },
-    
   ];
 
   return (
@@ -136,6 +149,7 @@ const Sidebar_faculty = () => {
                       className={value.className}
                       name={value.name}
                       icon={value.icon}
+                      key={index}
                     />
                   );
                 })}
