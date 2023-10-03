@@ -174,7 +174,7 @@ app.use('/api/annoucement', annoucementRouter)
 app.use('/api/policy', policyRouter)
 //Student Routes
 app.use('/api/student', studentRouter)
-app.ise('./api/courses', courseRouter)
+app.use('./api/courses', courseRouter)
 
 //Admin Js Routes
 app.use(adminJs.options.rootPath, router)
