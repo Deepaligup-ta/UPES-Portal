@@ -177,10 +177,14 @@ app.use('/api/annoucement', annoucementRouter)
 app.use('/api/policy', policyRouter)
 //Student Routes
 app.use('/api/student', studentRouter)
+<<<<<<< HEAD
 //Course Routes
 app.use('/api/courses', courseRouter)
 //Post Routes
 app.use('/api/post', postRouter)
+=======
+app.use('./api/courses', courseRouter)
+>>>>>>> 6d3b69a7948af7556e049ff2dff09dc2a083628d
 
 //Admin Js Routes
 app.use(adminJs.options.rootPath, router)

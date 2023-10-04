@@ -117,12 +117,7 @@ export const updatePolicy = (req, res) => {
     const { policyId, policyName, policyFile } = req.body
     User.findOne({ _id: userId })
         .then((user) => {
-            if(user.designations != "dean" ){
-                return res.status(400).json({
-                    error: true,
-                    errorMessage: "You are not allowed!"
-                })
-            }
+            
            Policy
                 .updateOne({ 
                     _id: policyId 
