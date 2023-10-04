@@ -1,5 +1,5 @@
-import { Course } from "../models/Course";
-import { User } from "../models/User";
+import { Course } from "../models/Course.js";
+import { User } from "../models/User.js";
 
 
 export const addCourse = (req, res) => {

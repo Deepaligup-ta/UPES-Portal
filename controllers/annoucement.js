@@ -4,7 +4,8 @@ import { User } from '../models/User.js'
 export const addNew = (req, res) => {
     const { title, description, message } = req.body
 
-    User.findOne({ _id: req.auth._id })
+    User
+        .findOne({ _id: req.auth._id })
         .then((data) => {
             let annoucement = new  Announcement({
                 title: title,
@@ -33,9 +34,10 @@ export const addNew = (req, res) => {
 }
 
 export const getAll = (req, res) => {
-    Announcement.find({ status: 'publish'})
+    Announcement
+        .find({ status: 'publish' })
         .select('title description from')
-        .populate('from')
+        .populate({ path: "from", select: "-encpy_password-salt"})
         .then((data) => {
             if(data)    
                 return res.json(data)
@@ -53,7 +55,9 @@ export const getAll = (req, res) => {
 }   
 
 export const getOne = (req, res) => {
-    Announcement.findOne({ status: 'publish', _id: req.params.annoucementId})
+    Announcement
+        .findOne({ status: 'publish', _id: req.params.annoucementId})
+        .populate({ path: "from", select: "-encpy_password-salt"})
         .then((data) => {
             if(data)
                 return res.json(data)
@@ -74,7 +78,8 @@ export const getOne = (req, res) => {
 export const updateAnnouncement = (req, res) => {
     const { _id } = req.body
 
-Announcement.updateOne({ _id: _id }, req.body)
+    Announcement
+        .updateOne({ _id: _id }, req.body)
         .then((data) => {
             if(data) 
                 return res.json({
@@ -96,24 +101,39 @@ Announcement.updateOne({ _id: _id }, req.body)
 }
 export const deleteAnnoucement = (req, res) => {
     const { annoucementId } = req.body
-
-    Announcement.updateOne({ _id: annoucementId }, { status: 'delete'})
+    const userId = req.aut._id
+    Announcement
+        .findOne({ _id: req.params.annoucementId})
         .then((data) => {
-            if(data) 
-                return res.json({
-                    success: true,
-                    error: false,
-                    successMessage: "Deleted Announcement!"
-                })
-            else
+            if(data.author !== userId)
                 return res.status(400).json({
-                    error: true
+                    error: true,
+                    errorMessage: "Not Allowed!"
                 })
-        })
-        .catch((error) => {
-            res.status(400).json({
-                error: true,
-                errorMessage: error
+            Announcement.updateOne({ _id: annoucementId }, { status: 'delete'})
+                .then((data) => {
+                    if(data) 
+                        return res.json({
+                            success: true,
+                            error: false,
+                            successMessage: "Deleted Announcement!"
+                        })
+                    else
+                        return res.status(400).json({
+                            error: true
+                        })
+                })
+                .catch((error) => {
+                    res.status(400).json({
+                        error: true,
+                        errorMessage: error
+                    })
+                })
             })
-        })
+            .catch((error) => {
+                res.status(400).json({
+                    error: true,
+                    errorMessage: error
+                })
+            })
 }

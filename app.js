@@ -17,6 +17,8 @@ import { router as timeTableRoutes } from './routes/timetable.js'
 import { router as annoucementRouter} from './routes/announcement.js'
 import { router as policyRouter } from './routes/policy.js'
 import { router as studentRouter } from './routes/student.js'
+import { router as courseRouter} from './routes/course.js'
+import { router as postRouter } from './routes/post.js'
 import { schoolResource } from './models/School.js'
 import { subjectResource } from './models/Subject.js'
 import { courseResource } from './models/Course.js'
@@ -25,7 +27,7 @@ import { timeTableResource } from './models/Timetable.js'
 import { studentResource } from './models/Student.js'
 import { announcementResource } from './models/Announcement.js'
 import { policyResource } from './models/Policy.js'
-import { router as courseRouter} from './routes/course.js'
+import { postResource } from './models/Post.js'
 // import fs from 'fs'
 // import * as csv from 'csv'
 
@@ -100,7 +102,8 @@ const adminJs = new AdminJS({
         timeTableResource, 
         studentResource,
         announcementResource,
-        policyResource
+        policyResource,
+        postResource
     ],
     branding: {
         companyName: "SoCS Information System",
@@ -174,7 +177,10 @@ app.use('/api/annoucement', annoucementRouter)
 app.use('/api/policy', policyRouter)
 //Student Routes
 app.use('/api/student', studentRouter)
-app.ise('./api/courses', courseRouter)
+//Course Routes
+app.use('/api/courses', courseRouter)
+//Post Routes
+app.use('/api/post', postRouter)
 
 //Admin Js Routes
 app.use(adminJs.options.rootPath, router)
