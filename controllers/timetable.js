@@ -42,7 +42,6 @@ export const getTimeTableFaculty = (req, res) => {
         .then(result => {
             let array = []
             for(let i = 0; i < result.length; i++) {
-                console.log("1st")
                 for(let j = 0; j < result[i].eventSchema.length; j++) {
                     let object = {
                        batch: '',

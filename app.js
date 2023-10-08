@@ -8,6 +8,7 @@ import * as AdminJSMongoose from '@adminjs/mongoose'
 import MongoStore from 'connect-mongo'
 import path from "path"
 import compression from 'compression'
+import morgan from 'morgan'
 import rfs from 'rotating-file-stream'
 const __dirname = path.resolve()
 
@@ -33,21 +34,20 @@ import { studentResource } from './models/Student.js'
 import { announcementResource } from './models/Announcement.js'
 import { policyResource } from './models/Policy.js'
 import { postResource } from './models/Post.js'
-import morgan from 'morgan'
-// import fs from 'fs'
-// import * as csv from 'csv'
+import { rateLimiter } from './middlewares/rateLimit.js'
+
 
 //Enviroment File Configuration
 dotenv.config()
 
 //App Configs
 const PORT = process.env.PORT || 8000 //PORT
-const DB = process.env.DB || "" //DATABASE
 
 let accessLogStream = rfs.createStream('access.log', {
     interval: '1d', 
     path: path.join(__dirname, 'log')
 })
+
 //Admin Js Adapter
 AdminJS.registerAdapter({
     Resource: AdminJSMongoose.Resource,
@@ -58,7 +58,7 @@ AdminJS.registerAdapter({
 const app = express()
 
 //Database Connection
-mongoose.connect('mongodb+srv://adminn:GQV33TKzSr3YvQuf@test.jwbz8ex.mongodb.net/test', {
+mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     autoIndex:true,
@@ -171,17 +171,18 @@ app.use(express.static('public'))
 
 //CORS
 app.use(cors({
-    origin: ['http://localhost:3000'], 
+    origin: [`${process.env.ORIGIN}`], 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true,
-    
 }))
 
+//Request Limiter
+app.use(rateLimiter)
 //HTTP Logger
 app.use(morgan('combined', { stream: accessLogStream }))
 //Json parser
-app.use(json({ limit: '50mb'}))
+app.use(json({ limit: `${process.env.UPLOAD_LIMIT}`}))
 //Compression GZIP
 app.use(compression())
 //Auth Routes

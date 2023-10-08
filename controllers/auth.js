@@ -188,7 +188,7 @@ export const authenticateAdmin = (email, password) => {
 
 //Middleware For Bearer Token Check
 export const isSignedIn = expressjwt({
-    secret: 'mysecret',
+    secret: `sMWx4NyJMJ21aDee0ZOqN70a5YBCdeCO`,
     userProperty: 'auth',
     algorithms: ['SHA1', 'RS256', 'HS256'],
 })
