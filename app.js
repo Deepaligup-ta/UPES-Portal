@@ -6,9 +6,11 @@ import cors from 'cors'
 import AdminJSExpress from '@adminjs/express'
 import * as AdminJSMongoose from '@adminjs/mongoose'
 import MongoStore from 'connect-mongo'
-//Configs
-import { usersResource, User } from './models/User.js'
-import { designationResource } from './models/Designation.js'
+import path from "path"
+import compression from 'compression'
+import rfs from 'rotating-file-stream'
+const __dirname = path.resolve()
+
 //Controllers
 import { authenticateAdmin } from './controllers/auth.js'
 //Routes
@@ -19,7 +21,10 @@ import { router as policyRouter } from './routes/policy.js'
 import { router as studentRouter } from './routes/student.js'
 import { router as courseRouter} from './routes/course.js'
 import { router as postRouter } from './routes/post.js'
-import { schoolResource } from './models/School.js'
+//AdminJs Resources
+import { usersResource, User } from './models/User.js'
+import { designationResource } from './models/Designation.js'
+import { School, schoolResource } from './models/School.js'
 import { subjectResource } from './models/Subject.js'
 import { courseResource } from './models/Course.js'
 import { batchResource } from './models/Batch.js'
@@ -28,15 +33,21 @@ import { studentResource } from './models/Student.js'
 import { announcementResource } from './models/Announcement.js'
 import { policyResource } from './models/Policy.js'
 import { postResource } from './models/Post.js'
+import morgan from 'morgan'
 // import fs from 'fs'
 // import * as csv from 'csv'
 
+//Enviroment File Configuration
 dotenv.config()
 
 //App Configs
-const PORT = process.env.PORT || 8000
-const DB = process.env.DB || ""
+const PORT = process.env.PORT || 8000 //PORT
+const DB = process.env.DB || "" //DATABASE
 
+let accessLogStream = rfs.createStream('access.log', {
+    interval: '1d', 
+    path: path.join(__dirname, 'log')
+})
 //Admin Js Adapter
 AdminJS.registerAdapter({
     Resource: AdminJSMongoose.Resource,
@@ -157,37 +168,40 @@ const router = AdminJSExpress.buildAuthenticatedRouter(
 )
 //Use static sources
 app.use(express.static('public'))
+
 //CORS
 app.use(cors({
     origin: ['http://localhost:3000'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials: true
+    credentials: true,
+    
 }))
 
+//HTTP Logger
+app.use(morgan('combined', { stream: accessLogStream }))
 //Json parser
-app.use(json())
+app.use(json({ limit: '50mb'}))
+//Compression GZIP
+app.use(compression())
 //Auth Routes
 app.use('/api/auth', authRoutes)
 //Timetable Routes
 app.use('/api/timetable', timeTableRoutes)
 //Annoucement Routes
-app.use('/api/annoucement', annoucementRouter)
+app.use('/api/announcement', annoucementRouter)
 //Policy Routes
 app.use('/api/policy', policyRouter)
 //Student Routes
 app.use('/api/student', studentRouter)
-<<<<<<< HEAD
 //Course Routes
-app.use('/api/courses', courseRouter)
+app.use('/api/course', courseRouter)
 //Post Routes
 app.use('/api/post', postRouter)
-=======
-app.use('./api/courses', courseRouter)
->>>>>>> 6d3b69a7948af7556e049ff2dff09dc2a083628d
-
-//Admin Js Routes
 app.use(adminJs.options.rootPath, router)
+app.use((req, res, next) => {
+    res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'))
+})
 
 
 app.listen(PORT, () => {

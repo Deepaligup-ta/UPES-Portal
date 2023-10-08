@@ -30,6 +30,9 @@ const userSchema = new mongoose.Schema({
         enum: ["disabled", "suspened", "active"],
         default: 'disabled'
     },
+    profilePic: {
+        type: String
+    },
     changePassword: {
         type: String,
         enum: ["yes", "no"],

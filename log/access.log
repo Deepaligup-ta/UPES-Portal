@@ -1,0 +1,3 @@
+::1 - - [08/Oct/2023:16:02:16 +0000] "GET /api/timetable/faculty HTTP/1.1" 304 - "http://localhost:8000/management/timetable" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+::1 - - [08/Oct/2023:16:03:15 +0000] "GET /api/auth/current HTTP/1.1" 200 350 "http://localhost:8000/management/profile" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+::1 - - [08/Oct/2023:16:03:57 +0000] "GET /api/auth/profilepic HTTP/1.1" 200 - "http://localhost:8000/management/profile" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"

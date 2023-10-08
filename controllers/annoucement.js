@@ -1,3 +1,4 @@
+import { cache } from "../middlewares/cache.js"
 import { Announcement } from "../models/Announcement.js"
 import { User } from '../models/User.js'
 
@@ -34,30 +35,48 @@ export const addNew = (req, res) => {
 }
 
 export const getAll = (req, res) => {
+    const pageOptions = {
+        page: req.query.page || 1,
+        limit: req.query.limit || 8,
+        sort: { createdAt: -1 },
+        populate: { path: 'from', select: 'firstName sapId designations'}
+    }
     Announcement
-        .find({ status: 'publish' })
-        .select('title description from')
-        .populate({ path: "from", select: "-encpy_password-salt"})
-        .then((data) => {
-            if(data)    
-                return res.json(data)
-            else 
+        .paginate({
+            status: 'publish'
+        }, pageOptions, (err, result) => {
+            if(err)
                 return res.status(400).json({
-                    error: true
+                    error: true,
+                    errorMessage: err
                 })
+            res.json(result)
         })
-        .catch((error) => {
-            res.status(400).json({
-                error: true,
-                errorMessage: error
-            })
-        })
+    // Announcement
+    //     .find({ status: 'publish' })
+    //     .select('title description from')
+    //     .populate({ path: "from", select: "firstName sapId designations"})
+    //     .then((data) => {
+    //         if(data)    
+    //             return res.json(data)
+    //         else 
+    //             return res.status(400).json({
+    //                 error: true
+    //             })
+    //     })
+    //     .catch((error) => {
+    //         res.status(400).json({
+    //             error: true,
+    //             errorMessage: error
+    //         })
+    //     })
 }   
 
 export const getOne = (req, res) => {
+    
     Announcement
-        .findOne({ status: 'publish', _id: req.params.annoucementId})
-        .populate({ path: "from", select: "-encpy_password-salt"})
+        .findOne({ status: 'publish', _id: req.params.announcementId})
+        .populate({ path: "from", select: "-encpy_password -salt"})
         .then((data) => {
             if(data)
                 return res.json(data)
@@ -101,11 +120,11 @@ export const updateAnnouncement = (req, res) => {
 }
 export const deleteAnnoucement = (req, res) => {
     const { annoucementId } = req.body
-    const userId = req.aut._id
+    const userId = req.auth._id
     Announcement
         .findOne({ _id: req.params.annoucementId})
         .then((data) => {
-            if(data.author !== userId)
+            if(String(data.from) !== userId)
                 return res.status(400).json({
                     error: true,
                     errorMessage: "Not Allowed!"

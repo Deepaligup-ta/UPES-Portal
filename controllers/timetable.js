@@ -53,10 +53,8 @@ export const getTimeTableFaculty = (req, res) => {
                         day: ''
                     }
                     //res.json(result[i].eventSchema[i])\
-                    console.log(String(result[i].eventSchema[j].faculty))
 
                     if(String(result[i].eventSchema[j].faculty) === userId)  {
-                        console.log("if")
                         const obj = result[i].eventSchema[j]
                         object.batch = obj.batch.course.courseName+'_Sem-'+obj.batch.currentSemester+'_Batch_'+obj.batch._id
                         object.start = obj.start
@@ -65,11 +63,7 @@ export const getTimeTableFaculty = (req, res) => {
                         object.room = obj.roomNumber
                         object.day = obj.day
                         array.push(object)
-                        console.log(array)
-                    }else {
-                        console.log("else")
                     }
-                    
                     
                 }  
                 if (i === result.length) {

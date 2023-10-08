@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import mongoosePaginate from 'mongoose-paginate-v2'
 
 
 const announcementSchema = mongoose.Schema({
@@ -21,7 +22,7 @@ const announcementSchema = mongoose.Schema({
 
 }, { timestamps: true })
 
-
+announcementSchema.plugin(mongoosePaginate)
 export const Announcement = mongoose.model('Annoucement', announcementSchema)
 export const announcementResource = {
     resource: Announcement,

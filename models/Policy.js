@@ -3,8 +3,9 @@ import { mongoose } from 'mongoose'
 
 const policySchema = mongoose.Schema({
     policyName: String,
+    policyDescription: String,
     policyFile: {
-        type: Buffer
+        type: String
     },
     school: {
         type: mongoose.ObjectId,
@@ -12,7 +13,8 @@ const policySchema = mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["delete", "publish"]
+        enum: ["delete", "publish"],
+        default: 'publish'
     }
     
 }, { timestamps: true })

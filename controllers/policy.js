@@ -12,8 +12,9 @@ export const getAllPolicy = (req, res) => {
                 })
             Policy.find({
                 school: user.school,
-                status: (user.role === "mangement" ? '*' : 'publish')
+                status: 'publish'
             })
+            .select('-policyFile')
             .then((policy) => {
                 if(!policy)
                     return res.status(400).json({
@@ -37,18 +38,9 @@ export const getAllPolicy = (req, res) => {
         })
 }
 export const getPolicy = (req ,res) => {
-    const userId = req.auth._id
     const policyId = req.params.policyId
-    User.findOne({ _id: userId })
-        .then((user) => {
-            if(!user) 
-                return res.status(400).json({
-                    erorr: true
-                })
             Policy.findOne({
-                _id: policyId,
-                school: user.school,
-                status: "publish"
+                _id: policyId
             })
             .then((policy) => {
                 if(!policy)
@@ -64,19 +56,12 @@ export const getPolicy = (req ,res) => {
                     errorMessage: error
                 })
             })
-        })
-        .catch((erorr) => {
-            return res.status(400).json({
-                erorr: true,
-                errorMessage: erorr
-            })
-        })
 }
 
 export const deletePolicy = (req, res) => {
     const userId = req.auth._id
     const policyId = req.params.policyId
-    User.findOne({ _id: userId, designations: "dean" })
+    User.findOne({ _id: userId })
         .then((user) => {
             if(!user) 
                 return res.status(400).json({
@@ -85,7 +70,7 @@ export const deletePolicy = (req, res) => {
             Policy.updateOne({
                 _id: policyId
             },
-            { status: "delete"})
+            { status: "delete" })
             .then((policy) => {
                 if(!policy)
                     return res.status(400).json({
@@ -114,7 +99,7 @@ export const deletePolicy = (req, res) => {
 
 export const updatePolicy = (req, res) => {
     const userId = req.auth._id
-    const { policyId, policyName, policyFile } = req.body
+    const { policyId, policyName, policyFile, policyDescription } = req.body
     User.findOne({ _id: userId })
         .then((user) => {
             
@@ -123,7 +108,8 @@ export const updatePolicy = (req, res) => {
                     _id: policyId 
                 }, { 
                     policyFile: policyFile, 
-                    policyName: policyName
+                    policyName: policyName,
+                    policyDescription: policyDescription
                 })
                 .then((update) => {
                     if(!update)
@@ -152,26 +138,28 @@ export const updatePolicy = (req, res) => {
 
 export const addPolicy = (req, res) => {
     const userId = req.auth._id
-    const { policyName, policyFile } = req.body
+    const { policyName, policyFile, policyDescription } = req.body
     User.findOne({ _id: userId })
         .then((user) => {
-            if(user.designations != "dean" ){
-                return res.status(400).json({
-                    error: true,
-                    errorMessage: "You are not allowed!"
-                })
-            }
+            // if(user.designations != "dean" ){
+            //     return res.status(400).json({
+            //         error: true,
+            //         errorMessage: "You are not allowed!"
+            //     })
+            // }
             let policy = new Policy({
+                policyDescription: policyDescription,
                 policyName: policyName,
                 policyFile: policyFile,
                 school: user.school
             })
             policy.save()
                     .then((save) => {
-                        if(!save)
+                        if(!save){
                             return res.status(400).json({
                                 error: true
                             })
+                        }
                         res.json({
                             success: true,
                             data: save

@@ -58,7 +58,7 @@ export const updatePost = (req, res) => {
                     error: true
                 })
 
-            if(post.author !== userId)
+            if(String(post.author) !== userId)
                 return res.status(401).json({
                     error: true,
                     errorMessage: "You are not allowed!"
@@ -97,14 +97,14 @@ export const deletePost = (req, res) => {
     const userId = req.auth._id
     const postId = req.body._id
     Post
-        .findOne({ _id: postId })
+        .findOne({ _id: postId  })
         .then((post) => {
             if(!post)
                 return res.status(400).json({
                     error: true
                 })
 
-            if(post.author !== userId)
+            if(String(post.author) !== userId)
                 return res.status(401).json({
                     error: true,
                     errorMessage: "You are not allowed!"
@@ -143,7 +143,7 @@ export const getPost = (req, res) => {
     const postId = req.params.postId
 
     Post
-        .findOne({ _id: postId })
+        .findOne({ _id: postId, status: "publish" })
         .populate({ path: 'author', select: '-encpy_password-salt'})
         .then((post) => {
             if(!post)
@@ -163,7 +163,7 @@ export const getPost = (req, res) => {
 export const getPosts = (req ,res) => {
 
     Post
-        .find()
+        .find({ status: ["publish"] })
         .populate({ path: 'author', select: 'firstName'})
         .then((posts) => {
             if(!posts)

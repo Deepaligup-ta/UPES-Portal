@@ -131,6 +131,7 @@ export const getCourses = (req, res) => {
             .find({
                 school: user.school
             })
+            .populate('school')
             .then((course) => {
                 if(!course)
                     return res.status(400).json({
@@ -158,6 +159,7 @@ export const getCourse = (req, res) => {
         .findOne({
             _id: req.params.courseId
         })
+        .populate('school')
         .then((course) => {
             if(!course)
                 return res.status(400).json({

@@ -1,18 +1,11 @@
 import { User } from '../models/User.js'
 
 export const getFaculty = (req, res) => {
-    const userId = req.auth._id
-
-    User.findOne({ _id: userId })
-        .then((user) => {
-            if(!user)    
-                return res.status(400).json({
-                    error: true
-                })
-            User.findOne({
-                _id: req.params.facultyId
-            })
-            .select("-salt-encpy_password")
+    User
+        .findOne({
+            _id: req.params.userId
+        })
+        .select("-salt -encpy_password")
             .then((faculty) => {
                 if(!faculty)
                     return res.status(400).json({
@@ -24,50 +17,58 @@ export const getFaculty = (req, res) => {
             .catch((error) => {
                 res.status(400).json({
                     error: true,
-                    errorMessage: error
+                    errorMessage: error,
                 })
             })
-        })
-        .catch((error) => {
-            res.status(400).json({
-                error: true,
-                errorMessage: error
-            })
-        })
+      
 }
 
 export const getAllFaculty = (req, res) => {
     const userId = req.auth._id
-
-    User.findOne({ _id: userId })
-        .then((user) => {
-            if(!user)    
+    const pageOptions = {
+        page: req.query.page || 1,
+        limit: req.query.limit || 10,
+        select: 'sapId firstName lastName email reportingManager',
+        populate: { path: 'reportingManager', select: 'firstName sapId'}
+    }
+    User
+        .paginate({}, pageOptions, (err, result) => {
+            if(err)
                 return res.status(400).json({
-                    error: true
-                })
-            User.find({
-                school: user.school
-            })
-            .select("-salt-encpy_password")
-            .then((users) => {
-                if(!users)
-                    return res.status(400).json({
-                        error: true
-                    })
-                
-                res.json(users)
-            })
-            .catch((error) => {
-                res.status(400).json({
                     error: true,
-                    errorMessage: error
+                    errorMessage: err
                 })
-            })
+            res.json(result)
         })
-        .catch((error) => {
-            res.status(400).json({
-                error: true,
-                errorMessage: error
-            })
-        })
+    // User.findOne({ _id: userId })
+    //     .then((user) => {
+    //         if(!user)    
+    //             return res.status(400).json({
+    //                 error: true
+    //             })
+    //         User.find({
+    //             school: user.school
+    //         })
+    //         .select("-salt -encpy_password")
+    //         .then((users) => {
+    //             if(!users)
+    //                 return res.status(400).json({
+    //                     error: true
+    //                 })
+                
+    //             res.json(users)
+    //         })
+    //         .catch((error) => {
+    //             res.status(400).json({
+    //                 error: true,
+    //                 errorMessage: error
+    //             })
+    //         })
+    //     })
+    //     .catch((error) => {
+    //         res.status(400).json({
+    //             error: true,
+    //             errorMessage: error
+    //         })
+    //     })
 }

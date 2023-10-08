@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4d36de84.css",
+    "main.js": "/static/js/main.31659423.js",
+    "static/media/upes-web-banner.mp4": "/static/media/upes-web-banner.791a63f9b1790bc170fe.mp4",
+    "static/media/upesfull.png": "/static/media/upesfull.be2de1f8e694f3463c68.png",
+    "index.html": "/index.html",
+    "main.4d36de84.css.map": "/static/css/main.4d36de84.css.map",
+    "main.31659423.js.map": "/static/js/main.31659423.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d36de84.css",
+    "static/js/main.31659423.js"
+  ]
+}

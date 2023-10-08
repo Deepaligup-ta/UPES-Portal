@@ -5,13 +5,13 @@ import crypto from 'crypto'
 
 //Create Hashed Password
 const createHash = (plainText, salt) => {
-    console.log(plainText)
     return crypto.createHmac('sha256', salt).update(`${plainText}`).digest('hex')
 }
 
 //Get User By SAPID
 const getUser = (sapId) => {
     return User.findOne({sapId})
+            .select('-profilePic -salt -encpy_password')
             .then(user => {
                 if(!user)
                     return null
@@ -29,7 +29,6 @@ export const signin = (req, res) => {
     
     User.findOne({sapId})
         .then(user => {
-            console.log(user)
             if(!user)
                 return res.status(401).json({ error: true, message: "User Or Password Is Incorrect!"})
             if(!user.authenticate(password))
@@ -43,7 +42,7 @@ export const signin = (req, res) => {
             let time = new Date()
             const { _id, firstName, lastName, sapId, designations, role } = user
             time.setTime(time.getTime() + (1800 * 1000))
-            res.cookie('socis', token,  { expire: time })
+            res.cookie('socis', token,  { expire: time, path: '/', domain: 'localhost' })
             if(user.changePassword === "yes")
                 return res.json({
                     token,
@@ -55,6 +54,14 @@ export const signin = (req, res) => {
                 user: { _id, firstName, lastName, sapId, designations, role }
             })
         })  
+}
+
+export const loggout = (req, res) => {
+    res.clearCookie('socis', { path: '/', domain: 'localhost', expires: new Date(1) })
+    res.status(200).json({
+        logout: true,
+        redirect: true
+    })
 }
 
 export const changePassword = (req, res) => {
@@ -113,9 +120,24 @@ export const getUsers = (req, res) => {
             res.json(result)
         })
 }
+export const getFaculty = (req, res) => {
+    User.findOne({ _id: req.params.userId })
+        .select('-salt -encpy_password -profilePic')
+        .populate({ path: 'reportingManager', select: 'firstName lastName sapId email designations'})
+        .then((user) => {
+            res.json(user)
+        })
+        .catch((error) => {
+            return res.status(400).json({
+                error: true,
+                errorMessage: error
+            })
+        })
+}
 
 //Get User By SAP Id
 export const getUserById = (req, res) => {
+    
     const { sapId } = req.auth
 
     getUser(sapId)
@@ -125,8 +147,6 @@ export const getUserById = (req, res) => {
                     error: true,
                     errorMesssage: "User is not allowed!"
                 })
-            user.encpy_password = undefined
-            user.salt = undefined
             res.json(user)
         })
         .catch(error => {
@@ -141,6 +161,7 @@ export const getUserById = (req, res) => {
 //Admin Signin Function
 export const authenticateAdmin = (email, password) => {
     return User.findOne({email})
+                .select('-profilePic')
                 .then((user) => {
                     if(!user) 
                         return { error1 : true }
@@ -169,15 +190,48 @@ export const authenticateAdmin = (email, password) => {
 export const isSignedIn = expressjwt({
     secret: 'mysecret',
     userProperty: 'auth',
-    algorithms: ['sha1', 'RS256', 'HS256'],
+    algorithms: ['SHA1', 'RS256', 'HS256'],
 })
 
-export const loggout = (req, res) => {
-    res.clearCookie('socis');
-    res.json({
-        logout: true
-    })
+export const getProfilePic = (req, res) => {
+    const userId = req.auth._id
+    User    
+        .findOne({ _id: userId })
+        .select('profilePic')
+        .then((pic) => {
+            res.json(pic)
+        })
+        .catch((error) => {
+            res.status(400).json({
+                error: true,
+                errorMessage: error
+            })
+        })
 }
+
+export const uploadProfile = (req, res) => {
+    const userId = req.auth._id
+    User
+        .updateOne({ _id: userId }, { profilePic: req.body.profilePic })
+        .then((update) => {
+            if(!update)
+                return res.status(400).json({
+                    error: true
+                })
+
+            res.json({
+                success: true,
+                dbResponse: update
+            })
+        })
+        .catch((error) => {
+            res.status(400).json({
+                error: true,
+                errorMessage: error
+            })
+        })
+}
+
 
 //Middleware For Check If The User Is Valid
 export const isAuthenticated = (req, res, next) => {
