@@ -1,0 +1,36 @@
+.timetable-page{
+    margin-right: 10rem;
+    /* margin-top: 2rem; */
+    padding-left: 10px;
+}
+.group{
+      position: fixed;
+      
+
+}
+.overlap-group {
+    width: 100vw;
+    height: 12vh;
+      background-color: #0a6480;
+  box-shadow: 0px 4px 4px #00000040;
+  position: relative;
+  margin-left: 5rem;
+    
+}
+ .text-wrapper {
+  color: #ffffff;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 40px;
+  padding-left: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 36px;
+}
+.rbc-time-header-cell {
+  height: 100px;
+}
+.rbc-timeslot-group{
+  min-height: 75px;
+}
