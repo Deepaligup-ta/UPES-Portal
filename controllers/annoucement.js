@@ -3,7 +3,7 @@ import { Announcement } from "../models/Announcement.js"
 import { User } from '../models/User.js'
 
 export const addNew = (req, res) => {
-    const { title, description, message } = req.body
+    const { title, description, message, to } = req.body
 
     User
         .findOne({ _id: req.auth._id })
@@ -13,6 +13,7 @@ export const addNew = (req, res) => {
                 description: description,
                 message: message,
                 from: req.auth._id,
+                to: (to ? [to] : []),
                 school: data.school
             })
             annoucement.save()
@@ -43,7 +44,7 @@ export const getAll = (req, res) => {
     }
     Announcement
         .paginate({
-            status: 'publish'
+            status: 'publish',
         }, pageOptions, (err, result) => {
             if(err)
                 return res.status(400).json({
@@ -78,8 +79,9 @@ export const getOne = (req, res) => {
         .findOne({ status: 'publish', _id: req.params.announcementId})
         .populate({ path: "from", select: "-encpy_password -salt"})
         .then((data) => {
-            if(data)
+            if(data){
                 return res.json(data)
+            }
             else
                 return res.status(400).json({
                     error: true

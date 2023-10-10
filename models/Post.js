@@ -1,5 +1,5 @@
 import mongoose  from "mongoose"
-
+import mongoosePaginate from 'mongoose-paginate-v2'
 const postSchema = mongoose.Schema({
     title: String,
     excerpt: String,
@@ -18,6 +18,8 @@ const postSchema = mongoose.Schema({
         default: 'publish'
     }
 }, { timestamps: true })
+
+postSchema.plugin(mongoosePaginate)
 
 export const Post = mongoose.model('Post', postSchema)
 

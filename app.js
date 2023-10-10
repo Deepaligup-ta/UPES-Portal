@@ -22,18 +22,22 @@ import { router as policyRouter } from './routes/policy.js'
 import { router as studentRouter } from './routes/student.js'
 import { router as courseRouter} from './routes/course.js'
 import { router as postRouter } from './routes/post.js'
+import { router as messageRouter } from './routes/message.js'
+import { router as groupRouter } from './routes/group.js'
 //AdminJs Resources
 import { usersResource, User } from './models/User.js'
 import { designationResource } from './models/Designation.js'
-import { School, schoolResource } from './models/School.js'
+import { schoolResource } from './models/School.js'
 import { subjectResource } from './models/Subject.js'
 import { courseResource } from './models/Course.js'
 import { batchResource } from './models/Batch.js'
 import { timeTableResource } from './models/Timetable.js'
 import { studentResource } from './models/Student.js'
 import { announcementResource } from './models/Announcement.js'
+import { messageResource } from './models/Message.js'
 import { policyResource } from './models/Policy.js'
 import { postResource } from './models/Post.js'
+import { groupResource } from './models/Group.js'
 import { rateLimiter } from './middlewares/rateLimit.js'
 
 
@@ -114,7 +118,9 @@ const adminJs = new AdminJS({
         studentResource,
         announcementResource,
         policyResource,
-        postResource
+        postResource,
+        messageResource,
+        groupResource
     ],
     branding: {
         companyName: "SoCS Information System",
@@ -167,11 +173,11 @@ const router = AdminJSExpress.buildAuthenticatedRouter(
     }
 )
 //Use static sources
-app.use(express.static('public'))
+app.use(express.static('public', { maxAge: 172800000 }))
 
 //CORS
 app.use(cors({
-    origin: [`${process.env.ORIGIN}`], 
+    origin: [`${process.env.ORIGIN}`, 'http://localhost:3000'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true,
@@ -199,11 +205,16 @@ app.use('/api/student', studentRouter)
 app.use('/api/course', courseRouter)
 //Post Routes
 app.use('/api/post', postRouter)
+//Message Routes
+app.use('/api/message', messageRouter)
+//Group Routes
+app.use('/api/group', groupRouter)
+//AdminJS Router
 app.use(adminJs.options.rootPath, router)
+//Redirect To React Only
 app.use((req, res, next) => {
     res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'))
 })
-
 
 app.listen(PORT, () => {
     console.log(`Server Running At PORT: ${PORT}`)

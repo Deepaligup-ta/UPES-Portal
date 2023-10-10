@@ -2,6 +2,7 @@ import { User } from '../models/User.js'
 import jwt from 'jsonwebtoken'
 import { expressjwt } from 'express-jwt'
 import crypto from 'crypto'
+import { cache } from '../middlewares/cache.js'
 
 //Create Hashed Password
 const createHash = (plainText, salt) => {
@@ -102,6 +103,20 @@ export const changePassword = (req, res) => {
         })
 }
 
+export const getAllUser = (req, res) => {
+    User.find()
+        .select('firstName lastName sapId email designations')
+        .then((users) => {
+            res.json(users)
+        })
+        .catch((error) => {
+            res.status(400).json({
+                error: true,
+                errorMessage: error
+            })
+        })
+}
+
 
 export const getUsers = (req, res) => {
     const pageOptions = {
@@ -194,7 +209,12 @@ export const isSignedIn = expressjwt({
 })
 
 export const getProfilePic = (req, res) => {
-    const userId = req.auth._id
+    let userId = null
+    if(req.query.userId) {
+        userId = req.query.userId
+    }else {
+        userId = req.auth._id
+    }
     User    
         .findOne({ _id: userId })
         .select('profilePic')
@@ -235,7 +255,7 @@ export const uploadProfile = (req, res) => {
 
 //Middleware For Check If The User Is Valid
 export const isAuthenticated = (req, res, next) => {
-    getUser(req.auth.user.sapId)
+    getUser(req.auth_id)
         .then(user => {
             if(!user)
                 return res.status(401).json({ error: true, errorMessage: "Not Authenticated" })

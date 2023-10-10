@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "nodemon app.js"
+    "test": "nodemon app.js",
+    "gen_vapid_keys": " web-push generate-vapid-keys [--json]"
   },
   "author": "Bhupender Singh",
   "license": "ISC",
@@ -31,7 +32,8 @@
     "nodemailer": "^6.9.5",
     "rate-limiter-flexible": "^3.0.0",
     "redis": "^4.6.10",
-    "rotating-file-stream": "^3.1.1"
+    "rotating-file-stream": "^3.1.1",
+    "web-push": "^3.6.6"
   },
   "type": "module"
 }

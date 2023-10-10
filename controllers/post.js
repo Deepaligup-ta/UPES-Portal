@@ -144,7 +144,7 @@ export const getPost = (req, res) => {
 
     Post
         .findOne({ _id: postId, status: "publish" })
-        .populate({ path: 'author', select: '-encpy_password-salt'})
+        .populate({ path: 'author', select: 'firstName lastName sapId designations'})
         .then((post) => {
             if(!post)
                 return res.status(400).json({
@@ -161,22 +161,38 @@ export const getPost = (req, res) => {
 }
 
 export const getPosts = (req ,res) => {
-
+    const pageOptions = {
+        page: req.query.page || 1,
+        limit: req.query.limit || 10,
+        sort: { createdAt: -1 },
+        populate: { path: 'author', select: 'firstName sapId designations' }
+    }
     Post
-        .find({ status: ["publish"] })
-        .populate({ path: 'author', select: 'firstName'})
-        .then((posts) => {
-            if(!posts)
+        .paginate({
+            status: 'publish',
+        }, pageOptions, (err, result) => {
+            if(err)
                 return res.status(400).json({
-                    error: true
+                    error: true,
+                    errorMessage: err
                 })
-            res.json(posts)
+            res.json(result)
         })
-        .catch((error) => {
-            res.status(400).json({
-                error: true,
-                errorMessage: error
-            })
-        })
+    // Post
+    //     .find({ status: ["publish"] })
+    //     .populate({ path: 'author', select: 'firstName'})
+    //     .then((posts) => {
+    //         if(!posts)
+    //             return res.status(400).json({
+    //                 error: true
+    //             })
+    //         res.json(posts)
+    //     })
+    //     .catch((error) => {
+    //         res.status(400).json({
+    //             error: true,
+    //             errorMessage: error
+    //         })
+    //     })
 }
 
