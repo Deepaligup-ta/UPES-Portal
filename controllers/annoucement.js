@@ -18,6 +18,7 @@ export const addNew = (req, res) => {
             })
             annoucement.save()
                 .then((data_1) => {
+                    cache.del('')
                     res.json(data_1)
                 })
                 .catch((error) => {
@@ -51,6 +52,7 @@ export const getAll = (req, res) => {
                     error: true,
                     errorMessage: err
                 })
+            cache.set(req.url, result)
             res.json(result)
         })
     // Announcement

@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "65117dcf060848f9e7a1ddfc"
+  },
+  "course": {
+    "$oid": "651146f9d6059fddb7932773"
+  },
+  "classCoordinator": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "students": [],
+  "createdAt": {
+    "$date": "2023-09-25T12:32:15.577Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-26T04:19:45.381Z"
+  },
+  "__v": 0,
+  "currentSemester": 1,
+  "timetable": {
+    "$oid": "65117e32060848f9e7a1de28"
+  },
+  "batchName": "BCA_1"
+},
+{
+  "_id": {
+    "$oid": "651259a099fa9d2f4abe946e"
+  },
+  "course": {
+    "$oid": "651146f9d6059fddb7932773"
+  },
+  "classCoordinator": {
+    "$oid": "65165aacfb68dbc510e89bce"
+  },
+  "currentSemester": 2,
+  "students": [],
+  "createdAt": {
+    "$date": "2023-09-26T04:10:08.305Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-06T04:14:23.860Z"
+  },
+  "__v": 0,
+  "batchName": "BCA_2",
+  "timetable": {
+    "$oid": "651264e5292406223c8c9740"
+  }
+},
+{
+  "_id": {
+    "$oid": "65180dafaed62737bcf4c7c6"
+  },
+  "batchName": "BTECH_B1",
+  "course": {
+    "$oid": "65180d89aed62737bcf4c7a0"
+  },
+  "classCoordinator": {
+    "$oid": "65165aacfb68dbc510e89bcc"
+  },
+  "currentSemester": 1,
+  "students": [],
+  "createdAt": {
+    "$date": "2023-09-30T11:59:43.446Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-06T04:15:03.877Z"
+  },
+  "__v": 0,
+  "timetable": {
+    "$oid": "65180e02aed62737bcf4c857"
+  }
+}]

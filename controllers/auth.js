@@ -3,14 +3,23 @@ import jwt from 'jsonwebtoken'
 import { expressjwt } from 'express-jwt'
 import crypto from 'crypto'
 import { cache } from '../middlewares/cache.js'
+import { error } from 'console'
 
 //Create Hashed Password
-const createHash = (plainText, salt) => {
+const createHash = async (plainText, salt) => {
     return crypto.createHmac('sha256', salt).update(`${plainText}`).digest('hex')
 }
 
 //Get User By SAPID
-const getUser = (sapId) => {
+const getUser =  (sapId) => {
+
+    // try {
+    //     const user = await User.findOne({sapId}).select("-profilePic -salt -encpy_password")
+    //     return user
+    // }catch(error){
+    //     return null
+    // }
+
     return User.findOne({sapId})
             .select('-profilePic -salt -encpy_password')
             .then(user => {
@@ -65,48 +74,76 @@ export const loggout = (req, res) => {
     })
 }
 
-export const changePassword = (req, res) => {
+export const changePassword =  (req, res) => {
 
     const { password, newpassword } = req.body
     const { sapId } = req.auth.user
-    getUser(sapId)
+    User
+        .findOne({sapId})
         .then(user => {
-
             if(!user) 
                 return res.status(400).json({ error: true, errorMessage: "User Not Found!" })
             if(user.changePassword === "no")
                 return res.status(400).json({ error: true, errorMessage: "Can't make this request"})
-            const hashpaswrod = createHash(password, user.salt)
-            if(hashpaswrod !== user.encpy_password)
-                return res.status(400).json({ error: true, errorMessage: "Old Password Is Not Correct" })
-
-            const newHashPassword = createHash(newpassword, user.salt)
-
-            if(newHashPassword === user.encpy_password)
+            createHash(password, user.salt)
+                .then((pass) => {
+                    if(pass !== user.encpy_password)
+                        return res.status(400).json({ error: true, errorMessage: "Old Password Is Not Correct" })
+                    createHash(newpassword, user.salt)
+                        .then((newpass) => {
+                            if(newpass === user.encpy_password)
+                                return res.status(400).json({
+                                    error: true,
+                                    errorMessage: "New Passsword Is Same As Old Password"
+                                })
+                            User.updateOne({sapId}, { encpy_password: newpass, changePassword: "no" })
+                                .then(update => {
+                                    if(update)
+                                        return res.json({ success: true, successMessage: "Password Changed!", redirect: true })
+                                    else    
+                                        return res.status(400).json({ error: true, errorMessage: "Error Updating Password!" })
+                                })
+                                .catch(error => {
+                                    return res.status(400).json({
+                                        error: true,
+                                        errorMessage: error
+                                    })
+                                })
+                        })
+                        .catch((error) => {
+                            return res.status(400).json({
+                                error: true,
+                                errorMessage: "Unknown Error!"
+                            })
+                        })
+                    
+                })
+                .catch((error) => {
+                    return res.status(400).json({ error: true, errorMessge: "Unknown error"})
+                })
+            })
+            .catch((error) => {
                 return res.status(400).json({
                     error: true,
-                    errorMessage: "New Passsword Is Same As Old Password"
+                    errorMessage: error
                 })
-            User.updateOne({sapId}, { encpy_password: newHashPassword, changePassword: "no" })
-                .then(update => {
-                    if(update)
-                        return res.json({ success: true, successMessage: "Password Changed!", redirect: true })
-                    else    
-                        return res.status(400).json({ error: true, errorMessage: "Error Updating Password!" })
-                })
-                .catch(error => {
-                    return res.status(400).json({
-                        error: true,
-                        err: error
-                    })
-                })
-        })
+            })
+            
 }
 
 export const getAllUser = (req, res) => {
-    User.find()
-        .select('firstName lastName sapId email designations')
+    // try {
+    //     const users = await User.find().select('firstName lastName sapId email designations')
+    //     res.json(users)
+    // }catch(error) {
+    //     res.status(400).json({
+    //         error: true,
+    //         errorMessage: error
+    //     })
+    // }
+    User.find().select('firstName lastName sapId email designations')
         .then((users) => {
+            cache.set(req.url, users)
             res.json(users)
         })
         .catch((error) => {
@@ -153,8 +190,7 @@ export const getFaculty = (req, res) => {
 //Get User By SAP Id
 export const getUserById = (req, res) => {
     
-    const { sapId } = req.auth
-
+    const { sapId } = req.auth.user
     getUser(sapId)
         .then(user => {
             if(user.activeAccount === 'suspend' || user.activeAccount === 'disabled')
@@ -180,8 +216,7 @@ export const authenticateAdmin = (email, password) => {
                 .then((user) => {
                     if(!user) 
                         return { error1 : true }
-                    const password1 = createHash(`${password}`, `${user.salt}`)
-                    if(user.encpy_password !== password1)
+                    if(!user.authenticate(password))
                         return { error2: true }
                 
                     if(user.role !== "admin")
@@ -254,7 +289,21 @@ export const uploadProfile = (req, res) => {
 
 
 //Middleware For Check If The User Is Valid
-export const isAuthenticated = (req, res, next) => {
+export const isAuthenticated =  (req, res, next) => {
+    // try {
+    //     const user = await getUser(req.auth._id)
+    //     if(user){
+    //         req.auth.user.role = user.role
+    //         next()
+    //     }
+
+    // }catch(error) {
+    //     res.status(401).json({
+    //         error: true,
+    //         errorMessage: "Not Authenticated!"
+    //     })
+    // }
+
     getUser(req.auth_id)
         .then(user => {
             if(!user)
@@ -269,7 +318,7 @@ export const isAuthenticated = (req, res, next) => {
 }
 
 //Middleware For Check If User Is Faculty
-export const isFaculty = (req, res, next) => {
+export const isFaculty = async (req, res, next) => {
     if(req.auth.user.role === "faculty")
         next()
     else
@@ -277,7 +326,7 @@ export const isFaculty = (req, res, next) => {
 }
 
 //Middleware For Check If User Is Management
-export const isManagement = (req, res, next) => {
+export const isManagement = async (req, res, next) => {
     if(req.auth.user.role === 'admin')
         next()
     if(req.auth.user.role !== 'management')

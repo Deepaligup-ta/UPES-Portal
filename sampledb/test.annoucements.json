@@ -1,0 +1,168 @@
+[{
+  "_id": {
+    "$oid": "6522cceecdbd1611f0b33423"
+  },
+  "title": "New Announcement",
+  "message": "New Message",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-08T15:38:22.958Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-08T15:38:22.958Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6522ccefcdbd1611f0b33427"
+  },
+  "title": "New Announcement",
+  "message": "New Message",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-08T15:38:23.457Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-08T15:38:23.457Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6522cd5917fae83dbd843574"
+  },
+  "title": "New",
+  "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-08T15:40:09.883Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T05:08:45.534Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6523add83eca3194202f91f0"
+  },
+  "title": "1",
+  "message": "1",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-09T07:38:00.413Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T07:38:00.413Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6523adde3eca3194202f91f6"
+  },
+  "title": "1",
+  "message": "1",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-09T07:38:06.248Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T07:38:06.248Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6523c4cec43e7a02fba9e41d"
+  },
+  "title": "New",
+  "message": "1234",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-09T09:15:58.635Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T09:15:58.635Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6523c547c43e7a02fba9e433"
+  },
+  "title": "new",
+  "message": "new",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-09T09:17:59.571Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-09T09:17:59.571Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652502e368c2cd129e44f56a"
+  },
+  "title": "NEw",
+  "message": "New",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-10T07:53:07.624Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-10T07:53:07.624Z"
+  },
+  "__v": 0
+}]

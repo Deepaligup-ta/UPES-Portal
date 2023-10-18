@@ -1,2 +1,4 @@
 /node_modules
-/log/*
+stress.txt
+/log
+.github

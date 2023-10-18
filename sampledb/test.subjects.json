@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "651146852b2c022e2466185d"
+  },
+  "subjectName": "Computer Networks",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-09-25T08:36:21.318Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-25T08:36:21.318Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65180dd4aed62737bcf4c7f2"
+  },
+  "subjectName": "Engineering Mathematics",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-09-30T12:00:20.727Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-30T12:00:20.727Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65180ddeaed62737bcf4c7fe"
+  },
+  "subjectName": "Engineering Physics",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-09-30T12:00:30.662Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-30T12:00:30.662Z"
+  },
+  "__v": 0
+}]

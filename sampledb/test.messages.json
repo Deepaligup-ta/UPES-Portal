@@ -1,0 +1,175 @@
+[{
+  "_id": {
+    "$oid": "6524ddd5928363186309e7ce"
+  },
+  "title": "New",
+  "message": "New MEssage",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "to": [
+    {
+      "$oid": "65114a7d04cb162af3f0cd6b"
+    },
+    {
+      "$oid": "65150114df14178acfef84c2"
+    },
+    {
+      "$oid": "651501b8df14178acfef84e8"
+    },
+    {
+      "$oid": "65150261df14178acfef84f9"
+    }
+  ],
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-10T05:15:01.874Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-10T05:15:01.874Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6524de4a928363186309e7e7"
+  },
+  "title": "dad",
+  "message": "dad",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "to": [
+    {
+      "$oid": "65114a7d04cb162af3f0cd6b"
+    },
+    {
+      "$oid": "65150114df14178acfef84c2"
+    },
+    {
+      "$oid": "651501b8df14178acfef84e8"
+    }
+  ],
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-10T05:16:58.880Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-10T05:16:58.880Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6525032368c2cd129e44f581"
+  },
+  "title": "new message",
+  "message": "New Message",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "to": [
+    {
+      "$oid": "65114a7d04cb162af3f0cd6b"
+    },
+    {
+      "$oid": "65150114df14178acfef84c2"
+    },
+    {
+      "$oid": "651501b8df14178acfef84e8"
+    },
+    {
+      "$oid": "65150261df14178acfef84f9"
+    },
+    {
+      "$oid": "65150404df14178acfef851c"
+    },
+    {
+      "$oid": "651502e9df14178acfef850b"
+    },
+    {
+      "$oid": "65150468df14178acfef8531"
+    }
+  ],
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-10T07:54:11.505Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-10T07:54:11.505Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6525035268c2cd129e44f598"
+  },
+  "title": "New Messge 1",
+  "message": "New messageee",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "to": [
+    {
+      "$oid": "65114a7d04cb162af3f0cd6b"
+    },
+    {
+      "$oid": "65165aacfb68dbc510e89bcf"
+    },
+    {
+      "$oid": "65165aacfb68dbc510e89bd1"
+    }
+  ],
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-10T07:54:58.641Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-10T07:54:58.641Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65251e087585ae70e80b1fa3"
+  },
+  "title": "new",
+  "message": "new",
+  "from": {
+    "$oid": "65114a7d04cb162af3f0cd6b"
+  },
+  "to": [
+    {
+      "$oid": "65114a7d04cb162af3f0cd6b"
+    },
+    {
+      "$oid": "65150261df14178acfef84f9"
+    },
+    {
+      "$oid": "651502e9df14178acfef850b"
+    }
+  ],
+  "status": "publish",
+  "school": {
+    "$oid": "651145d0732f4232ff25d836"
+  },
+  "createdAt": {
+    "$date": "2023-10-10T09:48:56.327Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-10T09:48:56.327Z"
+  },
+  "__v": 0
+}]

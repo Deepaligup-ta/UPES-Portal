@@ -10,6 +10,7 @@ import path from "path"
 import compression from 'compression'
 import morgan from 'morgan'
 import rfs from 'rotating-file-stream'
+import expressStatusMonitor from 'express-status-monitor'
 const __dirname = path.resolve()
 
 //Controllers
@@ -45,7 +46,7 @@ import { rateLimiter } from './middlewares/rateLimit.js'
 dotenv.config()
 
 //App Configs
-const PORT = process.env.PORT || 8000 //PORT
+const PORT = process.env.PORT //PORT
 
 let accessLogStream = rfs.createStream('access.log', {
     interval: '1d', 
@@ -137,19 +138,20 @@ const authenticate = async (email, password) => {
         password: 'password',
         name: ''
     }
-    return Promise.resolve(DEFAULT_ADMIN)
-    // return Promise.resolve(authenticateAdmin(email, password)
-    //     .then(user => {
-    //         if(user.error1 || user.error2 || user.error3)
-    //             return null
-    //         if(user){
-    //             DEFAULT_ADMIN.email = user.email
-    //             DEFAULT_ADMIN.name = user.firstName
-    //             return Promise.resolve(DEFAULT_ADMIN)
-    //         }
-    //         else      
-    //             return null
-    //     }))
+    return Promise.resolve(authenticateAdmin(email, password)
+        .then(user => {
+            console.log(user)
+            if(user.error1 || user.error2 || user.error3){
+                return null
+            }
+            if(user){
+                DEFAULT_ADMIN.email = user.email
+                DEFAULT_ADMIN.name = user.firstName
+                return Promise.resolve(DEFAULT_ADMIN)
+            }
+            else      
+                return null
+        }))
 }
 //Router For AdminJs Authenticated Routes
 const router = AdminJSExpress.buildAuthenticatedRouter(
@@ -173,11 +175,11 @@ const router = AdminJSExpress.buildAuthenticatedRouter(
     }
 )
 //Use static sources
-app.use(express.static('public', { maxAge: 172800000 }))
-
+app.use(express.static('public', { maxAge: 72000 }))
+//172800000
 //CORS
 app.use(cors({
-    origin: [`${process.env.ORIGIN}`, 'http://localhost:3000'], 
+    origin: [`${process.env.ORIGIN}`, 'http://localhost', 'http://localhost:3000'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true,
@@ -185,6 +187,8 @@ app.use(cors({
 
 //Request Limiter
 app.use(rateLimiter)
+//Monitor
+app.use(expressStatusMonitor())
 //HTTP Logger
 app.use(morgan('combined', { stream: accessLogStream }))
 //Json parser

@@ -1,0 +1,191 @@
+[{
+  "_id": {
+    "$oid": "65117e32060848f9e7a1de28"
+  },
+  "batch": {
+    "$oid": "65117dcf060848f9e7a1ddfc"
+  },
+  "eventSchema": [
+    {
+      "subjectName": {
+        "$oid": "651146852b2c022e2466185d"
+      },
+      "faculty": {
+        "$oid": "65114a7d04cb162af3f0cd6b"
+      },
+      "roomNumber": 0,
+      "batch": {
+        "$oid": "65117dcf060848f9e7a1ddfc"
+      },
+      "day": "sunday",
+      "start": {
+        "$date": "2023-09-25T02:33:00.000Z"
+      },
+      "end": {
+        "$date": "2023-09-25T04:33:00.000Z"
+      },
+      "_id": {
+        "$oid": "65117e32060848f9e7a1de29"
+      },
+      "createdAt": {
+        "$date": "2023-09-26T03:52:46.604Z"
+      },
+      "updatedAt": {
+        "$date": "2023-09-26T03:52:46.604Z"
+      }
+    },
+    {
+      "subjectName": {
+        "$oid": "651146852b2c022e2466185d"
+      },
+      "faculty": {
+        "$oid": "651184233597d439aca648f0"
+      },
+      "roomNumber": 0,
+      "batch": {
+        "$oid": "65117dcf060848f9e7a1ddfc"
+      },
+      "day": "monday",
+      "start": {
+        "$date": "2023-09-25T12:33:00.000Z"
+      },
+      "end": {
+        "$date": "2023-09-25T12:33:00.000Z"
+      },
+      "_id": {
+        "$oid": "65117e32060848f9e7a1de2a"
+      },
+      "createdAt": {
+        "$date": "2023-09-26T03:52:46.604Z"
+      },
+      "updatedAt": {
+        "$date": "2023-09-26T03:52:46.604Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-09-25T12:33:54.182Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-26T03:52:46.604Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651264e5292406223c8c9740"
+  },
+  "batch": {
+    "$oid": "651259a099fa9d2f4abe946e"
+  },
+  "eventSchema": [
+    {
+      "roomNumber": "0000",
+      "_id": {
+        "$oid": "651264e5292406223c8c9741"
+      },
+      "subjectName": {
+        "$oid": "651146852b2c022e2466185d"
+      },
+      "faculty": {
+        "$oid": "65114a7d04cb162af3f0cd6b"
+      },
+      "batch": {
+        "$oid": "651259a099fa9d2f4abe946e"
+      },
+      "day": "thursday",
+      "start": {
+        "$date": "2023-09-26T06:57:00.000Z"
+      },
+      "end": {
+        "$date": "2023-09-26T07:58:00.000Z"
+      },
+      "createdAt": {
+        "$date": "2023-09-26T04:58:13.027Z"
+      },
+      "updatedAt": {
+        "$date": "2023-09-26T04:58:13.027Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-09-26T04:58:13.027Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-26T04:58:13.027Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65180e02aed62737bcf4c857"
+  },
+  "batch": {
+    "$oid": "65180dafaed62737bcf4c7c6"
+  },
+  "eventSchema": [
+    {
+      "subjectName": {
+        "$oid": "65180dd4aed62737bcf4c7f2"
+      },
+      "faculty": {
+        "$oid": "65165aacfb68dbc510e89bb8"
+      },
+      "roomNumber": "9001",
+      "batch": {
+        "$oid": "65180dafaed62737bcf4c7c6"
+      },
+      "day": "monday",
+      "start": {
+        "$date": "2023-09-30T04:00:00.000Z"
+      },
+      "end": {
+        "$date": "2023-09-30T06:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "65180e02aed62737bcf4c858"
+      },
+      "createdAt": {
+        "$date": "2023-10-06T04:10:29.189Z"
+      },
+      "updatedAt": {
+        "$date": "2023-10-06T04:10:29.189Z"
+      }
+    },
+    {
+      "subjectName": {
+        "$oid": "65180ddeaed62737bcf4c7fe"
+      },
+      "faculty": {
+        "$oid": "65165aacfb68dbc510e89bb8"
+      },
+      "roomNumber": "10801",
+      "batch": {
+        "$oid": "65180dafaed62737bcf4c7c6"
+      },
+      "day": "wednesday",
+      "start": {
+        "$date": "2023-09-29T03:30:00.000Z"
+      },
+      "end": {
+        "$date": "2023-09-29T05:30:00.000Z"
+      },
+      "_id": {
+        "$oid": "65183eb8946e284e756fc239"
+      },
+      "createdAt": {
+        "$date": "2023-10-06T04:10:29.189Z"
+      },
+      "updatedAt": {
+        "$date": "2023-10-06T04:10:29.189Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-09-30T12:01:06.784Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-06T04:10:29.189Z"
+  },
+  "__v": 0
+}]
