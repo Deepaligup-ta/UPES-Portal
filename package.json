@@ -4,9 +4,8 @@
   "description": "SoCSI ",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "nodemon app.js",
-    "gen_vapid_keys": " web-push generate-vapid-keys [--json]"
+    "start": "SET NODE_ENV=production & node app.js",
+    "test": "SET NODE_ENV=development & nodemon app.js"
   },
   "author": "Bhupender Singh",
   "license": "ISC",
