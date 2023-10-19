@@ -36,7 +36,7 @@ export const signIn = (body) => {
         body: JSON.stringify(body)
     })
     .then(res => res.json())
-    .catch((error) => error.json());
+    .catch((error) =>  error);
 
 }
 
@@ -53,7 +53,7 @@ export const getAllUsers = () => {
 
   })
     .then((res) => res.json())
-    .catch((error) => error.json());
+    .catch((error) =>  error);
 }
 
 export const getUsers = (params) => {
@@ -69,7 +69,7 @@ export const getUsers = (params) => {
 
     })
       .then((res) => res.json())
-      .catch((error) => error.json());
+      .catch((error) =>  error);
 }
 
 export const getUserById = (userId) => {
@@ -85,7 +85,7 @@ export const getUserById = (userId) => {
 
     })
       .then((res) => res.json())
-      .catch((error) => error.json());
+      .catch((error) =>  error);
 
 }
 
@@ -102,7 +102,7 @@ export const getUser = () => {
 
     })
       .then((res) => res.json())
-      .catch((error) => error.json());
+      .catch((error) =>  error);
 
 }
 export const uploadPicture = (body) => {
@@ -118,7 +118,7 @@ export const uploadPicture = (body) => {
 
     })
       .then((res) => res.json())
-      .catch((error) => error.json());
+      .catch((error) =>  error);
 
 }
 
@@ -135,7 +135,7 @@ export const getPicture = (params) => {
 
     })
       .then((res) => res.json())
-      .catch((error) => error.json());
+      .catch((error) =>  error);
 
 }
 
@@ -152,7 +152,7 @@ export const changePassword = (body) => {
       body: JSON.stringify(body),
     })
       .then((res) => res.json())
-      .catch((error) => error.json());
+      .catch((error) => error);
 
 }
 
@@ -168,7 +168,7 @@ export const signout = () => {
         method: "POST"
 
     }).then((res) => res.json())
-    .catch((error) => error.json());
+    .catch((error) => error);
 }
 export const isAuthenticated = () => {
     if(getAuthToken)

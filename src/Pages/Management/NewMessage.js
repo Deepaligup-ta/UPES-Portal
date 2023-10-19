@@ -4,14 +4,19 @@ import { Form , Button, Input, notification, Select, Skeleton } from 'antd'
 import PageTitle from "../../Components/Basic/PageTitle"
 import { deleteMessage, editMessage, getMessage, newMesssage } from "../../Helper/Message"
 import { useLocation, useNavigate } from "react-router-dom"
-import { getAllUsers } from "../../Helper/Authentication"
+import { getAllUsers, getAuthToken } from "../../Helper/Authentication"
+import { getGroup, getGroups, newGroup } from "../../Helper/Group"
 
 const NewMessage = () => {
 
-    const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
-    const [data, setData] = useState(null)
+    const [data, setData] = useState({ to: [] })
+    const [def, setDef] = useState([getAuthToken()._id])
+    const [groups, setGroups] = useState([])
     const [recipent, setRecipent] = useState([])
+    const [groupRec, setGroupRec] = useState([])
+    const [name, setName] = useState("")
+    const [groupSet, setGroupSet] = useState(false)
     const navigate = useNavigate()
     const useQuery = () => {
         const { search } = useLocation()
@@ -30,10 +35,25 @@ const NewMessage = () => {
 
     useEffect(() => {
         document.title = "Add/Edit Message | SoCIS"
+        getGroups()
+            .then((data) => {
+                if(data.error){
+                    return openNotification({ type: 'error', message: 'Error Occured!', description: data.errorMessage })
+                }
+                let array = []
+                data.map((item) => {
+                    array.push({ value: item._id, label: `${item.groupName}` })
+                })
+                setGroups(array)
+            })
+            .catch((error) => {
+                return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
+            })
         getAllUsers()
             .then((data) => {
-                if(data.error)
+                if(data.error){
                     return openNotification({ type: 'error', message: 'Error Occured!', description: data.errorMessage })
+                }
                 let array = []
                 data.map((item) => {
                     array.push({ value: item._id, label: `${item.firstName} ${item.lastName} | SAP: ${item.sapId} | ${item.designations}` })
@@ -48,56 +68,115 @@ const NewMessage = () => {
             getMessage({ messageId: id})
                 .then((data) => {
                     setData(data)
+                    setDef(data.to)
                     setLoading(false)
                     
                 })
                 .catch((error) => {
+                    setLoading(false)
                     return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
                 })
         }
     }, [setData, id, setRecipent])
 
     const onFinish = (values) => {
+        groupRec.map((item) => {
+            setDef([...def, item])
+        })
+        let unique = []
+        def.forEach(element => { 
+            if (!unique.includes(element)) { 
+                unique.push(element)
+            } 
+        })
+        values.to = unique
+        setLoading(true)
         if(id) {
             editMessage(values)
                 .then((data) => {
-                    if(data.error)
+                    if(data.error){
+                        setLoading(false)
                         return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                    }
                     else
                         return navigate('/management/message/view?success=edit')
                 })
                 .catch((error) => {
+                    setLoading(false)
                     return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
                 })
         }else {
             delete values._id
             newMesssage(values)
                 .then((data) => {
-                    if(data.error)
+                    if(data.error){
+                        setLoading(false)
                         return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                    }
                     else
                         return navigate('/management/message/view?success=new')
                 })
                 .catch(error => {
+                    setLoading(false)
                     return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
                 })
         }
     }       
 
     const deleteAnn = () => {
+        setLoading(true)
         deleteMessage({ MessageId: data._id })
             .then((data) => {
-                if(data.error) 
+                if(data.error){
+                    setLoading(false)
                     return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
-                else
+                }else
                     return navigate('/management/message/view?success=delete')
             })
             .catch((error) => {
-                console.log(error)
+                setLoading(false)
+                return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
             })
     }
+
+    const createGroup = () => {
+        let unique = []
+        def.forEach(element => { 
+            if (!unique.includes(element)) { 
+                unique.push(element)
+            } 
+        })
+        newGroup({ groupName: name, users: unique })
+            .then((data) => {
+                openNotification({ type: 'success', message: 'Group Created!', description: `Group is created with the name : ${data.groupName}` })
+            })
+            .catch((error) => {
+                return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+            })
+    }
+    
+    const populateGroupData = (value) => {
+        let unique = []
+        getGroup({ groupId: value })
+            .then((group) => {
+                let arr = [...def]
+                group.users.map((item) => {
+                    arr.push(item)
+                })
+                arr.forEach(element => { 
+                    if (!unique.includes(element)) { 
+                        unique.push(element)
+                    } 
+                })
+                setGroupSet(true)
+                setGroupRec(unique)
+            })
+    }
+
     const handleChange = (value) => {
-        data.to.push(value)
+               
+        setDef(value)
+        
     }
 
     return(
@@ -137,33 +216,46 @@ const NewMessage = () => {
                     label="Recipents"
                     name="to"
                 >
-                {console.log()}
+                { !def ? "Not Available":
                     <Select
                         mode="multiple"
                         style={{
                         width: '100%',
                         }}
-                        defaultValue={(data ? data.to : [''])}
-                        placeholder="select recipents"
+                        defaultValue={(def ? def : [''])}
+                        placeholder="Select recipents"
                         onChange={handleChange}
                         optionLabelProp="label"
                         options={recipent}
                     />
-                    {  }
+                }
+                    <br/>
+                </Form.Item>
+                <Form.Item
+                    label="Group Recipents"
+                >
+                    <Select
+                        style={{
+                        width: '100%',
+                        }}
+                        placeholder="Select Group"
+                        onChange={populateGroupData}
+                        optionLabelProp="label"
+                        options={groups}
+                    />
                     
                 </Form.Item>
-                {/* <Form.Item
-                    label="Description"
-                    name="descriptiom"
-                    initialValue={data ? data.description : ""}
-                    rules={[{ required: true, message: 'Field is required!' }]}
+                <Form.Item
+                    label="Create Group"
+                    style={{ margin: 10 }}
                 >
-                    <Input
-                        type="text"
-                        placeholder="Excerpt"
-
-                    />
-                </Form.Item> */}
+                    <Input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                    <Button
+                         onClick={createGroup}
+                    >
+                        Create Group
+                    </Button>
+                </Form.Item>
                 <Form.Item
                     label="Message"
                     name="message"

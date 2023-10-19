@@ -37,7 +37,8 @@ const NewPostFaculty = () => {
                     
                 })
                 .catch((error) => {
-                    return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})                
                 })
         }
     }, [setData, id])

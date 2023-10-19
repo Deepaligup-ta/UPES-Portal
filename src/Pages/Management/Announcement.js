@@ -26,19 +26,25 @@ const MangementAnnouncement = () => {
     const query = useQuery()
     useEffect(() => {
         document.title = "Announcements | SoCIS"
+
         let success = query.get('success')
+
         if(success === "new") 
             openNotification({ type: "success", message: "Added New Announcement!" })
         else if(success === "edit")
             openNotification({ type: "success", message: "Updated Announcement!" })
         else if(success === "delete")
             openNotification({ type: "success", message: "Deleted Announcement!" })
+
         getAnnouncements(1)
             .then((res) => {
+
                 if(res.error)
                     return openNotification({ type: 'error', message: 'Error Occurred!'})
+
                 if(res.docs.length === 0)
                     return openNotification({ type: 'info', message: 'No Announcements Found!'})
+
                 setInfo(res)
                 setData(res.docs)
                 setLoading(false)
@@ -49,7 +55,9 @@ const MangementAnnouncement = () => {
     }, [setData, setInfo, query])
     
     const changePage = (page) => {
+
         setLoading(true)
+        
         getAnnouncements(page)
             .then((res) => {
                 setInfo(res)

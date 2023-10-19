@@ -1,84 +1,87 @@
-import React from "react"
+import React, { Suspense } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "./Assets/Style/index.css"
-import Login from "./Pages/Login"
+
 import ManagementRoutes from './Routes/Management'
 import FacultyRoute from "./Routes/Faculty"
-import ManagementDashboard from "./Pages/Management/Dashboard"
-import Password from "./Pages/Password"
-import ManagementTimetable from "./Pages/Management/Timetable"
-import MangementAnnouncement from "./Pages/Management/Announcement"
-import NewAnnouncement from "./Pages/Management/NewAnnouncement"
-import SingleAnnouncement from "./Pages/Management/SingleAnnouncement"
-import ManagementProfile from "./Pages/Management/Profile"
-import Course from "./Pages/Management/Course"
-import NewPolicy from "./Pages/Management/NewPolicy"
-import Policy from "./Pages/Management/Policy"
-import FullPolicy from "./Pages/Management/FullPolicy"
-import Faculty from "./Pages/Management/Faculty"
-import FacultyDashboard from "./Pages/Faculty/Dashboard"
-import FacultyTimetable from "./Pages/Faculty/Timetable"
-import FacultyAnnouncement from "./Pages/Faculty/Announcement"
-import ViewAnnouncement from "./Pages/Faculty/SingleAnnouncement"
-import FacultyPolicy from "./Pages/Faculty/Policy"
-import FullFacultyPolicy from "./Pages/Faculty/FullPolicy"
-import FacultyCourse from "./Pages/Faculty/Course"
-import FacultyProfile from "./Pages/Faculty/Profile"
-import ManagementMessage from "./Pages/Management/Message"
-import NewMessage from "./Pages/Management/NewMessage"
-import SingleMessage from "./Pages/Management/SingleMessage"
-import FacultyMessage from "./Pages/Faculty/Message"
-import NewMessageFaculty from "./Pages/Faculty/NewMessage"
-import SingleMessageFaculty from "./Pages/Faculty/SingleMessage"
-import NewPostFaculty from "./Pages/Faculty/NewPost"
-import FacultyPost from "./Pages/Faculty/Post"
-import SinglePostFaculty from "./Pages/Faculty/SinglePost"
-import ManagementPost from "./Pages/Management/Post"
-import NewPostManagement from "./Pages/Management/NewPost"
-import SinglePostManagement from "./Pages/Management/SinglePost"
+import Loader from "./Components/Loader"
+const Login = React.lazy(() => import("./Pages/Login"))
+const ManagementDashboard = React.lazy(() => import("./Pages/Management/Dashboard"))
+const Password = React.lazy(() => import("./Pages/Password"))
+const ManagementTimetable = React.lazy(() => import("./Pages/Management/Timetable"))
+const MangementAnnouncement = React.lazy(() => import("./Pages/Management/Announcement"))
+const NewAnnouncement = React.lazy(() => import("./Pages/Management/NewAnnouncement"))
+const SingleAnnouncement = React.lazy(() => import("./Pages/Management/SingleAnnouncement"))
+const ManagementProfile = React.lazy(() => import("./Pages/Management/Profile"))
+const Course  = React.lazy(() => import("./Pages/Management/Course"))
+const NewPolicy = React.lazy(() => import("./Pages/Management/NewPolicy"))
+const Policy  = React.lazy(() => import("./Pages/Management/Policy"))
+const FullPolicy  = React.lazy(() => import("./Pages/Management/FullPolicy"))
+const Faculty  = React.lazy(() => import("./Pages/Management/Faculty"))
+const FacultyDashboard = React.lazy(() => import("./Pages/Faculty/Dashboard"))
+const FacultyTimetable = React.lazy(() => import("./Pages/Faculty/Timetable"))
+const FacultyAnnouncement = React.lazy(() => import("./Pages/Faculty/Announcement"))
+const ViewAnnouncement = React.lazy(() => import("./Pages/Faculty/SingleAnnouncement"))
+const FacultyPolicy = React.lazy(() => import("./Pages/Faculty/Policy"))
+const FullFacultyPolicy = React.lazy(() => import("./Pages/Faculty/FullPolicy"))
+const FacultyCourse = React.lazy(() => import("./Pages/Faculty/Course"))
+const FacultyProfile = React.lazy(() => import("./Pages/Faculty/Profile"))
+const ManagementMessage = React.lazy(() => import("./Pages/Management/Message"))
+const NewMessage = React.lazy(() => import("./Pages/Management/NewMessage"))
+const SingleMessage = React.lazy(() => import("./Pages/Management/SingleMessage"))
+const FacultyMessage = React.lazy(() => import("./Pages/Faculty/Message"))
+const NewMessageFaculty = React.lazy(() => import("./Pages/Faculty/NewMessage"))
+const SingleMessageFaculty = React.lazy(() => import("./Pages/Faculty/SingleMessage"))
+const NewPostFaculty = React.lazy(() => import("./Pages/Faculty/NewPost"))
+const FacultyPost  = React.lazy(() => import("./Pages/Faculty/Post"))
+const SinglePostFaculty = React.lazy(() => import("./Pages/Faculty/SinglePost"))
+const ManagementPost = React.lazy(() => import("./Pages/Management/Post"))
+const NewPostManagement = React.lazy(() => import("./Pages/Management/NewPost"))
+const SinglePostManagement = React.lazy(() => import("./Pages/Management/SinglePost"))
+
 
 const App = () => {
 
   return(
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/new-password" element={<Password />} />
+        <Route path="/" element={<Suspense fallback={<Loader />}><Login /></Suspense>} />
+        <Route path="/new-password" element={<Suspense fallback={<Loader />}><Password /></Suspense>} />
         <Route element={<FacultyRoute />}>
-          <Route path="/faculty/dashboard" element={<FacultyDashboard />} />
-          <Route path="/faculty/timetable" element={<FacultyTimetable />} />
-          <Route path="/faculty/announcement/view" element={<FacultyAnnouncement />} />
-          <Route path="/faculty/announcement/view/:id" element={<ViewAnnouncement />} />
-          <Route path="/faculty/policy/view" element={<FacultyPolicy />} />
-          <Route path="/faculty/policy/view/:id" element={<FullFacultyPolicy />} />
-          <Route path="/faculty/course" element={<FacultyCourse/>}/>
-          <Route path="/faculty/profile" element={<FacultyProfile/>}/>
-          <Route path="/faculty/message/view" element={<FacultyMessage />} />
-          <Route path="/faculty/message/view/:id" element={<SingleMessageFaculty />} />
-          <Route path="/faculty/message/new" element={<NewMessageFaculty />} />
-          <Route path="/faculty/post/new" element={<NewPostFaculty />} />
-          <Route path="/faculty/post/view" element={<FacultyPost />} />
-          <Route path="/faculty/post/view/:id" element={<SinglePostFaculty />} />
+          <Route path="/faculty/dashboard" element={<Suspense fallback={<Loader />}><FacultyDashboard /></Suspense>} />
+          <Route path="/faculty/timetable" element={<Suspense fallback={<Loader />}><FacultyTimetable /></Suspense>} />
+          <Route path="/faculty/announcement/view" element={<Suspense fallback={<Loader />}><FacultyAnnouncement /></Suspense>} />
+          <Route path="/faculty/announcement/view/:id" element={<Suspense fallback={<Loader />}><ViewAnnouncement /></Suspense>} />
+          <Route path="/faculty/policy/view" element={<Suspense fallback={<Loader />}><FacultyPolicy /></Suspense>} />
+          <Route path="/faculty/policy/view/:id" element={<Suspense fallback={<Loader />}><FullFacultyPolicy /></Suspense>} />
+          <Route path="/faculty/course" element={<Suspense fallback={<Loader />}><FacultyCourse/></Suspense>}/>
+          <Route path="/faculty/profile" element={<Suspense fallback={<Loader />}><FacultyProfile/></Suspense>}/>
+          <Route path="/faculty/message/view" element={<Suspense fallback={<Loader />}><FacultyMessage /></Suspense>} />
+          <Route path="/faculty/message/view/:id" element={<Suspense fallback={<Loader />}><SingleMessageFaculty /></Suspense>} />
+          <Route path="/faculty/message/new" element={<Suspense fallback={<Loader />}><NewMessageFaculty /></Suspense>} />
+          <Route path="/faculty/post/new" element={<Suspense fallback={<Loader />}><NewPostFaculty /></Suspense>} />
+          <Route path="/faculty/post/view" element={<Suspense fallback={<Loader />}><FacultyPost /></Suspense>} />
+          <Route path="/faculty/post/view/:id" element={<Suspense fallback={<Loader />}><SinglePostFaculty /></Suspense>} />
         </Route>
         <Route element={<ManagementRoutes />}>
-          <Route path="/management/dashboard" element={<ManagementDashboard/>}/>
-          <Route path="/management/timetable" element={<ManagementTimetable/>}/>
-          <Route path="/management/message/view" element={<ManagementMessage />} />
-          <Route path="/management/message/view/:id" element={<SingleMessage />} />
-          <Route path="/management/message/new" element={<NewMessage />} />
-          <Route path="/management/announcement/new" element={<NewAnnouncement/>}/>
-          <Route path="/management/announcement/view" element={<MangementAnnouncement/>}/>
-          <Route path="/management/announcement/view/:id" element={<SingleAnnouncement/>}/>
-          <Route path="/management/faculty" element={<Faculty/>}/>|
-          <Route path="/management/faculty/:userId" element={<ManagementProfile/>}/>
-          <Route path="/management/profile" element={<ManagementProfile/>}/>
-          <Route path="/management/course" element={<Course/>}/>
-          <Route path="/management/policy/new" element={<NewPolicy/>}/>
-          <Route path="/management/policy/view" element={<Policy/>}/>
-          <Route path="/management/policy/view/:id" element={<FullPolicy/>}/>
-          <Route path="/management/post/new" element={<NewPostManagement />} />
-          <Route path="/management/post/view" element={<ManagementPost />} />
-          <Route path="/management/post/view/:id" element={<SinglePostManagement />} />
+          <Route path="/management/dashboard" element={<Suspense fallback={<Loader />}><ManagementDashboard/></Suspense>}/>
+          <Route path="/management/timetable" element={<Suspense fallback={<Loader />}><ManagementTimetable/></Suspense>}/>
+          <Route path="/management/message/view" element={<Suspense fallback={<Loader />}><ManagementMessage /></Suspense>} />
+          <Route path="/management/message/view/:id" element={<Suspense fallback={<Loader />}><SingleMessage /></Suspense>} />
+          <Route path="/management/message/new" element={<Suspense fallback={<Loader />}><NewMessage /></Suspense>} />
+          <Route path="/management/announcement/new" element={<Suspense fallback={<Loader />}><NewAnnouncement/></Suspense>}/>
+          <Route path="/management/announcement/view" element={<Suspense fallback={<Loader />}><MangementAnnouncement/></Suspense>}/>
+          <Route path="/management/announcement/view/:id" element={<Suspense fallback={<Loader />}><SingleAnnouncement/></Suspense>}/>
+          <Route path="/management/faculty" element={<Suspense fallback={<Loader />}><Faculty/></Suspense>}/>|
+          <Route path="/management/faculty/:userId" element={<Suspense fallback={<Loader />}><ManagementProfile/></Suspense>}/>
+          <Route path="/management/profile" element={<Suspense fallback={<Loader />}><ManagementProfile/></Suspense>}/>
+          <Route path="/management/course" element={<Suspense fallback={<Loader />}><Course/></Suspense>}/>
+          <Route path="/management/policy/new" element={<Suspense fallback={<Loader />}><NewPolicy/></Suspense>}/>
+          <Route path="/management/policy/view" element={<Suspense fallback={<Loader />}><Policy/></Suspense>}/>
+          <Route path="/management/policy/view/:id" element={<Suspense fallback={<Loader />}><FullPolicy/></Suspense>}/>
+          <Route path="/management/post/new" element={<Suspense fallback={<Loader />}><NewPostManagement /></Suspense>} />
+          <Route path="/management/post/view" element={<Suspense fallback={<Loader />}><ManagementPost /></Suspense>} />
+          <Route path="/management/post/view/:id" element={<Suspense fallback={<Loader />}><SinglePostManagement /></Suspense>} />
         </Route>
       </Routes>
     </BrowserRouter>

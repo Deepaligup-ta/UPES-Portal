@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ManagementBase from "../../Components/Management/Base"
-import { Form , Button, Input, Spin, notification} from 'antd'
+import { Form , Button, Input, Spin, notification, Skeleton} from 'antd'
 import PageTitle from "../../Components/Basic/PageTitle"
 import { deleteAnnouncement, editAnnouncement, getAnnouncement, newAnnouncement } from "../../Helper/Announcement"
 import { useLocation, useNavigate } from "react-router-dom"
@@ -33,54 +33,63 @@ const NewAnnouncement = () => {
             setLoading(true)
             getAnnouncement({ announcementId: id})
                 .then((data) => {
-                    console.log(data)
                     setData(data)
                     setLoading(false)
                     
                 })
                 .catch((error) => {
-                    console.log(error)
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
                 })
         }
     }, [setData, id])
 
     const onFinish = (values) => {
+        setLoading(true)
         if(id) {
             editAnnouncement(values)
                 .then((data) => {
-                    if(data.error)
+                    if(data.error){
+                        setLoading(false)
                         return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                    }
                     else
                         return navigate('/management/announcement/view?success=edit')
                 })
                 .catch((error) => {
-                    console.log(error)
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
                 })
         }else {
             delete values._id
             newAnnouncement(values)
                 .then((data) => {
-                    if(data.error)
+                    if(data.error){
+                        setLoading(false)
                         return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
-                    else
+                    }else
                         return navigate('/management/announcement/view?success=new')
                 })
                 .catch(error => {
-                    console.log(error)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
                 })
         }
     }       
 
     const deleteAnn = () => {
+        setLoading(true)
         deleteAnnouncement({ announcementId: data._id })
             .then((data) => {
-                if(data.error) 
+                if(data.error) {
+                    setLoading(false)
                     return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                }
                 else
                     return navigate('/management/announcement/view?success=delete')
             })
             .catch((error) => {
-                console.log(error)
+                setLoading(false)
+                return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
             })
     }
 
@@ -88,7 +97,7 @@ const NewAnnouncement = () => {
         <ManagementBase>
         {contextHolder}
            <PageTitle title={id ? "Update Announcement" : "New Announcement" } />
-           {loading ? <Spin /> : <Form
+           {loading ? <Skeleton active /> : <Form
                 name="new-announcement"
                 labelCol={{ span: 2 }}
                 wrapperCol={{ span: 16 }}

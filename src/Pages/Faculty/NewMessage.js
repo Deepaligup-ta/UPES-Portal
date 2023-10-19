@@ -9,7 +9,7 @@ import FacultyBase from "../../Components/Faculty/Base"
 const NewMessageFaculty = () => {
 
     const [loading, setLoading] = useState(false)
-    const [data, setData] = useState(null)
+    const [data, setData] = useState({ to: []})
     const [recipent, setRecipent] = useState([])
     const navigate = useNavigate()
     const useQuery = () => {
@@ -51,48 +51,60 @@ const NewMessageFaculty = () => {
                     
                 })
                 .catch((error) => {
-                    return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
                 })
         }
     }, [setData, id, setRecipent])
 
     const onFinish = (values) => {
+        setLoading(true)
         if(id) {
             editMessage(values)
                 .then((data) => {
-                    if(data.error)
+                    if(data.error){
+                        setLoading(false)
                         return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                    }
                     else
                         return navigate('/management/message/view?success=edit')
                 })
                 .catch((error) => {
-                    return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
                 })
         }else {
             delete values._id
             newMesssage(values)
                 .then((data) => {
-                    if(data.error)
+                    if(data.error){
+                        setLoading(false)
                         return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                    }
                     else
                         return navigate('/management/message/view?success=new')
                 })
                 .catch(error => {
-                    return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
                 })
         }
     }       
 
     const deleteAnn = () => {
-        deleteMessage({ MessageId: data._id })
+        setLoading(true)
+        deleteMessage({ messageId: data._id })
             .then((data) => {
-                if(data.error) 
+                if(data.error){
+                    setLoading(false)
                     return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                }
                 else
                     return navigate('/management/message/view?success=delete')
             })
             .catch((error) => {
-                console.log(error)
+                setLoading(false)
+                return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
             })
     }
     const handleChange = (value) => {
@@ -147,22 +159,9 @@ const NewMessageFaculty = () => {
                         onChange={handleChange}
                         optionLabelProp="label"
                         options={recipent}
-                    />
-                    {  }
-                    
+                    />                    
                 </Form.Item>
-                {/* <Form.Item
-                    label="Description"
-                    name="descriptiom"
-                    initialValue={data ? data.description : ""}
-                    rules={[{ required: true, message: 'Field is required!' }]}
-                >
-                    <Input
-                        type="text"
-                        placeholder="Excerpt"
-
-                    />
-                </Form.Item> */}
+              
                 <Form.Item
                     label="Message"
                     name="message"

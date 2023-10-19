@@ -4,7 +4,6 @@ import ManagementBase from "../../Components/Management/Base"
 import { getAuthToken } from "../../Helper/Authentication"
 
 
-
 const ManagementDashboard = () => {
     const [user] = useState(getAuthToken())
 

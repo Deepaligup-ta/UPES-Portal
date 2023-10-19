@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { UserOutlined, LogoutOutlined, DashboardOutlined, FieldTimeOutlined ,NotificationOutlined, MessageOutlined, FileTextOutlined, BulbOutlined, BulbFilled } from '@ant-design/icons'
+import { UserOutlined, IdcardOutlined, ScheduleOutlined, AppstoreOutlined, PlusOutlined, FolderViewOutlined, LogoutOutlined, DashboardOutlined, OrderedListOutlined ,NotificationOutlined, MessageOutlined, FileTextOutlined, BulbOutlined, BulbFilled } from '@ant-design/icons'
 import { Layout, Menu, theme, FloatButton, Avatar, Image } from 'antd'
 import { getAuthToken, signout } from '../../Helper/Authentication'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -45,7 +45,7 @@ const ManagementBase = (props) => {
     },
     {
       key: "/management/timetable",
-      icon: React.createElement(FieldTimeOutlined),
+      icon: React.createElement(ScheduleOutlined),
       label: (<Link to="/management/timetable">Timetable</Link>),
     },
     {
@@ -54,31 +54,31 @@ const ManagementBase = (props) => {
       label: (<Link to="/management/faculty">Faculty</Link>),
     },
     {
+      key: "/management/course",
+      icon: React.createElement(OrderedListOutlined),
+      label: (<Link to="/management/course">Courses</Link>),
+    },
+    {
+      key: "/management/profile",
+      icon: React.createElement(IdcardOutlined),
+      label: (<Link to="/management/profile">Profile</Link>),
+    },
+    {
       key: "announcement",
       icon: React.createElement(NotificationOutlined),
       label: `Announcements`,
       children: [
         {
           key: "/management/announcement/new",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(PlusOutlined),
           label: (<Link to="/management/announcement/new">New</Link>),
         },
         {
           key: "/management/announcement/view",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(FolderViewOutlined),
           label: (<Link to="/management/announcement/view">View</Link>),
         }
       ]
-    },
-    {
-      key: "/management/course",
-      icon: React.createElement(UserOutlined),
-      label: (<Link to="/management/course">Courses</Link>),
-    },
-    {
-      key: "/management/profile",
-      icon: React.createElement(UserOutlined),
-      label: (<Link to="/management/profile">Profile</Link>),
     },
     {
       key: "message",
@@ -87,29 +87,29 @@ const ManagementBase = (props) => {
       children: [
         {
           key: "/management/message/new",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(PlusOutlined),
           label: (<Link to="/management/message/new">New</Link>),
         },
         {
           key: "/management/message/view",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(FolderViewOutlined),
           label: (<Link to="/management/message/view">View</Link>),
         }
       ]
     },
     {
       key: "post",
-      icon: React.createElement(MessageOutlined),
+      icon: React.createElement(AppstoreOutlined),
       label: `Post`,
       children: [
         {
           key: "/management/post/new",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(PlusOutlined),
           label: (<Link to="/management/post/new">New</Link>),
         },
         {
           key: "/management/post/view",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(FolderViewOutlined),
           label: (<Link to="/management/post/view">View</Link>),
         }
       ]
@@ -121,12 +121,12 @@ const ManagementBase = (props) => {
       children: [
         {
           key: "/management/policy/new",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(PlusOutlined),
           label: (<Link to="/management/policy/new">New</Link>),
         },
         {
           key: "/management/policy/view",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(FolderViewOutlined),
           label: (<Link to="/management/policy/view">View</Link>),
         }
       ]
@@ -136,11 +136,7 @@ const ManagementBase = (props) => {
       icon: React.createElement(LogoutOutlined),
       label: (<Link onClick={logout}>Logout</Link>),
     },
-    // {
-    //   key: "Courses",
-    //   icon: React.createElement(UserOutlined),
-    //   label: `Courses`,
-    // },
+  
     ]
   return (
     <Layout>
@@ -157,7 +153,7 @@ const ManagementBase = (props) => {
           theme={(dark ? "dark": "light")}
           mode="inline"
           defaultSelectedKeys={location.pathname}
-          defaultOpenKeys={['policy', 'announcement','message']}
+          defaultOpenKeys={[]}
           items={menuItem}
         />
       </Sider>

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react"
 import ManagementBase from "../../Components/Management/Base"
-import { Form , Button, Input, Spin, notification, Upload, } from 'antd'
+import { Form , Button, Input, notification, Skeleton, } from 'antd'
 import PageTitle from "../../Components/Basic/PageTitle"
 import { getPolicy, deletePolicy, editPolicy, newPolicy } from "../../Helper/Policy"
 import { useLocation, useNavigate } from "react-router-dom"
 
 const NewPolicy = () => {
 
-    const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState(null)
     const [file, setFile] = useState(null)
@@ -34,21 +33,21 @@ const NewPolicy = () => {
             setLoading(true)
             getPolicy({ policyId: id})
                 .then((data) => {
-                    console.log(data)
-                    if(data.error)
-                        return openNotification({ type: 'error', message: 'Cannot Find The Policy', description: `We can't find the policy with id: ${id}`})
+                    if(data.error){
+                        setLoading(false)
+                        return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})                    }
                     setData(data)
                     setLoading(false)
                     
                 })
                 .catch((error) => {
-                    return openNotification({ type: 'error', message: 'Cannot Find The Policy', description: `We can't find the policy with id: ${id}`})
-                    console.log(error)
-                })
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})                })
         }
     }, [setData, id])
 
     const onFinish = (values) => {
+        setLoading(true)
         if(!file)
             return openNotification({ type: 'error', message: 'Error Occured', description: "Cannot Upload The File!"})
         values.policyFile = file
@@ -56,28 +55,31 @@ const NewPolicy = () => {
             values.policyFile = file
             editPolicy(values)
                 .then((data) => {
-                    console.log(data)
-                    if(data.error)
+                    if(data.error){
+                        setLoading(false)
                         return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                    }
                     else
                         return navigate('/management/policy/view?success=edit')
                 })
                 .catch((error) => {
-                    console.log(error)
-                })
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})                })
         }else {
             delete values._id
             values.policyFile = file
             newPolicy(values)
                 .then((data) => {
-                    if(data.error)
-                        return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                    if(data.error){
+                        setLoading(false)
+                        return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})                    
+                    }
                     else
                         return navigate('/management/policy/view?success=new')
                 })
                 .catch(error => {
-                    console.log(error)
-                })
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})                })
         }
     }       
     const fileChange = (e) => {
@@ -88,15 +90,19 @@ const NewPolicy = () => {
         reader.readAsDataURL(file)
     }
     const deleteAnn = () => {
+        setLoading(true)
         deletePolicy({ policyId: data._id })
             .then((data) => {
-                if(data.error) 
+                if(data.error){
+                    setLoading(false)
                     return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                }
                 else
                     return navigate('/management/policy/view?success=delete')
             })
             .catch((error) => {
-                console.log(error)
+                setLoading(false)
+                return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
             })
     }
 
@@ -104,7 +110,7 @@ const NewPolicy = () => {
         <ManagementBase>
         {contextHolder}
            <PageTitle title={id ? "Update Policy" : "New Policy" } />
-           {loading ? <Spin /> : <Form
+           {loading ? <Skeleton active /> : <Form
                 name="new-policy"
                 labelCol={{ span: 2 }}
                 wrapperCol={{ span: 16 }}

@@ -34,7 +34,6 @@ const NewPostManagement = () => {
                 .then((data) => {
                     setData(data)
                     setLoading(false)
-                    
                 })
                 .catch((error) => {
                     return openNotification({ type: 'error', message: 'Error Occured!', description: ''})
@@ -80,8 +79,9 @@ const NewPostManagement = () => {
         setLoading(true)
         deletePost({ postId: data._id })
             .then((data) => {
-                if(data.error) 
-                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})
+                if(data.error){
+                    setLoading(false)
+                    return openNotification({ type: 'error', message: 'Error Occured', description: (data.errorMessage ? data.errorMessage : "")})                }
                 else
                     return navigate('/management/message/view?success=delete')
             })

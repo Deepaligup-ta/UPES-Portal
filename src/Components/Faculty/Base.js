@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { UserOutlined, LogoutOutlined, DashboardOutlined, FieldTimeOutlined ,NotificationOutlined, FileTextOutlined, BulbOutlined, BulbFilled, MessageOutlined } from '@ant-design/icons'
+import { UserOutlined, IdcardOutlined, ScheduleOutlined, AppstoreOutlined, PlusOutlined, FolderViewOutlined, LogoutOutlined, DashboardOutlined, OrderedListOutlined ,NotificationOutlined, MessageOutlined, FileTextOutlined, BulbOutlined, BulbFilled } from '@ant-design/icons'
 import { Layout, Menu, theme, FloatButton, Avatar, Image } from 'antd'
 import { getAuthToken, signout } from '../../Helper/Authentication'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -44,7 +44,7 @@ const FacultyBase = (props) => {
     },
     {
       key: "/faculty/timetable",
-      icon: React.createElement(FieldTimeOutlined),
+      icon: React.createElement(ScheduleOutlined),
       label: (<Link to="/faculty/timetable">Timetable</Link>),
     },
     {
@@ -54,34 +54,34 @@ const FacultyBase = (props) => {
       children: [
         {
           key: "/faculty/announcement/view",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(FolderViewOutlined),
           label: (<Link to="/faculty/announcement/view">View</Link>),
         }
       ]
     },
     {
       key: "/faculty/course",
-      icon: React.createElement(UserOutlined),
+      icon: React.createElement(OrderedListOutlined),
       label: (<Link to="/faculty/course">Courses</Link>),
     },
     {
       key: "/faculty/profile",
-      icon: React.createElement(UserOutlined),
+      icon: React.createElement(IdcardOutlined),
       label: (<Link to="/faculty/profile">Profile</Link>),
     },
     {
       key: "post",
-      icon: React.createElement(MessageOutlined),
+      icon: React.createElement(AppstoreOutlined),
       label: `Post`,
       children: [
         {
           key: "/faculty/post/new",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(PlusOutlined),
           label: (<Link to="/faculty/post/new">New</Link>),
         },
         {
           key: "/faculty/post/view",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(FolderViewOutlined),
           label: (<Link to="/faculty/post/view">View</Link>),
         }
       ]
@@ -93,12 +93,12 @@ const FacultyBase = (props) => {
       children: [
         {
           key: "/faculty/message/new",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(PlusOutlined),
           label: (<Link to="/faculty/message/new">New</Link>),
         },
         {
           key: "/faculty/message/view",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(FolderViewOutlined),
           label: (<Link to="/faculty/message/view">View</Link>),
         }
       ]
@@ -110,7 +110,7 @@ const FacultyBase = (props) => {
       children: [
         {
           key: "/faculty/policy/view",
-          icon: React.createElement(FieldTimeOutlined),
+          icon: React.createElement(FolderViewOutlined),
           label: (<Link to="/faculty/policy/view">View</Link>),
         }
       ]

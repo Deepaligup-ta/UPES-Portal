@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import ManagementBase from "../../Components/Management/Base"
 import PageTitle from "../../Components/Basic/PageTitle"
-import { Pagination, Space, Spin, message, notification } from "antd"
+import { Pagination, Space, notification } from "antd"
 import { Link } from 'react-router-dom'
 import { useLocation } from "react-router-dom"
 import TableCard from "../../Components/Basic/Table"
@@ -83,7 +83,7 @@ const Faculty = () => {
             title: 'Actions',
             dataIndex: '_id',
             key: '_id',
-            render: (text) => <div><Link key={text} to={`${text}`}>Profile</Link> | <Link key={text} to={`/management/timetable?userId=${text}`}>Timetable</Link></div>
+            render: (text) => <div><Link to={`${text}`}>Profile</Link> | <Link key={text} to={`/management/timetable?userId=${text}`}>Timetable</Link></div>
         }
     ]
     return(

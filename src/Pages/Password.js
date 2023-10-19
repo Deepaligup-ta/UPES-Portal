@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import {Form, Button, Input, Typography} from 'antd'
+import {Form, Button, Input, Typography, Spin} from 'antd'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import "../Assets/Style/Login.css"
 import logo from "../Assets/Media/upesfull.png"
@@ -11,10 +11,12 @@ const Password = () => {
   const [oldPassword, setOldPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [error, setError] = useState(false)
-  
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
     document.title = "Change Password | SoCIS"
-    
+    if(!localStorage.getItem('user')) 
+      return navigate('/')
     if(!JSON.parse(localStorage.getItem('user')).changePassword)
       return navigate('/')
     
@@ -23,13 +25,18 @@ const Password = () => {
   const navigate = useNavigate()
   const handleSubmit = (event) => {
     event.preventDefault()
-    
+    setLoading(true)
     changePassword({ password: oldPassword, newpassword: newPassword })
       .then((data) => {
-          if(data.error)
-            return setError(data.error)
+          if(data.error){
+            setLoading(false)
+            return setError(data)
+          }
           localStorage.setItem('user', JSON.stringify({ changePassword: false }))
           return navigate('/')
+      })
+      .catch((error) => {
+        console.log(error)
       })
   }
 
@@ -56,7 +63,7 @@ const Password = () => {
         className="login__container text-black z-50 absolute"
         style={{ right: 80 }}
       >
-        <h1 className="text-3xl text-">Welcome To UPES Management Portal</h1>
+        <h1 className="text-3xl text-">Change Your Password To Continue</h1>
         <div className="form-container">
             <Form
                 name="normal_login"
@@ -70,7 +77,7 @@ const Password = () => {
                     rules={[{ required: true, message: 'Please input your Old password' }]}
                 >
                     <Input 
-                        prefix={<UserOutlined className="site-form-item-icon" />} 
+                        prefix={<LockOutlined className="site-form-item-icon" />} 
                         onChange={(e) => setOldPassword(e.target.value)} 
                         placeholder="Old Password"
                         value={oldPassword}
@@ -94,7 +101,8 @@ const Password = () => {
                         Submit
                     </Button>
                 </Form.Item>
-                {error ? <Typography style={{ background: '#fff', color: 'red', margin: '10px'}}>Error Occurred!</Typography>: ""}
+                { loading ? <Spin /> : ""}
+                {error ? <Typography style={{ background: '#fff', color: 'red', margin: '10px'}}>Error Occurred! {error.errorMessage}</Typography>: ""}
 
             </Form>
         </div>

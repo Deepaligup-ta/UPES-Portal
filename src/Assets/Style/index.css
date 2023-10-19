@@ -1,3 +1,6 @@
+body{
+  margin:0;
+}
 #components-form-demo-normal-login .login-form {
     max-width: 300px;
   }
