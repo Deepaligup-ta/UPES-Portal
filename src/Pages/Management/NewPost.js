@@ -9,11 +9,13 @@ const NewPostManagement = () => {
 
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState(null)
+
     const navigate = useNavigate()
     const useQuery = () => {
         const { search } = useLocation()
         return React.useMemo(() => new URLSearchParams(search), [search])
     }
+
     const query = useQuery()
     let id = query.get('id')
     const [api, contextHolder] = notification.useNotification()
@@ -74,7 +76,7 @@ const NewPostManagement = () => {
                 })
         }
     }       
-
+  
     const deleteAnn = () => {
         setLoading(true)
         deletePost({ postId: data._id })
@@ -136,6 +138,7 @@ const NewPostManagement = () => {
 
                     />
                 </Form.Item>
+               
                 <Form.Item
                     label="Content"
                     name="content"

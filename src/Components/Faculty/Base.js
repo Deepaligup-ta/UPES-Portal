@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { UserOutlined, IdcardOutlined, ScheduleOutlined, AppstoreOutlined, PlusOutlined, FolderViewOutlined, LogoutOutlined, DashboardOutlined, OrderedListOutlined ,NotificationOutlined, MessageOutlined, FileTextOutlined, BulbOutlined, BulbFilled } from '@ant-design/icons'
-import { Layout, Menu, theme, FloatButton, Avatar, Image } from 'antd'
+import { Layout, Menu, theme, FloatButton, Avatar, Image, ConfigProvider } from 'antd'
 import { getAuthToken, signout } from '../../Helper/Authentication'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
@@ -26,9 +26,6 @@ const FacultyBase = (props) => {
       setDark(true)
   }
 
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken()
   const logout = () => {
     signout()
       .then((data) => {
@@ -127,59 +124,69 @@ const FacultyBase = (props) => {
     // },
     ]
   return (
-    <Layout>
-      <Sider
-        breakpoint="lg"
-        theme={(dark ? "dark": "light")}
-        collapsedWidth="0"
-        style={{ height: '100vh'}}
-      >
-        <div className="demo-logo-vertical">
-          <Image src='/upesfull.png'/>
-        </div>
-        <Menu
-          theme={(dark ? "dark": "light")}
-          mode="inline"
-          defaultSelectedKeys={location.pathname}
-          defaultOpenKeys={[]}
-          items={menuItem}
-        />
-      </Sider>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#006494',
+          borderRadius: 2,
+          colorBgContainer: '#E8F1F2',
+        },
+        
+      }}
+    >
       <Layout>
-        <Header
-          style={{
-            padding: 0,
-            background: colorBgContainer,
-          }}
+        <Sider
+          breakpoint="lg"
+          theme={(dark ? "dark": "light")}
+          collapsedWidth="0"
+          style={{ height: '100vh', background: '#13293D'}}
         >
-          <Avatar size="large" style={{ float: 'right', margin: '10px'}} icon={<UserOutlined />} />
-        </Header>
-        <Content
-          style={{
-            margin: '24px 16px 0',
-            background: colorBgContainer,
-          }}
-        >
-          <div
+          <div className="demo-logo-vertical">
+            <Image src='/upesfull.png'/>
+          </div>
+          <Menu
+            theme={(dark ? "dark": "light")}
+            mode="inline"
+            style={{background: '#13293D', fontSize: '16px'}}
+            defaultSelectedKeys={location.pathname}
+            defaultOpenKeys={[]}
+            items={menuItem}
+          />
+        </Sider>
+        <Layout>
+          <Header
             style={{
-              padding: 24,
-              minHeight: 360,
+              padding: 0,
             }}
           >
-            { props.children }
-          </div>
-        </Content>
-        <Footer
-          style={{
-            textAlign: 'center',
+            <Avatar size="large" style={{ float: 'right', margin: '10px'}} icon={<UserOutlined />} />
+          </Header>
+          <Content
+            style={{
+              margin: '24px 16px 0',
+            }}
+          >
+            <div
+              style={{
+                padding: 24,
+                minHeight: 360,
+              }}
+            >
+              { props.children }
+            </div>
+          </Content>
+          <Footer
+            style={{
+              textAlign: 'center',
 
-          }}
-        >
-          Made By Students During Nighouts
-        </Footer>
+            }}
+          >
+            Made By Students During Nighouts
+          </Footer>
+        </Layout>
+        <FloatButton icon={(dark ? <BulbFilled /> : <BulbOutlined />)} onClick={() => mode()} />
       </Layout>
-      <FloatButton icon={(dark ? <BulbFilled /> : <BulbOutlined />)} onClick={() => mode()} />
-    </Layout>
+    </ConfigProvider>
   )
 }
 export default FacultyBase
