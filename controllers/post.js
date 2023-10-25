@@ -2,9 +2,9 @@ import { Post } from '../models/Post.js'
 import { User } from '../models/User.js'
 
 export const createPost = (req, res) => {
-
+    console.log(req.body)
     const userId = req.auth._id
-    const { title, excerpt, content, status } = req.body
+    const { title, excerpt, to, text, status, type, attachmentFile } = req.body
     User
         .findOne({ _id: userId })
         .then((user) => {
@@ -12,15 +12,25 @@ export const createPost = (req, res) => {
                 return res.status(400).json({
                     error: true
                 })
+            if(type === 'Policy' && user.role !== 'management')
+                return res.status(401).json({
+                    error: true,
+                    errorMessage: 'You are not authorized to change!'
+                })
 
-            const newpost = new Post({
+            const newdata = {
                 title: title,
+                to: (to ? to : null),
                 excerpt: excerpt,
-                content: content,
+                type: type,
+                attachmentFile: (attachmentFile ? attachmentFile : null),
+                content: (text ? text : null),
                 status: ( !status ? "publish": `${status}`),
                 school: user.school,
                 author: userId
-            })
+            }
+            console.log(newdata)
+            const newpost = new Post(newdata)
 
             newpost
                 .save()
@@ -63,7 +73,11 @@ export const updatePost = (req, res) => {
                     error: true,
                     errorMessage: "You are not allowed!"
                 })
-            
+            if(type === 'Policy' && user.role !== 'management')
+                return res.status(401).json({
+                    error: true,
+                    errorMessage: 'You are not authorized to change!'
+                })
             Post
                 .updateOne({ _id: postId }, req.body)
                 .then((update) => {
@@ -141,11 +155,12 @@ export const deletePost = (req, res) => {
 
 export const getPost = (req, res) => {
     const postId = req.params.postId
-
+    console.log(postId)
     Post
-        .findOne({ _id: postId, status: "publish" })
+        .findOne({ _id: postId })
         .populate({ path: 'author', select: 'firstName lastName sapId designations'})
         .then((post) => {
+            console.log(post)
             if(!post)
                 return res.status(400).json({
                     error: true
@@ -161,16 +176,32 @@ export const getPost = (req, res) => {
 }
 
 export const getPosts = (req ,res) => {
+    const { type } = req.query
+    const userId = req.auth._id
+    if(!type)
+        return res.status(400).json({
+            error: true,
+            errorMessage: 'Expected "type" as the query '
+        })
     const pageOptions = {
         page: req.query.page || 1,
         limit: req.query.limit || 10,
         sort: { createdAt: -1 },
+        select: '-attachmentFile',
         populate: { path: 'author', select: 'firstName sapId designations' }
     }
+    const queryDB = {
+        status: 'publish',
+        type: type,
+        $or: [
+            {to: (userId ? userId : '')},
+            {to: []}
+        ]
+    }
+    if(type === 'Policy')
+        delete queryDB.$or 
     Post
-        .paginate({
-            status: 'publish',
-        }, pageOptions, (err, result) => {
+        .paginate(queryDB, pageOptions, (err, result) => {
             if(err)
                 return res.status(400).json({
                     error: true,
@@ -178,21 +209,6 @@ export const getPosts = (req ,res) => {
                 })
             res.json(result)
         })
-    // Post
-    //     .find({ status: ["publish"] })
-    //     .populate({ path: 'author', select: 'firstName'})
-    //     .then((posts) => {
-    //         if(!posts)
-    //             return res.status(400).json({
-    //                 error: true
-    //             })
-    //         res.json(posts)
-    //     })
-    //     .catch((error) => {
-    //         res.status(400).json({
-    //             error: true,
-    //             errorMessage: error
-    //         })
-    //     })
+   
 }
 

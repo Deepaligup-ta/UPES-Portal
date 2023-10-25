@@ -179,7 +179,7 @@ app.use(express.static('public', { maxAge: 72000 }))
 //172800000
 //CORS
 app.use(cors({
-    origin: [`${process.env.ORIGIN}`, 'http://localhost', 'http://localhost:3000'], 
+    origin: [`${process.env.ORIGIN}`, 'http://localhost', 'http://localhost:3000', 'https://wt31hwj1-8000.inc1.devtunnels.ms/'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true,
