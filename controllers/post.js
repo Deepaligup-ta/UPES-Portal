@@ -2,12 +2,13 @@ import { Post } from '../models/Post.js'
 import { User } from '../models/User.js'
 
 export const createPost = (req, res) => {
-    console.log(req.body)
     const userId = req.auth._id
+    console.log(userId)
     const { title, excerpt, to, text, status, type, attachmentFile } = req.body
     User
         .findOne({ _id: userId })
         .then((user) => {
+            console.log(user)
             if(!user)
                 return res.status(400).json({
                     error: true
@@ -58,26 +59,30 @@ export const createPost = (req, res) => {
 }
 
 export const updatePost = (req, res) => {
+    if(req.body.attachmentFile === '')
+        delete req.body.attachmentFile
     const userId = req.auth._id
     const postId = req.body._id
     Post
         .findOne({ _id: postId })
+        .select("-attachmentFile")
+        .populate("author")
         .then((post) => {
             if(!post)
                 return res.status(400).json({
                     error: true
                 })
 
-            if(String(post.author) !== userId)
+            if(String(post.author._id) !== userId)
                 return res.status(401).json({
                     error: true,
                     errorMessage: "You are not allowed!"
                 })
-            if(type === 'Policy' && user.role !== 'management')
-                return res.status(401).json({
-                    error: true,
-                    errorMessage: 'You are not authorized to change!'
-                })
+            // if(type === 'Policy' && post.author.role !== 'management')
+            //     return res.status(401).json({
+            //         error: true,
+            //         errorMessage: 'You are not authorized to change!'
+            //     })
             Post
                 .updateOne({ _id: postId }, req.body)
                 .then((update) => {
@@ -109,7 +114,7 @@ export const updatePost = (req, res) => {
 
 export const deletePost = (req, res) => {
     const userId = req.auth._id
-    const postId = req.body._id
+    const postId = req.body.postId
     Post
         .findOne({ _id: postId  })
         .then((post) => {
@@ -117,13 +122,12 @@ export const deletePost = (req, res) => {
                 return res.status(400).json({
                     error: true
                 })
-
-            if(String(post.author) !== userId)
+            if(String(post.author) !== String(userId)){
                 return res.status(401).json({
                     error: true,
                     errorMessage: "You are not allowed!"
                 })
-            
+            }
             Post
                 .updateOne({ _id: postId }, { status: "delete" })
                 .then((update) => {
@@ -155,12 +159,10 @@ export const deletePost = (req, res) => {
 
 export const getPost = (req, res) => {
     const postId = req.params.postId
-    console.log(postId)
     Post
         .findOne({ _id: postId })
         .populate({ path: 'author', select: 'firstName lastName sapId designations'})
         .then((post) => {
-            console.log(post)
             if(!post)
                 return res.status(400).json({
                     error: true

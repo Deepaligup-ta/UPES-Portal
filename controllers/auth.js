@@ -11,7 +11,7 @@ const createHash = async (plainText, salt) => {
 }
 
 //Get User By SAPID
-const getUser =  (sapId) => {
+const getUser =  (id) => {
 
     // try {
     //     const user = await User.findOne({sapId}).select("-profilePic -salt -encpy_password")
@@ -20,7 +20,7 @@ const getUser =  (sapId) => {
     //     return null
     // }
 
-    return User.findOne({sapId})
+    return User.findOne({_id: id})
             .select('-profilePic -salt -encpy_password')
             .then(user => {
                 if(!user)
@@ -190,8 +190,7 @@ export const getFaculty = (req, res) => {
 //Get User By SAP Id
 export const getUserById = (req, res) => {
     
-    const { sapId } = req.auth.user
-    getUser(sapId)
+    getUser(req.auth._id)
         .then(user => {
             if(user.activeAccount === 'suspend' || user.activeAccount === 'disabled')
                 return res.status(401).json({
@@ -304,8 +303,9 @@ export const isAuthenticated =  (req, res, next) => {
     //     })
     // }
 
-    getUser(req.auth_id)
+    getUser(req.auth._id)
         .then(user => {
+            console.log(user)
             if(!user)
                 return res.status(401).json({ error: true, errorMessage: "Not Authenticated" })
             req.auth.user.role = user.role
