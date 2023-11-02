@@ -305,7 +305,6 @@ export const isAuthenticated =  (req, res, next) => {
 
     getUser(req.auth._id)
         .then(user => {
-            console.log(user)
             if(!user)
                 return res.status(401).json({ error: true, errorMessage: "Not Authenticated" })
             req.auth.user.role = user.role

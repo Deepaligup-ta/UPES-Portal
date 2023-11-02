@@ -3,12 +3,10 @@ import { User } from '../models/User.js'
 
 export const createPost = (req, res) => {
     const userId = req.auth._id
-    console.log(userId)
     const { title, excerpt, to, text, status, type, attachmentFile } = req.body
     User
         .findOne({ _id: userId })
         .then((user) => {
-            console.log(user)
             if(!user)
                 return res.status(400).json({
                     error: true
@@ -30,7 +28,6 @@ export const createPost = (req, res) => {
                 school: user.school,
                 author: userId
             }
-            console.log(newdata)
             const newpost = new Post(newdata)
 
             newpost

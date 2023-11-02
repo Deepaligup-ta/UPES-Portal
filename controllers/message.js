@@ -7,7 +7,6 @@ export const addNew = (req, res) => {
     User
         .findOne({ _id: req.auth._id })
         .then((data) => {
-            console.log(data.school)
             let newmessage = new  Message({
                 title: title,
                 message: message,
