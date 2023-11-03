@@ -5,6 +5,6 @@ if(cluster.isPrimary){
     const cpus = 4
     console.log(process.pid)
     for(let i = 0; i < cpus; i++)
-        cluster.fork({ env: `PORT=${8000+1}`})
+        cluster.fork({ env: `PORT=${8000+i}`})
 }else 
     import ('./app.js')
