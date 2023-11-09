@@ -1,5 +1,6 @@
 import { Timetable } from "../models/Timetable.js";
 import { Batch } from '../models/Batch.js'
+import { showLog } from "../utils/timeLog.js";
 
 export const getTimeTableBatch = (req, res) => {
     Timetable.findOne({ batch: req.params.batchId })
@@ -20,6 +21,7 @@ export const getTimeTableBatch = (req, res) => {
 }
 
 export const getTimeTableFaculty = (req, res) => {
+    showLog('getTimeTableFaculty() Function Called At controllers/timetable.js')
     let userId = ''
     if(req.query.userId) 
         userId = req.query.userId
@@ -72,6 +74,7 @@ export const getTimeTableFaculty = (req, res) => {
             res.json(array)
         })
         .catch((error) => {
+            showLog('Error Occured At getTimeTableFaculty() Function Called At controllers/timetable.js')
             res.status(400).json({
                 error: error
             })

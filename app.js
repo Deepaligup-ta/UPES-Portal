@@ -40,6 +40,7 @@ import { policyResource } from './models/Policy.js'
 import { postResource } from './models/Post.js'
 import { groupResource } from './models/Group.js'
 import { rateLimiter } from './middlewares/rateLimit.js'
+import { showLog } from './utils/timeLog.js'
 
 
 //Enviroment File Configuration
@@ -69,33 +70,8 @@ mongoose.connect(process.env.DATABASE, {
     autoIndex:true,
     ignoreUndefined: true,
 }).then(() => {
-    console.log('DB CONNECTED')
-}).catch(err => console.log(err))
-
-// fs.createReadStream('./data.csv')
-//     .pipe(csv.parse({ delimiter: ",", from_line: 2}))
-//     .on("data", (row) => {
-//         const newUser = {
-//             "firstName": row[1],
-//             "lastName": row[2],
-//             "sapId": row[0],
-//             "email": `${row[1]}@mail.com`,
-//             "password": row[1],
-//             "designations": row[4],
-//             "school": row[5],
-//             "reportingManager": row[3],
-//             "activeAccount": "active",
-//             "role": "faculty"
-//         }
-//         let user = new User(newUser)
-//         user.save()
-//             .then((data) => {
-//                 console.log(data)
-//             })
-//             .catch((error) => {
-//                 console.log(error)
-//             })
-//     })
+    showLog('Datbase Connected')
+}).catch(err => showLog(err))
 
 //Session Store For Logged In Users AdminJs
 const sessionStore =  MongoStore.create({
@@ -217,9 +193,10 @@ app.use('/api/group', groupRouter)
 app.use(adminJs.options.rootPath, router)
 //Redirect To React Only
 app.use((req, res, next) => {
+    showLog(`GET Resource URL: ${req.url}`)
     res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 app.listen(PORT, () => {
-    console.log(`Server Running At PORT: ${PORT}`)
+    showLog(`Server Started Running At PORT: ${PORT}`)
 })

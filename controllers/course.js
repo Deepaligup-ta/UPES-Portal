@@ -1,6 +1,6 @@
 import { Course } from "../models/Course.js";
 import { User } from "../models/User.js";
-
+import { showLog } from '../utils/timeLog.js'
 
 export const addCourse = (req, res) => {
     const { courseName, duration, type, status } = req.body
@@ -118,6 +118,8 @@ export const updateCourse = (req ,res) => {
 }
 
 export const getCourses = (req, res) => {
+    showLog('getCourses() Function Called At controllers/course.js')
+
     const userId = req.auth._id
     User.findOne({
         _id: userId
@@ -140,6 +142,7 @@ export const getCourses = (req, res) => {
                 res.json(course)
             })
             .catch((error) => {
+                showLog('Error Occured At getCourses() Function Called At controllers/course.js')
                 res.status(400).json({
                     erorr: true,
                     errorMessag: error
@@ -147,6 +150,7 @@ export const getCourses = (req, res) => {
             })
     })
     .catch((error) => {
+        showLog('Error Occured At getCourses() Function Called At controllers/course.js')
         res.status(400).json({
             error: true,
             errorMessage: error
@@ -155,6 +159,7 @@ export const getCourses = (req, res) => {
 }
 
 export const getCourse = (req, res) => {
+    showLog('getCourse() Function Called At controllers/course.js')
     Course
         .findOne({
             _id: req.params.courseId
@@ -168,6 +173,7 @@ export const getCourse = (req, res) => {
             res.json(course)
         })
         .catch((error) => {
+            showLog('Error Occured At getCourse() Function Called At controllers/course.js')
             res.status(400).json({
                 erorr: true,
                 errorMessag: error

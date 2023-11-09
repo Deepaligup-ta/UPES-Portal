@@ -1,6 +1,8 @@
 import { User } from '../models/User.js'
+import { showLog } from '../utils/timeLog.js'
 
 export const getFaculty = (req, res) => {
+    showLog('getFaculty() Function Called At controllers/user.js')
     User
         .findOne({
             _id: req.params.userId
@@ -15,6 +17,7 @@ export const getFaculty = (req, res) => {
                 res.json(faculty)
             })
             .catch((error) => {
+                showLog('Error Occured At getFaculty() Function Called At controllers/user.js')
                 res.status(400).json({
                     error: true,
                     errorMessage: error,
@@ -24,6 +27,7 @@ export const getFaculty = (req, res) => {
 }
 
 export const getAllFaculty = (req, res) => {
+    showLog('getAllFaculty() Function Called At controllers/user.js')
     const userId = req.auth._id
     const pageOptions = {
         page: req.query.page || 1,

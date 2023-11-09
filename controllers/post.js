@@ -1,7 +1,10 @@
 import { Post } from '../models/Post.js'
 import { User } from '../models/User.js'
+import { showLog } from '../utils/timeLog.js'
 
 export const createPost = (req, res) => {
+    showLog('createPost() Function Called At controllers/post.js')
+
     const userId = req.auth._id
     const { title, excerpt, to, text, status, type, attachmentFile } = req.body
     User
@@ -37,9 +40,11 @@ export const createPost = (req, res) => {
                         return res.status(400).json({
                             error: true
                         })
+                    showLog(`Post Added By SAPID: ${user.sapId} Of Type: ${type} With ID: ${post._id}`)
                     res.json(post)
                 })
                 .catch((error) => {
+                    showLog('Error Occured At createPost() Function Called At controllers/post.js')
                     res.status(400).json({
                         error: true,
                         errorMessage: error
@@ -47,6 +52,7 @@ export const createPost = (req, res) => {
                 })
         })
         .catch((error) => {
+            showLog('Error Occured At createPost() Function Called At controllers/post.js')
             res.status(400).json({
                 error: true,
                 errorMessage: error
@@ -56,6 +62,8 @@ export const createPost = (req, res) => {
 }
 
 export const updatePost = (req, res) => {
+    showLog('updatePost() Function Called At controllers/post.js')
+
     if(req.body.attachmentFile === '')
         delete req.body.attachmentFile
     const userId = req.auth._id
@@ -87,13 +95,14 @@ export const updatePost = (req, res) => {
                         return res.status(400).json({
                             error: true
                         })
-
+                    showLog(`Post Updated By SAPID: ${req.auth.user.sapId} With ID: ${postId}`)
                     res.json({
                         success: true,
                         dbResponse: update
                     })
                 })
                 .catch((error) => {
+                    showLog('Error Occured At updatePost() Function Called At controllers/post.js')
                     res.status(400).json({
                         error: true,
                         errorMessage: error
@@ -102,6 +111,7 @@ export const updatePost = (req, res) => {
           
         })
         .catch((error) => {
+            showLog('Error Occured At updatePost() Function Called At controllers/post.js')
             res.status(400).json({
                 error: true,
                 errorMessage: error
@@ -110,6 +120,7 @@ export const updatePost = (req, res) => {
 }
 
 export const deletePost = (req, res) => {
+    showLog('deletePost() Function Called At controllers/post.js')
     const userId = req.auth._id
     const postId = req.body.postId
     Post
@@ -132,13 +143,15 @@ export const deletePost = (req, res) => {
                         return res.status(400).json({
                             error: true
                         })
-
+                    
+                    showLog(`Post Deleted By SAPID: ${req.auth.user.sapId} With ID: ${postId}`)
                     res.json({
                         success: true,
                         dbResponse: update
                     })
                 })
                 .catch((error) => {
+                    showLog('Error Occured At deletePost() Function Called At controllers/post.js')
                     res.status(400).json({
                         error: true,
                         errorMessage: error
@@ -147,6 +160,7 @@ export const deletePost = (req, res) => {
           
         })
         .catch((error) => {
+            showLog('Error Occured At deletePost() Function Called At controllers/post.js')
             res.status(400).json({
                 error: true,
                 errorMessage: error
@@ -155,6 +169,7 @@ export const deletePost = (req, res) => {
 }
 
 export const getPost = (req, res) => {
+    showLog('getPost() Function Called At controllers/post.js')
     const postId = req.params.postId
     Post
         .findOne({ _id: postId })
@@ -167,6 +182,7 @@ export const getPost = (req, res) => {
             res.json(post)
         })
         .catch((error) => {
+            showLog('Error Occured At getPost() Function Called At controllers/post.js')
             res.status(400).json({
                 error: true,
                 errorMessage: error
@@ -175,6 +191,7 @@ export const getPost = (req, res) => {
 }
 
 export const getPosts = (req ,res) => {
+    showLog(`getPosts() Of Type: ${req.query.type} Function Called At controllers/post.js`)
     const { type } = req.query
     const userId = req.auth._id
     if(!type)

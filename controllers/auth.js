@@ -3,10 +3,11 @@ import jwt from 'jsonwebtoken'
 import { expressjwt } from 'express-jwt'
 import crypto from 'crypto'
 import { cache } from '../middlewares/cache.js'
-import { error } from 'console'
+import { showLog } from '../utils/timeLog.js'
 
 //Create Hashed Password
 const createHash = async (plainText, salt) => {
+    showLog('Error Creating Hash')
     return crypto.createHmac('sha256', salt).update(`${plainText}`).digest('hex')
 }
 
@@ -19,7 +20,7 @@ const getUser =  (id) => {
     // }catch(error){
     //     return null
     // }
-
+    showLog(`getUser() Function Called At controllers/auth.js ( Requested By USER: ${id}}`)
     return User.findOne({_id: id})
             .select('-profilePic -salt -encpy_password')
             .then(user => {
@@ -28,6 +29,7 @@ const getUser =  (id) => {
                 return user
             })
             .catch(error => {
+                showLog('Error At getUser() Function Called At controllers/auth.js')
                 return null
             })
 }
@@ -35,6 +37,8 @@ const getUser =  (id) => {
 
 //Signin Function
 export const signin = (req, res) => {
+    showLog('signin() Function Called At controllers/auth.js')
+
     const {sapId, password} = req.body
     
     User.findOne({sapId})
@@ -59,6 +63,8 @@ export const signin = (req, res) => {
                     user: { _id, firstName, lastName, sapId, role },
                     changePassword: true
                 })
+
+            showLog(`User With SAPID: ${user.sapId} Logged In`)
             return res.json({
                 token, 
                 user: { _id, firstName, lastName, sapId, designations, role }
@@ -67,14 +73,52 @@ export const signin = (req, res) => {
 }
 
 export const loggout = (req, res) => {
+    showLog(`User With SAPID: ${req.auth.user.sapId} Signed Out`)
     res.clearCookie('socis', { path: '/', domain: 'localhost', expires: new Date(1) })
     res.status(200).json({
         logout: true,
         redirect: true
     })
 }
+export const changePasswordFlag = (req, res) => {
+    showLog('changePasswordFlag() Function Called At controllers/auth.js')
+
+    const { sapId } = req.auth.user
+    User
+        .findOne({ sapId })
+        .then(user => {
+            if(!user){
+                showLog('Cannot Find User, Function changePasswordFlag() Called At controllers/auth.js')
+                return res.status(400).json({ error: true, errorMessage: "Error Occured!"})
+            }
+            User
+                .updateOne({ sapId }, { changePassword: "yes" })
+                .then(update => {
+                    showLog(`Change Password Flag Changed To TRUE For SAPID: ${user.sapId}`)
+                    res.json({
+                        success: true,
+                        successMessage: "Changed The Flag"
+                    })
+                })
+                .catch(error => {
+                    showLog('Error Occured At changePasswordFlag() Function Called At controllers/auth.js')
+                    res.status(400).json({
+                        error: true,
+                        errorMessage: error
+                    })
+                })
+        })
+        .catch(error => {
+            showLog('Error Occured At changePasswordFlag() Function Called At controllers/auth.js')
+            res.status(400).json({
+                error: true,
+                errorMessage: error
+            })
+        })
+}
 
 export const changePassword =  (req, res) => {
+    showLog('changePassword() Function Called At controllers/auth.js')
 
     const { password, newpassword } = req.body
     const { sapId } = req.auth.user
@@ -98,12 +142,14 @@ export const changePassword =  (req, res) => {
                                 })
                             User.updateOne({sapId}, { encpy_password: newpass, changePassword: "no" })
                                 .then(update => {
-                                    if(update)
+                                    if(update){
+                                        showLog(`Password Changed For The SAPID: ${user.sapId}`)
                                         return res.json({ success: true, successMessage: "Password Changed!", redirect: true })
-                                    else    
+                                    }else    
                                         return res.status(400).json({ error: true, errorMessage: "Error Updating Password!" })
                                 })
                                 .catch(error => {
+                                    showLog('Error Occured At changePassword() Function Called At controllers/auth.js')
                                     return res.status(400).json({
                                         error: true,
                                         errorMessage: error
@@ -111,6 +157,7 @@ export const changePassword =  (req, res) => {
                                 })
                         })
                         .catch((error) => {
+                            showLog('Error Occured At changePassword() Function Called At controllers/auth.js')
                             return res.status(400).json({
                                 error: true,
                                 errorMessage: "Unknown Error!"
@@ -119,10 +166,12 @@ export const changePassword =  (req, res) => {
                     
                 })
                 .catch((error) => {
+                    showLog('Error Occured At changePassword() Function Called At controllers/auth.js')
                     return res.status(400).json({ error: true, errorMessge: "Unknown error"})
                 })
             })
             .catch((error) => {
+                showLog('Error Occured At changePassword() Function Called At controllers/auth.js')
                 return res.status(400).json({
                     error: true,
                     errorMessage: error
@@ -141,6 +190,8 @@ export const getAllUser = (req, res) => {
     //         errorMessage: error
     //     })
     // }
+    showLog('getAllUser() Function Called At controllers/auth.js')
+
     User.find().select('firstName lastName sapId email designations')
         .then((users) => {
             cache.set(req.url, users)
@@ -156,6 +207,8 @@ export const getAllUser = (req, res) => {
 
 
 export const getUsers = (req, res) => {
+    showLog('getUsers() Function Called At controllers/auth.js')
+
     const pageOptions = {
         page: req.query.page || 1,
         limit: req.query.limit || 10,
@@ -173,6 +226,8 @@ export const getUsers = (req, res) => {
         })
 }
 export const getFaculty = (req, res) => {
+    showLog('getFaculty() Function Called At controllers/auth.js')
+
     User.findOne({ _id: req.params.userId })
         .select('-salt -encpy_password -profilePic')
         .populate({ path: 'reportingManager', select: 'firstName lastName sapId email designations'})
@@ -180,6 +235,7 @@ export const getFaculty = (req, res) => {
             res.json(user)
         })
         .catch((error) => {
+            showLog('Error Occured At getFaculty() Function Called At controllers/auth.js')
             return res.status(400).json({
                 error: true,
                 errorMessage: error
@@ -189,6 +245,7 @@ export const getFaculty = (req, res) => {
 
 //Get User By SAP Id
 export const getUserById = (req, res) => {
+    showLog('getUserById() Function Called At controllers/auth.js')
     
     getUser(req.auth._id)
         .then(user => {
@@ -200,6 +257,7 @@ export const getUserById = (req, res) => {
             res.json(user)
         })
         .catch(error => {
+            showLog('Error Occured At getUserById() Function Called At controllers/auth.js')
             res.status(400).json({
                 error: true,
                 errorMesssage: error
@@ -210,6 +268,7 @@ export const getUserById = (req, res) => {
 
 //Admin Signin Function
 export const authenticateAdmin = (email, password) => {
+    showLog('authenticateAdmin() Function Called At controllers/auth.js')
     return User.findOne({email})
                 .select('-profilePic')
                 .then((user) => {
@@ -243,6 +302,7 @@ export const isSignedIn = expressjwt({
 })
 
 export const getProfilePic = (req, res) => {
+    showLog('getProfilePic() Function Called At controllers/auth.js')
     let userId = null
     if(req.query.userId) {
         userId = req.query.userId
@@ -256,6 +316,7 @@ export const getProfilePic = (req, res) => {
             res.json(pic)
         })
         .catch((error) => {
+            showLog('Error Occured At getProfilePic() Function Called At controllers/auth.js')
             res.status(400).json({
                 error: true,
                 errorMessage: error
@@ -264,6 +325,8 @@ export const getProfilePic = (req, res) => {
 }
 
 export const uploadProfile = (req, res) => {
+    showLog('uploadProfile() Function Called At controllers/auth.js')
+
     const userId = req.auth._id
     User
         .updateOne({ _id: userId }, { profilePic: req.body.profilePic })
@@ -279,6 +342,7 @@ export const uploadProfile = (req, res) => {
             })
         })
         .catch((error) => {
+            showLog('Error Occured At uploadProfile() Function Called At controllers/auth.js')
             res.status(400).json({
                 error: true,
                 errorMessage: error
@@ -326,6 +390,7 @@ export const isFaculty = async (req, res, next) => {
 
 //Middleware For Check If User Is Management
 export const isManagement = async (req, res, next) => {
+
     if(req.auth.user.role === 'admin')
         next()
     if(req.auth.user.role !== 'management')
