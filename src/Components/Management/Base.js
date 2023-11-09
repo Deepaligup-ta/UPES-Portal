@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { UserOutlined, IdcardOutlined, ScheduleOutlined, AppstoreOutlined, PlusOutlined, FolderViewOutlined, LogoutOutlined, DashboardOutlined, OrderedListOutlined ,NotificationOutlined, MessageOutlined, FileTextOutlined, BulbOutlined, BulbFilled } from '@ant-design/icons'
-import { Layout, Menu, ConfigProvider, FloatButton, Avatar, Image } from 'antd'
+import { Layout, Menu, ConfigProvider, Avatar, Image, Dropdown } from 'antd'
 import { getAuthToken, signout } from '../../Helper/Authentication'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
@@ -26,8 +26,6 @@ const ManagementBase = (props) => {
     else  
       setDark(true)
   }
-
- 
   const logout = () => {
     signout()
       .then((data) => {
@@ -87,7 +85,25 @@ const ManagementBase = (props) => {
       label: (<Link onClick={logout}>Logout</Link>),
     },
   
-    ]
+  ]
+  const items = [
+    {
+      key: '2',
+      label: (
+        <Link to='/management/profile'>
+          Profile
+        </Link>
+      ),
+    },
+    {
+      key: '1',
+      label: (
+        <a href='#' onClick={() => logout()}>
+          Logout
+        </a>
+      ),
+    },
+  ]
   return (
     <ConfigProvider
       theme={{
@@ -124,7 +140,9 @@ const ManagementBase = (props) => {
               padding: 0,
             }}
           >
-            <Avatar size="large" style={{ float: 'right', margin: '10px'}} icon={<UserOutlined />} />
+            <Dropdown menu={{ items, }} placement='bottom'>
+              <Avatar size="large" style={{ float: 'right', margin: '10px'}} icon={<UserOutlined />} />
+            </Dropdown>
           </Header>
           <Content
             style={{
@@ -146,10 +164,10 @@ const ManagementBase = (props) => {
 
             }}
           >
-            Made By Students During Nighouts
+            Debugged By Students 
           </Footer>
         </Layout>
-        <FloatButton icon={(dark ? <BulbFilled /> : <BulbOutlined />)} onClick={() => mode()} />
+        {/* <FloatButton icon={(dark ? <BulbFilled /> : <BulbOutlined />)} onClick={() => mode()} /> */}
       </Layout>
     </ConfigProvider>
   )

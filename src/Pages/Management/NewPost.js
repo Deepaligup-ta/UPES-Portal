@@ -332,14 +332,14 @@ const NewPostManagement = () => {
                     <Input onChange={fileChange} type="file" />
                 </Form.Item>
                 <Form.Item
-                    label="Description"
+                    label="Subject"
                     name="excerpt"
                     initialValue={data.excerpt ? data.excerpt : ""}
                     rules={[{ required: (type === "Message" ? false : true ), message: 'Field is required!' }]}
                 >
                     <Input.TextArea
                         type="text"
-                        placeholder="Description"
+                        placeholder="Subject"
                     />
                 </Form.Item>
                 <Form.Item

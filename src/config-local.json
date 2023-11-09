@@ -1,0 +1,12 @@
+{
+    "host": "http://localhost:8000",
+    "auth": "http://localhost:8000/api/auth",
+    "announcement": "http://localhost:8000/api/announcement",
+    "policy": "http://localhost:8000/api/policy",
+    "timetable": "http://localhost:8000/api/timetable",
+    "course": "http://localhost:8000/api/course",
+    "message": "http://localhost:8000/api/message",
+    "post": "http://localhost:8000/api/post",
+    "group": "http://localhost:8000/api/group"
+
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import PageTitle from "../../Components/Basic/PageTitle"
-import {  Col, Row, Space, Spin, Typography } from "antd"
+import {  Col, Row, Space, Spin, Typography, Card } from "antd"
 import { useParams } from "react-router-dom"
 import FacultyBase from "../../Components/Faculty/Base"
 import { getPost } from "../../Helper/Post"
@@ -28,18 +28,25 @@ const FullFacultyPolicy = (props) => {
             <PageTitle title="Policy View" />
             <Space />
             { loading ? <Spin style={{ textAlign: 'center', justifyContent: 'center'}} /> :
-                <Row style={{ height: '100vh', width: '100vw'}}>
-                    <Col flex="200px">
-                        <Typography.Text style={{ fontSize: '18px'}}>
-                            Policy Name: {data.title} <br />
-                            Policy Description: {data.excerpt}
-                        </Typography.Text>
+                <Row>
+                    <Col flex={0.2}>
+                        <Card 
+                            style={{ width: '240px', height: '70vh' }}  
+                        >
+                            <Typography.Title style={{ fontSize: '20px'}}>
+                                Name: {data.title}
+                            </Typography.Title>
+                            <Typography>
+                                Description: {data.excerpt}
+                            </Typography>
+                        </Card>
                     </Col>
-                    <Col flex="auto">
-                        <iframe width="50%" height="50%" src={data.attachmentFile}></iframe>
+                    <Col flex={3} style={{height: '70vh'}}>
+                        <iframe width="100%" height="100%" src={data.attachmentFile}></iframe>
                     </Col>
                 </Row> 
             }
+           
            
         </FacultyBase>
     )

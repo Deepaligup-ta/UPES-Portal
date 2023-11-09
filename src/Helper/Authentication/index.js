@@ -139,6 +139,24 @@ export const getPicture = (params) => {
 
 }
 
+export const changePasswordFlag = () => {
+
+  return fetch(`${URL}/passwordflag`, {
+    headers: {
+      'Accept': "application/json",
+      "Content-Type": "application/json",
+      'Authorization': `Bearer ${getToken()[2]}`,
+    },
+    credentials: "include",
+    method: "PUT",
+    body: JSON.stringify({ demo: "hehe" }),
+  })
+    .then((res) => res.json())
+    .catch((error) => error);
+
+}
+
+
 export const changePassword = (body) => {
 
     return fetch(`${URL}/change-password`, {

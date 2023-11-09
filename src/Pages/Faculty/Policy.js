@@ -24,6 +24,8 @@ const FacultyPolicy = () => {
             .then((data) => {
                 if(data.error)
                     return openNotification({ type: 'error', message: 'Error Occured' })
+                if(data.docs.length == 0)
+                    return openNotification({ type: 'info', message: 'No Policies Found!'})
                 setData(data.docs)
                 setLoading(false)
             })

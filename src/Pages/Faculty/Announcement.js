@@ -25,6 +25,11 @@ const FacultyAnnouncement = () => {
         document.title = "Announcements | SoCIS"
         getPosts(1, 'Announcement')
             .then((res) => {
+                if(res.error)
+                    return openNotification({ type: 'error', message: 'Error Occurred!'})
+
+                if(res.docs.length === 0)
+                    return openNotification({ type: 'info', message: 'No Announcements Found!'})
                 setInfo(res)
                 setData(res.docs)
                 setLoading(false)

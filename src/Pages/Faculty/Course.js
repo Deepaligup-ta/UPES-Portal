@@ -22,8 +22,12 @@ const FacultyCourse = () => {
         document.title = "Courses | SoCIS"
         getCourses()
             .then((res) => {
+                
                 if(res.error)
-                    return setError(res)
+                    return openNotification({ type: 'error', message: 'Error Occurred!'})
+
+                if(res.length === 0)
+                    return openNotification({ type: 'info', message: 'No Announcements Found!'})
                 setData(res)
                 setLoading(false)
             })

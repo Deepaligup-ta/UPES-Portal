@@ -1,7 +1,7 @@
-import { Card, Layout, QRCode, Col, Row, Button, Form, Input } from "antd"
+import { Card, Layout, QRCode, Col, Row, Button, Form, Input, Modal } from "antd"
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { getPicture, uploadPicture } from "../../Helper/Authentication"
+import { changePasswordFlag, getAuthToken, getPicture, uploadPicture } from "../../Helper/Authentication"
 
 const ProfileCard = (props) => {
     const [pic, setPic] = useState(null)
@@ -38,6 +38,24 @@ const ProfileCard = (props) => {
             })
     }
 
+    const changePassword = () => {
+        changePasswordFlag()
+            .then(data => {
+                if(data.error)
+                    return alert("Can't Change The Flag!")
+                console.log(data)
+                if(data.success){
+                    localStorage.setItem('user', JSON.stringify({ changePassword: true }))
+                    return window.location.href = ('/new-password')
+                }else {
+                    alert("Encountered An Error")
+                }
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
     return(
         <Layout.Content>
             <Row>
@@ -62,25 +80,31 @@ const ProfileCard = (props) => {
                                 <b>Email:</b> <Link to={`mailto:${props.data.reportingManager.email}`}> {props.data.reportingManager.email}</Link><br/>
                             </div>
                         }
-                        <Form
-                            name="picture"
-                            onFinish={onFinish}
-                            autoComplete="off"
-                            style={{ width: '240px'}}
-                        >
-                            <Form.Item
-                                style={{ padding: 0, margin: 0}}
-                                label="Profile Picture"
-                                name="profilePic"
-                                rules={[{ required: true, message: 'Field is required!' }]}
+                        { props.data.sapId === getAuthToken().user.sapId ? 
+                            <Form
+                                name="picture"
+                                onFinish={onFinish}
+                                autoComplete="off"
+                                style={{ width: '240px'}}
                             >
-                                <Input onChange={fileChange} type="file" />
-                            </Form.Item>
-                            { loading ? "Uploading..." : ''}
-                            <Button style={{ visibility: (loading ? 'hidden': 'visible')}} type="primary" htmlType="submit">
-                                Update
-                            </Button>
-                        </Form>
+                                <Form.Item
+                                    style={{ padding: 0, margin: 0}}
+                                    label="Profile Picture"
+                                    name="profilePic"
+                                    rules={[{ required: true, message: 'Field is required!' }]}
+                                >
+                                    <Input onChange={fileChange} type="file" />
+                                </Form.Item>
+                                { loading ? "Uploading..." : ''}
+                                <Button  type="primary" htmlType="submit">
+                                    {loading ? 'Uploading' : 'Upload'}
+                                </Button><br/>
+                            </Form>
+                            : "" }
+                        <br/>
+                        <Button style={{ visibility: (props.data.sapId !== getAuthToken().user.sapId ? 'hidden' : 'visible')}} type="primary" onClick={() => changePassword()}>
+                                Change Password
+                        </Button>
                         <QRCode 
                             value={JSON.stringify(props.data)}
                             style={{ float: 'right'}}

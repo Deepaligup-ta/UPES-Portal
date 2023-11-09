@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { UserOutlined, IdcardOutlined, ScheduleOutlined, AppstoreOutlined, PlusOutlined, FolderViewOutlined, LogoutOutlined, DashboardOutlined, OrderedListOutlined ,NotificationOutlined, MessageOutlined, FileTextOutlined, BulbOutlined, BulbFilled } from '@ant-design/icons'
-import { Layout, Menu, theme, FloatButton, Avatar, Image, ConfigProvider } from 'antd'
+import { Layout, Menu, Dropdown, Avatar, Image, ConfigProvider } from 'antd'
 import { getAuthToken, signout } from '../../Helper/Authentication'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
@@ -33,6 +33,25 @@ const FacultyBase = (props) => {
           return navigate('/?logout=true')      
       })
   }
+  
+  const items = [
+    {
+      key: '2',
+      label: (
+        <Link to='/faculty/profile'>
+          Profile
+        </Link>
+      ),
+    },
+    {
+      key: '1',
+      label: (
+        <a href='#' onClick={() => logout()}>
+          Logout
+        </a>
+      ),
+    },
+  ]
   const menuItem = [
     {
       key: "/faculty/dashboard",
@@ -121,7 +140,9 @@ const FacultyBase = (props) => {
               padding: 0,
             }}
           >
-            <Avatar size="large" style={{ float: 'right', margin: '10px'}} icon={<UserOutlined />} />
+            <Dropdown menu={{ items, }} placement='bottom'>
+              <Avatar size="large" style={{ float: 'right', margin: '10px'}} icon={<UserOutlined />} />
+            </Dropdown>          
           </Header>
           <Content
             style={{
@@ -143,10 +164,10 @@ const FacultyBase = (props) => {
 
             }}
           >
-            Made By Students During Nighouts
+            Debugged By Students 
           </Footer>
         </Layout>
-        <FloatButton icon={(dark ? <BulbFilled /> : <BulbOutlined />)} onClick={() => mode()} />
+        {/* <FloatButton icon={(dark ? <BulbFilled /> : <BulbOutlined />)} onClick={() => mode()} /> */}
       </Layout>
     </ConfigProvider>
   )
