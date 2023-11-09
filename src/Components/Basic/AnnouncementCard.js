@@ -32,7 +32,7 @@ const AnnouncementCard = (props) => {
                                         //         See
                                         //     </Button>
                                         // </Link>,
-                                        <Link style={{visibility: ( getAuthToken().user.role === "management" ? "visible": "hidden")}} to={`/management/announcement/new?id=${item._id}`}>
+                                        <Link style={{visibility: ( getAuthToken().user.role === "management" ? "visible": "hidden")}} to={`/management/post/new?id=${item._id}`}>
                                             <Button >
                                                 Update
                                             </Button>
@@ -46,8 +46,8 @@ const AnnouncementCard = (props) => {
                                         {item.description}
                                     </Typography.Text>
                                     <Typography.Title style={{ fontSize: '12px', textAlign: 'right'}}>
-                                        {item.from.firstName} <br />
-                                        ({item.from.designations})
+                                        {item.author.firstName} <br />
+                                        ({item.author.designations})
                                     </Typography.Title>
                                 </Card>
                             </Badge.Ribbon>

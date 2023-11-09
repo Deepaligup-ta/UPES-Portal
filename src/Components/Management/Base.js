@@ -62,72 +62,24 @@ const ManagementBase = (props) => {
       label: (<Link to="/management/profile">Profile</Link>),
     },
     {
-      key: "announcement",
-      icon: React.createElement(NotificationOutlined),
-      label: `Announcements`,
-      children: [
-        {
-          key: "/management/announcement/new",
-          icon: React.createElement(PlusOutlined),
-          label: (<Link to="/management/announcement/new">New</Link>),
-        },
-        {
-          key: "/management/announcement/view",
-          icon: React.createElement(FolderViewOutlined),
-          label: (<Link to="/management/announcement/view">View</Link>),
-        }
-      ]
+      key: "/management/announcement/view",
+      icon: React.createElement(FolderViewOutlined),
+      label: (<Link to="/management/announcement/view">Announcements</Link>),
     },
     {
       key: "message",
       icon: React.createElement(MessageOutlined),
-      label: `Message`,
-      children: [
-        {
-          key: "/management/message/new",
-          icon: React.createElement(PlusOutlined),
-          label: (<Link to="/management/message/new">New</Link>),
-        },
-        {
-          key: "/management/message/view",
-          icon: React.createElement(FolderViewOutlined),
-          label: (<Link to="/management/message/view">View</Link>),
-        }
-      ]
+      label: (<Link to="/management/message/view">Messages</Link>),
     },
     {
-      key: "post",
-      icon: React.createElement(AppstoreOutlined),
-      label: `Post`,
-      children: [
-        {
-          key: "/management/post/new",
-          icon: React.createElement(PlusOutlined),
-          label: (<Link to="/management/post/new">New</Link>),
-        },
-        {
-          key: "/management/post/view",
-          icon: React.createElement(FolderViewOutlined),
-          label: (<Link to="/management/post/view">View</Link>),
-        }
-      ]
+      key: "/management/post/new",
+      icon: React.createElement(PlusOutlined),
+      label: (<Link to="/management/post/new">Post</Link>),
     },
     {
-      key: "policy",
-      icon: React.createElement(FileTextOutlined),
-      label: `Policy`,
-      children: [
-        {
-          key: "/management/policy/new",
-          icon: React.createElement(PlusOutlined),
-          label: (<Link to="/management/policy/new">New</Link>),
-        },
-        {
-          key: "/management/policy/view",
-          icon: React.createElement(FolderViewOutlined),
-          label: (<Link to="/management/policy/view">View</Link>),
-        }
-      ]
+      key: "/management/policy/view",
+      icon: React.createElement(FolderViewOutlined),
+      label: (<Link to="/management/policy/view">Policy</Link>),
     },
     {
       key: "Logout",

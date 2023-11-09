@@ -45,16 +45,9 @@ const FacultyBase = (props) => {
       label: (<Link to="/faculty/timetable">Timetable</Link>),
     },
     {
-      key: "announcement",
-      icon: React.createElement(NotificationOutlined),
-      label: `Announcements`,
-      children: [
-        {
-          key: "/faculty/announcement/view",
-          icon: React.createElement(FolderViewOutlined),
-          label: (<Link to="/faculty/announcement/view">View</Link>),
-        }
-      ]
+      key: "/faculty/announcement/view",
+      icon: React.createElement(FolderViewOutlined),
+      label: (<Link to="/faculty/announcement/view">Announcement</Link>),
     },
     {
       key: "/faculty/course",
@@ -67,50 +60,19 @@ const FacultyBase = (props) => {
       label: (<Link to="/faculty/profile">Profile</Link>),
     },
     {
-      key: "post",
-      icon: React.createElement(AppstoreOutlined),
-      label: `Post`,
-      children: [
-        {
-          key: "/faculty/post/new",
-          icon: React.createElement(PlusOutlined),
-          label: (<Link to="/faculty/post/new">New</Link>),
-        },
-        {
-          key: "/faculty/post/view",
-          icon: React.createElement(FolderViewOutlined),
-          label: (<Link to="/faculty/post/view">View</Link>),
-        }
-      ]
+      key: "/faculty/post/new",
+      icon: React.createElement(PlusOutlined),
+      label: (<Link to="/faculty/post/new">Post</Link>),
     },
     {
-      key: "message",
-      icon: React.createElement(MessageOutlined),
-      label: `Message`,
-      children: [
-        {
-          key: "/faculty/message/new",
-          icon: React.createElement(PlusOutlined),
-          label: (<Link to="/faculty/message/new">New</Link>),
-        },
-        {
-          key: "/faculty/message/view",
-          icon: React.createElement(FolderViewOutlined),
-          label: (<Link to="/faculty/message/view">View</Link>),
-        }
-      ]
+      key: "/faculty/message/view",
+      icon: React.createElement(FolderViewOutlined),
+      label: (<Link to="/faculty/message/view">Message</Link>),
     },
     {
-      key: "policy",
-      icon: React.createElement(FileTextOutlined),
-      label: `Policy`,
-      children: [
-        {
-          key: "/faculty/policy/view",
-          icon: React.createElement(FolderViewOutlined),
-          label: (<Link to="/faculty/policy/view">View</Link>),
-        }
-      ]
+      key: "/faculty/policy/view",
+      icon: React.createElement(FolderViewOutlined),
+      label: (<Link to="/faculty/policy/view">Policy</Link>),
     },
     {
       key: "Logout",

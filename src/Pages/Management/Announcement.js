@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react"
 import ManagementBase from "../../Components/Management/Base"
 import PageTitle from "../../Components/Basic/PageTitle"
 import { Pagination, Space, notification } from "antd"
-import { getAnnouncements } from "../../Helper/Announcement/index.js"
 import AnnouncementCard from "../../Components/Basic/AnnouncementCard"
 import { useLocation } from "react-router-dom"
 import CardLoader from "../../Components/Basic/CardLoader"
+import { getPosts } from "../../Helper/Post"
 
 
 const MangementAnnouncement = () => {
@@ -29,14 +29,14 @@ const MangementAnnouncement = () => {
 
         let success = query.get('success')
 
-        if(success === "new") 
-            openNotification({ type: "success", message: "Added New Announcement!" })
-        else if(success === "edit")
-            openNotification({ type: "success", message: "Updated Announcement!" })
-        else if(success === "delete")
-            openNotification({ type: "success", message: "Deleted Announcement!" })
+        // if(success === "new") 
+        //     openNotification({ type: "success", message: "Added New Announcement!" })
+        // else if(success === "edit")
+        //     openNotification({ type: "success", message: "Updated Announcement!" })
+        // else if(success === "delete")
+        //     openNotification({ type: "success", message: "Deleted Announcement!" })
 
-        getAnnouncements(1)
+        getPosts(1, 'Announcement')
             .then((res) => {
 
                 if(res.error)
@@ -44,7 +44,7 @@ const MangementAnnouncement = () => {
 
                 if(res.docs.length === 0)
                     return openNotification({ type: 'info', message: 'No Announcements Found!'})
-
+                console.log(res)
                 setInfo(res)
                 setData(res.docs)
                 setLoading(false)
@@ -58,7 +58,7 @@ const MangementAnnouncement = () => {
 
         setLoading(true)
         
-        getAnnouncements(page)
+        getPosts(page, 'Announcement')
             .then((res) => {
                 setInfo(res)
                 setData(res.docs)

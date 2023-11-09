@@ -3,7 +3,7 @@ import ManagementBase from "../../Components/Management/Base"
 import PageTitle from "../../Components/Basic/PageTitle"
 import {  Col, Row, Space, Spin, Card, Typography } from "antd"
 import { useParams } from "react-router-dom"
-import { getPolicy } from "../../Helper/Policy"
+import { getPost } from "../../Helper/Post"
 
 
 const FullPolicy = (props) => {
@@ -12,7 +12,7 @@ const FullPolicy = (props) => {
     const { id } = useParams()
     useEffect(() => {
         document.title = "Policy | SoCIS"
-        getPolicy({ policyId: id })
+        getPost({ postId: id })
             .then((res) => {
                 setData(res)
                 setLoading(false)
@@ -34,15 +34,15 @@ const FullPolicy = (props) => {
                             style={{ width: '240px', height: '70vh' }}  
                         >
                             <Typography.Title style={{ fontSize: '20px'}}>
-                                Name: {data.policyName}
+                                Name: {data.title}
                             </Typography.Title>
                             <Typography>
-                                Description: {data.policyDescription}
+                                Description: {data.excerpt}
                             </Typography>
                         </Card>
                     </Col>
                     <Col flex={3} style={{height: '70vh'}}>
-                        <iframe width="100%" height="100%" src={data.policyFile}></iframe>
+                        <iframe width="100%" height="100%" src={data.attachmentFile}></iframe>
                     </Col>
                 </Row> 
             }

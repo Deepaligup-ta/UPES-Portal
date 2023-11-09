@@ -67,9 +67,9 @@ export const getPost = (params) => {
 
 }
 
-export const getPosts = (page) => {
+export const getPosts = (page, type) => {
     
-    return fetch(`${URL}/all?page=${page}`, {
+    return fetch(`${URL}/all?page=${page}&type=${type}`, {
         headers: {
           'Accept': "application/json",
           "Content-Type": "application/json",

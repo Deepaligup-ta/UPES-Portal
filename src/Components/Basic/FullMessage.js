@@ -10,15 +10,16 @@ const FullMessage = (props) => {
                         <Typography.Title style={{ fontSize: '30px', textAlign: 'center'}}>
                             {props.data.title}
                         </Typography.Title>
-                        {/* <Typography.Title style={{ fontSize: '18px'}}>
-                            Description: {props.data.description}
-                        </Typography.Title> */}
+                        <Typography.Title style={{ fontSize: '18px'}}>
+                            Description: {props.data.excerpt}
+                        </Typography.Title>
                         <Typography.Text style={{ fontSize: '16px'}}>
-                            { props.data.message }
+                            { props.data.text }
                         </Typography.Text> 
                         <Typography.Title style={{ fontSize: '20px', bottom: 0, right: 0, position: 'absolute', padding: '20px'}}>
-                            { props.data.from.firstName } { props.data.from.lastName} <br/> ({ props.data.from.designations })
+                            { props.data.author.firstName } { props.data.author.lastName} <br/> ({ props.data.author.designations })
                         </Typography.Title> 
+                        <iframe width="100%" height="500px" src={props.data.attachmentFile}></iframe>
                     </Card>
                 </Badge.Ribbon>
             </Col>

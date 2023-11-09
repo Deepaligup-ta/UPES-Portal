@@ -34,7 +34,7 @@ const MessageCard = (props) => {
                                         //     </Button>
                                         // </Link>,
                                      
-                                        <Link style={{visibility: ( getAuthToken().user.sapId === item.from.sapId ? "visible": "hidden")}} to={`${getAuthToken().user.role === "management" ? '/management' : '/faculty'}/message/new?id=${item._id}`}>
+                                        <Link style={{visibility: ( getAuthToken().user.sapId === item.author.sapId ? "visible": "hidden")}} to={`${getAuthToken().user.role === "management" ? '/management' : '/faculty'}/post/new?id=${item._id}`}>
                                             <Button >
                                                 Update 
                                             </Button>
@@ -45,11 +45,11 @@ const MessageCard = (props) => {
                                         {item.title}
                                     </Typography.Title>
                                     <Typography.Text>
-                                        {item.description}
+                                        {item.excerpt}
                                     </Typography.Text>
                                     <Typography.Title style={{ fontSize: '12px', textAlign: 'right'}}>
-                                        {item.from.firstName} <br />
-                                        ({item.from.designations})
+                                        {item.author.firstName} <br />
+                                        ({item.author.designations})
                                     </Typography.Title>
                                 </Card>
                             </Badge.Ribbon>

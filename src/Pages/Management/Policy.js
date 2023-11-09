@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom"
 import { getPolicies } from "../../Helper/Policy"
 import PolicyCard from "../../Components/Basic/PolicyCard"
 import CardLoader from '../../Components/Basic/CardLoader'
+import { getPosts } from "../../Helper/Post"
 
 const Policy = () => {
     const [data, setData] = useState([])
@@ -31,13 +32,13 @@ const Policy = () => {
             openNotification({ type: "success", message: "Updated Policy!" })
         else if(success === "delete")
             openNotification({ type: "success", message: "Deleted Policy!" })
-        getPolicies()
+        getPosts(1, 'Policy')
             .then((data) => {
                 if(data.error)
                     return openNotification({ type: 'error', message: 'Error Occured' })
                 if(data.length === 0)
                     return openNotification({ type: 'info', message: 'No Policies Found!'})
-                setData(data)
+                setData(data.docs)
                 setLoading(false)
             })
     }, [setLoading, setData, query])

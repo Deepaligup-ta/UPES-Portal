@@ -6,6 +6,7 @@ import { getMessages } from "../../Helper/Message/index.js"
 import MessageCard from "../../Components/Basic/MessageCard"
 import { useLocation } from "react-router-dom"
 import CardLoader from "../../Components/Basic/CardLoader"
+import { getPosts } from "../../Helper/Post"
 
 
 const ManagementMessage = () => {
@@ -26,14 +27,8 @@ const ManagementMessage = () => {
     const query = useQuery()
     useEffect(() => {
         document.title = "Messages | SoCIS"
-        let success = query.get('success')
-        if(success === "new") 
-            openNotification({ type: "success", message: "Added New Message!" })
-        else if(success === "edit")
-            openNotification({ type: "success", message: "Updated Message!" })
-        else if(success === "delete")
-            openNotification({ type: "success", message: "Deleted Message!" })
-        getMessages(1)
+      
+        getPosts(1, 'Message')
             .then((res) => {
                 if(res.error)
                     return openNotification({ type: 'error', message: 'Error Occurred!'})
@@ -46,11 +41,11 @@ const ManagementMessage = () => {
             .catch((error) => {
                 console.log(error)
             })
-    }, [setData, setInfo, query])
+    }, [setData, setInfo])
     
     const changePage = (page) => {
         setLoading(true)
-        getMessages(page)
+        getPosts(page, 'Message')
             .then((res) => {
                 setInfo(res)
                 setData(res.docs)

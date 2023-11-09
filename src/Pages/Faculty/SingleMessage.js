@@ -5,6 +5,7 @@ import { getMessage } from "../../Helper/Message"
 import { useParams } from "react-router-dom"
 import FullMessage from "../../Components/Basic/FullMessage"
 import FacultyBase from "../../Components/Faculty/Base"
+import { getPost } from "../../Helper/Post"
 
 
 const SingleMessageFaculty = (props) => {
@@ -13,7 +14,7 @@ const SingleMessageFaculty = (props) => {
     const { id } = useParams()
     useEffect(() => {
         document.title = "View Message | SoCIS"
-        getMessage({ messageId: id })
+        getPost({ postId: id })
             .then((res) => {
                 setData(res)
                 setLoading(false)

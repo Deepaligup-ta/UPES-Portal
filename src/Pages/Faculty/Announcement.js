@@ -6,6 +6,7 @@ import { getAnnouncements } from "../../Helper/Announcement/index.js"
 import AnnouncementCard from "../../Components/Basic/AnnouncementCard"
 import CardLoader from "../../Components/Basic/CardLoader"
 import FacultyBase from "../../Components/Faculty/Base"
+import { getPost, getPosts } from "../../Helper/Post"
 
 
 const FacultyAnnouncement = () => {
@@ -22,7 +23,7 @@ const FacultyAnnouncement = () => {
    
     useEffect(() => {
         document.title = "Announcements | SoCIS"
-        getAnnouncements(1)
+        getPosts(1, 'Announcement')
             .then((res) => {
                 setInfo(res)
                 setData(res.docs)
@@ -35,7 +36,7 @@ const FacultyAnnouncement = () => {
     
     const changePage = (page) => {
         setLoading(true)
-        getAnnouncements(page)
+        getPosts(page, 'Announcement')
             .then((res) => {
                 setInfo(res)
                 setData(res.docs)

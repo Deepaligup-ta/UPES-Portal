@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react"
 import PageTitle from "../../Components/Basic/PageTitle"
 import FacultyBase from '../../Components/Faculty/Base'
 import { Pagination, Space, notification } from "antd"
-import { getMessages } from "../../Helper/Message/index.js"
 import MessageCard from "../../Components/Basic/MessageCard"
 import { useLocation } from "react-router-dom"
 import CardLoader from "../../Components/Basic/CardLoader"
+import { getPosts } from "../../Helper/Post"
 
 
 const FacultyMessage = () => {
@@ -33,7 +33,7 @@ const FacultyMessage = () => {
             openNotification({ type: "success", message: "Updated Message!" })
         else if(success === "delete")
             openNotification({ type: "success", message: "Deleted Message!" })
-        getMessages(1)
+        getPosts(1, 'Message')
             .then((res) => {
                 if(res.error)
                     return openNotification({ type: 'error', message: 'Error Occurred!'})
@@ -50,7 +50,7 @@ const FacultyMessage = () => {
     
     const changePage = (page) => {
         setLoading(true)
-        getMessages(page)
+        getPosts(page, 'Message')
             .then((res) => {
                 setInfo(res)
                 setData(res.docs)

@@ -33,7 +33,7 @@ const PolicyCard = (props) => {
                                                 View
                                             </Button>
                                         </Link>,
-                                        <Link style={{visibility: ( getAuthToken().user.role === "management" ? "visible": "hidden")}} to={`/management/policy/new?id=${item._id}`}>
+                                        <Link style={{visibility: ( getAuthToken().user.role === "management" ? "visible": "hidden")}} to={`/management/post/new?id=${item._id}`}>
                                             <Button >
                                                 Update
                                             </Button>
@@ -41,10 +41,10 @@ const PolicyCard = (props) => {
                                     ]}
                                 >
                                     <Typography.Title style={{ fontSize: '18px'}}>
-                                        {item.policyName}
+                                        {item.title}
                                     </Typography.Title>
                                     <Typography.Text>
-                                        {item.policyDescriptiom}
+                                        {item.excerpt}
                                     </Typography.Text>
                                 </Card>
                             </Badge.Ribbon>

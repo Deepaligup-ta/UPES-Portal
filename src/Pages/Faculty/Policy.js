@@ -5,6 +5,7 @@ import { getPolicies } from "../../Helper/Policy"
 import PolicyCard from "../../Components/Basic/PolicyCard"
 import CardLoader from '../../Components/Basic/CardLoader'
 import FacultyBase from "../../Components/Faculty/Base"
+import { getPosts } from "../../Helper/Post"
 
 const FacultyPolicy = () => {
     const [data, setData] = useState([])
@@ -19,11 +20,11 @@ const FacultyPolicy = () => {
   
     useEffect(() => {
         document.title = "Policies | SoCIS"
-        getPolicies()
+        getPosts(1, 'Policy')
             .then((data) => {
                 if(data.error)
                     return openNotification({ type: 'error', message: 'Error Occured' })
-                setData(data)
+                setData(data.docs)
                 setLoading(false)
             })
     }, [setLoading, setData])

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react"
 import ManagementBase from "../../Components/Management/Base"
 import PageTitle from "../../Components/Basic/PageTitle"
 import { Skeleton } from "antd"
-import { getAnnouncement } from "../../Helper/Announcement"
 import { useParams } from "react-router-dom"
 import FullAnnouncement from "../../Components/Basic/FullAnnouncement"
+import { getPost } from "../../Helper/Post"
 
 
 const SingleAnnouncement = (props) => {
@@ -13,7 +13,7 @@ const SingleAnnouncement = (props) => {
     const { id } = useParams()
     useEffect(() => {
         document.title = "View Announcement | SoCIS"
-        getAnnouncement({ announcementId: id })
+        getPost({ postId: id })
             .then((res) => {
                 setData(res)
                 setLoading(false)

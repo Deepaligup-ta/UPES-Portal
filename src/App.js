@@ -27,10 +27,10 @@ const FullFacultyPolicy = React.lazy(() => import("./Pages/Faculty/FullPolicy"))
 const FacultyCourse = React.lazy(() => import("./Pages/Faculty/Course"))
 const FacultyProfile = React.lazy(() => import("./Pages/Faculty/Profile"))
 const ManagementMessage = React.lazy(() => import("./Pages/Management/Message"))
-const NewMessage = React.lazy(() => import("./Pages/Management/NewMessage"))
+// const NewMessage = React.lazy(() => import("./Pages/Management/NewMessage"))
 const SingleMessage = React.lazy(() => import("./Pages/Management/SingleMessage"))
 const FacultyMessage = React.lazy(() => import("./Pages/Faculty/Message"))
-const NewMessageFaculty = React.lazy(() => import("./Pages/Faculty/NewMessage"))
+// const NewMessageFaculty = React.lazy(() => import("./Pages/Faculty/NewMessage"))
 const SingleMessageFaculty = React.lazy(() => import("./Pages/Faculty/SingleMessage"))
 const NewPostFaculty = React.lazy(() => import("./Pages/Faculty/NewPost"))
 const FacultyPost  = React.lazy(() => import("./Pages/Faculty/Post"))
@@ -58,30 +58,30 @@ const App = () => {
           <Route path="/faculty/profile" element={<Suspense fallback={<Loader />}><FacultyProfile/></Suspense>}/>
           <Route path="/faculty/message/view" element={<Suspense fallback={<Loader />}><FacultyMessage /></Suspense>} />
           <Route path="/faculty/message/view/:id" element={<Suspense fallback={<Loader />}><SingleMessageFaculty /></Suspense>} />
-          <Route path="/faculty/message/new" element={<Suspense fallback={<Loader />}><NewMessageFaculty /></Suspense>} />
+          {/* <Route path="/faculty/message/new" element={<Suspense fallback={<Loader />}><NewMessageFaculty /></Suspense>} /> */}
           <Route path="/faculty/post/new" element={<Suspense fallback={<Loader />}><NewPostFaculty /></Suspense>} />
-          <Route path="/faculty/post/view" element={<Suspense fallback={<Loader />}><FacultyPost /></Suspense>} />
-          <Route path="/faculty/post/view/:id" element={<Suspense fallback={<Loader />}><SinglePostFaculty /></Suspense>} />
+          {/* <Route path="/faculty/post/view" element={<Suspense fallback={<Loader />}><FacultyPost /></Suspense>} /> */}
+          {/* <Route path="/faculty/post/view/:id" element={<Suspense fallback={<Loader />}><SinglePostFaculty /></Suspense>} /> */}
         </Route>
         <Route element={<ManagementRoutes />}>
           <Route path="/management/dashboard" element={<Suspense fallback={<Loader />}><ManagementDashboard/></Suspense>}/>
           <Route path="/management/timetable" element={<Suspense fallback={<Loader />}><ManagementTimetable/></Suspense>}/>
           <Route path="/management/message/view" element={<Suspense fallback={<Loader />}><ManagementMessage /></Suspense>} />
           <Route path="/management/message/view/:id" element={<Suspense fallback={<Loader />}><SingleMessage /></Suspense>} />
-          <Route path="/management/message/new" element={<Suspense fallback={<Loader />}><NewMessage /></Suspense>} />
-          <Route path="/management/announcement/new" element={<Suspense fallback={<Loader />}><NewAnnouncement/></Suspense>}/>
+          {/* <Route path="/management/message/new" element={<Suspense fallback={<Loader />}><NewMessage /></Suspense>} /> */}
+          {/* <Route path="/management/announcement/new" element={<Suspense fallback={<Loader />}><NewAnnouncement/></Suspense>}/> */}
           <Route path="/management/announcement/view" element={<Suspense fallback={<Loader />}><MangementAnnouncement/></Suspense>}/>
           <Route path="/management/announcement/view/:id" element={<Suspense fallback={<Loader />}><SingleAnnouncement/></Suspense>}/>
           <Route path="/management/faculty" element={<Suspense fallback={<Loader />}><Faculty/></Suspense>}/>|
           <Route path="/management/faculty/:userId" element={<Suspense fallback={<Loader />}><ManagementProfile/></Suspense>}/>
           <Route path="/management/profile" element={<Suspense fallback={<Loader />}><ManagementProfile/></Suspense>}/>
           <Route path="/management/course" element={<Suspense fallback={<Loader />}><Course/></Suspense>}/>
-          <Route path="/management/policy/new" element={<Suspense fallback={<Loader />}><NewPolicy/></Suspense>}/>
+          {/* <Route path="/management/policy/new" element={<Suspense fallback={<Loader />}><NewPolicy/></Suspense>}/> */}
           <Route path="/management/policy/view" element={<Suspense fallback={<Loader />}><Policy/></Suspense>}/>
           <Route path="/management/policy/view/:id" element={<Suspense fallback={<Loader />}><FullPolicy/></Suspense>}/>
           <Route path="/management/post/new" element={<Suspense fallback={<Loader />}><NewPostManagement /></Suspense>} />
-          <Route path="/management/post/view" element={<Suspense fallback={<Loader />}><ManagementPost /></Suspense>} />
-          <Route path="/management/post/view/:id" element={<Suspense fallback={<Loader />}><SinglePostManagement /></Suspense>} />
+          {/* <Route path="/management/post/view" element={<Suspense fallback={<Loader />}><ManagementPost /></Suspense>} /> */}
+          {/* <Route path="/management/post/view/:id" element={<Suspense fallback={<Loader />}><SinglePostManagement /></Suspense>} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

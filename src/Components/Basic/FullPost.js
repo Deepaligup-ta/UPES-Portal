@@ -11,8 +11,11 @@ const FullPost = (props) => {
                             {props.data.title}
                         </Typography.Title>
                         <hr/>
+                        <Typography.Title style={{ fontSize: '18px'}}>
+                            Description: {props.data.excerpt}
+                        </Typography.Title>
                         <Typography.Text style={{ fontSize: '16px'}}>
-                            { props.data.content }
+                            { props.data.text }
                         </Typography.Text> 
                     </Card>
                 </Badge.Ribbon>

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react"
 import PageTitle from "../../Components/Basic/PageTitle"
 import {  Space } from "antd"
-import { getAnnouncement } from "../../Helper/Announcement"
 import { useParams } from "react-router-dom"
 import FullAnnouncement from "../../Components/Basic/FullAnnouncement"
 import FacultyBase from "../../Components/Faculty/Base"
 import CardLoader from "../../Components/Basic/CardLoader"
-
+import { getPost } from "../../Helper/Post"
 
 const ViewAnnouncement = () => {
     const [data, setData] = useState([])
@@ -14,7 +13,7 @@ const ViewAnnouncement = () => {
     const { id } = useParams()
     useEffect(() => {
         document.title = "View Announcement | SoCIS"
-        getAnnouncement({ announcementId: id })
+        getPost({ postId: id })
             .then((res) => {
                 setData(res)
                 setLoading(false)
