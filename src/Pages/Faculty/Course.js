@@ -27,7 +27,7 @@ const FacultyCourse = () => {
                     return openNotification({ type: 'error', message: 'Error Occurred!'})
 
                 if(res.length === 0)
-                    return openNotification({ type: 'info', message: 'No Announcements Found!'})
+                    return openNotification({ type: 'info', message: 'No Courses Found!'})
                 setData(res)
                 setLoading(false)
             })
