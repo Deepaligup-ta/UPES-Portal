@@ -227,6 +227,7 @@ const NewPostFaculty = () => {
             setFile(reader.result)
         }
     }
+
     return(
         <FacultyBase>
         {contextHolder}

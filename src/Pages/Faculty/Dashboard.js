@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import {Statistic, Row, Col, Card, Typography } from 'antd'
-import { getAuthToken } from "../../Helper/Authentication"
+import { getAuthToken, getToken } from "../../Helper/Authentication"
 import FacultyBase from "../../Components/Faculty/Base"
 
 
@@ -9,14 +9,14 @@ const FacultyDashboard = () => {
     const [user, setUser] = useState(getAuthToken())
     useEffect(() => {
         document.title = "Dashboard | SoCIS"
-
     })
     return(
        <FacultyBase>
         <Typography.Title>
-            Greetings, <br/>{user.user.firstName}
+            Greetings, {user.user.firstName}
         </Typography.Title>
         <Row>
+        {console.log(getToken()[2])}
                 <Col
                     xs={{
                         span: 5,

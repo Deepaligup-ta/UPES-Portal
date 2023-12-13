@@ -1,5 +1,6 @@
 import jwtDecode from 'jwt-decode';
-import config from '../../config.json';
+import config from '../../config.json'
+import { useMsal } from '@azure/msal-react'
 
 const URL = config.auth
 
@@ -39,6 +40,23 @@ export const signIn = (body) => {
     .catch((error) =>  error);
 
 }
+
+export const checkOutlook = (body) => {
+  return fetch(`${URL}/check`, {
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      method: "POST",
+
+      body: JSON.stringify(body)
+  })
+  .then(res => res.json())
+  .catch((error) =>  error);
+
+}
+
 
 export const getAllUsers = () => {
 
@@ -187,7 +205,25 @@ export const signout = () => {
 
     }).then((res) => res.json())
     .catch((error) => error);
+
 }
+
+export const microsoftLogin = (body) => {
+  return fetch(`${URL}/outlook`, {
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      method: "PUT",
+
+      body: JSON.stringify(body)
+  })
+  .then(res => res.json())
+  .catch((error) =>  error);
+
+}
+
 export const isAuthenticated = () => {
     if(getAuthToken)
         return true

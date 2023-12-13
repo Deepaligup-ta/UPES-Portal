@@ -3,7 +3,7 @@ import {Form, Button, Input, Typography, Spin } from 'antd'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import "../Assets/Style/Login.css"
 import logo from "../Assets/Media/upesfull.png"
-import bg from "../Assets/Media/upes-web-banner.mp4"
+import bg from "../Assets/Media/bgimage.jpg"
 import { getAuthToken, signIn } from "../Helper/Authentication/index"
 import { useNavigate, useLocation } from "react-router-dom"
 
@@ -17,7 +17,7 @@ const Login = () => {
     const { search } = useLocation()
     return React.useMemo(() => new URLSearchParams(search), [search])
   }
-    const query = useQuery()
+  const query = useQuery()
   let logout = query.get('logout')
 
   useEffect(() => {
@@ -34,12 +34,11 @@ const Login = () => {
     
   }, [logout])
 
-  const videoRef = useRef(null)
   const navigate = useNavigate()
   const handleSubmit = (event) => {
     setLoading(true)
     event.preventDefault()
-    signIn({ sapId: sapId, password: password })
+    signIn({ sapId: sapId, password: password, email: JSON.parse(sessionStorage.getItem('outlook')).email })
       .then((data) => {
         localStorage.setItem('user', JSON.stringify({ changePassword: (data.changePassword ? true : false )}))
         if (data.changePassword) return navigate("/new-password")
@@ -57,18 +56,7 @@ const Login = () => {
   return (
     <div className="login_main text-black">
       <div className="video-container">
-        <video
-          ref={videoRef}
-          loop
-          muted
-          autoPlay={true}
-          data-preload="true"
-          playsInline
-          className="responsive-video bg-cover"
-        >
-          <source src={bg} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <img className="responsive-video bg-cover" src={bg} />
       </div>
 
       <img className="login__logo" src={logo} alt="Logo" />
@@ -77,7 +65,7 @@ const Login = () => {
         className="login__container text-black z-50 absolute"
         style={{ right: 80 }}
       >
-        <h1 className="text-3xl text-">Welcome To UPES Management Portal</h1>
+        <h1 className="text-3xl text-">To Continue Add Your Local Credentials</h1>
         <div className="form-container">
             <Form
                 name="normal_login"

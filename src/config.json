@@ -1,12 +1,13 @@
 {
-    "host": "https://10.9.7.124",
-    "auth": "https://10.9.7.124/api/auth",
-    "announcement": "https://10.9.7.124/api/announcement",
-    "policy": "https://10.9.7.124/api/policy",
-    "timetable": "https://10.9.7.124/api/timetable",
-    "course": "https://10.9.7.124/api/course",
-    "message": "https://10.9.7.124/api/message",
-    "post": "https://10.9.7.124/api/post",
-    "group": "https://10.9.7.124/api/group"
+    "host": "http://localhost:8000",
+    "auth": "http://localhost:8000/api/auth",
+    "announcement": "http://localhost:8000/api/announcement",
+    "policy": "http://localhost:8000/api/policy",
+    "timetable": "http://localhost:8000/api/timetable",
+    "course": "http://localhost:8000/api/course",
+    "message": "http://localhost:8000/api/message",
+    "post": "http://localhost:8000/api/post",
+    "group": "http://localhost:8000/api/group",
+    "evaluate": "http://localhost:8000/api/evaluate"
 
 }

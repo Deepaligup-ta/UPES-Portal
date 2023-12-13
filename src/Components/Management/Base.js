@@ -9,8 +9,6 @@ const ManagementBase = (props) => {
   const location = useLocation()
 
   useEffect(() => {
-    if(JSON.parse(localStorage.getItem('user')).changePassword)
-      return navigate('/')
     let user = getAuthToken().user
     if(user.role !== "management"){
       return window.location.href = "/" 
@@ -78,6 +76,11 @@ const ManagementBase = (props) => {
       key: "/management/policy/view",
       icon: React.createElement(FolderViewOutlined),
       label: (<Link to="/management/policy/view">Policy</Link>),
+    },
+    {
+      key: "/management/evaluate",
+      icon: React.createElement(FolderViewOutlined),
+      label: (<Link to="/management/evaluate">Evaluate</Link>),
     },
     {
       key: "Logout",

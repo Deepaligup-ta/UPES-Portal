@@ -3,21 +3,21 @@ import { UserOutlined, IdcardOutlined, ScheduleOutlined, AppstoreOutlined, PlusO
 import { Layout, Menu, Dropdown, Avatar, Image, ConfigProvider } from 'antd'
 import { getAuthToken, signout } from '../../Helper/Authentication'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useMsal } from '@azure/msal-react'
 
 const { Header, Content, Footer, Sider } = Layout
 const FacultyBase = (props) => {
   const location = useLocation()
+
   useEffect(() => {
-    if(JSON.parse(localStorage.getItem('user')).changePassword)
-      return navigate('/')
     let user = getAuthToken().user
     if(user.role !== "faculty"){
       return window.location.href = "/" 
     }
-   
   }, [getAuthToken])
   const [dark, setDark] = useState(true)
   const navigate = useNavigate()
+  const { instance } = useMsal()
 
   const mode = () => {
     if(dark)
@@ -29,8 +29,18 @@ const FacultyBase = (props) => {
   const logout = () => {
     signout()
       .then((data) => {
-        if(data.redirect)
-          return navigate('/?logout=true')      
+        if(data.redirect){
+          instance.logoutRedirect()
+            .then((result) => {
+              if(result)
+                return navigate('/?logout=true')
+              alert("Error Occurred!")
+              
+            })
+            .catch(err => {
+              alert('error occured')
+            })
+        }  
       })
   }
   
@@ -92,6 +102,16 @@ const FacultyBase = (props) => {
       key: "/faculty/policy/view",
       icon: React.createElement(FolderViewOutlined),
       label: (<Link to="/faculty/policy/view">Policy</Link>),
+    },
+    {
+      key: "/faculty/outlook/events",
+      icon: React.createElement(FolderViewOutlined),
+      label: (<Link to="/faculty/outlook/events">Meetings/Events</Link>),
+    },
+    {
+      key: "/faculty/evaluate",
+      icon: React.createElement(FolderViewOutlined),
+      label: (<Link to="/faculty/evaluate">Evaluate</Link>),
     },
     {
       key: "Logout",
