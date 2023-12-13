@@ -2,6 +2,16 @@ import mongoose from "mongoose"
 import mongoosePaginate from 'mongoose-paginate-v2'
 import crypto, { randomUUID } from 'crypto'
 
+const sessionSchema = new mongoose.Schema({
+    lastLogin: {
+        type: Number
+    },
+    ipAddress: {
+        type: Number,
+        required: true
+    }
+}, { timestamps: true })
+
 const userSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
@@ -30,6 +40,10 @@ const userSchema = new mongoose.Schema({
         enum: ["disabled", "suspened", "active"],
         default: 'disabled'
     },
+    outlookToken: {
+        type: String,
+        default: ""
+    },
     profilePic: {
         type: String
     },
@@ -43,12 +57,6 @@ const userSchema = new mongoose.Schema({
         enum: ["Assistant Manager","Assistant Professor - Selection Grade","Assistant Professor - Senior Scale","Assistant Professor -Selection Grade","Assistant Professor- Selection Grade","Associate Professor","Deputy Director","Director","Distinguished Professor cum Director", "Lab Assistant", "Professor", "Professor and Dean","Sr. Associate Professor","Sr. Lab Assistant"],
         default: 'none'
     },
-    // designations: [
-    //     {
-    //         type: mongoose.ObjectId,
-    //         ref: 'Designation'
-    //     }
-    // ],
     role: {
         type: String,
         enum: ["admin", "management", "faculty"],
@@ -62,7 +70,8 @@ const userSchema = new mongoose.Schema({
     school: {
         type: mongoose.ObjectId,
         ref:'School'
-    }
+    },
+    sessions: [sessionSchema]
     }, 
     { 
         timestamps:true 

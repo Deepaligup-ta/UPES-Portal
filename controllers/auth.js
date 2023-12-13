@@ -4,6 +4,7 @@ import { expressjwt } from 'express-jwt'
 import crypto from 'crypto'
 import { cache } from '../middlewares/cache.js'
 import { showLog } from '../utils/timeLog.js'
+import { error } from 'console'
 
 //Create Hashed Password
 const createHash = async (plainText, salt) => {
@@ -13,13 +14,6 @@ const createHash = async (plainText, salt) => {
 
 //Get User By SAPID
 const getUser =  (id) => {
-
-    // try {
-    //     const user = await User.findOne({sapId}).select("-profilePic -salt -encpy_password")
-    //     return user
-    // }catch(error){
-    //     return null
-    // }
     showLog(`getUser() Function Called At controllers/auth.js ( Requested By USER: ${id}}`)
     return User.findOne({_id: id})
             .select('-profilePic -salt -encpy_password')
@@ -34,12 +28,42 @@ const getUser =  (id) => {
             })
 }
 
+export const outlookCheck = (req, res) => {
+    showLog('outlookCheck() Function Called At controllers/auth.js')
+
+    User.findOne({ email: req.body.email })
+        .then((user) => {
+            if(!user) 
+                return res.status(404).json({
+                    error: true,
+                    errorMessage: "Can't Find The User With The EmaiL!",
+                    solution: "Linking Email To The DB Accounts"
+                })
+
+            if(user.activeAccount === '' || user.activeAccount === 'disabled' || user.activeAccount === 'suspened')
+                return res.status(403).json({
+                    error: true,
+                    message: "Your Account Is Not Active!"
+                })
+
+            const token = jwt.sign({_id: user._id, user: { sapId: user.sapId, firstName: user.firstName, role: user.role }}, process.env.SECRET)
+            let time = new Date()
+            const { _id, firstName, lastName, sapId, designations, role } = user
+            time.setTime(time.getTime() + (1800 * 1000))
+            res.cookie('socis', token,  { expire: time, path: '/', domain: 'localhost' })
+            showLog(`User With SAPID: ${user.sapId} Logged In`)
+            return res.json({
+                token, 
+                user: { _id, firstName, lastName, sapId, designations, role }
+            })
+        })
+}
 
 //Signin Function
 export const signin = (req, res) => {
     showLog('signin() Function Called At controllers/auth.js')
 
-    const {sapId, password} = req.body
+    const {sapId, password, email} = req.body
     
     User.findOne({sapId})
         .then(user => {
@@ -47,29 +71,42 @@ export const signin = (req, res) => {
                 return res.status(401).json({ error: true, message: "User Or Password Is Incorrect!"})
             if(!user.authenticate(password))
                 return res.status(401).json({ error: true, message: "User Or Password Is Incorrect!"})
-            // if(user.encpy_password !== createHash(password, user.salt))
-            //     return res.status(401).json({ error: true })
             if(user.activeAccount === '' || user.activeAccount === 'disabled' || user.activeAccount === 'suspened')
                 return res.status(403).json({ error: true, message: "Your account is not active!"})
 
-            const token = jwt.sign({_id: user._id, user: { sapId: user.sapId, firstName: user.firstName, role: user.role }}, process.env.SECRET)
-            let time = new Date()
-            const { _id, firstName, lastName, sapId, designations, role } = user
-            time.setTime(time.getTime() + (1800 * 1000))
-            res.cookie('socis', token,  { expire: time, path: '/', domain: 'localhost' })
-            if(user.changePassword === "yes")
-                return res.json({
-                    token,
-                    user: { _id, firstName, lastName, sapId, role },
-                    changePassword: true
-                })
+            User.updateOne({ sapId }, { email: email })
+                .then((update) => {
+                    console.log(update)
+                    if(!update) 
+                        return res.status(400).json({
+                            error: true
+                        })
 
-            showLog(`User With SAPID: ${user.sapId} Logged In`)
-            return res.json({
-                token, 
-                user: { _id, firstName, lastName, sapId, designations, role }
-            })
+                        const token = jwt.sign({_id: user._id, user: { sapId: user.sapId, firstName: user.firstName, role: user.role, outlookRefreshToken: user.outlookToken }}, process.env.SECRET)
+                        let time = new Date()
+                        const { _id, firstName, lastName, sapId, designations, role } = user
+                        time.setTime(time.getTime() + (1800 * 1000))
+                        res.cookie('socis', token,  { expire: time, path: '/', domain: 'localhost' })
+                        showLog(`User With SAPID: ${user.sapId} Logged In`)
+                        return res.json({
+                            token, 
+                            user: { _id, firstName, lastName, sapId, designations, role }
+                        })
+                })
+                .catch((error) => {
+                    return res.status(400).json({
+                        error: true,
+                        message: error.toString()
+                    })
+                })
+          
         })  
+        .catch((error) => {
+            return res.status(400).json({
+                error: true,
+                message: error.toString()
+            })
+        })
 }
 
 export const loggout = (req, res) => {

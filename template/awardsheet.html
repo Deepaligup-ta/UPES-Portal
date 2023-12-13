@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Award Sheet</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        .title {
+            text-align: center;
+            font-size: 48px;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        footer, p {
+            font-size: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">
+        UPES, Dehradun
+    </h1>
+    <h3>Name: {{ name }}</h3>
+    <h3>SAPID: {{ sapId }}</h3>
+    <h3>Roll Number: {{ rollNumber }}</h3>
+<table>
+    <tr>
+      <th>Subject</th>
+      <th>Subject Code</th>
+      <th>Marks</th>
+    </tr>
+    {{#each grades}}
+        <tr>
+            <td>{{this.subjectName}}</td>
+            <td>{{this.subjectCode}}</td>
+            <td>{{this.finalGrade}}</td>
+        </tr>
+    {{/each}}
+   
+  </table>
+  <footer>
+    <p>*This is a computer generated awardsheet*</p>
+  </footer>
+</body>
+</html>

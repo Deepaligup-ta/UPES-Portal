@@ -1,0 +1,652 @@
+﻿S.No,School,Program Name,SEM,Code,Course,DATE& TIME,Evaluator Name,Strength,Batch Name
+1,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Debashis Ghosh ,67,B1-B2
+2,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Biplab Dhar,67,B3-B4
+3,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Divya Ahluwalia,69,B5-B6
+4,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Debashis Ghosh ,64,B7-B8
+5,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Nitin Uniyal,67,B9-B10
+6,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Divya Ahluwalia,68,B11-B12
+7,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Anupam Bhandari,67,B13-B14
+8,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Sourav Hossain,67,B15-B16
+9,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Reshu Gupta,66,B17-B18
+10,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Reshu Gupta,66,B19-B20
+11,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Akmal Hussain,66,B21-B22
+12,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Akmal Hussain,66,B23-B24
+13,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Sourav Hossain,65,B25-B26
+14,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Manisha Malik,64,B27-B28
+15,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Manisha Malik,68,B29-B30
+16,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Biplab Dhar,68,B31-B32
+17,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Bhuwan,67,B33-B34
+18,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Ravi Kiran Maddali,64,B35-B36
+19,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Rashmi Dubey,66,B37-B38
+20,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Rashmi Dubey,60,B39-B40
+21,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Pratibha Joshi,77,B41-B42
+22,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Pratibha Joshi,79,B43-B44
+23,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Manisha Malik,77,B45-B46
+24,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Biplab Dhar,85,B47-B48
+25,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Ashishi Puri ,83,B49-B50
+26,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Ashishi Puri ,84,B51-B52
+27,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Ashishi Puri ,112,B53-B54-B57
+28,SOCS,B.Tech Computer Science and Engineering,I,MATH1059,Advanced Engineering Mathematics - 1,12.12.202310 AM - 01PM,Bhuwan,119,B55-B56-B58
+29,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,AMIT CHAWLA,67,"B01,B02"
+30,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,PRASHANT MANDAL,67,"B03,B04"
+31,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,AMIT AWASTHI,69,"B05,B06"
+32,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,ABHISHEK K MISHRA,64,"B07,B08"
+33,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,RAJEEV GUPTA,67,"B09,B10"
+34,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,SATYA KRISHNA,68,"B11,B12"
+35,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,KAILASH PANDEY,67,"B13,B14"
+36,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,KAILASH PANDEY,67,"B15,B16"
+37,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,D P SINGH,66,"B17,B18"
+38,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,PARSWAJIT KALITA,66,"B19,B20"
+39,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,GAGAN ANAND,66,"B21,B22"
+40,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,RAJEEV GUPTA,66,"B23,B24"
+41,SOCS,B.Tech Computer Science and Engineering,I,PHYS1032,Physics for Computer Engineers ,14.12.202310 AM - 01PM,MRITYUNJYA GUHA,65,"B25,B26"
+42,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Amar Shukla,67,B1-B2
+43,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Sandip Kumar Chaurasiya,67,B3-B4
+44,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Christalin Nelson S,69,B5-B6
+45,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Amar Shukla,64,B7-B8
+46,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Pallabi Sharma,67,B9-B10
+47,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Gaytri -,68,B11-B12
+48,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Pallabi Sharma,67,B13-B14
+49,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Anil Kumar,67,B15-B16
+50,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Bhupendra Singh,66,B17-B18
+51,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Amit Verma,66,B19-B20
+52,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Tarandeep Kaur Bhatia,66,B21-B22
+53,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Goutam Datta,66,B23-B24
+54,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Bhavana Kaushik,65,B25-B26
+55,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Tanu Singh,64,B27-B28
+56,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Bhupendra Singh,68,B29-B30
+57,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Roohi Sille,68,B31-B32
+58,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Piyush Rawat,67,B33-B34
+59,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Maithilee Laxmanrao Patawar,64,B35-B36
+60,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Roohi Sille,66,B37-B38
+61,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Shamik Tiwari,60,B39-B40
+62,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Varun Sapra,77,B41-B42
+63,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Sandeep Pratap Singh,79,B43-B44
+64,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Achala Shakya,77,B45-B46
+65,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Deepika Koundal,85,B47-B48
+66,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Kotha Venugopalachary,83,B49-B50
+67,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Richa Choudhary,84,B51-B52
+68,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Bhavana Kaushik,76,B53-B54
+69,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Varun Sapra,75,B55-B56
+70,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Bhavana Kaushik,36,B57
+71,SOCS,B.Tech Computer Science and Engineering,I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Varun Sapra,44,B58
+72,SOCS,Bachelor of Computer Application (BCA),I,MATH1058,Basic Mathematics,12.12.202310 AM - 01PM,Sandeep Dixit,84,"B-01, B-02"
+73,SOCS,Bachelor of Computer Application (BCA),I,MATH1058,Basic Mathematics,12.12.202310 AM - 01PM,Bhuwan Chandra Joshi,82,B-03 B-04
+74,SOCS,Bachelor of Computer Application (BCA),I,CSEG1028,Web Technologies ,14.12.202310 AM - 01PM,Akhilesh Mohan Srivastava,84,"B-01, B-02"
+75,SOCS,Bachelor of Computer Application (BCA),I,CSEG1028,Web Technologies ,14.12.202310 AM - 01PM,Saroj Snehal Shivagunde,82,B-03 B-04
+76,SOCS,Bachelor of Computer Application (BCA),I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Gagan Deep Singh,84,"B-01, B-02"
+77,SOCS,Bachelor of Computer Application (BCA),I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Sandip Kumar Chaurasia,82,B-03 B-04
+78,SOCS,B.Sc. (Computer Science),I,MATH1060,Mathematical Science – 1,12.12.202310 AM - 01PM,Pratibha Joshi,12,All Batch
+79,SOCS,B.Sc. (Computer Science),I,ECEG1010,Digital Electronics,14.12.202310 AM - 01PM,Dr. Abhinav Sharma,12,All Batch
+80,SOCS,B.Sc. (Computer Science),I,CSEG1025,Programming in C,19.12.202310 AM - 01PM,Sandip Kumar Chaurasia,12,All Batch
+81,SOCS,M.Tech (Computer Science and Engineering),I,CSEG7001,Algorithm Design and Analysis,12.12.202310 AM - 01PM,Hanumat Sastry,12,All Batch
+82,SOCS,M.Tech (Computer Science and Engineering),I,CSAI7003P,Artificial Intelligence & Expert Systems,14.12.202310 AM - 01PM,Alok Aggarwal,12,All Batch
+83,SOCS,M.Tech (Computer Science and Engineering),I,CSCS7002P,Cyber Security and Ethics,18.12.202310 AM - 01PM,Sunil Gupta,5,All Batch
+84,SOCS,M.Tech (Computer Science and Engineering),I,CSDA7002P,Predictive Modelling,18.12.202310 AM - 01PM,Shamik Tiwari,2,All Batch
+85,SOCS,M.Tech (Computer Science and Engineering),I,CSEG7002,Advance Database Management Systems,20.12.202310 AM - 01PM,Mitali Chugh,12,All Batch
+86,SOCS,M.Tech (Computer Science and Engineering),I,CSEG7003,Statistical Modelling for Computer Sciences,22.12.202310 AM - 01PM,Priya Ranjan,12,All Batch
+87,SOCS,Master of Computer Application (MCA),I,CSAI7011,Python Programming,12.12.202310 AM - 01PM,Anushree Shah,154,"B-01, B-02,B3,B4"
+88,SOCS,Master of Computer Application (MCA),I,CSAI7011,Python Programming,12.12.202310 AM - 01PM,Hemant Petwal,39,B-05
+89,SOCS,Master of Computer Application (MCA),I,CSEG7017,Web Technologies ,14.12.202310 AM - 01PM,Dhiviya Rose J,154,"B-01,B-02,B-03,B-04"
+90,SOCS,Master of Computer Application (MCA),I,CSEG7017,Web Technologies ,14.12.202310 AM - 01PM,Priyanka Singh,39,B-05
+91,SOCS,Master of Computer Application (MCA),I,CSDS7001,Introduction to Data Science,15.12.202310 AM - 01PM,Sanoj Kumar,66,All Batch
+92,SOCS,Master of Computer Application (MCA),I,CSEG7015,Data Structure ,18.12.202310 AM - 01PM,Pankaj Badoni,74,"B-01, B-02"
+93,SOCS,Master of Computer Application (MCA),I,CSEG7015,Data Structure ,18.12.202310 AM - 01PM,Ambika Aggarwal,80,"B-03, B-04"
+94,SOCS,Master of Computer Application (MCA),I,CSEG7015,Data Structure ,18.12.202310 AM - 01PM,Hemant Petwal,39,B-05
+95,SOCS,Master of Computer Application (MCA),I,CSAI7012,Problem Domains of AI,20.12.202310 AM - 01PM,Mitali Chugh,83,All Batch
+96,SOCS,Master of Computer Application (MCA),I,CSCS7006,Introdcution to Cyber Security,20.12.202310 AM - 01PM,Vinod Patidar,29,All Batch
+97,SOCS,Master of Computer Application (MCA),I,HRES7018,Business Communication & Ethics,21.12.202310 AM - 01PM,Neeraja Sisodia-VF,193,All Batch
+98,SOCS,Master of Computer Application (MCA),I,CSEG7018,Software Engineering  & Agile Practices,22.12.202310 AM - 01PM,Sonali Vyas,154,"B-01,B-02,B-03,B-04"
+99,SOCS,Master of Computer Application (MCA),I,CSEG7018,Software Engineering  & Agile Practices,22.12.202310 AM - 01PM,Subhankar Ghosal,39,B-05
+100,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Amit Verma,41,B07
+101,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Amit Verma,39,B08
+102,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Amit Verma,42,B09
+103,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Deepak Kumar Sharma,40,B04
+104,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Deepak Kumar Sharma,39,B05
+105,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Deepak Kumar Sharma,40,B06
+106,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Sahinur Rahman Laskar,40,B01
+107,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Sahinur Rahman Laskar,40,B02
+108,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Sahinur Rahman Laskar,38,B03
+109,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Juhi Agarwal,40,B01
+110,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Juhi Agarwal,40,B02
+111,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Juhi Agarwal,38,B03
+112,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ajay Prasad,40,B04
+113,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ajay Prasad,39,B05
+114,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ajay Prasad,40,B06
+115,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Abhijit Kumar,41,B07
+116,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Abhijit Kumar,39,B08
+117,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Abhijit Kumar,42,B09
+118,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Mohammad Ahsan,40,B01
+119,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Mohammad Ahsan,40,B02
+120,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Mohammad Ahsan,38,B03
+121,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,40,B04
+122,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,39,B05
+123,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,40,B06
+124,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,41,B07
+125,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,39,B08
+126,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,42,B09
+127,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Rahul Kumar Singh,40,B01
+128,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Rahul Kumar Singh,40,B02
+129,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Rahul Kumar Singh,38,B03
+130,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Aradhana Kumari Singh,40,B04
+131,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Aradhana Kumari Singh,39,B05
+132,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Aradhana Kumari Singh,40,B06
+133,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Yeshwant Singh,41,B07
+134,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Yeshwant Singh,39,B08
+135,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Yeshwant Singh,42,B09
+136,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Shubhi Sharma,40,B01
+137,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Shubhi Sharma,40,B02
+138,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Shubhi Sharma,38,B03
+139,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Yeshwant Singh,40,B04
+140,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Yeshwant Singh,39,B05
+141,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Yeshwant Singh,40,B06
+142,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Surbhi Saraswat,41,B07
+143,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Surbhi Saraswat,39,B08
+144,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Surbhi Saraswat,42,B09
+145,SOCS,B.Tech (H) CSE (Spl. AI & ML),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Sahinur Rahman Laskar,78,"B01,B02,B03"
+146,SOCS,B.Tech (H) CSE (Spl. AI & ML),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Vijendra Singh,78,"B01,B02,B03"
+147,SOCS,B.Tech (H) CSE (Spl. AI & ML),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Arun Singh Bhadwal,78,"B01,B02,B03"
+148,SOCS,B.Tech (H) CSE (Spl. AI & ML),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Virender Kadyan,78,"B01,B02,B03"
+149,SOCS,B.Tech (H) CSE (Spl. AI & ML),III,CSAI2012,Introduction to AI and ML,20.12.202302 PM - 05 PM,Abhijit Kumar,78,"B01,B02,B03"
+150,SOCS,B.Tech (H) CSE (Spl. AI & ML),III,CSEG2036P,Probability & Statistics for Engineers,22.12.202302 PM - 05 PM,Mrittunjoy Guha Majumdar,78,"B01,B02,B03"
+151,SOCS,B.Tech(CSE) (Data Science),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Priyanka Singh,40,B01
+152,SOCS,B.Tech(CSE) (Data Science),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Shahid Sultan Hajam,40,B02
+153,SOCS,B.Tech(CSE) (Data Science),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Priyanka Singh,33,B03
+154,SOCS,B.Tech(CSE) (Data Science),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Goutam Datta,40,B01
+155,SOCS,B.Tech(CSE) (Data Science),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Nadeem Yousuf Khanday,40,B02
+156,SOCS,B.Tech(CSE) (Data Science),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Goutam Datta,33,B03
+157,SOCS,B.Tech(CSE) (Data Science),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Arun Singh Bhadwal,40,B01
+158,SOCS,B.Tech(CSE) (Data Science),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,40,B02
+159,SOCS,B.Tech(CSE) (Data Science),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Arun Singh Bhadwal,33,B03
+160,SOCS,B.Tech(CSE) (Data Science),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Shiladitya Bhattacharjee,40,B01
+161,SOCS,B.Tech(CSE) (Data Science),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Shiladitya Bhattacharjee,40,B02
+162,SOCS,B.Tech(CSE) (Data Science),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Shiladitya Bhattacharjee,33,B03
+163,SOCS,B.Tech(CSE) (Data Science),III,CSBA2012,Introduction to Business Analytics,20.12.202302 PM - 05 PM,Shubhi Sharma,40,B01
+164,SOCS,B.Tech(CSE) (Data Science),III,CSBA2012,Introduction to Business Analytics,20.12.202302 PM - 05 PM,Shubhi Sharma,40,B02
+165,SOCS,B.Tech(CSE) (Data Science),III,CSBA2012,Introduction to Business Analytics,20.12.202302 PM - 05 PM,Shubhi Sharma,33,B03
+166,SOCS,B.Tech(CSE)(Hons.) (Data Science),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Priyanka Singh,21,All Batch
+167,SOCS,B.Tech(CSE)(Hons.) (Data Science),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Goutam Datta,21,All Batch
+168,SOCS,B.Tech(CSE)(Hons.) (Data Science),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Arun Singh Bhadwal,21,All Batch
+169,SOCS,B.Tech(CSE)(Hons.) (Data Science),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Shiladitya Bhattacharjee,21,All Batch
+170,SOCS,B.Tech(CSE)(Hons.) (Data Science),III,CSBA2012,Introduction to Business Analytics,20.12.202302 PM - 05 PM,Shubhi Sharma,21,All Batch
+171,SOCS,B.Tech(CSE)(Hons.) (Data Science),III,CSEG2036P,Probability & Statistics for Engineers,22.12.202302 PM - 05 PM,Mrittunjoy Guha Majumdar,21,All Batch
+172,SOCS,B.Tech CSE (DevOps),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Swati Rastogi,80,"B01,B2"
+173,SOCS,B.Tech CSE (DevOps),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Akhilesh Mohan Srivastava,80,"B01,B2"
+174,SOCS,B.Tech CSE (DevOps),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Mohammad Ahsan,80,"B01,B2"
+175,SOCS,B.Tech CSE (DevOps),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Saswata Shannigrahi,80,"B01,B2"
+176,SOCS,B.Tech CSE (DevOps),III,CSDV2007,DevOps Overview & Tool Trade,20.12.202302 PM - 05 PM,Arjun Arora,80,"B01,B2"
+177,SOCS,B.Tech (H) CSE (DevOps),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Swati Rastogi,8,B01
+178,SOCS,B.Tech (H) CSE (DevOps),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Akhilesh Mohan Srivastava,8,B01
+179,SOCS,B.Tech (H) CSE (DevOps),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Mohammad Ahsan,8,B01
+180,SOCS,B.Tech (H) CSE (DevOps),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Saswata Shannigrahi,8,B01
+181,SOCS,B.Tech (H) CSE (DevOps),III,CSDV2007,DevOps Overview & Tool Trade,20.12.202302 PM - 05 PM,Arjun Arora,8,B01
+182,SOCS,B.Tech (H) CSE (DevOps),III,CSEG2036P,Probability & Statistics for Engineers,22.12.202302 PM - 05 PM,Mrittunjoy Guha Majumdar,8,B01
+183,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Deepa Joshi,39,B01
+184,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Deepa Joshi,39,B02
+185,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Christalin Nelson S,37,B03
+186,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Christalin Nelson S,39,B04
+187,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Sonal Talreja,40,B05
+188,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Sonal Talreja,40,B06
+189,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Christalin Nelson S,32,B07
+190,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ajay Kumar,39,B01
+191,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ajay Kumar,39,B02
+192,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Piyush Rawat,37,B03
+193,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Piyush Rawat,39,B04
+194,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ram Kumar,40,B05
+195,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Neeraj Chugh,40,B06
+196,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ram Kumar,32,B07
+197,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Arun Singh Bhadwal,39,B01
+198,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Arun Singh Bhadwal,39,B02
+199,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Arun Singh Bhadwal,37,B03
+200,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Arun Singh Bhadwal,39,B04
+201,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ajay Kumar,40,B05
+202,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ajay Kumar,40,B06
+203,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Sonal Talreja,32,B07
+204,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Shahina Anwarul,39,B01
+205,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Shahina Anwarul,39,B02
+206,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Hanumat Sastryg,37,B03
+207,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Hanumat Sastryg,39,B04
+208,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Vidyanand Mishra,40,B05
+209,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Vidyanand Mishra,40,B06
+210,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Shahina Anwarul,32,B07
+211,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSVT2009,Cloud Computing Fundamentals,20.12.202302 PM - 05 PM,Neelu Jyothi Ahuja,39,B01
+212,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSVT2009,Cloud Computing Fundamentals,20.12.202302 PM - 05 PM,Neelu Jyothi Ahuja,39,B02
+213,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSVT2009,Cloud Computing Fundamentals,20.12.202302 PM - 05 PM,Neelu Jyothi Ahuja,37,B03
+214,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSVT2009,Cloud Computing Fundamentals,20.12.202302 PM - 05 PM,Neelu Jyothi Ahuja,39,B04
+215,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSVT2009,Cloud Computing Fundamentals,20.12.202302 PM - 05 PM,Shaurya Gupta,40,B05
+216,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSVT2009,Cloud Computing Fundamentals,20.12.202302 PM - 05 PM,Shaurya Gupta,40,B06
+217,SOCS,B.Tech(CSE - Spl. CC&VT),III,CSVT2009,Cloud Computing Fundamentals,20.12.202302 PM - 05 PM,Nitika Nigam,32,B07
+218,SOCS,B.Tech (H) CSE  (Spl. CC&VT),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Christalin Nelson S,11,B01
+219,SOCS,B.Tech (H) CSE  (Spl. CC&VT),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ram Kumar,11,B01
+220,SOCS,B.Tech (H) CSE  (Spl. CC&VT),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Sonal Talreja,11,B01
+221,SOCS,B.Tech (H) CSE  (Spl. CC&VT),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Shahina Anwarul,11,B01
+222,SOCS,B.Tech (H) CSE  (Spl. CC&VT),III,CSVT2009,Cloud Computing Fundamentals,20.12.202302 PM - 05 PM,Nitika Nigam,11,B01
+223,SOCS,B.Tech (H) CSE  (Spl. CC&VT),III,CSEG2036P,Probability & Statistics for Engineers,22.12.202302 PM - 05 PM,Mrittunjoy Guha Majumdar,10,B01
+224,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Neeraj Chugh,40,B01
+225,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Saurabh Jain,39,B02
+226,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Saurabh Jain,41,B03
+227,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Saurabh Jain,40,B04
+228,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Neeraj Chugh,31,B05
+229,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ajay Kumar,40,B01
+230,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Alok Jhaldiyal,39,B02
+231,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Alok Jhaldiyal,41,B03
+232,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Alok Jhaldiyal,40,B04
+233,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ajay Kumar,31,B05
+234,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Sandip Kumar Chaurasiya,40,B01
+235,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Sandip Kumar Chaurasiya,39,B02
+236,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,41,B03
+237,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ravi Yadav,40,B04
+238,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Sonal Talreja,31,B05
+239,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Anurag Jain,40,B01
+240,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Rohit Tanwar,39,B02
+241,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Anurag Jain,41,B03
+242,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Anurag Jain,40,B04
+243,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Anurag Jain,31,B05
+244,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSSF2012,Physical and IT Security ,20.12.202302 PM - 05 PM,Gopal Rawat,40,B01
+245,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSSF2012,Physical and IT Security ,20.12.202302 PM - 05 PM,Gopal Rawat,39,B02
+246,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSSF2012,Physical and IT Security ,20.12.202302 PM - 05 PM,Keshav Sinha,41,B03
+247,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSSF2012,Physical and IT Security ,20.12.202302 PM - 05 PM,Keshav Sinha,40,B04
+248,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),III,CSSF2012,Physical and IT Security ,20.12.202302 PM - 05 PM,Gopal Rawat,31,B05
+249,SOCS,B.Tech (H) CSE (Spl.CSF),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Neeraj Chugh,5,B01
+250,SOCS,B.Tech (H) CSE (Spl.CSF),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Ajay Kumar,5,B01
+251,SOCS,B.Tech (H) CSE (Spl.CSF),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Sonal Talreja,5,B01
+252,SOCS,B.Tech (H) CSE (Spl.CSF),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Anurag Jain,5,B01
+253,SOCS,B.Tech (H) CSE (Spl.CSF),III,CSSF2012,Physical and IT Security ,20.12.202302 PM - 05 PM,Gopal Rawat,5,B01
+254,SOCS,B.Tech (H) CSE (Spl.CSF),III,CSEG2036P,Probability & Statistics for Engineers,22.12.202302 PM - 05 PM,Mrittunjoy Guha Majumdar,4,B01
+255,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Sonali Vyas,75,All Batch
+256,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Nadeem Yousuf Khanday,75,All Batch
+257,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Mohammad Ahsan,75,All Batch
+258,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Dhirendra Kumar Sharma,75,All Batch
+259,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Sonali Vyas,2,All Batch
+260,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),III,CSEG2007,Operating Systems,13.12.202302 PM - 05 PM,Nadeem Yousuf Khanday,2,All Batch
+261,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Mohammad Ahsan,2,All Batch
+262,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Dhirendra Kumar Sharma,2,All Batch
+263,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),III,CSEG2036P,Probability & Statistics for Engineers,22.12.202302 PM - 05 PM,Mrittunjoy Guha Majumdar,2,All Batch
+264,SOCS,B.Tech CSE (Big Data),III,CSEG2016,Object Oriented Programming,12.12.202302 PM - 05 PM,Deepak Kumar Sharma,56,All Batch
+265,SOCS,B.Tech CSE (Big Data),III,CSBC2003,Operating Systems,13.12.202302 PM - 05 PM,Mohammad Ahsan,56,All Batch
+266,SOCS,B.Tech CSE (Big Data),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Shahid Sultan Hajam,56,All Batch
+267,SOCS,B.Tech CSE (Big Data),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Yeshwant Singh,56,All Batch
+268,SOCS,B.Tech CSE (Big Data),III,CSBD2006,Big Data Ingestion,20.12.202302 PM - 05 PM,Surbhi Saraswat,56,All Batch
+269,SOCS,B.Tech CSE (Big Data),III,CSBD2005,Big Data Analysis,21.12.202302 PM - 05 PM,Tarandeep Kaur Bhatia,56,All Batch
+270,SOCS,B.Tech (H) CSE  (Big Data),III,CSEG2016,Object Oriented Programming,12.12.202302 PM - 05 PM,Deepak Kumar Sharma,3,B1
+271,SOCS,B.Tech (H) CSE  (Big Data),III,CSBC2003,Operating Systems,13.12.202302 PM - 05 PM,Mohammad Ahsan,3,B1
+272,SOCS,B.Tech (H) CSE  (Big Data),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Shahid Sultan Hajam,3,B1
+273,SOCS,B.Tech (H) CSE  (Big Data),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Yeshwant Singh,3,B1
+274,SOCS,B.Tech (H) CSE  (Big Data),III,CSBD2006,Big Data Ingestion,20.12.202302 PM - 05 PM,Surbhi Saraswat,3,B1
+275,SOCS,B.Tech (H) CSE  (Big Data),III,CSBD2005,Big Data Analysis,21.12.202302 PM - 05 PM,Tarandeep Kaur Bhatia,3,B1
+276,SOCS,B.Tech (H) CSE  (Big Data),III,CSEG2036P,Probability & Statistics for Engineers,22.12.202302 PM - 05 PM,Mrittunjoy Guha Majumdar,3,B1
+277,SOCS,B.Tech(CSE) (Full Stack AI),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Nayantara Kotoky,115,All Batch
+278,SOCS,B.Tech(CSE) (Full Stack AI),III,CSBC2003,Operating Systems,13.12.202302 PM - 05 PM,Silky Goel,40,B01
+279,SOCS,B.Tech(CSE) (Full Stack AI),III,CSBC2003,Operating Systems,13.12.202302 PM - 05 PM,Silky Goel,38,B02
+280,SOCS,B.Tech(CSE) (Full Stack AI),III,CSBC2003,Operating Systems,13.12.202302 PM - 05 PM,Saroj Snehal Shivagunde,37,B03
+281,SOCS,B.Tech(CSE) (Full Stack AI),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ved Prakash Bhardwaj,40,B01
+282,SOCS,B.Tech(CSE) (Full Stack AI),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Ved Prakash Bhardwaj,38,B02
+283,SOCS,B.Tech(CSE) (Full Stack AI),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Sandeep Pratap Singh,37,B03
+284,SOCS,B.Tech(CSE) (Full Stack AI),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Amrendra Tripathi,40,B01
+285,SOCS,B.Tech(CSE) (Full Stack AI),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Amrendra Tripathi,38,B02
+286,SOCS,B.Tech(CSE) (Full Stack AI),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Akhilesh Mohan Srivastava,37,B03
+287,SOCS,B.Tech(CSE) (Hons.)(Full Stack AI),III,CSEG2020,Object Oriented Programming,12.12.202302 PM - 05 PM,Nayantara Kotoky,20,All Batch
+288,SOCS,B.Tech(CSE) (Hons.)(Full Stack AI),III,CSBC2003,Operating Systems,13.12.202302 PM - 05 PM,Saroj Snehal Shivagunde,20,All Batch
+289,SOCS,B.Tech(CSE) (Hons.)(Full Stack AI),III,CSEG2004,Computer System Architecture,15.12.202302 PM - 05 PM,Sandeep Pratap Singh,20,All Batch
+290,SOCS,B.Tech(CSE) (Hons.)(Full Stack AI),III,CSEG2021,Design and Analysis of Algorithm,18.12.202302 PM - 05 PM,Akhilesh Mohan Srivastava,20,All Batch
+291,SOCS,B.Tech(CSE) (Hons.)(Full Stack AI),III,CSEG2036P,Probability & Statistics for Engineers,22.12.202302 PM - 05 PM,Mrittunjoy Guha Majumdar,20,All Batch
+292,SOCS,Bachelor of Computer Appli.-Spl CSF,III,CSBC2024,Java Programming,12.12.202302 PM - 05 PM,Sachi Choudhury,78,"B01,B02"
+293,SOCS,Bachelor of Computer Appli.-Spl CSF,III,CSBC2027,Networking & Technology,15.12.202302 PM - 05 PM,Sunil Gupta,78,"B01,B02"
+294,SOCS,Bachelor of Computer Appli.-Spl CSF,III,CSSF2010P,Introduction to Cyber Security,18.12.202302 PM - 05 PM,Rahul Kumar,77,"B01,B02"
+295,SOCS,Bachelor of Computer Appli.-Spl CSF,III,CSAI2010P,Introduction to Artificial Intelligence,18.12.202302 PM - 05 PM,Alok Aggarwal,1,"B01,B02"
+296,SOCS,Bachelor of Computer Appli.-Spl CSF,III,CSEG2047P,Discrete mathematics,20.12.202302 PM - 05 PM,Alind,25,"B01,B02"
+297,SOCS,Bachelor of Computer Appli.-Spl CSF,III,CSBD2009P,Statistics for Data Science,20.12.202302 PM - 05 PM,Sanoj Kumar,53,"B01,B02"
+298,SOCS,Bachelor of Computer Appli.-Spl AIML,III,CSBC2024,Java Programming,12.12.202302 PM - 05 PM,Sachi Choudhary,65,"B01,B02"
+299,SOCS,Bachelor of Computer Appli.-Spl AIML,III,CSBC2027,Networking & Technology,15.12.202302 PM - 05 PM,Pankaj Kundan Dadure,65,"B01,B02"
+300,SOCS,Bachelor of Computer Appli.-Spl AIML,III,CSAI2010P,Introduction to Artificial Intelligence,18.12.202302 PM - 05 PM,Alok Aggarwal,65,"B01,B02"
+301,SOCS,Bachelor of Computer Appli.-Spl AIML,III,CSEG2047P,Discrete mathematics,20.12.202302 PM - 05 PM,Alind,31,"B01,B02"
+302,SOCS,Bachelor of Computer Appli.-Spl AIML,III,CSBD2009P,Statistics for Data Science,20.12.202302 PM - 05 PM,Sanoj Kumar,34,"B01,B02"
+303,SOCS,Masters in Computer Application (MCA),III,CSEG8003,Modeling and simulation,12.12.202302 PM - 05 PM,Vinod Patidar,142,All Batch
+304,SOCS,Masters in Computer Application (MCA),III,CSEG8004,Computer Networks,13.12.202302 PM - 05 PM,Priya Ranjan,142,All Batch
+305,SOCS,Masters in Computer Application (MCA),III,CSEG8005,Computer Graphics,15.12.202302 PM - 05 PM,Rohit Srivastava,142,All Batch
+306,SOCS,Masters in Computer Application (MCA),III,CSAI8002P,Machine Learning - Using Data for Artificial Intelligence,18.12.202302 PM - 05 PM,Amar Shukla,86,All Batch
+307,SOCS,Masters in Computer Application (MCA),III,CSCS8001P,Cyber Forensic Procedures and Analysis,18.12.202302 PM - 05 PM,Gagan Deep Singh,56,All Batch
+308,SOCS,Masters in Computer Application (MCA),III,CSAI8003P,Deep learning and ANN,20.12.202302 PM - 05 PM,Syed Sajid,86,All Batch
+309,SOCS,Masters in Computer Application (MCA),III,CSCS8002P,Forensic Tools,20.12.202302 PM - 05 PM,Swati Rastogi,56,All Batch
+310,SOCS,Masters in Computer Application (MCA),III,CSAI8004P,Natural language Processing,21.12.202302 PM - 05 PM,Pankaj Kundan Dadure,33,All Batch
+311,SOCS,Masters in Computer Application (MCA),III,CSAI8006P,Image Processing and Machine Vision,21.12.202302 PM - 05 PM,Sanoj Kumar,53,All Batch
+312,SOCS,Masters in Computer Application (MCA),III,CSCS8006P,Digital Data Recovery and Analysis,21.12.202302 PM - 05 PM,Poonam Kainthur,48,All Batch
+313,SOCS,Masters in Computer Application (MCA),III,CSCS8003P,Digital Evidence,21.12.202302 PM - 05 PM,Poonam Kainthura,8,All Batch
+314,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSAI3001,Neural Networks  ,13.12.202310 AM - 01PM,Kingshuk Srivastava,109,"B01,B02,B03"
+315,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSAI3001,Neural Networks  ,13.12.202310 AM - 01PM,Sugandha Sharma,109,"B04,B05,B06"
+316,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,70,All Batch
+317,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,27,All Batch
+318,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,31,All Batch
+319,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,28,All Batch
+320,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,39,All Batch
+321,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,23,All Batch
+322,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Aradhana Kumari Singh,109,"B01,B02,B03"
+323,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Aradhana Kumari Singh,109,"B04,B05,B06"
+324,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,109,"B01,B02,B03"
+325,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,N Prasanthi Kumari,109,"B04,B05,B06"
+326,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSAI3010,Algorithm for Intelligent Systems and Robotics,22.12.202310 AM - 01PM,Anil Kumar,109,"B01,B02,B03"
+327,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,V,CSAI3010,Algorithm for Intelligent Systems and Robotics,22.12.202310 AM - 01PM,Jerry w Sangma,109,"B04,B05,B06"
+328,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSAI3001,Neural Networks  ,13.12.202310 AM - 01PM,Niharika Singh,49,"B01,B02"
+329,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,4,All Batch
+330,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,4,All Batch
+331,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,7,All Batch
+332,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,12,All Batch
+333,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,13,All Batch
+334,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,9,All Batch
+335,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Rahul Kumar Singh,49,"B01,B02"
+336,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,N Prasanthi Kumari,49,"B01,B02"
+337,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,16,All Batch
+338,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSEG3041P,Image Processing & Pattern Analysis,21.12.202310 AM - 01PM,Sanoj Kumar,33,All Batch
+339,SOCS,B.Tech (H) CSE (Spl. AI & ML),V,CSAI3010,Algorithm for Intelligent Systems and Robotics,22.12.202310 AM - 01PM,Sanjeev Kumar,49,"B01,B02"
+340,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,CSBA3001,Data Mining & Prediction Modeling,13.12.202310 AM - 01PM,Niharika Singh,34,B01
+341,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,3,All Batch
+342,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,1,All Batch
+343,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,20,All Batch
+344,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,7,All Batch
+345,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,3,All Batch
+346,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Achala Shakya,34,B01
+347,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,N Prasanthi Kumari,34,B01
+348,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),V,CSBA3004,Operation Research & Optimization,22.12.202310 AM - 01PM,Subhankar Ghosal,34,B01
+349,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),V,CSBA3001,Data Mining & Prediction Modeling,13.12.202310 AM - 01PM,Niharika Singh,3,B01
+350,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,1,All Batch
+351,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,2,All Batch
+352,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Achala Shakya,3,B01
+353,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,N Prasanthi Kumari,3,B01
+354,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,3,All Batch
+355,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),V,CSBA3004,Operation Research & Optimization,22.12.202310 AM - 01PM,Subhankar Ghosal,3,B01
+356,SOCS,B.Tech CSE (DevOps),V,CSDV3009,Continuous Integration and Continuous Delivery,13.12.202310 AM - 01PM,Hitesh Kumar Sharma,101,"B01,B02,B03"
+357,SOCS,B.Tech CSE (DevOps),V,CSDV3009,Continuous Integration and Continuous Delivery,13.12.202310 AM - 01PM,Dhirendra Kumar Sharma,34,B04
+358,SOCS,B.Tech CSE (DevOps),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,81,All Batch
+359,SOCS,B.Tech CSE (DevOps),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,2,All Batch
+360,SOCS,B.Tech CSE (DevOps),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,12,All Batch
+361,SOCS,B.Tech CSE (DevOps),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,3,All Batch
+362,SOCS,B.Tech CSE (DevOps),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,34,All Batch
+363,SOCS,B.Tech CSE (DevOps),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,3,All Batch
+364,SOCS,B.Tech CSE (DevOps),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Amar Jindal,101,"B01,B02,B03"
+365,SOCS,B.Tech CSE (DevOps),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Rohit Srivastava,34,B04
+366,SOCS,B.Tech CSE (DevOps),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Vibhu Jately,101,"B01,B02,B03"
+367,SOCS,B.Tech CSE (DevOps),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Vibhu Jately,34,B04
+368,SOCS,B.Tech CSE (DevOps),V,CSDV3010,Application Containerization  and Orchestration,22.12.202310 AM - 01PM,Arjun Arora,101,"B01,B02,B03"
+369,SOCS,B.Tech CSE (DevOps),V,CSDV3010,Application Containerization  and Orchestration,22.12.202310 AM - 01PM,Hitesh Kumar Sharma,34,B04
+370,SOCS,B.Tech (H) CSE (DevOps),V,CSDV3009,Continuous Integration and Continuous Delivery,13.12.202310 AM - 01PM,Dhirendra Kumar Sharma,23,B01
+371,SOCS,B.Tech (H) CSE (DevOps),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,7,All Batch
+372,SOCS,B.Tech (H) CSE (DevOps),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,1,All Batch
+373,SOCS,B.Tech (H) CSE (DevOps),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,1,All Batch
+374,SOCS,B.Tech (H) CSE (DevOps),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,14,All Batch
+375,SOCS,B.Tech (H) CSE (DevOps),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Rohit Srivastava,23,B01
+376,SOCS,B.Tech (H) CSE (DevOps),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Vibhu Jately,23,B01
+377,SOCS,B.Tech (H) CSE (DevOps),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,20,All Batch
+378,SOCS,B.Tech (H) CSE (DevOps),V,CSEG3041P,Image Processing & Pattern Analysis,21.12.202310 AM - 01PM,Sanoj Kumar,3,All Batch
+379,SOCS,B.Tech (H) CSE (DevOps),V,CSDV3010,Application Containerization  and Orchestration,22.12.202310 AM - 01PM,Hitesh Kumar Sharma,23,B01
+380,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSVT3009,Container Orchestration & Infrastructure Automation,13.12.202310 AM - 01PM,Avita Katal,109,"B01,B02,B03"
+381,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSVT3009,Container Orchestration & Infrastructure Automation,13.12.202310 AM - 01PM,Avita Katal,109,"B04,B05,B06"
+382,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSVT3009,Container Orchestration & Infrastructure Automation,13.12.202310 AM - 01PM,Abhirup Khanna,73,"B07,B08"
+383,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,11,All Batch
+384,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,55,All Batch
+385,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,10,All Batch
+386,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,33,All Batch
+387,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,20,All Batch
+388,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,162,All Batch
+389,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Saurabh Shanu,112,"B01,B02,B03"
+390,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Chhotelal Kumar,106,"B04,B05,B06"
+391,SOCS,B.Tech(CSE - Spl. CC&VT),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Ram Kumar,73,"B07,B08"
+392,SOCS,B.Tech(CSE - Spl. CC&VT),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Vibhu Jately,112,"B01,B02,B03"
+393,SOCS,B.Tech(CSE - Spl. CC&VT),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,106,"B04,B05,B06"
+394,SOCS,B.Tech(CSE - Spl. CC&VT),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,N Prasanthi Kumari,73,"B07,B08"
+395,SOCS,B.Tech (H) CSE  (Spl. CC&VT),V,CSVT3009,Container Orchestration & Infrastructure Automation,13.12.202310 AM - 01PM,Abhirup Khanna,39,"B01,B02"
+396,SOCS,B.Tech (H) CSE  (Spl. CC&VT),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,19,All Batch
+397,SOCS,B.Tech (H) CSE  (Spl. CC&VT),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,1,All Batch
+398,SOCS,B.Tech (H) CSE  (Spl. CC&VT),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,2,All Batch
+399,SOCS,B.Tech (H) CSE  (Spl. CC&VT),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,17,All Batch
+400,SOCS,B.Tech (H) CSE  (Spl. CC&VT),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Ram Kumar,39,"B01,B02"
+401,SOCS,B.Tech (H) CSE  (Spl. CC&VT),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,N Prasanthi Kumari,39,"B01,B02"
+402,SOCS,B.Tech (H) CSE  (Spl. CC&VT),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,39,All Batch
+403,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSSF3003,Digital Forensics I,13.12.202310 AM - 01PM,Deepika Koundal,108,"B01,B02,B03"
+404,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSSF3003,Digital Forensics I,13.12.202310 AM - 01PM,Keshav Kaushik,34,B04
+405,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,51,All Batch
+406,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,8,All Batch
+407,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,1,All Batch
+408,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,35,All Batch
+409,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,10,All Batch
+410,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,12,All Batch
+411,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,25,All Batch
+412,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Prateek Gupta,108,"B01,B02,B03"
+413,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Prateek Gupta,34,B04
+414,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Vibhu Jately,142,"B01,B02,B03,B04"
+415,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSSF3013,IT Network Security,22.12.202310 AM - 01PM,Keshav Sinha,108,"B01,B02,B03"
+416,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),V,CSSF3013,IT Network Security,22.12.202310 AM - 01PM,Akashdeep Bharadwaj,34,B04
+417,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSSF3003,Digital Forensics I,13.12.202310 AM - 01PM,Keshav Kaushik,13,B01
+418,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,6,All Batch
+419,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,1,All Batch
+420,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,4,All Batch
+421,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,2,All Batch
+422,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Prateek Gupta,13,B01
+423,SOCS,B.Tech (H) CSE (Spl.CSF),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Vibhu Jately,13,B01
+424,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,12,All Batch
+425,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSEG3041P,Image Processing & Pattern Analysis,21.12.202310 AM - 01PM,Sanoj Kumar,1,All Batch
+426,SOCS,B.Tech (H) CSE (Spl.CSF),V,CSSF3013,IT Network Security,22.12.202310 AM - 01PM,Akashdeep Bharadwaj,13,B01
+427,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSMC3014,Mobile Application Development,13.12.202310 AM - 01PM,Ved Prakash Bhardwaj,45,All Batch
+428,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,4,All Batch
+429,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,1,All Batch
+430,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,2,All Batch
+431,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,3,All Batch
+432,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,17,All Batch
+433,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,5,All Batch
+434,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,13,All Batch
+435,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Rohit Srivastava,45,All Batch
+436,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,45,All Batch
+437,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),V,CSMC3014,Mobile Application Development,13.12.202310 AM - 01PM,Ved Prakash Bhardwaj,2,All Batch
+438,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,2,All Batch
+439,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Rohit Srivastava,2,All Batch
+440,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,2,All Batch
+441,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,2,All Batch
+442,SOCS,B.Tech CSE (Big Data),V,CSBD3003,In Memory Processing,13.12.202310 AM - 01PM,Shaurya Gupta,37,B01
+443,SOCS,B.Tech CSE (Big Data),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,1,All Batch
+444,SOCS,B.Tech CSE (Big Data),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,10,B01
+445,SOCS,B.Tech CSE (Big Data),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,3,B01
+446,SOCS,B.Tech CSE (Big Data),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,2,B01
+447,SOCS,B.Tech CSE (Big Data),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,14,B01
+448,SOCS,B.Tech CSE (Big Data),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,7,B01
+449,SOCS,B.Tech CSE (Big Data),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Aviral Sharma,37,B01
+450,SOCS,B.Tech CSE (Big Data),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,37,B01
+451,SOCS,B.Tech CSE (Big Data),V,CSBD3002,Advanced Functional Thinking,22.12.202310 AM - 01PM,Surbhi Saraswat,37,B01
+452,SOCS,B.Tech (H) CSE  (Big Data),V,CSBD3003,In Memory Processing,13.12.202310 AM - 01PM,Shaurya Gupta,4,B01
+453,SOCS,B.Tech (H) CSE  (Big Data),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,2,B01
+454,SOCS,B.Tech (H) CSE  (Big Data),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,1,B01
+455,SOCS,B.Tech (H) CSE  (Big Data),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,1,B01
+456,SOCS,B.Tech (H) CSE  (Big Data),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Aviral Sharma,4,B01
+457,SOCS,B.Tech (H) CSE  (Big Data),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,4,B01
+458,SOCS,B.Tech (H) CSE  (Big Data),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,3,B01
+459,SOCS,B.Tech (H) CSE  (Big Data),V,CSEG3041P,Image Processing & Pattern Analysis,21.12.202310 AM - 01PM,Sanoj Kumar,1,B01
+460,SOCS,B.Tech (H) CSE  (Big Data),V,CSBD3002,Advanced Functional Thinking,22.12.202310 AM - 01PM,Surbhi Saraswat,4,B01
+461,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSOS3009,Open Source Graphics & Animation Tools,13.12.202310 AM - 01PM,Pankaj Badoni,19,B01
+462,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,2,All Batch
+463,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,3,All Batch
+464,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,1,All Batch
+465,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSBL3012P,Introduction to Blockchain,15.12.202310 AM - 01PM,Nadeem Yousuf Khanday,1,All Batch
+466,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,2,All Batch
+467,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,2,All Batch
+468,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,8,All Batch
+469,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Rohit Srivastava,19,B01
+470,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,19,B01
+471,SOCS,B.Tech(CSE - Spl.Open Source & Open Std),V,CSEG3011,XML Programming ,22.12.202310 AM - 01PM,Anushree Sah,19,B01
+472,SOCS,B.Tech(Hons.)(CSE-Open Source&Open Std),V,CSOS3009,Open Source Graphics & Animation Tools,13.12.202310 AM - 01PM,Pankaj Badoni,1,B01
+473,SOCS,B.Tech(Hons.)(CSE-Open Source&Open Std),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,1,All Batch
+474,SOCS,B.Tech(Hons.)(CSE-Open Source&Open Std),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Rohit Srivastava,1,B01
+475,SOCS,B.Tech(Hons.)(CSE-Open Source&Open Std),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,1,B01
+476,SOCS,B.Tech(Hons.)(CSE-Open Source&Open Std),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,1,All Batch
+477,SOCS,B.Tech(Hons.)(CSE-Open Source&Open Std),V,CSEG3011,XML Programming ,22.12.202310 AM - 01PM,Anushree Sah,1,B01
+478,SOCS,B.Tech(CSE-Blockchain Technology),V,CSBL3009,Blockchain Components and Architecture,13.12.202310 AM - 01PM,Avishek Majumder,33,B01
+479,SOCS,B.Tech(CSE-Blockchain Technology),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,4,All Batch
+480,SOCS,B.Tech(CSE-Blockchain Technology),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,3,All Batch
+481,SOCS,B.Tech(CSE-Blockchain Technology),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,15,All Batch
+482,SOCS,B.Tech(CSE-Blockchain Technology),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,9,All Batch
+483,SOCS,B.Tech(CSE-Blockchain Technology),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,2,All Batch
+484,SOCS,B.Tech(CSE-Blockchain Technology),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Saurabh Shanu,33,B01
+485,SOCS,B.Tech(CSE-Blockchain Technology),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,33,B01
+486,SOCS,B.Tech(CSE-Blockchain Technology),V,CSBL3002,Industry Use Cases using Blockchain,22.12.202310 AM - 01PM,Avishek Majumder,33,B01
+487,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,CSBL3009,Blockchain Components and Architecture,13.12.202310 AM - 01PM,Avishek Majumder,4,B01
+488,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,1,All Batch
+489,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,1,All Batch
+490,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,1,All Batch
+491,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,CSDV3016P,DevOps Overview,15.12.202310 AM - 01PM,Ambika Agarwal,1,All Batch
+492,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Saurabh Shanu,4,B01
+493,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,4,B01
+494,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,4,All Batch
+495,SOCS,B.Tech(Hons.)(CSE-Blockchain Technology),V,CSBL3002,Industry Use Cases using Blockchain,22.12.202310 AM - 01PM,Avishek Majumder,4,B01
+496,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,CSTI3009,Realtime Operating Systems Internals,13.12.202310 AM - 01PM,Amar Jindal,14,B01
+497,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,6,All Batch
+498,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,CSBA3014P,Introduction to Business Analytics,15.12.202310 AM - 01PM,Muthu Kumar,3,All Batch
+499,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,CSSF3018P,Information Security Fundamentals,15.12.202310 AM - 01PM,Shubhankar Ghoshal,1,All Batch
+500,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,2,All Batch
+501,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,CSBD3013P,Big Data Overview,15.12.202310 AM - 01PM,Sugandha Sharma,2,All Batch
+502,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Saurabh Shanu,14,B01
+503,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,14,B01
+504,SOCS,B.Tech(CSE - Spl. IOT & Smart Cities),V,CSIS3010,Descriptive Analytics for IOT,22.12.202310 AM - 01PM,Rohit Tanwar,14,B01
+505,SOCS,B.Tech(Hons.) (CSE-IOT & Smart Cities),V,CSTI3009,Realtime Operating Systems Internals,13.12.202310 AM - 01PM,Amar Jindal,2,B01
+506,SOCS,B.Tech(Hons.) (CSE-IOT & Smart Cities),V,CSVT3022P,Cloud Computing Fundamentals,15.12.202310 AM - 01PM,Avita Katal,1,All Batch
+507,SOCS,B.Tech(Hons.) (CSE-IOT & Smart Cities),V,CSAI3014P,Machine Learning,15.12.202310 AM - 01PM,Anurag Jain,1,All Batch
+508,SOCS,B.Tech(Hons.) (CSE-IOT & Smart Cities),V,CSEG3015,Compiler Design,18.12.202310 AM - 01PM,Saurabh Shanu,2,B01
+509,SOCS,B.Tech(Hons.) (CSE-IOT & Smart Cities),V,ECEG3052,Micro Processor & Embedded Systems,20.12.202310 AM - 01PM,Sushabhan Choudhury,2,B01
+510,SOCS,B.Tech(Hons.) (CSE-IOT & Smart Cities),V,CSEG3040P,Cryptography and Network Security,21.12.202310 AM - 01PM,Shubhankar Ghoshal,1,All Batch
+511,SOCS,B.Tech(Hons.) (CSE-IOT & Smart Cities),V,CSEG3041P,Image Processing & Pattern Analysis,21.12.202310 AM - 01PM,Sanoj Kumar,1,All Batch
+512,SOCS,B.Tech(Hons.) (CSE-IOT & Smart Cities),V,CSIS3010,Descriptive Analytics for IOT,22.12.202310 AM - 01PM,Rohit Tanwar,2,B01
+513,SOCS,Bachelor of Computer Appli.-Spl CSF,V,CSBC3017,Mobile Application Development,13.12.202310 AM - 01PM,Ved Prakash Bhardwaj,42,B01
+514,SOCS,Bachelor of Computer Appli.-Spl CSF,V,CSEG3049P,Service Oriented Architecture,18.12.202310 AM - 01PM,Dhiviya Rose J,20,All Batch
+515,SOCS,Bachelor of Computer Appli.-Spl CSF,V,CSBC3020P,Microservices & Containerization,18.12.202310 AM - 01PM,Abhirup Khanna,22,All Batch
+516,SOCS,Bachelor of Computer Appli.-Spl CSF,V,CSSF3020,Application Security,20.12.202310 AM - 01PM,Gagan Deep Singh,42,All Batch
+517,SOCS,Bachelor of Computer Appli.-Spl CSF,V,CSIS3015,IoT and Smart Cities,20.12.202310 AM - 01PM,Shaurya Gupta,42,All Batch
+518,SOCS,Bachelor of Computer Appli.-Spl AIML,V,CSBC3017,Mobile Application Development,13.12.202310 AM - 01PM,Ved Prakash Bhardwaj,38,B01
+519,SOCS,Bachelor of Computer Appli.-Spl AIML,V,CSEG3049P,Service Oriented Architecture,18.12.202310 AM - 01PM,Dhiviya Rose J,15,All Batch
+520,SOCS,Bachelor of Computer Appli.-Spl AIML,V,CSBC3020P,Microservices & Containerization,18.12.202310 AM - 01PM,Abhirup Khanna,23,All Batch
+521,SOCS,Bachelor of Computer Appli.-Spl AIML,V,CSIS3015,IoT and Smart Cities,20.12.202310 AM - 01PM,Shaurya Gupta,38,All Batch
+522,SOCS,Bachelor of Computer Appli.-Spl AIML,V,CSAI3016,Application domain in AI,20.12.202310 AM - 01PM,Mitali Chugh,38,All Batch
+523,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,37,All Batch
+524,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,11,All Batch
+525,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Aviral Sharma,31,All Batch
+526,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,16,All Batch
+527,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSMC4002P,Security in Mobile,13.12.202302 PM - 05 PM,Ved Prakash Bharadwaj,5,All Batch
+528,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSMT4007P,Mainframe DBMS (DB2),13.12.202302 PM - 05 PM,Neeraj Chugh,1,All Batch
+529,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSOS4002P,"Marketing, Services & Licensing in OSS",13.12.202302 PM - 05 PM,Rohit Srivastava,5,All Batch
+530,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSBI4011P,"Banking & Insurance Technology - Application Architecture, Database & Structures",13.12.202302 PM - 05 PM,Juhi Aggarwal,1,All Batch
+531,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSER4007P,E-Customer Relationship Management (eCRM),13.12.202302 PM - 05 PM,Anushree Shah,3,All Batch
+532,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSOG4004P,"Information Technology for Exploration, Production, Petroleum Refining and Petrochemicals",13.12.202302 PM - 05 PM,Kingshuk Srivastava,3,All Batch
+533,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSGG4010P,Augmented and Virtual Reality,13.12.202302 PM - 05 PM,Pankaj Badoni,5,All Batch
+534,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSBD4006P,Big Data Analysis,13.12.202302 PM - 05 PM,Hemant Petwal,37,All Batch
+535,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Sandeep Pratap Singh,10,All Batch
+536,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,45,All Batch
+537,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,16,All Batch
+538,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Shahid Sultan Hajam,35,All Batch
+539,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,20,All Batch
+540,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSMC4002P,Security in Mobile,13.12.202302 PM - 05 PM,Ved Prakash Bharadwaj,4,All Batch
+541,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSOS4002P,"Marketing, Services & Licensing in OSS",13.12.202302 PM - 05 PM,Rohit Srivastava,5,All Batch
+542,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSBI4011P,"Banking & Insurance Technology - Application Architecture, Database & Structures",13.12.202302 PM - 05 PM,Juhi Aggarwal,4,All Batch
+543,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSER4007P,E-Customer Relationship Management (eCRM),13.12.202302 PM - 05 PM,Anushree Shah,1,All Batch
+544,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSGG4010P,Augmented and Virtual Reality,13.12.202302 PM - 05 PM,Pankaj Badoni,3,All Batch
+545,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSBD4006P,Big Data Analysis,13.12.202302 PM - 05 PM,Hemant Petwal,47,All Batch
+546,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Abhirup Khanna,11,All Batch
+547,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSEG4012P,Enterprise Resource Planning,15.12.202302 PM - 05 PM,Chottelal Kumar,60,All Batch
+548,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSEG4013P,Software Version Control,15.12.202302 PM - 05 PM,Gopal Rawat,106,"B4,B5,B6"
+549,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSEG4013P,Software Version Control,15.12.202302 PM - 05 PM,Virender Kadyan,108,"B01,B02,B03"
+550,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,4,All Batch
+551,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Aviral Sharma,10,All Batch
+552,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,13,All Batch
+553,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSMC4002P,Security in Mobile,13.12.202302 PM - 05 PM,Ved Prakash Bharadwaj,3,All Batch
+554,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,15,All Batch
+555,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSOS4002P,"Marketing, Services & Licensing in OSS",13.12.202302 PM - 05 PM,Rohit Srivastava,2,All Batch
+556,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSER4007P,E-Customer Relationship Management (eCRM),13.12.202302 PM - 05 PM,Anushree Shah,3,All Batch
+557,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSIT4005P,IT Service Management & Framework,13.12.202302 PM - 05 PM,Shahinur Laskar,3,All Batch
+558,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSGG4010P,Augmented and Virtual Reality,13.12.202302 PM - 05 PM,Pankaj Badoni,3,All Batch
+559,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSBD4006P,Big Data Analysis,13.12.202302 PM - 05 PM,Hemant Petwal,18,All Batch
+560,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Sandeep Pratap Singh,70,All Batch
+561,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,3,All Batch
+562,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Shahid Sultan Hajam,8,All Batch
+563,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,3,All Batch
+564,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSMC4002P,Security in Mobile,13.12.202302 PM - 05 PM,Ved Prakash Bharadwaj,2,All Batch
+565,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,8,All Batch
+566,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSOS4002P,"Marketing, Services & Licensing in OSS",13.12.202302 PM - 05 PM,Rohit Srivastava,1,All Batch
+567,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSBI4011P,"Banking & Insurance Technology - Application Architecture, Database & Structures",13.12.202302 PM - 05 PM,Juhi Aggarwal,2,All Batch
+568,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSGG4010P,Augmented and Virtual Reality,13.12.202302 PM - 05 PM,Pankaj Badoni,1,All Batch
+569,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSBD4006P,Big Data Analysis,13.12.202302 PM - 05 PM,Hemant Petwal,5,All Batch
+570,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Abhirup Khanna,33,All Batch
+571,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSEG4012P,Enterprise Resource Planning,15.12.202302 PM - 05 PM,Chottelal Kumar,11,All Batch
+572,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSEG4013P,Software Version Control,15.12.202302 PM - 05 PM,Achala Shakya,86,"B01,B02,B03"
+573,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Aviral Sharma,1,All Batch
+574,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,4,All Batch
+575,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,2,All Batch
+576,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),VII,CSBI4011P,"Banking & Insurance Technology - Application Architecture, Database & Structures",13.12.202302 PM - 05 PM,Juhi Aggarwal,2,All Batch
+577,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),VII,CSER4007P,E-Customer Relationship Management (eCRM),13.12.202302 PM - 05 PM,Anushree Shah,1,All Batch
+578,SOCS,B.Tech(CSE -Spl. Buss. Analytics & Opt.),VII,CSBD4006P,Big Data Analysis,13.12.202302 PM - 05 PM,Hemant Petwal,6,All Batch
+579,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Shahid Sultan Hajam,1,All Batch
+580,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),VII,CSER4007P,E-Customer Relationship Management (eCRM),13.12.202302 PM - 05 PM,Anushree Shah,1,All Batch
+581,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),VII,CSIT4005P,IT Service Management & Framework,13.12.202302 PM - 05 PM,Shahinur Laskar,1,All Batch
+582,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),VII,CSBD4006P,Big Data Analysis,13.12.202302 PM - 05 PM,Hemant Petwal,5,All Batch
+583,SOCS,B.Tech (H) CSE (Spl Buss. Analy. & Opt),VII,CSEG4012P,Enterprise Resource Planning,15.12.202302 PM - 05 PM,Chottelal Kumar,8,All Batch
+584,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,45,All Batch
+585,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,4,All Batch
+586,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Aviral Sharma,10,All Batch
+587,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,18,All Batch
+588,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSMC4002P,Security in Mobile,13.12.202302 PM - 05 PM,Ved Prakash Bharadwaj,6,All Batch
+589,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSMT4007P,Mainframe DBMS (DB2),13.12.202302 PM - 05 PM,Neeraj Chugh,3,All Batch
+590,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,14,All Batch
+591,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSOS4002P,"Marketing, Services & Licensing in OSS",13.12.202302 PM - 05 PM,Rohit Srivastava,1,All Batch
+592,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSBI4011P,"Banking & Insurance Technology - Application Architecture, Database & Structures",13.12.202302 PM - 05 PM,Juhi Aggarwal,3,All Batch
+593,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSER4007P,E-Customer Relationship Management (eCRM),13.12.202302 PM - 05 PM,Anushree Shah,1,All Batch
+594,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSIT4005P,IT Service Management & Framework,13.12.202302 PM - 05 PM,Shahinur Laskar,5,All Batch
+595,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSGG4010P,Augmented and Virtual Reality,13.12.202302 PM - 05 PM,Pankaj Badoni,4,All Batch
+596,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSBD4006P,Big Data Analysis,13.12.202302 PM - 05 PM,Hemant Petwal,1,All Batch
+597,SOCS,B.Tech(CSE-Spl.Cyber Security&Forensic),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Sandeep Pratap Singh,6,All Batch
+598,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,23,All Batch
+599,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,3,All Batch
+600,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Shahid Sultan Hajam,9,All Batch
+601,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,11,All Batch
+602,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSMC4002P,Security in Mobile,13.12.202302 PM - 05 PM,Ved Prakash Bharadwaj,1,All Batch
+603,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSMT4007P,Mainframe DBMS (DB2),13.12.202302 PM - 05 PM,Neeraj Chugh,2,All Batch
+604,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,6,All Batch
+605,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSBI4011P,"Banking & Insurance Technology - Application Architecture, Database & Structures",13.12.202302 PM - 05 PM,Juhi Aggarwal,2,All Batch
+606,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Abhirup Khanna,5,All Batch
+607,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSEG4012P,Enterprise Resource Planning,15.12.202302 PM - 05 PM,Chottelal Kumar,42,All Batch
+608,SOCS,B.Tech (H) CSE (Spl.CSF),VII,CSEG4013P,Software Version Control,15.12.202302 PM - 05 PM,Virender Kadyan,20,All Batch
+609,SOCS,B.Tech CSE (Big Data),VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,9,All Batch
+610,SOCS,B.Tech CSE (Big Data),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,6,All Batch
+611,SOCS,B.Tech CSE (Big Data),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Aviral Sharma,1,All Batch
+612,SOCS,B.Tech CSE (Big Data),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,1,All Batch
+613,SOCS,B.Tech CSE (Big Data),VII,CSMC4002P,Security in Mobile,13.12.202302 PM - 05 PM,Ved Prakash Bharadwaj,1,All Batch
+614,SOCS,B.Tech CSE (Big Data),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,3,All Batch
+615,SOCS,B.Tech CSE (Big Data),VII,CSOS4002P,"Marketing, Services & Licensing in OSS",13.12.202302 PM - 05 PM,Rohit Srivastava,1,All Batch
+616,SOCS,B.Tech CSE (Big Data),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Sandeep Pratap Singh,2,All Batch
+617,SOCS,B.Tech (H) CSE  (Big Data),VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,5,All Batch
+618,SOCS,B.Tech (H) CSE  (Big Data),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,5,All Batch
+619,SOCS,B.Tech (H) CSE  (Big Data),VII,CSIS4009P,IOT Enterprise Solution Architecture,13.12.202302 PM - 05 PM,Shahid Sultan Hajam,1,All Batch
+620,SOCS,B.Tech (H) CSE  (Big Data),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,2,All Batch
+621,SOCS,B.Tech (H) CSE  (Big Data),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,1,All Batch
+622,SOCS,B.Tech (H) CSE  (Big Data),VII,CSER4007P,E-Customer Relationship Management (eCRM),13.12.202302 PM - 05 PM,Anushree Shah,1,All Batch
+623,SOCS,B.Tech (H) CSE  (Big Data),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Abhirup Khanna,4,All Batch
+624,SOCS,B.Tech (H) CSE  (Big Data),VII,CSEG4012P,Enterprise Resource Planning,15.12.202302 PM - 05 PM,Chottelal Kumar,8,All Batch
+625,SOCS,B.Tech (H) CSE  (Big Data),VII,CSEG4013P,Software Version Control,15.12.202302 PM - 05 PM,Virender Kadyan,12,All Batch
+626,SOCS,B.Tech CSE (DevOps),VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,8,All Batch
+627,SOCS,B.Tech CSE (DevOps),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,1,All Batch
+628,SOCS,B.Tech CSE (DevOps),VII,CSMT4007P,Mainframe DBMS (DB2),13.12.202302 PM - 05 PM,Neeraj Chugh,1,All Batch
+629,SOCS,B.Tech CSE (DevOps),VII,CSOS4002P,"Marketing, Services & Licensing in OSS",13.12.202302 PM - 05 PM,Rohit Srivastava,1,All Batch
+630,SOCS,B.Tech (H) CSE (DevOps),VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,9,All Batch
+631,SOCS,B.Tech (H) CSE (DevOps),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,1,All Batch
+632,SOCS,B.Tech (H) CSE (DevOps),VII,CSEG4013P,Software Version Control,15.12.202302 PM - 05 PM,Virender Kadyan,12,All Batch
+633,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),VII,CSVT4013P,Container Orchestration & Infrastructure Automation,13.12.202302 PM - 05 PM,Manish Kumar Giri,10,All Batch
+634,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),VII,CSBA4022P,Data Warehouse & Data Mining,13.12.202302 PM - 05 PM,Niharika Singh,2,All Batch
+635,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,8,All Batch
+636,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),VII,CSMC4002P,Security in Mobile,13.12.202302 PM - 05 PM,Ved Prakash Bharadwaj,10,All Batch
+637,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),VII,CSAI4004P,Pattern Recognition and Anomaly Detection,13.12.202302 PM - 05 PM,Syed Sajid,8,All Batch
+638,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),VII,CSER4007P,E-Customer Relationship Management (eCRM),13.12.202302 PM - 05 PM,Anushree Shah,2,All Batch
+639,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Sandeep Pratap Singh,2,All Batch
+640,SOCS,B.Tech(CSE - Spl. Graphics & Gaming),VII,CSGG4009,GPU Programming,18.12.202302 PM - 05 PM,Alind,42,All Batch
+641,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),VII,CSBL4003P,Blockchain Components and Architecture,13.12.202302 PM - 05 PM,Avishek Majumdar,2,All Batch
+642,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),VII,CSDV4007P,Application Containerization & Orchestration,13.12.202302 PM - 05 PM,Abhirup Khanna,1,All Batch
+643,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),VII,CSEG4013P,Software Version Control,15.12.202302 PM - 05 PM,Virender Kadyan,3,All Batch
+644,SOCS,B.Tech (H) CSE (Spl Graphics & Gaming),VII,CSGG4009,GPU Programming,18.12.202302 PM - 05 PM,Alind,3,All Batch
+645,SOCS,B.Tech(CSE) Spl. Artificial Intell & ML,VII,CSSF4016P,Ethical hacking and penetration testing ,13.12.202302 PM - 05 PM,Prateek Gupta,28,All Batch
+646,SOCS,B.Tech (H) CSE (Spl. AI & ML),VII,CSSF4016P,Ethical hacking and penetration testing ,13.12.202302 PM - 05 PM,Prateek Gupta,23,All Batch
+647,SOCS,B.Tech (H) CSE  (Spl. CC&VT),VII,CSSF4016P,Ethical hacking and penetration testing ,13.12.202302 PM - 05 PM,Prateek Gupta,31,All Batch
+648,SOCS,B.Tech(CSE - Spl. CC&VT),VII,CSSF4016P,Ethical hacking and penetration testing ,13.12.202302 PM - 05 PM,Prateek Gupta,23,All Batch
+649,SOCS,B.Tech (H) CSE (DevOps),VII,CSSF4016P,Ethical hacking and penetration testing ,13.12.202302 PM - 05 PM,Prateek Gupta,2,All Batch
+650,SOCS,B.Tech CSE (Big Data),VII,CSSF4016P,Ethical hacking and penetration testing ,13.12.202302 PM - 05 PM,Prateek Gupta,2,All Batch
+651,SOCS,B.Tech (H) CSE  (Big Data),VII,CSSF4016P,Ethical hacking and penetration testing ,13.12.202302 PM - 05 PM,Prateek Gupta,1,All Batch

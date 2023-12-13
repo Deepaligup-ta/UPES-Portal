@@ -11,6 +11,9 @@ import compression from 'compression'
 import morgan from 'morgan'
 import rfs from 'rotating-file-stream'
 import expressStatusMonitor from 'express-status-monitor'
+import requestIp from 'request-ip'
+import fs from 'fs'
+import { parse } from 'csv-parse'
 const __dirname = path.resolve()
 
 //Controllers
@@ -18,27 +21,23 @@ import { authenticateAdmin } from './controllers/auth.js'
 //Routes
 import { router as authRoutes } from './routes/auth.js'
 import { router as timeTableRoutes } from './routes/timetable.js'
-import { router as annoucementRouter} from './routes/announcement.js'
-import { router as policyRouter } from './routes/policy.js'
-import { router as studentRouter } from './routes/student.js'
 import { router as courseRouter} from './routes/course.js'
 import { router as postRouter } from './routes/post.js'
-import { router as messageRouter } from './routes/message.js'
 import { router as groupRouter } from './routes/group.js'
+import { router as pushRouter } from './routes/push.js'
+import { router as evaluateRouter } from './routes/evaluate.js'
+
 //AdminJs Resources
-import { usersResource, User } from './models/User.js'
+import { User, usersResource } from './models/User.js'
 import { designationResource } from './models/Designation.js'
 import { schoolResource } from './models/School.js'
-import { subjectResource } from './models/Subject.js'
 import { courseResource } from './models/Course.js'
-import { batchResource } from './models/Batch.js'
 import { timeTableResource } from './models/Timetable.js'
-import { studentResource } from './models/Student.js'
-import { announcementResource } from './models/Announcement.js'
-import { messageResource } from './models/Message.js'
-import { policyResource } from './models/Policy.js'
 import { postResource } from './models/Post.js'
 import { groupResource } from './models/Group.js'
+import { evaluateResource, Evaluate } from './models/Evaluate.js'
+
+//Utils
 import { rateLimiter } from './middlewares/rateLimit.js'
 import { showLog } from './utils/timeLog.js'
 
@@ -81,23 +80,17 @@ const sessionStore =  MongoStore.create({
     autoRemove: "interval",
     autoRemoveInterval: 1
 })
-
 //Admin Js Config
 const adminJs = new AdminJS({
     resources: [
         designationResource, 
         usersResource, 
         schoolResource, 
-        subjectResource, 
         courseResource, 
-        batchResource, 
         timeTableResource, 
-        studentResource,
-        announcementResource,
-        policyResource,
         postResource,
-        messageResource,
-        groupResource
+        groupResource,
+        evaluateResource
     ],
     branding: {
         companyName: "SoCS Information System",
@@ -152,17 +145,58 @@ const router = AdminJSExpress.buildAuthenticatedRouter(
 )
 //Use static sources
 app.use(express.static('public', { maxAge: 72000 }))
-//172800000
 //CORS
 app.use(cors({
-    origin: [`${process.env.ORIGIN}`], 
+    origin: [`${process.env.ORIGIN}`, 'http://localhost:3000'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true,
 }))
+let count = 0;
+let notFound = []
+// fs.createReadStream('./socsev.csv')
+//     .pipe(parse({ delimiter: ",", from_line: 2}))
+//     .on("data", (row) => {
+//         let names = row[7].split(" ", 3)
+//         const newEvaa = {
+//             firstName: names[0],
+//             lastName: names[1] + (names[2] ? " "+names[2]: '')
+//         }
+//         const newEva = {
+//             programName: row[2],
+//             semester: row[3],
+//             subjectCode: row[4],
+//             subjectName: row[5],
+//             evaluator: "",
+//             strength: row[8],
+//             batchName: row[9],
+            
+//         }
+//         User.findOne({ firstName: newEvaa.firstName, lastName: (newEvaa.lastName ? newEvaa.lastName : "") })
+//             .then((user) => {
+//                 if(!user) {
+//                     notFound.push(newEvaa)
+//                 }else {
+//                     newEva.evaluator = user._id.toString()
+//                     let eva = new Evaluate(newEva)
+//                     eva.save().then((data) => {
+//                         console.log(data)
+//                     })
+//                     .catch(err => {
+//                         console.log(err)
+//                     })
+//                 }
+//             })
+//             .catch((error) => {
+//                 console.log(error)
+//             })
+//         console.log(newEva)
+//     })
 
 //Request Limiter
 app.use(rateLimiter)
+//IPAddress Request Middleware
+app.use(requestIp.mw())
 //Monitor
 app.use(expressStatusMonitor())
 //HTTP Logger
@@ -175,22 +209,19 @@ app.use(compression())
 app.use('/api/auth', authRoutes)
 //Timetable Routes
 app.use('/api/timetable', timeTableRoutes)
-//Annoucement Routes
-app.use('/api/announcement', annoucementRouter)
-//Policy Routes
-app.use('/api/policy', policyRouter)
-//Student Routes
-app.use('/api/student', studentRouter)
 //Course Routes
 app.use('/api/course', courseRouter)
 //Post Routes
 app.use('/api/post', postRouter)
-//Message Routes
-app.use('/api/message', messageRouter)
 //Group Routes
 app.use('/api/group', groupRouter)
+//Push Routes
+app.use('/api/push', pushRouter)
+//Evaluate Routes
+app.use('/api/evaluate', evaluateRouter)
 //AdminJS Router
 app.use(adminJs.options.rootPath, router)
+
 //Redirect To React Only
 app.use((req, res, next) => {
     showLog(`GET Resource URL: ${req.url}`)
