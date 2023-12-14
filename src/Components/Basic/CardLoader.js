@@ -58,59 +58,59 @@ const CardLoader = (props) => {
                     <Skeleton active />    
             </Col>
             <Col
-                key={4}
-                xs={{
-                    span: 5,
-                    offset: 2,
-                }}
-                lg={{
-                    span: 5,
-                    offset: 2,
-                }}
-            >
-                    <Skeleton active />    
-            </Col>
-            <Col
-                key={4}
-                xs={{
-                    span: 5,
-                    offset: 2,
-                }}
-                lg={{
-                    span: 5,
-                    offset: 2,
-                }}
-            >
-                    <Skeleton active />    
-            </Col>
-            <Col
-                key={4}
-                xs={{
-                    span: 5,
-                    offset: 2,
-                }}
-                lg={{
-                    span: 5,
-                    offset: 2,
-                }}
-            >
-                    <Skeleton active />    
-            </Col>
-            <Col
-                key={4}
-                xs={{
-                    span: 5,
-                    offset: 2,
-                }}
-                lg={{
-                    span: 5,
-                    offset: 2,
-                }}
-            >
-                    <Skeleton active />    
-            </Col>
-            <Col
                 key={5}
+                xs={{
+                    span: 5,
+                    offset: 2,
+                }}
+                lg={{
+                    span: 5,
+                    offset: 2,
+                }}
+            >
+                    <Skeleton active />    
+            </Col>
+            <Col
+                key={6}
+                xs={{
+                    span: 5,
+                    offset: 2,
+                }}
+                lg={{
+                    span: 5,
+                    offset: 2,
+                }}
+            >
+                    <Skeleton active />    
+            </Col>
+            <Col
+                key={7}
+                xs={{
+                    span: 5,
+                    offset: 2,
+                }}
+                lg={{
+                    span: 5,
+                    offset: 2,
+                }}
+            >
+                    <Skeleton active />    
+            </Col>
+            <Col
+                key={8}
+                xs={{
+                    span: 5,
+                    offset: 2,
+                }}
+                lg={{
+                    span: 5,
+                    offset: 2,
+                }}
+            >
+                    <Skeleton active />    
+            </Col>
+            <Col
+                key={9}
                 xs={{
                     span: 5,
                     offset: 2,

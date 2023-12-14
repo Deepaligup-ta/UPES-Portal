@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import PageTitle from "../../Components/Basic/PageTitle"
 import FacultyBase from '../../Components/Faculty/Base'
-import { notification } from "antd"
+import { notification, Row, Col, Card, Button, Table } from "antd"
 import { useLocation } from "react-router-dom"
 import CardLoader from "../../Components/Basic/CardLoader"
-import { getEvents, postFreeTime } from "../Outlook/Helper"
+import { getEvents } from "../Outlook/Helper"
 import { useMsal } from "@azure/msal-react"
 
 
@@ -35,21 +35,61 @@ const FacultyEvents = () => {
        
         getEvents(JSON.parse(sessionStorage.getItem('outlook')).accessToken)
             .then((result) => {
-                console.log(result.value)
-                setData(result.value)
+                let datas = []
+                result.value.map((item) => {
+                    datas.push({ 
+                        subject: item.subject,
+                        priority: item.importance.toUpperCase(),
+                        start: item.start.dateTime.split('.')[0],
+                        end: item.end.dateTime.split('.')[0],
+                        join: ''
+
+                    })
+                })
+                setData(datas)
                 setLoading(false)
             })
             .catch((error) => {
+                openNotification({ type: 'error', message: 'Cannot Fetch Events From Outlook'})
                 console.log(error)
             })
     }, [setData, query])
-    
+    const columns = [
+        {
+          title: 'Subject',
+          dataIndex: 'subject',
+          key: 'subject',
+        },
+        {
+          title: 'Priority',
+          dataIndex: 'priority',
+          key: 'priority',
+        },
+        {
+          title: 'Start',
+          dataIndex: 'start',
+          key: 'start',
+        },
+        {
+            title: 'End',
+            dataIndex: 'end',
+            key: 'end',
+        },
+        {
+            title: 'Join',
+            dataIndex: 'join',
+            key: 'join',
+            render: (text) => <Button onClick={() => window.open(`${text}`, '_blank')}>Join Meeting</Button>
+
+        }
+    ]
+      
     return(
         <FacultyBase>
         {contextHolder}
             <PageTitle title="Events/Meetings" />
             { console.log(data)}
-           
+            { loading ? <CardLoader /> : <Table loading={loading} columns={columns} dataSource={data}  />}
         </FacultyBase>
     )
 }

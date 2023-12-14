@@ -67,8 +67,8 @@ export const getOne = (params) => {
 }
 
 export const getAll = (type) => {
-    let url = `${URL}/all` + (type === 'management' ? '?all=true': '') 
-    return fetch(`${url}`, {
+
+    return fetch(`${URL}/all${(type === 'management' ? '?all=true' : '')}`, {
         headers: {
           'Accept': "application/json",
           "Content-Type": "application/json",

@@ -16,7 +16,6 @@ const FacultyDashboard = () => {
             Greetings, {user.user.firstName}
         </Typography.Title>
         <Row>
-        {console.log(getToken()[2])}
                 <Col
                     xs={{
                         span: 5,

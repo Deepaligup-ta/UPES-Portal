@@ -34,5 +34,5 @@ export const postFreeTime = (token, body) => {
 }
 
 export const getEvents = (token) => {
-    return getGraph(`${DEFAULT_URL}/me/calendar/getschedule`, token)
+    return getGraph(`${DEFAULT_URL}/me/calendar/events`, token)
 }
