@@ -44,7 +44,161 @@ const ManagementEvaluate = () => {
             })
     }, [setData, setOptions, setResultSelect, setFile, setResult])
 
-    const dataSource = []
+    const dataSource = [
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "2",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        rollnumber: "2018BTECS00001",
+        sapId: "500060720",
+        internal: 10,
+        midsem: 20,
+        endsem: 30,
+      },
+    ];
     const columns = [
         {
           title: 'Name',
@@ -77,6 +231,47 @@ const ManagementEvaluate = () => {
             key: 'endsem',
         },
     ]
+
+    const columns2 = [
+        {
+          title: 'Faculty Name',
+          dataIndex: 'name',
+          key: 'name',
+        },
+        {
+          title: 'Batch Name',
+          dataIndex: 'rollnumber',
+          key: 'rollnumber',
+        },
+        {
+          title: 'Course Name',
+          dataIndex: 'sapId',
+          key: 'sapId',
+        },
+        {
+            title: 'Faculty Email',
+            dataIndex: 'facultyEmail',
+            key: 'facultyEmail',
+        },
+        {
+            title: 'Cluster Head Email',
+            dataIndex: 'clusterHeadEmail',
+            key: 'clusterHeadEmail',
+        },
+        {
+            title: 'Send Email',
+            dataIndex: 'send',
+            key: 'send',
+            render: (text, record) => (
+                <Button type="primary" onClick={() => handleSend(record)}>Send</Button>
+            ),
+        },
+    ]
+
+    const handleSend = (record) => {
+        // Handle send button click event
+        console.log("Send button clicked for record:", record);
+    }
 
     const onSelectChange = (e) => {
         setResult(null)
@@ -142,53 +337,80 @@ const ManagementEvaluate = () => {
         }
     }   
 
-    return(
-        <ManagementBase>
+    return (
+      <ManagementBase>
         {contextHolder}
-            <PageTitle title="Evaluation" />
-            <Space />
-            { loading ? <Spin /> : 
-                <Form onSubmitCapture={() => null}>
-                    <Form.Item
-                        style={{
-                            width: '100%'
-                        }}
-                        required={true}
-                        label="Select The Batch And Course:"
-                    >
-                        <Select
-                            defaultValue={select}
-                            options={options}
-                            onChange={onSelectChange}
-                            showSearch
-                        >
-                        </Select>
-                    </Form.Item>
-                </Form>
-            }
-            { !result ? '':
-                <div>
-                  <Table loading={ !result ? true : false } dataSource={result} columns={columns} />
-                </div>
-            }
-            { !resultSelect ? '': 
-                <Form
-                    onSubmitCapture={submitResult}
-                >
-                    <Form.Item
-                        label="Drag and Drop .XLSX File"
-                    >
-                        <Input style={{ height: '200px'}} type="file" onChangeCapture={fileChange} onChange={fileChange} placeholder="Drag and drop files or click"/>
-                    </Form.Item>
-                    
-                    <Form.Item>
-                        <Button htmlType="submit" type="primary">Submit</Button>
-                    </Form.Item>
-                </Form>
-            }
+        <PageTitle title="Evaluation" />
+        <Space />
+        {/* {loading ? (
+          <Spin />
+        ) : (
+          <Form onSubmitCapture={() => null}>
+            <Form.Item
+              style={{
+                width: "100%",
+              }}
+              required={true}
+              label="Select The Batch And Course:"
+            >
+              <Select
+                defaultValue={select}
+                options={options}
+                onChange={onSelectChange}
+                showSearch
+              ></Select>
+            </Form.Item>
+          </Form>
+        )}
+        {!result ? (
+          ""
+        ) : (
+          <div>
+            <Table
+              loading={!result ? true : false}
+              dataSource={result}
+              columns={columns}
+            />
+          </div>
+        )}
+        {!resultSelect ? (
+          ""
+        ) : (
+          <Form onSubmitCapture={submitResult}>
+            <Form.Item label="Drag and Drop .XLSX File">
+              <Input
+                style={{ height: "200px" }}
+                type="file"
+                onChangeCapture={fileChange}
+                onChange={fileChange}
+                placeholder="Drag and drop files or click"
+              />
+            </Form.Item>
 
-        </ManagementBase>
-    )
+            <Form.Item>
+              <Button htmlType="submit" type="primary">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
+        )} */}
+        <div style={{ maxHeight: "400px" }}>
+          <h4>Faculty who have not generated award sheet</h4>{" "}
+          <Table
+            dataSource={dataSource}
+            columns={columns2}
+            pagination={false}
+            scroll={{ y: 300 }}
+          />
+          {/* add button for send all */}
+        <div style={{padding:"10px", textAlign: "right"}}>
+            <Button type="primary" style={{}}>
+                Send All
+            </Button>
+        </div>
+        </div>
+      </ManagementBase>
+    );
 }
 
 export default ManagementEvaluate
