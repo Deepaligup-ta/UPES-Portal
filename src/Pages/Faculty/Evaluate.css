@@ -1,0 +1,24 @@
+/* Updated CSS for the grading points section */
+.grading-points-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.grading-points-header {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.grading-point {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Adjusted spacing */
+}
+
+.min-input,
+.max-input {
+  width: 80px;
+  margin-right: 10px;
+}
