@@ -10,5 +10,5 @@ const Check = () => {
         return <Outlet />
     else    
         return <Navigate to="/" />
-};
+}
 export default Check

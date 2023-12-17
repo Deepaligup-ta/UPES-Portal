@@ -11,5 +11,5 @@ const ManagementRoutes = () => {
     else    
 
         return <Navigate to="/" state={{ from: location}} />
-};
+}
 export default ManagementRoutes

@@ -10,5 +10,5 @@ const FacultyRoute = () => {
         return <Outlet />
     else    
         return <Navigate to="/" />
-};
+}
 export default FacultyRoute

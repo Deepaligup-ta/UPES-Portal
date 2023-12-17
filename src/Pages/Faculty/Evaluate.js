@@ -35,7 +35,10 @@ const FacultyEvaluation = () => {
                 setData(res)
                 let array = []
                 res.map((item) => {
-                    array.push({ value: `${item._id}`, label: `${item.programName}-${item.semester}-${item.batchName} Subject:${item.subjectName} (${item.subjectCode})`})
+                    array.push({ 
+                        value: `${item._id}`, 
+                        label: `${item.programName}-${item.semester}-${item.batchName} Subject:${item.subjectName} (${item.subjectCode})`
+                    })
                 })
                 setOptions(array)
                 setLoading(false)
@@ -46,6 +49,7 @@ const FacultyEvaluation = () => {
     }, [setData, setOptions, setResultSelect, setFile, setResult])
 
     const dataSource = []
+
     const columns = [
         {
           title: 'Name',
@@ -175,6 +179,9 @@ const FacultyEvaluation = () => {
                 <Form
                     onSubmitCapture={submitResult}
                 >
+                    <Form.Item>
+                        
+                    </Form.Item>
                     <Form.Item
                         label="Drag and Drop .XLSX File"
                     >

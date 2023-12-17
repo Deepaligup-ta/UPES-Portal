@@ -38,7 +38,7 @@ const OutlookLogin = () => {
     instance.loginPopup({
         scopes: ["User.Read", "Calendars.Read", "offline_access"]
     }).then(result => {
-        checkOutlook({ email: result.account.username })
+        checkOutlook(result.accessToken)
             .then((res) => {
                 if(res.solution) {
                     window.sessionStorage.setItem('outlook', JSON.stringify({ email: result.account.username, accessToken: result.accessToken }))

@@ -41,16 +41,16 @@ export const signIn = (body) => {
 
 }
 
-export const checkOutlook = (body) => {
+export const checkOutlook = (jwtToken) => {
   return fetch(`${URL}/check`, {
       headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwtToken}`,
       },
       credentials: 'include',
       method: "POST",
-
-      body: JSON.stringify(body)
+      body: ''
   })
   .then(res => res.json())
   .catch((error) =>  error);
