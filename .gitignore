@@ -4,4 +4,5 @@ stress.txt
 .github
 /temp/pdf/*
 data.txt
+*.xlsx
 

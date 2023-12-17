@@ -9,7 +9,7 @@ var template = fs.readFileSync('./template/awardsheet.html', 'utf-8')
 export const submitResult = (req, res) => {
     
     //Get Values From Form
-    const { value, file, subjectName, subjectCode, semester } = req.body
+    const { value, file, subjectName, subjectCode, semester, parameters } = req.body
     //Split The Base64
     let base64Image = file.split(';base64,').pop();
     Evaluate
@@ -22,99 +22,133 @@ export const submitResult = (req, res) => {
                     errorMessage: "Can't find the batch OR Result already uploaded!"
                 })
                 //Convert Base64 to original file
-                fs.writeFile(`temp/${value}.xlsx`, base64Image, {encoding: 'base64'}, function(err) {
+                fs.writeFile(`temp/${value}.xlsx`, base64Image, { encoding: 'base64' }, (err) => {
                     //If No Error
                     if(!err) {
-                        //Read the xlsx file
-                        readXlsxFile(fs.createReadStream(`./temp/${value}.xlsx`)).then((rows) => {
-                            //removes the first row
-                            rows.shift()
-                            //mapping the rows
-                            rows.map((row, index) => {
-                                //find if the student exits
-                                Student.findOne({ sapId: row[1] })
-                                    .then((student) => {
-                                        //if doesnt create a new doc
-                                        if(!student) {
-                                            let news =  {
-                                                name: row[2],
-                                                sapId: row[1],
-                                                rollNumber: row[0],
-                                                grades: [
-                                                    {
-                                                        subjectName: subjectName,
-                                                        subjectCode: subjectCode,
-                                                        semester: semester,
-                                                        internalMarks: row[4],
-                                                        endSemMarks: row[5],
-                                                        midSemMarks: row[3],
-                                                        evaluation: value
+                        Evaluate.updateOne({ 
+                            _id: value 
+                        }, { 
+                            $set: { 
+                                parameters: parameters
+                            }
+                        }).then((update) => {
+                            if(!update) 
+                                return res.status(400).json({
+                                    error: true,
+                                    message: 'Error At database'
+                                })
+
+                            //Read the xlsx file
+                            readXlsxFile(fs.createReadStream(`./temp/${value}.xlsx`)).then((rows) => {
+                                //removes the first row
+                                rows.shift()
+                                //mapping the rows
+                                rows.map((row, index) => {
+                                    //find if the student exits
+                                    Student.findOne({ sapId: row[1] })
+                                        .then((student) => {
+                                            if(!student) {
+                                                let finalmark = (row[4] * parameters.internalAssessmentPercentage / 100) + (row[5] * parameters.endsemPercentage / 100) + (row[3] * parameters.midsemPercentage / 100)
+                                                let grade = ''
+                                                parameters.grade.map((item) => {
+                                                    if(item.max >= finalmark && item.min >= finalmark) {
+                                                        grade = item.grade
                                                     }
-                                                ]
-                                            }
-                                            let newStu = new Student(news)
-                                            newStu.save()
-                                            //once it reaches the end send the response
-                                            if(index == rows.length - 1) {
-                                                Evaluate
-                                                    .updateOne({ _id: value }, { $set: { uploaded: true } })
-                                                    .exec()
-                                                    .then((done) => {
-                                                        res.json({
-                                                            success: true,
-                                                            message: "Result Uploaded!"
+                                                })
+                                                let news =  {
+                                                    name: row[2],
+                                                    sapId: row[1],
+                                                    rollNumber: row[0],
+                                                    grades: [
+                                                        {
+                                                            subjectName: subjectName,
+                                                            subjectCode: subjectCode,
+                                                            semester: semester,
+                                                            internalMarks: row[4],
+                                                            endSemMarks: row[5],
+                                                            midSemMarks: row[3],
+                                                            evaluation: value,
+                                                            finalMarks: finalmark,
+                                                            grade: grade
+                                                        }
+                                                    ]
+                                                }
+                                                let newStu = new Student(news)
+                                                newStu.save()
+                                                //once it reaches the end send the response
+                                                if(index == rows.length - 1) {
+                                                    Evaluate
+                                                        .updateOne({ _id: value }, { $set: { uploaded: true } })
+                                                        .exec()
+                                                        .then((done) => {
+                                                            res.json({
+                                                                success: true,
+                                                                message: "Result Uploaded!"
+                                                            })
                                                         })
-                                                    })
-                                                    .catch((error) => {
-                                                        res.status(400).json({
-                                                            error: true,
-                                                            errorMessage: error
+                                                        .catch((error) => {
+                                                            res.status(400).json({
+                                                                error: true,
+                                                                errorMessage: error
+                                                            })
                                                         })
-                                                    })
-                                                
-                                            }
-            
-                                        }else {
-                                            //if exits just push the subject grades
-                                            let grades = {
-                                                subjectName: subjectName,
-                                                subjectCode: subjectCode,
-                                                semester: semester,
-                                                internalMarks: row[4],
-                                                endSemMarks: row[5],
-                                                midSemMarks: row[3],
-                                                evaluation: value
-                                            }
-                                            Student
-                                                .updateOne({ sapId: student.sapId }, { $push: { grades: grades }})
-                                                .exec()
-                                            //once it reaches the end send the response
-                                            if(index == rows.length - 1) {
-                                                Evaluate
-                                                    .updateOne({ _id: value }, { $set: { uploaded: true } })
-                                                    .exec()
-                                                    .then((done) => {
-                                                        res.json({
-                                                            success: true,
-                                                            message: "Result Uploaded!"
-                                                        })
-                                                    })
-                                                    .catch((error) => {
-                                                        res.status(400).json({
-                                                            error: true,
-                                                            errorMessage: error
-                                                        })
-                                                    })
                                                     
+                                                }
+                
+                                            }else {
+                                                //if exits just push the subject grades
+                                                let grades = {
+                                                    subjectName: subjectName,
+                                                    subjectCode: subjectCode,
+                                                    semester: semester,
+                                                    internalMarks: row[4],
+                                                    endSemMarks: row[5],
+                                                    midSemMarks: row[3],
+                                                    evaluation: value
+                                                }
+                                                Student
+                                                    .updateOne({ sapId: student.sapId }, { $push: { grades: grades }})
+                                                    .exec()
+                                                //once it reaches the end send the response
+                                                if(index == rows.length - 1) {
+                                                    Evaluate
+                                                        .updateOne({ _id: value }, { $set: { uploaded: true } })
+                                                        .exec()
+                                                        .then((done) => {
+                                                            res.json({
+                                                                success: true,
+                                                                message: "Result Uploaded!"
+                                                            })
+                                                        })
+                                                        .catch((error) => {
+                                                            res.status(400).json({
+                                                                error: true,
+                                                                errorMessage: error
+                                                            })
+                                                        })
+                                                        
+                                                }
                                             }
-                                        }
-                                    })
-                                    .catch((error) => {
-                                        return error
-                                    })
+                                        })
+                                        .catch((error) => {
+                                            return res.status(400).json({
+                                                error: true,
+                                                message: "error"
+                                            })
+                                            return error
+                                        })
+                                })
+                            
                             })
-                         
                         })
+                        .catch((error) => {
+                            res.status(400).json({
+                                error: true,
+                                message: "Error Occured At Database!"
+                            })
+
+                        })
+
                     }
                 })
         }) 
@@ -131,8 +165,17 @@ export const submitResult = (req, res) => {
 export const getAll = (req, res) => {
     const { _id } = req.auth
     if(req.query.all) {
+        console.log("Called")
         Evaluate
-            .find()
+            .find({ uploaded: false })
+            .populate({
+                path: 'evaluator',
+                select: 'firstName lastName email reportingManager',
+                populate: {
+                    path: 'reportingManager',
+                    select: 'firstName lastName email'
+                }
+            })
             .then((data) => {
                 res.json(data)
             })
@@ -246,7 +289,6 @@ export const generateResult = (req, res) => {
                     }
                 })
                 .catch((error) => {
-                    console.log(error)
                     res.status(400).json({
                         error: true,
                         errorMessage: "Can't generate PDF"
@@ -257,6 +299,20 @@ export const generateResult = (req, res) => {
             res.status(400).json({
                 error: true,
                 errorMessage: error
+            })
+        })
+}
+
+export const notEvaluated = (req, res) => {
+    Evaluate
+        .find()
+        .then((data) => {
+            res.json(data)
+        })
+        .catch((error) => {
+            res.status(400).json({
+                error: true,
+                errorMessage:error
             })
         })
 }

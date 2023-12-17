@@ -1,7 +1,6 @@
 import express from "express"
 import { changePassword, changePasswordFlag, getAllUser, getFaculty, getProfilePic, getUserById, isAuthenticated, isManagement, isSignedIn, loggout, outlookCheck, signin, uploadProfile } from "../controllers/auth.js"
 import { getAllFaculty } from "../controllers/user.js"
-import { checkCache } from "../middlewares/cache.js"
 
 
 export const router = express.Router()

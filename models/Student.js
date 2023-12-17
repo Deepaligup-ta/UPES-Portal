@@ -6,6 +6,8 @@ const resultSchema = new mongoose.Schema({
     internalMarks: Number,
     endSemMarks: Number,
     midSemMarks: Number,
+    finalMarks: Number,
+    grade: String,
     semester: String,
     evaluation: {
         type: mongoose.ObjectId,

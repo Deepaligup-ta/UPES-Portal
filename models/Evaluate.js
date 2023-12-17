@@ -1,5 +1,14 @@
 import mongoose from "mongoose"
 
+
+const parameterSchema = new mongoose.Schema({
+    grade: [],
+    internalAssessmentPercentage: Number,
+    midsemPercentage: Number,
+    endsemPercentage: Number
+      
+}, { timestamps: true })
+
 const evaluateSchema = new mongoose.Schema({
     programName: {
         type: String,
@@ -29,7 +38,8 @@ const evaluateSchema = new mongoose.Schema({
     uploaded: {
         type: Boolean,
         default: false
-    }
+    },
+    parameters: [parameterSchema]
     
 })
 
