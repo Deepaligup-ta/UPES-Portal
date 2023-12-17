@@ -18,9 +18,11 @@ const FullAnnouncement = (props) => {
                         <Typography.Text style={{ fontSize: '16px'}}>
                             { props.data.content }
                         </Typography.Text> 
-                        <Typography.Title style={{ fontSize: '20px', bottom: 0, right: 0, position: 'absolute', padding: '20px'}}>
-                            { props.data.author.firstName } { props.data.author.lastName} <br/> ({ props.data.author.designations })
-                        </Typography.Title> 
+                        { !props.data.author ? '':
+                            <Typography.Title style={{ fontSize: '20px', bottom: 0, right: 0, position: 'absolute', padding: '20px'}}>
+                                { props.data.author.firstName } { props.data.author.lastName} <br/> ({ props.data.author.designations })
+                            </Typography.Title>
+                        } 
                         <Modal width={1200} title="Attachment" open={open} onOk={() => setOpen(false)} onCancel={() => setOpen(false)}>
                             <iframe  width={1000} height={600} src={props.data.attachmentFile}></iframe>
                         </Modal>

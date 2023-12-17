@@ -50,7 +50,6 @@ export const getResult = (body) => {
 
 }
 
-
 export const getOne = (params) => {
     return fetch(`${URL}/${params.courseId}`, {
         headers: {
@@ -68,7 +67,7 @@ export const getOne = (params) => {
 
 export const getAll = (type) => {
 
-    return fetch(`${URL}/all${(type === 'management' ? '?all=true' : '')}`, {
+    return fetch(`${URL}/all` + (type === 'management' ? '?all=true' : ''), {
         headers: {
           'Accept': "application/json",
           "Content-Type": "application/json",
@@ -80,4 +79,18 @@ export const getAll = (type) => {
         .then((res) => res.json())
         .catch((error) => error.json());
 
+}
+
+export const getNotEvaluated = () => {
+  return fetch(`${URL}/notevaluated`, {
+    headers: {
+      'Accept': "application/json",
+      "Content-Type": "application/json",
+      'Authorization': `Bearer ${getToken()[2]}`,
+    },
+    credentials: "include",
+    method: "GET",  
+  })
+    .then((res) => res.json())
+    .catch((error) => console.log(error));
 }

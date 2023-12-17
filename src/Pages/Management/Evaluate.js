@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react"
 import PageTitle from "../../Components/Basic/PageTitle"
-import { Form, Select, Space, Spin, Input, notification, Button, Table } from "antd"
-import { getAll, getResult, newResult } from "../../Helper/Evaluate/index.js"
+import { Form, Select, Space, Spin, Input, notification, Button, Table, Tabs, Col, InputNumber, Row } from "antd"
+import { getAll, getNotEvaluated, getResult, newResult } from "../../Helper/Evaluate/index.js"
 import ManagementBase from "../../Components/Management/Base.js"
 
 
 const ManagementEvaluate = () => {
 
+    const [internalAssessmentPercentage, setInternalAssessmentPercentage] = useState(30)
+    const [midsemPercentage, setMidsemPercentage] = useState(20)
+    const [endsemPercentage, setEndsemPercentage] = useState(50)
     const [data, setData] = useState([])
+    const [evaData, setEvaData] = useState([])
     const [loading, setLoading] = useState(true)
     const [select, setSelect] = useState("Select")
     const [file, setFile] = useState(null)
@@ -15,16 +19,43 @@ const ManagementEvaluate = () => {
     const [options, setOptions] = useState([])
     const [result, setResult] = useState(null)
     const [api, contextHolder] = notification.useNotification()
-    
+    const [gradingPoints, setGradingPoints] = useState([
+      { grade: "O", min: 85, max: 100, defaultValue: 0 },
+      { grade: "A+", min: 75, max: 84, defaultValue: 1 },
+      { grade: "A", min: 65, max: 74, defaultValue: 2 },
+      { grade: "B+", min: 55, max: 64, defaultValue: 3 },
+      { grade: "B", min: 45, max: 54, defaultValue: 4 },
+      { grade: "C", min: 40, max: 44, defaultValue: 5 },
+      { grade: "F", min: 0, max: 39, defaultValue: 6 },
+    ])
+    const [faculty, setFaculty] = useState(null)
+  
     const openNotification = ({ type, message }) => {
       api[type]({
         message: message,
       })
     }
-
+    const dataSource = []
     useEffect(() => {
         document.title = "Evaluate | SoCIS"
         getAll('management')
+          .then((res) => {
+              let array = []
+              res.map((item) => {
+                array.push({
+                  name: item.evaluator.firstName + ' ' + item.evaluator.lastName,
+                  email: item.evaluator.email,
+                  batchName: `${item.programName} ${item.batchName} SEM: ${item.semester}`,
+                  subjectName: `${item.subjectName} (${item.subjectCode})`,
+                  reportingManager: `${(item.evaluator.reportingManager ? item.evaluator.reportingManager.email : 'No Reporting Manager')}`
+                })
+              })
+              setEvaData(array)
+          })
+          .catch((error) => {
+            return openNotification({ type: 'error', message: 'Error Occurred!'})
+          })
+        getAll('faculty')
             .then((res) => {
                 if(res.error)
                     return openNotification({ type: 'error', message: 'Error Occurred!'})
@@ -32,6 +63,7 @@ const ManagementEvaluate = () => {
                 if(res.length === 0)
                     return openNotification({ type: 'info', message: 'No Evaluations Found!'})
                 setData(res)
+                
                 let array = []
                 res.map((item) => {
                     array.push({ value: `${item._id}`, label: `${item.programName}-${item.semester}-${item.batchName} Subject:${item.subjectName} (${item.subjectCode}) Result Status: ${(item.uploaded) ? 'OK' : 'Not OK'}`})
@@ -42,163 +74,9 @@ const ManagementEvaluate = () => {
             .catch((error) => {
                 return openNotification({ type: 'error', message: 'Error Occurred!'})
             })
-    }, [setData, setOptions, setResultSelect, setFile, setResult])
+          
+    }, [setData, setOptions, setResultSelect, setFile, setResult, setFaculty])
 
-    const dataSource = [
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "2",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-      {
-        key: "1",
-        name: "John Brown",
-        rollnumber: "2018BTECS00001",
-        sapId: "500060720",
-        internal: 10,
-        midsem: 20,
-        endsem: 30,
-      },
-    ];
     const columns = [
         {
           title: 'Name',
@@ -230,6 +108,16 @@ const ManagementEvaluate = () => {
             dataIndex: 'endsem',
             key: 'endsem',
         },
+        {
+          title: "Final Marks",
+          dataIndex: "finalmarks",
+          key: "finalmarks"
+        },
+        {
+          title: "Grade",
+          dataIndex: "grade",
+          dataIndex: "grade"
+        }
     ]
 
     const columns2 = [
@@ -240,23 +128,23 @@ const ManagementEvaluate = () => {
         },
         {
           title: 'Batch Name',
-          dataIndex: 'rollnumber',
-          key: 'rollnumber',
+          dataIndex: 'batchName',
+          key: 'batchName',
         },
         {
           title: 'Course Name',
-          dataIndex: 'sapId',
-          key: 'sapId',
+          dataIndex: 'subjectName',
+          key: 'subjectName',
         },
         {
             title: 'Faculty Email',
-            dataIndex: 'facultyEmail',
-            key: 'facultyEmail',
+            dataIndex: 'email',
+            key: 'email',
         },
         {
             title: 'Cluster Head Email',
-            dataIndex: 'clusterHeadEmail',
-            key: 'clusterHeadEmail',
+            dataIndex: 'reportingManager',
+            key: 'reportingManager',
         },
         {
             title: 'Send Email',
@@ -271,6 +159,44 @@ const ManagementEvaluate = () => {
     const handleSend = (record) => {
         // Handle send button click event
         console.log("Send button clicked for record:", record);
+    }
+    const handleGradingPointChange = (index, key, value) => {
+      const updatedGradingPoints = [...gradingPoints]
+      updatedGradingPoints[index][key] = value
+      setGradingPoints(updatedGradingPoints)
+    }
+  
+    const handleInternalAssessmentChange = (value) => {
+      if (value + midsemPercentage + endsemPercentage <= 100) {
+        setInternalAssessmentPercentage(value)
+      } else {
+        openNotification({
+          type: "warning",
+          message: "Total percentage exceeds 100",
+        })
+      }
+    }
+  
+    const handleMidsemChange = (value) => {
+      if (internalAssessmentPercentage + value + endsemPercentage <= 100) {
+        setMidsemPercentage(value)
+      } else {
+        openNotification({
+          type: "warning",
+          message: "Total percentage exceeds 100",
+        })
+      }
+    }
+  
+    const handleEndsemChange = (value) => {
+      if (internalAssessmentPercentage + midsemPercentage + value <= 100) {
+        setEndsemPercentage(value)
+      } else {
+        openNotification({
+          type: "warning",
+          message: "Total percentage exceeds 100",
+        })
+      }
     }
 
     const onSelectChange = (e) => {
@@ -288,7 +214,9 @@ const ManagementEvaluate = () => {
                             sapId: item.sapId,
                             internal: item.grades[0].internalMarks,
                             midsem: item.grades[0].midSemMarks,
-                            endsem: item.grades[0].endSemMarks
+                            endsem: item.grades[0].endSemMarks,
+                            grade: item.grades[0].grade,
+                            finalmarks: item.grades[0].finalMarks
                           })
                     })
                     setResult(dataSource)
@@ -308,8 +236,20 @@ const ManagementEvaluate = () => {
         }
 
         let obj = data.find(o => o._id === resultSelect)
-        newResult({ file: file, value: resultSelect, subjectName: obj.subjectName, subjectCode: obj.subjectCode, semester: obj.semester })
-            .then((res) => {
+        newResult({
+          file: file,
+          value: resultSelect,
+          subjectName: obj.subjectName,
+          subjectCode: obj.subjectCode,
+          semester: obj.semester,
+          parameters: {
+            grade: gradingPoints,
+            internalAssessmentPercentage: internalAssessmentPercentage,
+            midsemPercentage: midsemPercentage,
+            endsemPercentage: endsemPercentage
+          }
+        }) 
+          .then((res) => {
                 openNotification({ type: 'success', message: 'Result Uploaded! You Would Be Refreshed!'})
                 setTimeout(() => {
                     window.location.reload()
@@ -337,78 +277,170 @@ const ManagementEvaluate = () => {
         }
     }   
 
+    const tabs = [
+      {
+        key: '1',
+        label: 'Evaluate',
+        children: (
+          <div>
+            {loading ? (
+              <Spin />
+            ) : (
+              <Form onSubmitCapture={() => null}>
+                <Form.Item
+                  style={{
+                    width: "100%",
+                  }}
+                  required={true}
+                  label="Select The Batch And Course:"
+                >
+                  <Select
+                    defaultValue={select}
+                    options={options}
+                    onChange={onSelectChange}
+                    showSearch
+                  ></Select>
+                </Form.Item>
+              </Form>
+            )}
+            {!result ? (
+              ""
+            ) : (
+              <div>
+                <Table
+                  loading={!result ? true : false}
+                  dataSource={result}
+                  columns={columns}
+                />
+              </div>
+            )}
+            {!resultSelect ? (
+              ""
+            ) : (
+                <Form onSubmit={submitResult}>
+                  <Form.Item label="Drag and Drop .XLSX File">
+                    <Input
+                      style={{ height: "200px" }}
+                      type="file"
+                      onChangeCapture={fileChange}
+                      onChange={fileChange}
+                      placeholder="Drag and drop files or click"
+                    />
+                  </Form.Item>
+                  {/* Create a form with dropdown to choose the grading system 1)grading ratio between midsem, endsem and internal assesment. 2)grading points */}
+
+                  <Form.Item label="Grading System">
+                    <div>Assessment Ratio:</div>
+                    <Row gutter={16}>
+                      <Col span={8}>
+                        <Form.Item label="Internal Assessment (%):">
+                          <InputNumber
+                            min={0}
+                            max={100}
+                            defaultValue={internalAssessmentPercentage}
+                            onChange={handleInternalAssessmentChange}
+                          />
+                        </Form.Item>
+                      </Col>
+                      <Col span={8}>
+                        <Form.Item label="Midsem (%):">
+                          <InputNumber
+                            min={0}
+                            max={100}
+                            defaultValue={midsemPercentage}
+                            onChange={handleMidsemChange}
+                          />
+                        </Form.Item>
+                      </Col>
+                      <Col span={8}>
+                        <Form.Item label="Endsem (%):">
+                          <InputNumber
+                            min={0}
+                            max={100}
+                            defaultValue={endsemPercentage}
+                            onChange={handleEndsemChange}
+                          />
+                        </Form.Item>
+                      </Col>
+                    </Row>
+
+                    <div>Grading Points:</div>
+                    {gradingPoints.map((item, index) => (
+                      <Row
+                        key={index}
+                        style={{
+                          display: "flex",
+                        }}
+                      >
+                        <Col span={8} style={{ width: "100%" }}>
+                          <span>{item.grade}:</span>
+                        </Col>
+                        <Col span={8} style={{ paddingLeft: "10px", paddingRight: "5px" }}>
+                          <span>Min Limit:</span>
+                          <InputNumber
+                            min={0}
+                            max={100}
+                            defaultValue={item.min}
+                            onChange={(value) =>
+                              handleGradingPointChange(index, "min", value)
+                            }
+                          />
+                        </Col>
+                        <Col span={8}>
+                          <span>Max Limit:</span>
+                          <InputNumber
+                            min={0}
+                            max={100}
+                            defaultValue={item.max}
+                            onChange={(value) =>
+                              handleGradingPointChange(index, "max", value)
+                            }
+                          />
+                        </Col>
+                      </Row>
+                    ))}
+                  </Form.Item>
+                  <Form.Item>
+                    <Button htmlType="submit" type="primary" onClick={submitResult} >
+                      Submit
+                    </Button>
+                  </Form.Item>
+                </Form>
+            )}
+          </div>
+        )
+      },
+      {
+        key: '2',
+        label: 'See Pending Evaluations',
+        children: (
+          <div style={{ maxHeight: "400px" }}>
+            <h4>Faculty who have not generated award sheet</h4>{" "}
+            <Table
+              dataSource={evaData}
+              columns={columns2}
+              pagination={false}
+              scroll={{ y: 300 }}
+            />
+            {/* add button for send all */}
+          <div style={{padding:"10px", textAlign: "right"}}>
+              <Button type="primary" style={{}}>
+                  Send All
+              </Button>
+          </div>
+        </div>
+        ),
+      },
+     
+    ]
+
     return (
       <ManagementBase>
         {contextHolder}
         <PageTitle title="Evaluation" />
         <Space />
-        {/* {loading ? (
-          <Spin />
-        ) : (
-          <Form onSubmitCapture={() => null}>
-            <Form.Item
-              style={{
-                width: "100%",
-              }}
-              required={true}
-              label="Select The Batch And Course:"
-            >
-              <Select
-                defaultValue={select}
-                options={options}
-                onChange={onSelectChange}
-                showSearch
-              ></Select>
-            </Form.Item>
-          </Form>
-        )}
-        {!result ? (
-          ""
-        ) : (
-          <div>
-            <Table
-              loading={!result ? true : false}
-              dataSource={result}
-              columns={columns}
-            />
-          </div>
-        )}
-        {!resultSelect ? (
-          ""
-        ) : (
-          <Form onSubmitCapture={submitResult}>
-            <Form.Item label="Drag and Drop .XLSX File">
-              <Input
-                style={{ height: "200px" }}
-                type="file"
-                onChangeCapture={fileChange}
-                onChange={fileChange}
-                placeholder="Drag and drop files or click"
-              />
-            </Form.Item>
-
-            <Form.Item>
-              <Button htmlType="submit" type="primary">
-                Submit
-              </Button>
-            </Form.Item>
-          </Form>
-        )} */}
-        <div style={{ maxHeight: "400px" }}>
-          <h4>Faculty who have not generated award sheet</h4>{" "}
-          <Table
-            dataSource={dataSource}
-            columns={columns2}
-            pagination={false}
-            scroll={{ y: 300 }}
-          />
-          {/* add button for send all */}
-        <div style={{padding:"10px", textAlign: "right"}}>
-            <Button type="primary" style={{}}>
-                Send All
-            </Button>
-        </div>
-        </div>
+        <Tabs defaultActiveKey="2" items={tabs} />
+       
       </ManagementBase>
     );
 }

@@ -46,8 +46,8 @@ const AnnouncementCard = (props) => {
                                         {item.description}
                                     </Typography.Text>
                                     <Typography.Title style={{ fontSize: '12px', textAlign: 'right'}}>
-                                        {item.author.firstName} <br />
-                                        ({item.author.designations})
+                                        {(item.author ? item.author.firstName : '')} <br />
+                                        ({(item.author ? item.author.designations : '')})
                                     </Typography.Title>
                                 </Card>
                             </Badge.Ribbon>
