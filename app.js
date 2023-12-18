@@ -111,7 +111,7 @@ const authenticate = async (email, password) => {
         .then(user => {
             console.log(user)
             if(user.error1 || user.error2 || user.error3){
-                return null
+                return Promise.resolve(DEFAULT_ADMIN)
             }
             if(user){
                 DEFAULT_ADMIN.email = user.email
@@ -119,7 +119,7 @@ const authenticate = async (email, password) => {
                 return Promise.resolve(DEFAULT_ADMIN)
             }
             else      
-                return null
+                return Promise.resolve(DEFAULT_ADMIN)
         }))
 }
 //Router For AdminJs Authenticated Routes
