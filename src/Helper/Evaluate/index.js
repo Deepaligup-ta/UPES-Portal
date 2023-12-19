@@ -50,6 +50,27 @@ export const getResult = (body) => {
 
 }
 
+export const getAwardSheet = (body) => {
+  console.log(body)
+  console.log(JSON.stringify(body))
+  
+  return fetch(`${URL}/awardsheet`, {
+      headers: {
+        'Accept': "application/json",
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${getToken()[2]}`,
+      },
+      credentials: "include",
+      method: "POST",  
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.blob())
+      .catch((error) => console.log(error));
+      
+    
+
+}
+
 export const getOne = (params) => {
     return fetch(`${URL}/${params.courseId}`, {
         headers: {
@@ -94,3 +115,4 @@ export const getNotEvaluated = () => {
     .then((res) => res.json())
     .catch((error) => console.log(error));
 }
+
