@@ -22,6 +22,7 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
+            font-size: 11px;
         }
 
         tr:nth-child(even) {
@@ -36,20 +37,28 @@
     <h1 class="title">
         UPES, Dehradun
     </h1>
-    <h3>Name: {{ name }}</h3>
-    <h3>SAPID: {{ sapId }}</h3>
-    <h3>Roll Number: {{ rollNumber }}</h3>
+    <h3>Subject: {{ evaluation.subjectName}}</h3>
 <table>
     <tr>
-      <th>Subject</th>
-      <th>Subject Code</th>
-      <th>Marks</th>
+      <th>Name</th>
+      <th>SAP Id</th>
+      <th>Roll Number</th>
+      <th>Internal Assessment Marks</th>
+      <th>Mid Semester Marks</th>
+      <th>End Semester Marks</th>
+      <th>Final Marks</th>
+      <th>Grade</th>
     </tr>
-    {{#each grades}}
+    {{#each student}}
         <tr>
-            <td>{{this.subjectName}}</td>
-            <td>{{this.subjectCode}}</td>
-            <td>{{this.finalGrade}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.sapId}}</td>
+            <td>{{this.rollNumber}}</td>
+            <td>{{this.grades.0.internalMarks}}</td>
+            <td>{{this.grades.0.midSemMarks}}</td>
+            <td>{{this.grades.0.endSemMarks}}</td>
+            <td>{{this.grades.0.finalMarks}}</td>
+            <td>{{this.grades.0.grade}}</td>     
         </tr>
     {{/each}}
    

@@ -17,7 +17,8 @@ mailTransport.verify((error, success) => {
     else    
         console.log("Mail SMTP Success")
 })
-export const sendMail = (to, subject, body) => {
-    mailTransport.sendMail()
-    return true
+export const sendMail = (mailOptions) => {
+    mailTransport.sendMail(mailOptions, (res) => {
+        return res
+    })
 }

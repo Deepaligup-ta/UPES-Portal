@@ -39,6 +39,10 @@ const evaluateSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    downloaded: {
+        type: Boolean,
+        default: false
+    },
     parameters: [parameterSchema]
     
 })

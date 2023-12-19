@@ -3,9 +3,9 @@ import readXlsxFile from "read-excel-file/node"
 import pdf from 'pdf-creator-node'
 import fs from 'fs'
 import { Student } from "../models/Student.js"
+import { User } from "../models/User.js"
 
 var template = fs.readFileSync('./template/awardsheet.html', 'utf-8')
-
 export const submitResult = (req, res) => {
     
     //Get Values From Form
@@ -165,9 +165,8 @@ export const submitResult = (req, res) => {
 export const getAll = (req, res) => {
     const { _id } = req.auth
     if(req.query.all) {
-        console.log("Called")
         Evaluate
-            .find({ uploaded: false })
+            .find({ downloaded: false })
             .populate({
                 path: 'evaluator',
                 select: 'firstName lastName email reportingManager',
@@ -236,64 +235,158 @@ export const getResult = (req, res) => {
     })
 }
 
-export const generateResult = (req, res) => {
-    const { sapId } = req.body
+// export const generateResult = (req, res) => {
+//     const { sapId } = req.body
+//     const options = {
+//         format: "A4",
+//         orientation: "portrait",
+//         border: "10mm"
+//     }
+//     Student
+//         .findOne({ sapId: sapId })
+//         .then((student) => {
+//             let grades = student.grades.map(item=> item.toObject())
+//             let finalGrades = []
+//             grades.map((item) => {
+//                 let finalGrade = 0
+//                 if(item.semester === 'I' || item.semester === 'II') {
+//                     finalGrade = (item.internalMarks * 0.5) + (item.endSemMarks * 0.3) + (item.midSemMarks * 0.2)
+
+//                 }else {
+//                     finalGrade = (item.internalMarks * 0.3) + (item.endSemMarks * 0.5) + (item.midSemMarks * 0.2)
+
+//                 }
+//                 finalGrades.push({ subjectName: item.subjectName, subjectCode: item.subjectCode, finalGrade: finalGrade })
+//             })
+//             const document = {
+//                 html: template,
+//                 data: {
+//                   name: student.name,
+//                   sapId: student.sapId,
+//                   rollNumber: student.rollNumber,
+//                   grades: finalGrades
+//                 },
+//                 path: `./temp/pdf/${student.sapId}.pdf`,
+//                 type: "",
+//             }
+//             pdf
+//                 .create(document, options)
+//                 .then((file) => {
+//                     if(file) {
+//                         res.download(file.filename, `${student.sapId}.pdf`, (err) => {
+//                             if (err) {
+//                               res.status(500).send({
+//                                 message: "Could not download the file. " + err,
+//                               })
+//                             }
+//                           })
+                       
+//                     }else {
+//                         res.status(400).json({
+//                             error: true
+//                         })
+//                     }
+//                 })
+//                 .catch((error) => {
+//                     res.status(400).json({
+//                         error: true,
+//                         errorMessage: "Can't generate PDF"
+//                     })
+//                 })
+//         })
+//         .catch((error) => {
+//             res.status(400).json({
+//                 error: true,
+//                 errorMessage: error
+//             })
+//         })
+// }
+
+export const generateAwardsheet = (req, res) => {
+    const { evaluationId } = req.body
     const options = {
         format: "A4",
         orientation: "portrait",
         border: "10mm"
     }
     Student
-        .findOne({ sapId: sapId })
-        .then((student) => {
-            let grades = student.grades.map(item=> item.toObject())
-            let finalGrades = []
-            grades.map((item) => {
-                let finalGrade = 0
-                if(item.semester === 'I' || item.semester === 'II') {
-                    finalGrade = (item.internalMarks * 0.5) + (item.endSemMarks * 0.3) + (item.midSemMarks * 0.2)
-
-                }else {
-                    finalGrade = (item.internalMarks * 0.3) + (item.endSemMarks * 0.5) + (item.midSemMarks * 0.2)
-
+        .find({ 
+            grades: {
+                $elemMatch: {
+                    evaluation: evaluationId
                 }
-                finalGrades.push({ subjectName: item.subjectName, subjectCode: item.subjectCode, finalGrade: finalGrade })
-            })
-            const document = {
-                html: template,
-                data: {
-                  name: student.name,
-                  sapId: student.sapId,
-                  rollNumber: student.rollNumber,
-                  grades: finalGrades
-                },
-                path: `./temp/pdf/${student.sapId}.pdf`,
-                type: "",
             }
-            pdf
-                .create(document, options)
-                .then((file) => {
-                    if(file) {
-                        res.download(file.filename, `${student.sapId}.pdf`, (err) => {
-                            if (err) {
-                              res.status(500).send({
-                                message: "Could not download the file. " + err,
-                              })
-                            }
-                          })
-                       
-                    }else {
-                        res.status(400).json({
-                            error: true
-                        })
-                    }
-                })
-                .catch((error) => {
-                    res.status(400).json({
-                        error: true,
-                        errorMessage: "Can't generate PDF"
+        })
+        .then((student) => {
+            Evaluate.findOne({
+                _id: student[0].grades[0].evaluationId
+            })
+            .lean()
+            .then((data) => {
+                let grades = student.map(item=> item.toObject())   
+                const document = {
+                    html: template,
+                    data: {
+                        student: grades,
+                        evaluation: data
+                    },
+                    path: `./temp/pdf/${evaluationId}.pdf`,
+                    type: "",
+                }
+                pdf
+                    .create(document, options)
+                    .then((file) => {
+                        if(file) {
+                            Evaluate
+                                .updateOne({ 
+                                    _id: evaluationId 
+                                }, {
+                                    $set: {
+                                        downloaded: true
+                                    }
+                                })
+                                .then((update) => {
+                                    if(update) {
+                                        res.download(file.filename, `${evaluationId}.pdf`, (err) => {
+                                            if (err) {
+                                                res.status(500).send({
+                                                    message: "Could not download the file. " + err,
+                                                })
+                                            }
+                                        })
+                                    }else {
+                                        res.status(400).json({
+                                            error: true,
+                                            errorMessage: 'Unknown'
+                                        })
+                                    }
+                                })
+                                .catch((error) => {
+                                    res.status(400).json({
+                                        error: true,
+                                        errorMessage: error
+                                    })
+                                })
+                        
+                        }else {
+                            res.status(400).json({
+                                error: true
+                            })
+                        }
                     })
+                    .catch((error) => {
+                        res.status(400).json({
+                            error: true,
+                            errorMessage: "Can't generate PDF"
+                        })
+                    })
+            })
+            .catch((error) => {
+                res.status(400).json({
+                    error: true,
+                    errorMessage: error
                 })
+            })
         })
         .catch((error) => {
             res.status(400).json({
@@ -303,16 +396,15 @@ export const generateResult = (req, res) => {
         })
 }
 
-export const notEvaluated = (req, res) => {
-    Evaluate
-        .find()
-        .then((data) => {
-            res.json(data)
-        })
-        .catch((error) => {
-            res.status(400).json({
-                error: true,
-                errorMessage:error
-            })
-        })
+export const sendMails = (req, res) => {
+    const { users } = req.body
+    User.find({ })
+    mails.map((mail) => {
+        const mailOptions = {
+            from: 'socis@test.com',
+            to: `${mail.facultyMail}, ${mail.clusterMail}`,
+            subject: '',
+            text: 'That was easy!'
+        }
+    })
 }
