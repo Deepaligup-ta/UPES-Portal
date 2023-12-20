@@ -15,7 +15,7 @@ import {
   Col,
 } from "antd"
 import FacultyBase from "../../Components/Faculty/Base"
-import { getAll, getResult, newResult } from "../../Helper/Evaluate/index.js"
+import { getAll, getAwardSheet, getResult, newResult } from "../../Helper/Evaluate/index.js"
 
 const FacultyEvaluation = () => {
   const [internalAssessmentPercentage, setInternalAssessmentPercentage] = useState(30)
@@ -248,7 +248,30 @@ const FacultyEvaluation = () => {
       setFile(reader.result)
     }
   }
+const downloadResult = (evaluationId) => {
+  console.log("Downloading result for evaluationId:", evaluationId);
+  getAwardSheet({ evaluationId: evaluationId })
+    .then((data) => {
+      const url = window.URL.createObjectURL(data);
+      const a = document.createElement("a");
+      a.style.display = "none";
+      a.href = url;
+      a.download = `${evaluationId}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    })
+    .catch((error) => {
+      console.error("Error while downloading result:", error);
+      // Handle the error accordingly, such as showing a notification
+      // show notification
 
+      openNotification({
+        type: "error",
+        message: "Error while downloading result",
+      });
+    });
+};
   return (
     <FacultyBase>
       {contextHolder}
@@ -257,7 +280,7 @@ const FacultyEvaluation = () => {
       {loading ? (
         <Spin />
       ) : (
-        <Form onSubmit={submitResult} >
+        <Form onSubmit={submitResult}>
           <Form.Item
             style={{
               width: "100%",
@@ -282,6 +305,15 @@ const FacultyEvaluation = () => {
             dataSource={result}
             columns={columns}
           />
+          <div style={{ padding: "10px", textAlign: "right" }}>
+            <Button
+              type="primary"
+              onClick={() => downloadResult(result[0].evaluationId)}
+              // onClick={console.log(result[0].evaluationId)}
+            >
+              Download Result
+            </Button>
+          </div>
         </div>
       )}
       {!resultSelect ? (
@@ -345,7 +377,10 @@ const FacultyEvaluation = () => {
                 <Col span={8} style={{ width: "100%" }}>
                   <span>{item.grade}:</span>
                 </Col>
-                <Col span={8} style={{ paddingLeft: "10px", paddingRight: "5px" }}>
+                <Col
+                  span={8}
+                  style={{ paddingLeft: "10px", paddingRight: "5px" }}
+                >
                   <span>Min Limit:</span>
                   <InputNumber
                     min={0}
@@ -371,14 +406,14 @@ const FacultyEvaluation = () => {
             ))}
           </Form.Item>
           <Form.Item>
-            <Button htmlType="submit" type="primary" onClick={submitResult} >
+            <Button htmlType="submit" type="primary" onClick={submitResult}>
               Submit
             </Button>
           </Form.Item>
         </Form>
       )}
     </FacultyBase>
-  )
+  );
 }
 
 export default FacultyEvaluation

@@ -71,7 +71,7 @@ const OutlookLogin = () => {
         className="login__container text-black z-50 absolute"
         style={{ right: 80 }}
       >
-        <h1 className="text-3xl text-">Welcome To UPES Management Portal</h1>
+        <h1 className="text-3xl text-">Welcome To SOCS Intranet</h1>
         <div className="form-container">
             <Form
                 name="normal_login"

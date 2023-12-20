@@ -13,6 +13,7 @@ import {
   Col,
   InputNumber,
   Row,
+  Radio
 } from "antd";
 import {
   getAll,
@@ -24,6 +25,11 @@ import {
 import ManagementBase from "../../Components/Management/Base.js";
 import { Layout } from "antd";
 import { useState, useEffect } from "react";
+// import { sendEmail } from "../../Helper/Email/index.js";
+import { Modal } from "antd";
+
+const { TextArea } = Input;
+
 const ManagementEvaluate = () => {
   const [internalAssessmentPercentage, setInternalAssessmentPercentage] =
     useState(30);
@@ -79,7 +85,6 @@ const ManagementEvaluate = () => {
         return openNotification({ type: "error", message: "Error Occurred!" });
       });
 
-
     getAll("faculty")
       .then((res) => {
         if (res.error)
@@ -113,9 +118,6 @@ const ManagementEvaluate = () => {
         return openNotification({ type: "error", message: "Error Occurred!" });
       });
   }, [setData, setOptions, setResultSelect, setFile, setResult, setFaculty]);
-
-  
-
 
   const columns = [
     {
@@ -197,11 +199,61 @@ const ManagementEvaluate = () => {
       ),
     },
   ];
+  const [template, setTemplate] = useState("");
 
-  const handleSend = (record) => {
-    // Handle send button click event
-    console.log("Send button clicked for record:", record);
-  };
+    const handleSend = (record) => {
+      // Handle send button click event
+      console.log("Send button clicked for record:", record);
+      const { name, email, batchName, subjectName } = record;
+      const template = `
+        Dear ${name},\n
+        I hope this message finds you well.\n
+
+        This is a friendly reminder regarding the pending task of generating the award sheet for the ${batchName} batch in ${subjectName} course.\n
+
+        Your cooperation in completing this task is crucial to ensure timely completion of the evaluation process.\n
+
+        Please generate the award sheet at your earliest convenience and ensure its submission.\n
+
+        Thank you for your attention to this matter.
+      `;
+
+      Modal.confirm({
+        title: "Edit Email Template",
+        content: (
+          <TextArea
+            rows={10}
+            defaultValue={template}
+            onChange={(e) => setTemplate(e.target.value)}
+          />
+        ),
+        okText: "Send",
+        cancelText: "Cancel",
+        style: { height: "1000px" },
+        width: "300",
+        height: "400",
+        
+        // Set the desired width here
+        // onOk: () => {
+        //   // Send email
+        //   sendEmail({ email, template })
+        //     .then((data) => {
+        //       // Show success notification
+        //       openNotification({
+        //         type: 'success',
+        //         message: 'Email sent successfully',
+        //       });
+        //     })
+        //     .catch((error) => {
+        //       // Show error notification
+        //       openNotification({
+        //         type: 'error',
+        //         message: 'Error while sending email',
+        //       });
+        //     });
+        // },
+      });
+    };
   const handleGradingPointChange = (index, key, value) => {
     const updatedGradingPoints = [...gradingPoints];
     updatedGradingPoints[index][key] = value;
@@ -260,7 +312,7 @@ const ManagementEvaluate = () => {
               endsem: item.grades[0].endSemMarks,
               grade: item.grades[0].grade,
               finalmarks: item.grades[0].finalMarks,
-              evaluationId:item.grades[0].evaluation
+              evaluationId: item.grades[0].evaluation,
             });
           });
           setResult(dataSource);
@@ -277,33 +329,33 @@ const ManagementEvaluate = () => {
       setResultSelect(e);
     }
   };
-const downloadResult = (evaluationId) => {
-  console.log("Downloading result for evaluationId:", evaluationId);
-  getAwardSheet({ evaluationId: evaluationId })
-    .then((data) => {
-      const url = window.URL.createObjectURL(data);
-      const a = document.createElement("a");
-      a.style.display = "none";
-      a.href = url;
-      a.download = `${evaluationId}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-    })
-    .catch((error) => {
-      console.error("Error while downloading result:", error);
-      // Handle the error accordingly, such as showing a notification
-      // show notification
+  const downloadResult = (evaluationId) => {
+    console.log("Downloading result for evaluationId:", evaluationId);
+    getAwardSheet({ evaluationId: evaluationId })
+      .then((data) => {
+        const url = window.URL.createObjectURL(data);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = `${evaluationId}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((error) => {
+        console.error("Error while downloading result:", error);
+        // Handle the error accordingly, such as showing a notification
+        // show notification
 
-      openNotification({
-        type: "error",
-        message: "Error while downloading result",
+        openNotification({
+          type: "error",
+          message: "Error while downloading result",
+        });
       });
-    });
-};
+  };
 
   const submitResult = (e) => {
-    console.log(e)
+    console.log(e);
     e.preventDefault();
     if (file === null) {
       return openNotification({
@@ -359,8 +411,6 @@ const downloadResult = (evaluationId) => {
     };
   };
 
- 
-
   const tabs = [
     {
       key: "1",
@@ -378,13 +428,15 @@ const downloadResult = (evaluationId) => {
                 required={true}
                 label="Select The Batch And Course:"
               >
-                <Select
-                  defaultValue={select}
-                  options={options}
-                  onChange={onSelectChange}
-                  showSearch
-                ></Select>
+                <Radio.Group onChange={onSelectChange} value={select}>
+                  {options.map((option) => (
+                    <Radio key={option.value} value={option.value} style={{ display: "block", marginBottom: 10 }}>
+                      {option.label}
+                    </Radio>
+                  ))}
+                </Radio.Group>
               </Form.Item>
+           
             </Form>
           )}
           {!result ? (
