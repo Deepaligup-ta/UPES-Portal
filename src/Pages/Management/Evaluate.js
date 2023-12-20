@@ -22,6 +22,8 @@ import {
   getResult,
   newResult,
 } from "../../Helper/Evaluate/index.js";
+import { Upload, message } from "antd";
+import { InboxOutlined } from "@ant-design/icons";
 import ManagementBase from "../../Components/Management/Base.js";
 import { Layout } from "antd";
 import { useState, useEffect } from "react";
@@ -391,25 +393,55 @@ const ManagementEvaluate = () => {
         return openNotification({ type: "error", message: "Error Occurred!" });
       });
   };
+ const handleFileUpload = (file) => {
+   let name = file.name.split(".");
+   if (name[1] !== "xlsx") {
+     setTimeout(() => {
+       window.location.reload();
+     }, 2000);
+     openNotification({
+       type: "warning",
+       message: "Only .XLSX File Are Allowed",
+     });
+     return false; // Prevent file upload if not .xlsx
+   }
 
-  const fileChange = (e) => {
-    const f = e.target.files[0];
-    let name = f.name.split(".");
-    if (name[1] !== "xlsx") {
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-      return openNotification({
-        type: "warning",
-        message: "Only .XLSX File Are Allowed",
-      });
-    }
-    var reader = new FileReader();
-    reader.readAsDataURL(f);
-    reader.onload = () => {
-      setFile(reader.result);
-    };
-  };
+   var reader = new FileReader();
+   reader.readAsDataURL(file);
+   reader.onload = () => {
+     setFile(reader.result);
+   };
+   return false; // Return false to prevent default upload behavior
+ };
+
+ const fileChange = (e) => {
+   if (e && e.target && e.target.files && e.target.files.length > 0) {
+     const f = e.target.files[0];
+     let name = f.name.split(".");
+     if (name[1] !== "xlsx") {
+       setTimeout(() => {
+         window.location.reload();
+       }, 2000);
+       return openNotification({
+         type: "warning",
+         message: "Only .XLSX File Are Allowed",
+       });
+     }
+     var reader = new FileReader();
+     reader.readAsDataURL(f);
+     reader.onload = () => {
+       setFile(reader.result);
+     };
+   } else {
+     // Handle the case where the event or file information is not available
+     console.error("File information not available");
+     openNotification({
+       type: "error",
+       message: "File information not available",
+     });
+   }
+ };
+
 
   const tabs = [
     {
@@ -428,15 +460,20 @@ const ManagementEvaluate = () => {
                 required={true}
                 label="Select The Batch And Course:"
               >
-                <Radio.Group onChange={onSelectChange} value={select}>
+                {/* <Radio.Group onChange={onSelectChange} value={select}>
                   {options.map((option) => (
                     <Radio key={option.value} value={option.value} style={{ display: "block", marginBottom: 10 }}>
                       {option.label}
                     </Radio>
                   ))}
-                </Radio.Group>
+                </Radio.Group> */}
+                <Select
+                  defaultValue={select}
+                  options={options}
+                  onChange={onSelectChange}
+                  showSearch
+                ></Select>
               </Form.Item>
-           
             </Form>
           )}
           {!result ? (
@@ -464,15 +501,21 @@ const ManagementEvaluate = () => {
             ""
           ) : (
             <Form onSubmit={submitResult}>
-              <Form.Item label="Drag and Drop .XLSX File">
-                <Input
-                  style={{ height: "200px" }}
-                  type="file"
-                  onChangeCapture={fileChange}
-                  onChange={fileChange}
-                  placeholder="Drag and drop files or click"
-                />
-              </Form.Item>
+             
+<Upload.Dragger
+  name="file"
+  multiple={false}
+  beforeUpload={(file) => handleFileUpload(file)}
+  showUploadList={false}
+>
+  <p className="ant-upload-drag-icon">
+    <InboxOutlined />
+  </p>
+  <p className="ant-upload-text">
+    Click or drag Excel file to this area to upload
+  </p>
+</Upload.Dragger>
+
               {/* Create a form with dropdown to choose the grading system 1)grading ratio between midsem, endsem and internal assesment. 2)grading points */}
 
               <Form.Item label="Grading System">
