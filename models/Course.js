@@ -4,7 +4,8 @@ import mongoose from "mongoose"
 const courseSchema = mongoose.Schema({
     courseName: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     duration: {
         type: Number,
@@ -12,7 +13,7 @@ const courseSchema = mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ['undergraduate', 'postgraduate', 'diploma']
+        enum: ['UG', 'PG']
     },
     school: {
         type: mongoose.ObjectId,

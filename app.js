@@ -31,7 +31,7 @@ import { router as evaluateRouter } from './routes/evaluate.js'
 import { User, usersResource } from './models/User.js'
 import { designationResource } from './models/Designation.js'
 import { schoolResource } from './models/School.js'
-import { courseResource } from './models/Course.js'
+import { Course, courseResource } from './models/Course.js'
 import { timeTableResource } from './models/Timetable.js'
 import { postResource } from './models/Post.js'
 import { groupResource } from './models/Group.js'
@@ -40,6 +40,7 @@ import { evaluateResource, Evaluate } from './models/Evaluate.js'
 //Utils
 import { rateLimiter } from './middlewares/rateLimit.js'
 import { showLog } from './utils/timeLog.js'
+import { Student } from './models/Student.js'
 
 
 //Enviroment File Configuration
@@ -109,7 +110,6 @@ const authenticate = async (email, password) => {
     }
     return Promise.resolve(authenticateAdmin(email, password)
         .then(user => {
-            console.log(user)
             if(user.error1 || user.error2 || user.error3){
                 return Promise.resolve(DEFAULT_ADMIN)
             }
@@ -154,6 +154,29 @@ app.use(cors({
 }))
 let count = 0;
 let notFound = []
+// fs.createReadStream('./data.csv')
+//     .pipe(parse({ delimiter: ",", from_line: 2 }))
+//     .on("data", (row) => {
+//                     const student = {
+//                         name: row[3],
+//                         sapId: row[1],
+//                         rollNumber: row[2],
+//                         school: row[4],
+//                         semester: row[5],
+//                         program: row[7],
+//                         batch: row[10].split('-').pop(),
+//                         status: row[8],
+//                         yearOfEnrollment: row[9]
+//                     }
+//                     let newstudent = new Student(student)
+//                     newstudent.save()
+//                         .then((student) => {
+//                             console.log(student)
+//                         })
+//                         .catch((error) => {
+//                             return console.log(error)
+//                         })
+//     })
 // fs.createReadStream('./socsev.csv')
 //     .pipe(parse({ delimiter: ",", from_line: 2}))
 //     .on("data", (row) => {

@@ -31,6 +31,26 @@ const studentSchema = new mongoose.Schema(
             required: true,
             unique: true
         },
+        semester: {
+            type: String,
+            required: true,
+        },
+        yearOfEnrollment: {
+            type: String,
+        },
+        status: {
+            type: String,
+            enum: ["REGD.", "Name Struck off"]
+        },
+        program: String,
+        batch: {
+            type: String,
+            required: true
+        },
+        school: {
+            type: mongoose.ObjectId,
+            ref: 'School'
+        },
         grades:[resultSchema]
     },
     { 

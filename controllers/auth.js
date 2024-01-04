@@ -38,49 +38,45 @@ export const outlookCheck = (req, res) => {
      } else{
         res.status(400).json({error:true})
      }
-       User.findOne({ email: decodedToken.unique_name }).then((user) => {
-         if (!user)
-           return res.status(404).json({
-             error: true,
-             errorMessage: "Can't Find The User With The EmaiL!",
-             solution: "Linking Email To The DB Accounts",
-           });
+       User
+        .findOne({ email: decodedToken.unique_name }).then((user) => {
+            if (!user)
+                return res.status(404).json({
+                    error: true,
+                    errorMessage: "Can't Find The User With The EmaiL!",
+                    solution: "Linking Email To The DB Accounts",
+                })
 
-         if (
-           user.activeAccount === "" ||
-           user.activeAccount === "disabled" ||
-           user.activeAccount === "suspened"
-         )
-           return res.status(403).json({
-             error: true,
-             message: "Your Account Is Not Active!",
-           });
-
-         const token = jwt.sign(
-           {
-             _id: user._id,
-             user: {
-               sapId: user.sapId,
-               firstName: user.firstName,
-               role: user.role,
-             },
-           },
-           process.env.SECRET
-         );
-         let time = new Date();
-         const { _id, firstName, lastName, sapId, designations, role } = user;
-         time.setTime(time.getTime() + 1800 * 1000);
-         res.cookie("socis", token, {
-           expire: time,
-           path: "/",
-           domain: "localhost",
-         });
-         showLog(`User With SAPID: ${user.sapId} Logged In`);
-         return res.json({
-           token,
-           user: { _id, firstName, lastName, sapId, designations, role },
-         });
-       });
+            if (user.activeAccount === "" || user.activeAccount === "disabled" || user.activeAccount === "suspened")
+                return res.status(403).json({
+                    error: true,
+                    message: "Your Account Is Not Active!",
+                })
+            let time = new Date()
+            time.setTime(time.getTime() + 1800 * 1000)
+            const token = jwt.sign(
+                {
+                    _id: user._id,
+                    user: {
+                    sapId: user.sapId,
+                    firstName: user.firstName,
+                    role: user.role,
+                    },
+                },
+                process.env.SECRET
+            )
+            const { _id, firstName, lastName, sapId, designations, role } = user
+            res.cookie("socis", token, {
+                expire: time,
+                path: "/",
+                domain: "localhost",
+            })
+            showLog(`User With SAPID: ${user.sapId} Logged In`)
+            return res.json({
+                token,
+                user: { _id, firstName, lastName, sapId, designations, role },
+            })
+        })
 }
 
 //Signin Function
