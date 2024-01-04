@@ -1,24 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Award Sheet</title>
     <style>
-        * {
-            font-family: sans-serif;
-        }
         .title {
             text-align: center;
             font-size: 48px;
         }
+
         table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: large;
+        }
+
+        td,
+        th {
+            text-align: left;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        tr:nth-child(even) {}
+
+        footer,
+        p {
+            font-size: 8px;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .upes {}
+
+        /* body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Times New Roman', Times, serif;
+        } */
+
+        /* Rest of your existing styles... */
+
+        .title {
+            text-align: center;
+            font-size: 48px;
+        }
+
+        /* table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
         }
 
-        td, th {
+        td,
+        th {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
@@ -27,44 +70,155 @@
 
         tr:nth-child(even) {
             background-color: #dddddd;
-        }
-        footer, p {
+        } */
+
+        footer,
+        p {
             font-size: 8px;
+        }
+
+        .upes {
+            /* Your existing styles for UPES */
+        }
+
+        .center {
+            text-align: center;
+            flex: auto;
+
+        }
+
+        .header_table {
+            text-decoration: none;
+        }
+
+        .grades {
+            width: 100%;
+            /* Make the table wider */
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        .grades th,
+        .grades td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 6px;
+            /* Adjust padding as desired */
         }
     </style>
 </head>
+
 <body>
-    <h1 class="title">
-        UPES, Dehradun
-    </h1>
-    <h3>Subject: {{ evaluation.subjectName}}</h3>
-<table>
-    <tr>
-      <th>Name</th>
-      <th>SAP Id</th>
-      <th>Roll Number</th>
-      <th>Internal Assessment Marks</th>
-      <th>Mid Semester Marks</th>
-      <th>End Semester Marks</th>
-      <th>Final Marks</th>
-      <th>Grade</th>
-    </tr>
-    {{#each student}}
+    <div style="display: flex; align-items: center; flex: auto;">
+        <img src="data:image/png;base64,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" alt="UPES Logo" width="200px" height="100%">
+        <div class="center" style="text-align: center;">
+            <h2 class="upes" style="margin-bottom: 0; white-space: 0;"><b>University of Petroleum and Energy Studies</b>
+            </h2>
+
+            <h2 style="margin-bottom: 0;">Bidholi, Dehradun</h2>
+            <h2 style="margin-bottom: 0;"><u>Award of Grades</u></h2>
+        </div>
+    </div>
+    <table class="header_table">
         <tr>
+            <th>
+                <h3>Subject: {{ evaluation.subjectName}}</h3>
+            </th>
+            <th>
+                <h3>Theory/Lab/Project</h3>
+            </th>
+            <th>
+                Theory
+            </th>
+
+        </tr>
+        <tr>
+            <th>
+                <h3>Course: {{evaluation.programName}}</h3>
+            </th>
+            <th>
+                <h4>Semester: {{evaluation.semester}}</h4>
+            </th>
+
+
+
+        </tr>
+        <tr>
+            <th>
+                <h3>Common Paper</h3>
+            </th>
+            <th>
+                <h3>
+                    YES/NO
+                </h3>
+            </th>
+            <th>
+                <h3>
+                    FINAL AWARD SHEET
+                </h3>
+
+            </th>
+        </tr>
+    </table>
+    <table style="border: 2px;">
+        <td colspan="7"> <!-- Spanning 7 columns -->
+            <!-- New table inserted within this cell -->
+            <h3>Grading Pattern</h3>
+
+            <table class="additional-table">
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Grade</th>
+                    <!-- Add more headers if needed -->
+                </tr>
+                {{#each evaluation.parameters.0.grade}}
+                <tr>
+                    <td>{{this.min}}</td>
+                    <td>{{this.max}}</td>
+                    <td>{{this.grade}}</td>
+                </tr>
+                {{/each}}
+
+                <!-- Add more rows as needed -->
+            </table>
+        </td>
+    </table>
+    <script>
+        var Handlebars = require('handlebars');
+
+        Handlebars.registerHelper("inc", function (value, options) {
+            return parseInt(value) + 1;
+        });
+    </script>
+    <table class="grades">
+        <tr>
+            <th>S.no</th> <!-- Add a new column for S.no -->
+            <th>Name</th>
+            <th>SAP Id</th>
+            <th>Roll Number</th>
+            <th>IA</th>
+            <th>END</th>
+            <th>Total</th>
+            <th>Grade</th>
+        </tr>
+        {{#each student}}
+        <tr>
+            <td>{{@index}}</td> <!-- Display the S.no value using @index + 1 -->
             <td>{{this.name}}</td>
             <td>{{this.sapId}}</td>
             <td>{{this.rollNumber}}</td>
             <td>{{this.grades.0.internalMarks}}</td>
-            <td>{{this.grades.0.midSemMarks}}</td>
             <td>{{this.grades.0.endSemMarks}}</td>
             <td>{{this.grades.0.finalMarks}}</td>
-            <td>{{this.grades.0.grade}}</td>     
+            <td>{{this.grades.0.grade}}</td>
         </tr>
-    {{/each}}
-   
-  </table>
-  <footer>
-    <p>*This is a computer generated awardsheet*</p>
-  </footer>
+        {{/each}}
+
+    </table>
+    <footer>
+        <p>*This is a computer generated awardsheet*</p>
+    </footer>
 </body>
+
 </html>
